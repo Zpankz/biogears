@@ -223,7 +223,6 @@ bool SESubstanceClearance::HasCellBirthRate() const
 //-----------------------------------------------------------------------------
 SEScalarFrequency& SESubstanceClearance::GetCellBirthRate()
 {
-
   return m_def.CellBirthRate;
 }
 //-----------------------------------------------------------------------------
