@@ -1234,14 +1234,14 @@ void Respiratory::Pneumothorax()
     // Maximum flow resistance for the chest cavity or alveoli leak
     double dPneumoMaxFlowResistance_cmH2O_s_Per_L = m_dDefaultOpenResistance_cmH2O_s_Per_L;
     // Flow resistance for the decompression needle, if used
-    double dNeedleFlowResistance_cmH2O_s_Per_L = 15.0;
+    double dNeedleFlowResistance_cmH2O_s_Per_L = 15.0/13.0;
     // Increase in pleural pressure restricts blood return to heart.  Model this by increasing vena cava->right heart resistance
     SEFluidCircuitPath* venousReturn = m_data.GetCircuits().GetCardiovascularCircuit().GetPath(BGE::CardiovascularPath::VenaCavaToRightAtrium1);
     double nextVenousResistance = venousReturn->GetResistanceBaseline(FlowResistanceUnit::mmHg_s_Per_mL);
     double normalPleuralPressure_mmHg = -4.2;
     double venousResistanceModifier = GeneralMath::LinearInterpolator(normalPleuralPressure_mmHg, 3.0, 1.0, 4.0, GetMeanPleuralPressure(PressureUnit::mmHg));
     venousResistanceModifier = std::max(1.0, venousResistanceModifier);
-    nextVenousResistance *= venousResistanceModifier;
+    nextVenousResistance *= 1.1*venousResistanceModifier;
     venousReturn->GetNextResistance().SetValue(nextVenousResistance, FlowResistanceUnit::mmHg_s_Per_mL);
 
     if (m_PatientActions->HasLeftOpenTensionPneumothorax()) {
