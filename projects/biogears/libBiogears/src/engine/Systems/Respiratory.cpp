@@ -1249,7 +1249,7 @@ void Respiratory::Pneumothorax()
       double severity = m_PatientActions->GetLeftOpenTensionPneumothorax()->GetSeverity().GetValue();
       double resistance_cmH2O_s_Per_L = dPneumoMaxFlowResistance_cmH2O_s_Per_L;
       if (severity > 0.0 && !m_PatientActions->HasLeftChestOcclusiveDressing()) {
-        resistance_cmH2O_s_Per_L = dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
+        resistance_cmH2O_s_Per_L = -544.44 * severity + 554.44; //dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
       }
       resistance_cmH2O_s_Per_L = std::min(resistance_cmH2O_s_Per_L, dPneumoMaxFlowResistance_cmH2O_s_Per_L);
       m_EnvironmentToLeftChestLeak->GetNextResistance().SetValue(resistance_cmH2O_s_Per_L, FlowResistanceUnit::cmH2O_s_Per_L);
@@ -1266,7 +1266,7 @@ void Respiratory::Pneumothorax()
       double severity = m_PatientActions->GetRightOpenTensionPneumothorax()->GetSeverity().GetValue();
       double resistance_cmH2O_s_Per_L = dPneumoMaxFlowResistance_cmH2O_s_Per_L;
       if (severity > 0.0 && !m_PatientActions->HasRightChestOcclusiveDressing()) {
-        resistance_cmH2O_s_Per_L = dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
+        resistance_cmH2O_s_Per_L = -544.44 * severity + 554.44; //dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
       }
       resistance_cmH2O_s_Per_L = std::min(resistance_cmH2O_s_Per_L, dPneumoMaxFlowResistance_cmH2O_s_Per_L);
       m_EnvironmentToRightChestLeak->GetNextResistance().SetValue(resistance_cmH2O_s_Per_L, FlowResistanceUnit::cmH2O_s_Per_L);
@@ -1284,7 +1284,7 @@ void Respiratory::Pneumothorax()
       double severity = m_PatientActions->GetLeftClosedTensionPneumothorax()->GetSeverity().GetValue();
       double resistance_cmH2O_s_Per_L = dPneumoMaxFlowResistance_cmH2O_s_Per_L;
       if (severity > 0.0) {
-        resistance_cmH2O_s_Per_L = dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
+        resistance_cmH2O_s_Per_L = -544.44 * severity + 554.44; //dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
       }
       resistance_cmH2O_s_Per_L = std::min(resistance_cmH2O_s_Per_L, dPneumoMaxFlowResistance_cmH2O_s_Per_L);
       m_LeftAlveoliLeakToLeftPleuralCavity->GetNextResistance().SetValue(resistance_cmH2O_s_Per_L, FlowResistanceUnit::cmH2O_s_Per_L);
@@ -1302,7 +1302,7 @@ void Respiratory::Pneumothorax()
       double severity = m_PatientActions->GetRightClosedTensionPneumothorax()->GetSeverity().GetValue();
       double resistance_cmH2O_s_Per_L = dPneumoMaxFlowResistance_cmH2O_s_Per_L;
       if (severity > 0.0) {
-        resistance_cmH2O_s_Per_L = dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
+        resistance_cmH2O_s_Per_L = -544.44 * severity + 554.44; //dPneumoMinFlowResistance_cmH2O_s_Per_L / std::pow(severity, 2.0);
       }
       resistance_cmH2O_s_Per_L = std::min(resistance_cmH2O_s_Per_L, dPneumoMaxFlowResistance_cmH2O_s_Per_L);
       m_RightAlveoliLeakToRightPleuralCavity->GetNextResistance().SetValue(resistance_cmH2O_s_Per_L, FlowResistanceUnit::cmH2O_s_Per_L);
