@@ -1235,6 +1235,8 @@ void Respiratory::Pneumothorax()
     double dPneumoMaxFlowResistance_cmH2O_s_Per_L = m_dDefaultOpenResistance_cmH2O_s_Per_L;
     // Flow resistance for the decompression needle, if used
     double dNeedleFlowResistance_cmH2O_s_Per_L = 15.0/13.0;
+    // Flow resistance for the chest tube, if used
+    double dChestTubeFlowResistance_cmH2O_s_Per_L = 15.0;
     // Increase in pleural pressure restricts blood return to heart.  Model this by increasing vena cava->right heart resistance
     SEFluidCircuitPath* venousReturn = m_data.GetCircuits().GetCardiovascularCircuit().GetPath(BGE::CardiovascularPath::VenaCavaToRightAtrium1);
     double nextVenousResistance = venousReturn->GetResistanceBaseline(FlowResistanceUnit::mmHg_s_Per_mL);
@@ -1259,6 +1261,9 @@ void Respiratory::Pneumothorax()
       if (m_PatientActions->HasLeftNeedleDecompression()) {
         DoLeftNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
       }
+      if (m_PatientActions->HasLeftChestTube()) {
+        DoLeftChestTube(dChestTubeFlowResistance_cmH2O_s_Per_L);
+      }
     }
 
     if (m_PatientActions->HasRightOpenTensionPneumothorax()) {
@@ -1277,6 +1282,11 @@ void Respiratory::Pneumothorax()
       if (m_PatientActions->HasRightNeedleDecompression()) {
         DoRightNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
       }
+
+      if (m_PatientActions->HasRightChestTube()) {
+        DoRightChestTube(dChestTubeFlowResistance_cmH2O_s_Per_L);
+      }
+
     }
 
     if (m_PatientActions->HasLeftClosedTensionPneumothorax()) {
@@ -1295,6 +1305,11 @@ void Respiratory::Pneumothorax()
       if (m_PatientActions->HasLeftNeedleDecompression()) {
         DoLeftNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
       }
+
+      if (m_PatientActions->HasLeftChestTube()) {
+        DoLeftChestTube(dChestTubeFlowResistance_cmH2O_s_Per_L);
+      }
+
     }
 
     if (m_PatientActions->HasRightClosedTensionPneumothorax()) {
@@ -1313,24 +1328,29 @@ void Respiratory::Pneumothorax()
       if (m_PatientActions->HasRightNeedleDecompression()) {
         DoRightNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
       }
+      if (m_PatientActions->HasRightChestTube()) {
+        DoRightNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
+      }
     }
 
     //Check for interventions without insult
     if (!m_PatientActions->HasLeftClosedTensionPneumothorax() && !m_PatientActions->HasLeftOpenTensionPneumothorax()) {
-      if (m_PatientActions->HasLeftChestOcclusiveDressing() || m_PatientActions->HasLeftNeedleDecompression()) {
+      if (m_PatientActions->HasLeftChestOcclusiveDressing() || m_PatientActions->HasLeftNeedleDecompression() || m_PatientActions->HasLeftChestTube()) {
         /// \error Patient: Cannot perform an intervention if Tension Pneumothorax is not present on that side.
         Error("Cannot perform an intervention if Tension Pneumothorax is not present on that side.");
         m_PatientActions->RemoveLeftChestOcclusiveDressing();
         m_PatientActions->RemoveLeftNeedleDecompression();
+        m_PatientActions->RemoveLeftChestTube();
         return;
       }
     }
     if (!m_PatientActions->HasRightClosedTensionPneumothorax() && !m_PatientActions->HasRightOpenTensionPneumothorax()) {
-      if (m_PatientActions->HasRightChestOcclusiveDressing() || m_PatientActions->HasRightNeedleDecompression()) {
+      if (m_PatientActions->HasRightChestOcclusiveDressing() || m_PatientActions->HasRightNeedleDecompression() || m_PatientActions->HasRightChestTube()) {
         /// \error Patient: Cannot perform an intervention if Tension Pneumothorax is not present on that side.
         Error("Cannot perform an intervention if Tension Pneumothorax is not present on that side.");
         m_PatientActions->RemoveRightChestOcclusiveDressing();
         m_PatientActions->RemoveRightNeedleDecompression();
+        m_PatientActions->RemoveRightChestTube();
         return;
       }
     }
@@ -1349,6 +1369,13 @@ void Respiratory::Pneumothorax()
       Error("Cannot perform a Chest Occlusive Dressing intervention if Tension Pneumothorax is not present");
       m_PatientActions->RemoveLeftChestOcclusiveDressing();
       m_PatientActions->RemoveRightChestOcclusiveDressing();
+      return;
+    }
+    if (m_PatientActions->HasChestTube()) {
+      /// \error Patient: can't process a chest occlusive dressing if no pneumothorax is present
+      Error("Cannot perform a Chest Tube intervention if Tension Pneumothorax is not present");
+      m_PatientActions->RemoveLeftChestTube();
+      m_PatientActions->RemoveRightChestTube();
       return;
     }
   }
@@ -1477,6 +1504,42 @@ void Respiratory::DoLeftNeedleDecompression(double dFlowResistance)
 /// Used for right side needle decompression. this is an intervention (action) used to treat right
 /// side tension pneumothorax
 //--------------------------------------------------------------------------------------------------
+void Respiratory::DoRightChestTube(double ctFlowResistance)
+{
+  //Leak flow resistance that is scaled in proportion to Lung resistance, depending on severity
+  double dScalingFactor = 0.5; //Tuning parameter to allow gas flow due to needle decompression using lung resistance as reference
+  double dFlowResistanceRightNeedle = dScalingFactor * ctFlowResistance;
+  m_RightPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceRightNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
+}
+
+//--------------------------------------------------------------------------------------------------
+/// \brief
+/// Left Side Needle Decompression
+///
+/// \param  dFlowResistance - Resistance value for air flow through the needle
+///
+/// \details
+/// Used for left side needle decompression. this is an intervention (action) used to treat left
+/// side tension pneumothorax
+//--------------------------------------------------------------------------------------------------
+void Respiratory::DoLeftChestTube(double ctFlowResistance)
+{
+  //Leak flow resistance that is scaled in proportion to Lung resistance, depending on severity
+  double dScalingFactor = 0.5; //Tuning parameter to allow gas flow due to needle decompression using lung resistance as reference
+  double dFlowResistanceLeftNeedle = dScalingFactor * ctFlowResistance;
+  m_LeftPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceLeftNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
+}
+
+//--------------------------------------------------------------------------------------------------
+/// \brief
+/// Right Side Needle Decompression
+///
+/// \param  dFlowResistance - Resistance value for air flow through the needle
+///
+/// \details
+/// Used for right side needle decompression. this is an intervention (action) used to treat right
+/// side tension pneumothorax
+//--------------------------------------------------------------------------------------------------
 void Respiratory::DoRightNeedleDecompression(double dFlowResistance)
 {
   //Leak flow resistance that is scaled in proportion to Lung resistance, depending on severity
@@ -1484,7 +1547,6 @@ void Respiratory::DoRightNeedleDecompression(double dFlowResistance)
   double dFlowResistanceRightNeedle = dScalingFactor * dFlowResistance;
   m_RightPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceRightNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
 }
-
 //--------------------------------------------------------------------------------------------------
 /// \brief
 /// Pulmonary Shunt Implementation

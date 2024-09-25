@@ -128,6 +128,8 @@ private:
   // Pneumothorax
   void DoLeftNeedleDecompression(double dFlowResistance);
   void DoRightNeedleDecompression(double dFlowResistance);
+  void DoLeftChestTube(double ctFlowResistance);
+  void DoRightChestTube(double ctFlowResistance);
   // Aerosol Deposition and various Effects
   void ProcessAerosolSubstances();
 
