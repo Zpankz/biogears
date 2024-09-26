@@ -1329,7 +1329,7 @@ void Respiratory::Pneumothorax()
         DoRightNeedleDecompression(dNeedleFlowResistance_cmH2O_s_Per_L);
       }
       if (m_PatientActions->HasRightChestTube()) {
-        DoRightNeedleDecompression(dChestTubeFlowResistance_cmH2O_s_Per_L);
+        DoRightChestTube(dChestTubeFlowResistance_cmH2O_s_Per_L);
       }
     }
 
