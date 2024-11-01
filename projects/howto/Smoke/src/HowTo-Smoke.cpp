@@ -66,11 +66,11 @@ int HowToSmoke()
   }
 
   // Get some substances out we will use
-  SESubstanceDefinition N2 = bg->GetSubstanceManager().GetSubstance("Nitrogen")->GetDefinition();
-  SESubstanceDefinition O2 = bg->GetSubstanceManager().GetSubstance("Oxygen")->GetDefinition();
-  SESubstanceDefinition CO2 = bg->GetSubstanceManager().GetSubstance("CarbonDioxide")->GetDefinition();
-  SESubstanceDefinition CO = bg->GetSubstanceManager().GetSubstance("CarbonMonoxide")->GetDefinition();
-  SESubstanceDefinition Particulate = bg->GetSubstanceManager().GetSubstance("ForestFireParticulate")->GetDefinition();
+  SESubstanceDefinition N2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Nitrogen)->GetDefinition();
+  SESubstanceDefinition O2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Oxygen)->GetDefinition();
+  SESubstanceDefinition CO2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonDioxide)->GetDefinition();
+  SESubstanceDefinition CO = bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonMonoxide)->GetDefinition();
+  SESubstanceDefinition Particulate = bg->GetSubstanceManager().GetSubstance(StandardSubstances::ForestFireParticulate)->GetDefinition();
 
   // The tracker is responsible for advancing the engine time and outputting the data requests below at each time step
   

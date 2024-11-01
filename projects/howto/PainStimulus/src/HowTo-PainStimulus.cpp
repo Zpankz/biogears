@@ -63,9 +63,9 @@ int HowToPainStimulus()
 
   //Set up substances.  Initialized morphine plasma concentration to 0.  Note that saline is technically a compound--this is
   //so the engine knows to look for multiple components within the same substance file (i.e. Na, Cl, etc)
-  SESubstance* epi = bg->GetSubstanceManager().GetSubstance("Epinephrine");
+  SESubstance* epi = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Epinephrine);
   // Get the Morphine substance from the substance manager
-  const SESubstance* morphine = bg->GetSubstanceManager().GetSubstance("Morphine");
+  const SESubstance* morphine = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Morphine);
 
   // Create a substance bolus action to administer the substance
   SESubstanceBolus bolus(*morphine);

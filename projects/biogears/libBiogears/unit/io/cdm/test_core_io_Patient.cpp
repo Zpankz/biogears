@@ -84,8 +84,8 @@ TEST_F(TEST_FIXTURE_NAME, Patient)
   SEType source(&logger), sink(&logger);
   CDMType data;
 
-  auto oxygen = mgr.GetSubstance("Oxygen");
-  auto nitrogen = mgr.GetSubstance("Nitrogen");
+  auto oxygen = mgr.GetSubstance(biogears::Oxygen);
+  auto nitrogen = mgr.GetSubstance(biogears::Nitrogen);
 
   source.SetName("unit_test");
   source.SetAnnotation("Seerailization Test User");

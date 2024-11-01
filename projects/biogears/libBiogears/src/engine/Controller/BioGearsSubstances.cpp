@@ -1060,23 +1060,23 @@ bool BioGearsSubstances::LoadSubstanceDirectory()
   if (!SESubstanceManager::LoadSubstanceDirectory())
     return false;
 
-  m_O2 = GetSubstance("Oxygen");
-  m_CO = GetSubstance("CarbonMonoxide");
-  m_CO2 = GetSubstance("CarbonDioxide");
-  m_N2 = GetSubstance("Nitrogen");
-  m_Hb = GetSubstance("Hemoglobin");
-  m_HbO2 = GetSubstance("Oxyhemoglobin");
-  m_HbCO2 = GetSubstance("Carbaminohemoglobin");
-  m_HbCO = GetSubstance("Carboxyhemoglobin");
-  m_HbO2CO2 = GetSubstance("OxyCarbaminohemoglobin");
-  m_HCO3 = GetSubstance("Bicarbonate");
-  m_epi = GetSubstance("Epinephrine");
+  m_O2 = GetSubstance(StandardSubstances::Oxygen);
+  m_CO = GetSubstance(StandardSubstances::CarbonMonoxide);
+  m_CO2 = GetSubstance(StandardSubstances::CarbonDioxide);
+  m_N2 = GetSubstance(StandardSubstances::Nitrogen);
+  m_Hb = GetSubstance(StandardSubstances::Hemoglobin);
+  m_HbO2 = GetSubstance(StandardSubstances::Oxyhemoglobin);
+  m_HbCO2 = GetSubstance(StandardSubstances::Carbaminohemoglobin);
+  m_HbCO = GetSubstance(StandardSubstances::Carboxyhemoglobin);
+  m_HbO2CO2 = GetSubstance(StandardSubstances::OxyCarbaminohemoglobin);
+  m_HCO3 = GetSubstance(StandardSubstances::Bicarbonate);
+  m_epi = GetSubstance(StandardSubstances::Epinephrine);
 
-  m_platelets = GetSubstance("Platelet");
-  m_AntigenA = GetSubstance("Antigen_A");
-  m_AntigenB = GetSubstance("Antigen_B");
-  m_RBC = GetSubstance("RedBloodCell");
-  m_WBC = GetSubstance("WhiteBloodCell");
+  m_platelets = GetSubstance(StandardSubstances::Platelet);
+  m_AntigenA = GetSubstance(StandardSubstances::Antigen_A);
+  m_AntigenB = GetSubstance(StandardSubstances::Antigen_B);
+  m_RBC = GetSubstance(StandardSubstances::RedBloodCell);
+  m_WBC = GetSubstance(StandardSubstances::WhiteBloodCell);
 
   bool substancesAreMissing = false;
   if (m_O2 == nullptr) {
@@ -1132,21 +1132,21 @@ bool BioGearsSubstances::LoadSubstanceDirectory()
       || m_HbCO2 == nullptr || m_HbCO == nullptr || m_HbO2CO2 == nullptr || m_epi == nullptr || m_HCO3 == nullptr)
     return false;
 
-  m_albumin = GetSubstance("Albumin");
-  m_aminoAcids = GetSubstance("AminoAcids");
-  m_calcium = GetSubstance("Calcium");
-  m_chloride = GetSubstance("Chloride");
-  m_creatinine = GetSubstance("Creatinine");
-  m_globulin = GetSubstance("Globulin");
-  m_glucagon = GetSubstance("Glucagon");
-  m_glucose = GetSubstance("Glucose");
-  m_insulin = GetSubstance("Insulin");
-  m_ketones = GetSubstance("Ketones");
-  m_lactate = GetSubstance("Lactate");
-  m_potassium = GetSubstance("Potassium");
-  m_sodium = GetSubstance("Sodium");
-  m_triacylglycerol = GetSubstance("Triacylglycerol");
-  m_urea = GetSubstance("Urea");
+  m_albumin = GetSubstance(StandardSubstances::Albumin);
+  m_aminoAcids = GetSubstance(StandardSubstances::AminoAcids);
+  m_calcium = GetSubstance(StandardSubstances::Calcium);
+  m_chloride = GetSubstance(StandardSubstances::Chloride);
+  m_creatinine = GetSubstance(StandardSubstances::Creatinine);
+  m_globulin = GetSubstance(StandardSubstances::Globulin);
+  m_glucagon = GetSubstance(StandardSubstances::Glucagon);
+  m_glucose = GetSubstance(StandardSubstances::Glucose);
+  m_insulin = GetSubstance(StandardSubstances::Insulin);
+  m_ketones = GetSubstance(StandardSubstances::Ketones);
+  m_lactate = GetSubstance(StandardSubstances::Lactate);
+  m_potassium = GetSubstance(StandardSubstances::Potassium);
+  m_sodium = GetSubstance(StandardSubstances::Sodium);
+  m_triacylglycerol = GetSubstance(StandardSubstances::Triacylglycerol);
+  m_urea = GetSubstance(StandardSubstances::Urea);
 
   if (m_albumin == nullptr) {
     Error("Albumin Definition not found");

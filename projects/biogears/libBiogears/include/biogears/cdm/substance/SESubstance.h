@@ -42,7 +42,6 @@ namespace io {
 } // namespace io
 
 class BIOGEARS_API SESubstanceDefinition {
-
 public:
   SESubstanceDefinition(SESubstanceDefinition const& obj);
   SESubstanceDefinition(SESubstanceDefinition&& obj);
@@ -76,6 +75,88 @@ public:
   SESubstancePharmacokinetics Pharmacokinetics;
   SESubstancePharmacodynamics Pharmacodynamics;
 };
+
+inline namespace StandardSubstances {
+  static constexpr char const* const Acetaminophen = "Acetaminophen";
+  static constexpr char const* const Acetoacetate = "Acetoacetate";
+  static constexpr char const* const Albumin = "Albumin";
+  static constexpr char const* const Albuminar_25 = "Albuminar_25";
+  static constexpr char const* const Albuminex_4PCT = "Albuminex_4PCT";
+  static constexpr char const* const Albuminex_5PCT = "Albuminex_5PCT";
+  static constexpr char const* const Albuterol = "Albuterol";
+  static constexpr char const* const AminoAcids = "AminoAcids";
+  static constexpr char const* const Antigen_A = "Antigen_A";
+  static constexpr char const* const Antigen_B = "Antigen_B";
+  static constexpr char const* const Atropine = "Atropine";
+  static constexpr char const* const Bicarbonate = "Bicarbonate";
+  static constexpr char const* const Blood_ABNegative = "Blood_ABNegative";
+  static constexpr char const* const Blood_ABPositive = "Blood_ABPositive";
+  static constexpr char const* const Blood_ANegative = "Blood_ANegative";
+  static constexpr char const* const Blood_APositive = "Blood_APositive";
+  static constexpr char const* const Blood_BNegative = "Blood_BNegative";
+  static constexpr char const* const Blood_BPositive = "Blood_BPositive";
+  static constexpr char const* const Blood_ONegative = "Blood_ONegative";
+  static constexpr char const* const Blood_OPositive = "Blood_OPositive";
+  static constexpr char const* const Caffeine = "Caffeine";
+  static constexpr char const* const Calcium = "Calcium";
+  static constexpr char const* const Carbaminohemoglobin = "Carbaminohemoglobin";
+  static constexpr char const* const CarbonDioxide = "CarbonDioxide";
+  static constexpr char const* const CarbonMonoxide = "CarbonMonoxide";
+  static constexpr char const* const Carboxyhemoglobin = "Carboxyhemoglobin";
+  static constexpr char const* const Chloride = "Chloride";
+  static constexpr char const* const Creatinine = "Creatinine";
+  static constexpr char const* const Desflurane = "Desflurane";
+  static constexpr char const* const Epinephrine = "Epinephrine";
+  static constexpr char const* const Ertapenem = "Ertapenem";
+  static constexpr char const* const Etomidate = "Etomidate";
+  static constexpr char const* const Fentanyl = "Fentanyl";
+  static constexpr char const* const ForestFireParticulate = "ForestFireParticulate";
+  static constexpr char const* const Furosemide = "Furosemide";
+  static constexpr char const* const Globulin = "Globulin";
+  static constexpr char const* const Glucagon = "Glucagon";
+  static constexpr char const* const Glucose = "Glucose";
+  static constexpr char const* const Hemoglobin = "Hemoglobin";
+  static constexpr char const* const Insulin = "Insulin";
+  static constexpr char const* const Ketamine = "Ketamine";
+  static constexpr char const* const Ketones = "Ketones";
+  static constexpr char const* const Lactate = "Lactate";
+  static constexpr char const* const Magnesium = "Magnesium";
+  static constexpr char const* const Midazolam = "Midazolam";
+  static constexpr char const* const Morphine = "Morphine";
+  static constexpr char const* const Moxifloxacin = "Moxifloxacin";
+  static constexpr char const* const Naloxone = "Naloxone";
+  static constexpr char const* const Nitrogen = "Nitrogen";
+  static constexpr char const* const Norepinephrine = "Norepinephrine";
+  static constexpr char const* const Ondansetron = "Ondansetron";
+  static constexpr char const* const OxyCarbaminohemoglobin = "OxyCarbaminohemoglobin";
+  static constexpr char const* const Oxygen = "Oxygen";
+  static constexpr char const* const Oxyhemoglobin = "Oxyhemoglobin";
+  static constexpr char const* const Piperacillin = "Piperacillin";
+  static constexpr char const* const PiperacillinTazobactam = "PiperacillinTazobactam";
+  static constexpr char const* const PlamsaLyteA = "PlamsaLyteA";
+  static constexpr char const* const Plasma = "Plasma";
+  static constexpr char const* const PlasmaLyteA = "PlasmaLyteA";
+  static constexpr char const* const Platelet = "Platelet";
+  static constexpr char const* const Potassium = "Potassium";
+  static constexpr char const* const Pralidoxime = "Pralidoxime";
+  static constexpr char const* const Prednisone = "Prednisone";
+  static constexpr char const* const Propofol = "Propofol";
+  static constexpr char const* const RedBloodCell = "RedBloodCell";
+  static constexpr char const* const RingersLactate = "RingersLactate";
+  static constexpr char const* const Rocuronium = "Rocuronium";
+  static constexpr char const* const Saline = "Saline";
+  static constexpr char const* const SalineSlowDrip = "SalineSlowDrip";
+  static constexpr char const* const Sarin = "Sarin";
+  static constexpr char const* const Sodium = "Sodium";
+  static constexpr char const* const Succinylcholine = "Succinylcholine";
+  static constexpr char const* const Tazobactam = "Tazobactam";
+  static constexpr char const* const TranexamicAcid = "TranexamicAcid";
+  static constexpr char const* const Triacylglycerol = "Triacylglycerol";
+  static constexpr char const* const Tristearin = "Tristearin";
+  static constexpr char const* const Urea = "Urea";
+  static constexpr char const* const Vasopressin = "Vasopressin";
+  static constexpr char const* const WhiteBloodCell = "WhiteBloodCell";
+}
 
 class BIOGEARS_API SESubstance : public Loggable {
   friend io::Substance;

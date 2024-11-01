@@ -84,7 +84,7 @@ TEST_F(TEST_FIXTURE_NAME, Inhaler)
   SEType source(mgr), sink(mgr);
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetState(biogears::SEOnOff::Off);
   source.GetMeteredDose().SetValue(55.f, biogears::MassUnit::kg);

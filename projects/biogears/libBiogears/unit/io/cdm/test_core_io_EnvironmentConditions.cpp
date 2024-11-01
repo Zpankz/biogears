@@ -90,8 +90,8 @@ TEST_F(TEST_FIXTURE_NAME, InitialEnvironment)
   source.SetConditionsFile("ConditionFile.xml");
   auto& conditions = source.GetConditions();
 
-  auto nitrogen = subMgr.GetSubstance("Nitrogen")->GetDefinition();
-  auto sarin = subMgr.GetSubstance("Sarin")->GetDefinition();
+  auto nitrogen = subMgr.GetSubstance(biogears::Nitrogen)->GetDefinition();
+  auto sarin = subMgr.GetSubstance(biogears::Sarin)->GetDefinition();
   ASSERT_NE(nullptr, sarin);
   ASSERT_NE(nullptr, nitrogen);
   conditions.SetSurroundingType(biogears::SESurroundingType::Water);

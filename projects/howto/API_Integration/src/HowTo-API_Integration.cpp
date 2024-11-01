@@ -97,9 +97,9 @@ bool action_env_change(std::unique_ptr<biogears::BioGearsEngine>& engine, biogea
   // This example only uses three partial gasses. You could submit a vector of name/value pairs.
   // Then this section could be modified to Get every substance in the pair list.
   //
-  auto N2 = engine->GetSubstanceManager().GetSubstance("Nitrogen")->GetDefinition();
-  auto O2 = engine->GetSubstanceManager().GetSubstance("Oxygen")->GetDefinition();
-  auto CO2 = engine->GetSubstanceManager().GetSubstance("CarbonDioxide")->GetDefinition();
+  auto N2 = engine->GetSubstanceManager().GetSubstance(biogears::Nitrogen)->GetDefinition();
+  auto O2 = engine->GetSubstanceManager().GetSubstance(biogears::Oxygen)->GetDefinition();
+  auto CO2 = engine->GetSubstanceManager().GetSubstance(biogears::CarbonDioxide)->GetDefinition();
 
   auto conditions = environment.GetConditions();
   conditions.Invalidate(); // Reset he existing conditions
@@ -234,7 +234,7 @@ bool action_infection(std::unique_ptr<biogears::BioGearsEngine>& engine, biogear
 //-------------------------------------------------------------------------------
 bool action_bloodtransfuction(std::unique_ptr<biogears::BioGearsEngine>& engine, double blood_volume_ml, double flowrate_ml_Per_min)
 {
-  auto* o_negative = engine->GetSubstanceManager().GetCompound("Blood_ONegative");
+  auto* o_negative = engine->GetSubstanceManager().GetCompound(biogears::Blood_ONegative);
   auto transfusion = biogears::SESubstanceCompoundInfusion(*o_negative);
   transfusion.GetBagVolume().SetValue(blood_volume_ml, biogears::VolumeUnit::mL); // the total volume in the bag
   transfusion.GetRate().SetValue(flowrate_ml_Per_min, biogears::VolumePerTimeUnit::mL_Per_min); // The rate to admnister the compound in the bag
@@ -530,9 +530,9 @@ void BioGearsPlugin::run()
           // This function as the patient changes locations.
 
           auto conditions = biogears::SEEnvironmentalConditions(_pimpl->engine->GetSubstanceManager());
-          auto N2 = _pimpl->engine->GetSubstanceManager().GetSubstance("Nitrogen")->GetDefinition();
-          auto O2 = _pimpl->engine->GetSubstanceManager().GetSubstance("Oxygen")->GetDefinition();
-          auto CO2 = _pimpl->engine->GetSubstanceManager().GetSubstance("CarbonDioxide")->GetDefinition();
+          auto N2 = _pimpl->engine->GetSubstanceManager().GetSubstance(biogears::Nitrogen)->GetDefinition();
+          auto O2 = _pimpl->engine->GetSubstanceManager().GetSubstance(biogears::Oxygen)->GetDefinition();
+          auto CO2 = _pimpl->engine->GetSubstanceManager().GetSubstance(biogears::CarbonDioxide)->GetDefinition();
 
           conditions.SetSurroundingType(SESurroundingType::Water);
           conditions.GetAirVelocity().SetValue(0, LengthPerTimeUnit::m_Per_s);
@@ -563,9 +563,9 @@ void BioGearsPlugin::run()
 
           /// DRUGS
           auto customCompound = substance_make_compound(_pimpl->engine);
-          auto mixSuccess = addCompoundComponents(_pimpl->engine, customCompound, "Saline", 2.17, MassPerVolumeUnit::kg_Per_L);
-          mixSuccess &= addCompoundComponents(_pimpl->engine, customCompound, "Albumin", 10.0, MassPerVolumeUnit::mg_Per_mL);
-          mixSuccess &= addCompoundComponents(_pimpl->engine, customCompound, "Morphine", 10.0, MassPerVolumeUnit::mg_Per_mL);
+          auto mixSuccess = addCompoundComponents(_pimpl->engine, customCompound, biogears::Saline, 2.17, MassPerVolumeUnit::kg_Per_L);
+          mixSuccess &= addCompoundComponents(_pimpl->engine, customCompound, biogears::Albumin, 10.0, MassPerVolumeUnit::mg_Per_mL);
+          mixSuccess &= addCompoundComponents(_pimpl->engine, customCompound, biogears::Morphine, 10.0, MassPerVolumeUnit::mg_Per_mL);
 
           if (mixSuccess) {
             for (auto& component : customCompound->GetComponents()) {

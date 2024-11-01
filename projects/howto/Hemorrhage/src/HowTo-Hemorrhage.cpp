@@ -134,7 +134,7 @@ int HowToHemorrhage()
   // Patient is stabilizing, but not great
 
   // Let's administer a saline drip, we need to get saline from the substance maganer
-  SESubstanceCompound* saline = bg->GetSubstanceManager().GetCompound("Saline");
+  SESubstanceCompound* saline = bg->GetSubstanceManager().GetCompound(StandardSubstances::Saline);
   SESubstanceCompoundInfusion iVSaline(*saline);
   iVSaline.GetBagVolume().SetValue(500, VolumeUnit::mL); //the total volume in the bag of Saline
   iVSaline.GetRate().SetValue(100, VolumePerTimeUnit::mL_Per_min); //The rate to admnister the compound in the bag in this case saline

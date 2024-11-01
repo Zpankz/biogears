@@ -83,7 +83,7 @@ TEST_F(TEST_FIXTURE_NAME, Nutrition)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetName("Not Real nutrition");
   source.GetCarbohydrate().SetValue(0.7777, biogears::MassUnit::g);

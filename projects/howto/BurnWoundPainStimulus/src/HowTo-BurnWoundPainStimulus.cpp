@@ -135,7 +135,7 @@ BurnThread::BurnThread(const std::string logFile, double tbsa)
     m_bg->GetLogger()->Error("Could not load state, check the error");
     throw std::runtime_error("Could not load state, check the error");
   }
-  SESubstance* epi = m_bg->GetSubstanceManager().GetSubstance("Epinephrine");
+  SESubstance* epi = m_bg->GetSubstanceManager().GetSubstance(StandardSubstances::Epinephrine);
 
   //Create CSV results file and set up data that we want to be tracked (tracking done in AdvanceModelTime)
   int docTBSA = (int)(tbsa);
@@ -164,9 +164,9 @@ BurnThread::BurnThread(const std::string logFile, double tbsa)
   m_bg->GetEngineTrack()->GetDataTrack().Probe("bagVolumeAlbumin_mL", m_ivBagVolumeAlbumin_mL);
 
   //Load substances and compounds
-  SESubstanceCompound* ringers = m_bg->GetSubstanceManager().GetCompound("RingersLactate");
-  SESubstanceCompound* albumex = m_bg->GetSubstanceManager().GetCompound("Albuminex_4PCT");
-  SESubstance* ketamine = m_bg->GetSubstanceManager().GetSubstance("Ketamine");
+  SESubstanceCompound* ringers = m_bg->GetSubstanceManager().GetCompound(StandardSubstances::RingersLactate);
+  SESubstanceCompound* albumex = m_bg->GetSubstanceManager().GetCompound(StandardSubstances::Albuminex_4PCT);
+  SESubstance* ketamine = m_bg->GetSubstanceManager().GetSubstance(StandardSubstances::Ketamine);
   //Create infusion and bolus actions
   m_ringers = new SESubstanceCompoundInfusion(*ringers);
   m_albumex = new SESubstanceCompoundInfusion(*albumex);

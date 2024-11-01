@@ -572,7 +572,7 @@ int HowToPatientEvents()
 
   machine_config.GetLeftChamber().SetState(SEOnOff::On);
   machine_config.GetLeftChamber().GetSubstanceFraction().SetValue(0.05);
-  machine_config.GetLeftChamber().SetSubstance(*bg->GetSubstanceManager().GetSubstance("Desflurane"));
+  machine_config.GetLeftChamber().SetSubstance(*bg->GetSubstanceManager().GetSubstance(StandardSubstances::Desflurane));
   bg->ProcessAction(machine);
 
   bg->AdvanceModelTime(0.5, TimeUnit::hr);

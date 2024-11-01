@@ -75,7 +75,7 @@ BioGearsThread::BioGearsThread(const std::string& logfile)
 {
   // Create our engine with the standard patient
   m_bg = CreateBioGearsEngine(logfile);
-  SESubstanceCompound* saline = m_bg->GetSubstanceManager().GetCompound("Saline");
+  SESubstanceCompound* saline = m_bg->GetSubstanceManager().GetCompound(StandardSubstances::Saline);
 
   if (!m_bg->LoadState("./states/StandardMale@0s.xml")) {
     m_bg->GetLogger()->Error("Could not load state, check the error");

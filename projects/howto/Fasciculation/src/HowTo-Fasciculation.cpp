@@ -45,10 +45,10 @@ int HowToFaciculation()
   }
 
   //---Initialize all variables needed for scenario
-  SESubstance* Na = bg->GetSubstanceManager().GetSubstance("Sodium");
-  SESubstance* K = bg->GetSubstanceManager().GetSubstance("Potassium");
-  SESubstance* Cl = bg->GetSubstanceManager().GetSubstance("Chloride");
-  SESubstance* Ca = bg->GetSubstanceManager().GetSubstance("Calcium");
+  SESubstance* Na = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Sodium);
+  SESubstance* K = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Potassium);
+  SESubstance* Cl = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Chloride);
+  SESubstance* Ca = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Calcium);
 
   double monitorTime = 200.0; //how long we're going to be on the look out for ion imbalances in the blood
   SEOnOff lowKActive;

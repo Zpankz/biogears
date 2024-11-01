@@ -50,7 +50,7 @@ int HowToPupillaryResponse()
 
   // The tracker is responsible for advancing the engine time and outputting the data requests below at each time step
 
-  SESubstance* morphine = bg->GetSubstanceManager().GetSubstance("Morphine");
+  SESubstance* morphine = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Morphine);
   morphine->GetPlasmaConcentration().SetValue(0.0, MassPerVolumeUnit::ug_Per_L);
 
   // Create a substance bolus action to administer the substance

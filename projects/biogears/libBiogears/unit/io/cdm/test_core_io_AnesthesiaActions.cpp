@@ -72,8 +72,8 @@ void TEST_FIXTURE_NAME::SetUp()
     machine = new biogears::SEAnesthesiaMachine(*mgr);
   }
 
-  auto oxygen = mgr->GetSubstance("Oxygen");
-  auto nitrogen = mgr->GetSubstance("Nitrogen");
+  auto oxygen = mgr->GetSubstance(biogears::Oxygen);
+  auto nitrogen = mgr->GetSubstance(biogears::Nitrogen);
 
   machine->SetConnection(biogears::SEAnesthesiaMachineConnection::Mask);
   machine->GetInletFlow().SetValue(33, biogears::VolumePerTimeUnit::mL_Per_day);
@@ -128,8 +128,8 @@ TEST_F(TEST_FIXTURE_NAME, AnesthesiaMachineConfiguration)
   SEType source(mgr), sink(mgr);
   CDMType data;
 
-  auto oxygen = mgr.GetSubstance("Oxygen");
-  auto nitrogen = mgr.GetSubstance("Nitrogen");
+  auto oxygen = mgr.GetSubstance(biogears::Oxygen);
+  auto nitrogen = mgr.GetSubstance(biogears::Nitrogen);
 
   source.GetConfiguration().SetConnection(biogears::SEAnesthesiaMachineConnection::Mask);
   source.GetConfiguration().GetInletFlow().SetValue(33, biogears::VolumePerTimeUnit::mL_Per_day);

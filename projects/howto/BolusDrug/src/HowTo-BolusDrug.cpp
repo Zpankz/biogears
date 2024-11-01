@@ -69,7 +69,7 @@ int HowToBolusDrug()
   bg->AdvanceModelTime(50, TimeUnit::s);
 
   // Get the Succinylcholine substance from the substance manager
-  const SESubstance* succs = bg->GetSubstanceManager().GetSubstance("Succinylcholine");
+  const SESubstance* succs = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Succinylcholine);
 
   // Create a substance bolus action to administer the substance
   SESubstanceBolus bolus(*succs);

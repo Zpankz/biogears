@@ -50,11 +50,11 @@ SELiquidSubstanceQuantity::SELiquidSubstanceQuantity(SESubstance& sub, SELiquidC
   m_isO2 = false;
   m_isCO2 = false;
   m_isCO = false;
-  if (sub.GetName() == "Oxygen")
+  if (sub.GetName() == StandardSubstances::Oxygen)
     m_isO2 = true;
-  else if (sub.GetName() == "CarbonMonoxide")
+  else if (sub.GetName() == StandardSubstances::CarbonMonoxide)
     m_isCO = true;
-  else if (sub.GetName() == "CarbonDioxide")
+  else if (sub.GetName() == StandardSubstances::CarbonDioxide)
     m_isCO2 = true;
 
   if (m_Substance.GetState() != SESubstanceState::Gas)

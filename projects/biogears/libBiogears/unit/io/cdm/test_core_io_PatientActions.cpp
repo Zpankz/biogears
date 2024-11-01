@@ -906,7 +906,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceBolus)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto oxygen = mgr.GetSubstance("Oxygen");
+  auto oxygen = mgr.GetSubstance(biogears::Oxygen);
 
   SEType source { *oxygen }, sink { *oxygen };
   CDMType data;
@@ -938,7 +938,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceBolusState)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto oxygen = mgr.GetSubstance("Oxygen");
+  auto oxygen = mgr.GetSubstance(biogears::Oxygen);
 
   SEType source { *oxygen }, sink { *oxygen };
   CDMType data;
@@ -968,7 +968,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceCompoundInfusion)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto saline = mgr.GetCompound("Saline");
+  auto saline = mgr.GetCompound(biogears::Saline);
   ASSERT_TRUE(saline != nullptr);
   SEType source { *saline }, sink { *saline };
   CDMType data;
@@ -999,7 +999,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceInfusion)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto oxygen = mgr.GetSubstance("Oxygen");
+  auto oxygen = mgr.GetSubstance(biogears::Oxygen);
   SEType source { *oxygen }, sink { *oxygen };
   CDMType data;
 
@@ -1053,7 +1053,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceNasalDose)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto naloxone = mgr.GetSubstance("Naloxone");
+  auto naloxone = mgr.GetSubstance(biogears::Naloxone);
   SEType source { *naloxone }, sink { *naloxone };
   CDMType data;
 
@@ -1080,7 +1080,7 @@ TEST_F(TEST_FIXTURE_NAME, NasalState)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto naloxone = mgr.GetSubstance("Naloxone");
+  auto naloxone = mgr.GetSubstance(biogears::Naloxone);
   SEType source { *naloxone }, sink { *naloxone };
   CDMType data;
 
@@ -1110,7 +1110,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceOralDose)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto naloxone = mgr.GetSubstance("Naloxone");
+  auto naloxone = mgr.GetSubstance(biogears::Naloxone);
   SEType source { *naloxone }, sink { *naloxone };
   CDMType data;
 
@@ -1137,7 +1137,7 @@ TEST_F(TEST_FIXTURE_NAME, TransmucosalState)
   biogears::Logger logger;
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
-  auto naloxone = mgr.GetSubstance("Naloxone");
+  auto naloxone = mgr.GetSubstance(biogears::Naloxone);
   SEType source { *naloxone }, sink { *naloxone };
   CDMType data;
 

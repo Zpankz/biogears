@@ -53,14 +53,14 @@ SECompartmentManager::SECompartmentManager(SESubstanceManager& subMgr)
   : Loggable(subMgr.GetLogger())
   , m_subMgr(subMgr)
 {
-  m_O2 = subMgr.GetSubstance("Oxygen");
-  m_CO2 = subMgr.GetSubstance("CarbonDioxide");
-  m_CO = subMgr.GetSubstance("CarbonMonoxide");
-  m_Hb = subMgr.GetSubstance("Hemoglobin");
-  m_HbO2 = subMgr.GetSubstance("Oxyhemoglobin");
-  m_HbCO2 = subMgr.GetSubstance("Carbaminohemoglobin");
-  m_HbO2CO2 = subMgr.GetSubstance("OxyCarbaminohemoglobin");
-  m_HbCO = subMgr.GetSubstance("Carboxyhemoglobin");
+  m_O2 = subMgr.GetSubstance(StandardSubstances::Oxygen);
+  m_CO2 = subMgr.GetSubstance(StandardSubstances::CarbonDioxide);
+  m_CO = subMgr.GetSubstance(StandardSubstances::CarbonMonoxide);
+  m_Hb = subMgr.GetSubstance(StandardSubstances::Hemoglobin);
+  m_HbO2 = subMgr.GetSubstance(StandardSubstances::Oxyhemoglobin);
+  m_HbCO2 = subMgr.GetSubstance(StandardSubstances::Carbaminohemoglobin);
+  m_HbO2CO2 = subMgr.GetSubstance(StandardSubstances::OxyCarbaminohemoglobin);
+  m_HbCO = subMgr.GetSubstance(StandardSubstances::Carboxyhemoglobin);
   Invalidate();
 }
 SECompartmentManager::~SECompartmentManager()

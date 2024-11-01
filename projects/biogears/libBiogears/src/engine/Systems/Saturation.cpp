@@ -146,15 +146,15 @@ SaturationCalculator::SaturationCalculator(BioGears& bg)
 void SaturationCalculator::Initialize(SESubstanceManager& substances)
 {
   m_Logger = substances.GetLogger();
-  m_O2 = substances.GetSubstance("Oxygen");
-  m_CO2 = substances.GetSubstance("CarbonDioxide");
-  m_CO = substances.GetSubstance("CarbonMonoxide");
-  m_Hb = substances.GetSubstance("Hemoglobin");
-  m_HbO2 = substances.GetSubstance("Oxyhemoglobin");
-  m_HbCO2 = substances.GetSubstance("Carbaminohemoglobin");
-  m_HbCO = substances.GetSubstance("Carboxyhemoglobin");
-  m_HbO2CO2 = substances.GetSubstance("OxyCarbaminohemoglobin");
-  m_HCO3 = substances.GetSubstance("Bicarbonate");
+  m_O2 = substances.GetSubstance(StandardSubstances::Oxygen);
+  m_CO2 = substances.GetSubstance(StandardSubstances::CarbonDioxide);
+  m_CO = substances.GetSubstance(StandardSubstances::CarbonMonoxide);
+  m_Hb = substances.GetSubstance(StandardSubstances::Hemoglobin);
+  m_HbO2 = substances.GetSubstance(StandardSubstances::Oxyhemoglobin);
+  m_HbCO2 = substances.GetSubstance(StandardSubstances::Carbaminohemoglobin);
+  m_HbCO = substances.GetSubstance(StandardSubstances::Carboxyhemoglobin);
+  m_HbO2CO2 = substances.GetSubstance(StandardSubstances::OxyCarbaminohemoglobin);
+  m_HCO3 = substances.GetSubstance(StandardSubstances::Bicarbonate);
 
   if (m_O2 == nullptr)
     Fatal("Oxygen Definition not found");

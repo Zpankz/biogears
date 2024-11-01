@@ -210,7 +210,7 @@ void BloodChemistry::SetUp()
   SESubstance* insulin = &m_data.GetSubstances().GetInsulin();
   SESubstance* ketones = &m_data.GetSubstances().GetKetones();
   SESubstance* lactate = &m_data.GetSubstances().GetLactate();
-  m_Ondansetron = m_data.GetSubstances().GetSubstance("Ondansetron");
+  m_Ondansetron = m_data.GetSubstances().GetSubstance(StandardSubstances::Ondansetron);
   SESubstance* potassium = &m_data.GetSubstances().GetPotassium();
   SESubstance* rbc = &m_data.GetSubstances().GetRBC();
   SESubstance* sodium = &m_data.GetSubstances().GetSodium();

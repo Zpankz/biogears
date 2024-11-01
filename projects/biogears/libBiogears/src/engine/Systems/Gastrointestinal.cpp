@@ -847,7 +847,7 @@ void Gastrointestinal::ProcessDrugCAT()
       }
     }
     double fMetabolized = 0.0;
-    if (sub->GetName() == "Fentanyl") {
+    if (sub->GetName() == StandardSubstances::Fentanyl) {
       fMetabolized = 0.20; // If more drugs needs this we can think about adding it to substance clearance schema
     }
     // Dissolution data

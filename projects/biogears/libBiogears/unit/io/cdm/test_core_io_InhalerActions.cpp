@@ -84,7 +84,7 @@ TEST_F(TEST_FIXTURE_NAME, InhalerConfiguration)
   SEType source(mgr), sink(mgr);
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   auto& conf = source.GetConfiguration();
 

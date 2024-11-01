@@ -2067,7 +2067,7 @@ void Cardiovascular::AdjustVascularTone()
     double CardiacOutput_mL_Per_s = GetCardiacOutput(VolumePerTimeUnit::mL_Per_s);
     if (CardiacOutput_mL_Per_s != 0.0) {
       ResistanceChange = m_data.GetDrugs().GetMeanBloodPressureChange(PressureUnit::mmHg) / GetCardiacOutput(VolumePerTimeUnit::mL_Per_s);
-      if (m_data.GetSubstances().IsActive(*m_data.GetSubstances().GetSubstance("Sarin"))) {
+      if (m_data.GetSubstances().IsActive(*m_data.GetSubstances().GetSubstance(StandardSubstances::Sarin))) {
         ResistanceChange *= -1.0; // oppose the effect for sarin
       }
     }
@@ -2122,7 +2122,7 @@ SEScalar& Cardiovascular::CalculateCardiovascularSOFA()
   SEScalar* sofa = new SEScalar();
   double sofaScore = 0.0;
   const double meanPressure = GetMeanArterialPressure(PressureUnit::mmHg);
-  SESubstance* norEpi = m_data.GetSubstances().GetSubstance("Norepinephrine");
+  SESubstance* norEpi = m_data.GetSubstances().GetSubstance(StandardSubstances::Norepinephrine);
   std::map<const SESubstance*, SESubstanceInfusion*> infusionMap = m_data.GetActions().GetPatientActions().GetSubstanceInfusions();
   if (meanPressure >= 70.0) {
     // Normal, leave sofaScore = 0

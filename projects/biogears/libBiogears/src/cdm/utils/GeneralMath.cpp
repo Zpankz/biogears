@@ -415,9 +415,9 @@ double GeneralMath::CalculateNernstPotential(SELiquidCompartment& extra, SELiqui
   double intraIon_M = intra.GetSubstanceQuantity(*ion)->GetMolarity(AmountPerVolumeUnit::mol_Per_L);
   double extraIon_M = extra.GetSubstanceQuantity(*ion)->GetMolarity(AmountPerVolumeUnit::mol_Per_L);
   double z = 1.0;
-  if (ion->GetName() == "Chloride")
+  if (ion->GetName() == StandardSubstances::Chloride)
     z = -1.0;
-  if (ion->GetName() == "Calcium")
+  if (ion->GetName() == StandardSubstances::Calcium)
     z = 2.0;
 
   double nernst_V = (gasConstant_J_Per_mol * coreTemp_K) / (faradaysConstant_C_Per_mol * z) * log(extraIon_M / intraIon_M);

@@ -48,7 +48,7 @@ void DiffusionCalculator::Initialize(SESubstanceManager& subMgr)
     if (sub->HasMaximumDiffusionFlux()) {
       m_FacilitatedDiffusionSubstances.emplace_back(sub);
     } else {
-      if (sub->GetMolarMass(MassPerAmountUnit::g_Per_mol) < 1000.0 && sub->GetName() != "Bicarbonate" && sub->GetClassification() != SESubstanceClass::WholeBlood) {
+      if (sub->GetMolarMass(MassPerAmountUnit::g_Per_mol) < 1000.0 && sub->GetName() != StandardSubstances::Bicarbonate && sub->GetClassification() != SESubstanceClass::WholeBlood) {
         //We elect not to transport HCO3 with simple diffusion because it is a charged substance.   We also need to filter out blood antigens
         m_SimpleDiffusionSubstances.emplace_back(sub);
       }
@@ -275,7 +275,7 @@ void DiffusionCalculator::CalculateNonLinearDiffusionMethods()
   for (auto diffSet : m_DiffusionSets) {
     CalculateActiveIonDiffusion(diffSet);
     for (auto facilitatedSub : m_FacilitatedDiffusionSubstances) {
-      if (facilitatedSub->GetName() == "Triacylglycerol" && diffSet.vascular->GetName() == BGE::VascularCompartment::Brain)
+      if (facilitatedSub->GetName() == StandardSubstances::Triacylglycerol && diffSet.vascular->GetName() == BGE::VascularCompartment::Brain)
         continue;
       double massToAreaCoefficient_cm2_Per_g = 1.0; /// \todo Define relationship between tissue mass and membrane area.
       double capCoverage_cm2 = massToAreaCoefficient_cm2_Per_g * diffSet.tissue->GetTotalMass(MassUnit::g);

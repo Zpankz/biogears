@@ -195,10 +195,10 @@ int HowToMechanicalVentialtion()
   bg->GetEngineTrack()->GetDataRequestManager().CreatePatientDataRequest().Set("VitalCapacity", VolumeUnit::L);
   //Compartment data
   //Arteriole bicarbonate
-  SESubstance* HCO3 = bg->GetSubstanceManager().GetSubstance("Bicarbonate");
+  SESubstance* HCO3 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Bicarbonate);
   bg->GetEngineTrack()->GetDataRequestManager().CreateLiquidCompartmentDataRequest().Set(BGE::VascularCompartment::Aorta, *HCO3, "Concentration", MassPerVolumeUnit::ug_Per_mL);
   //Lactate - this should have a relationship to lactic acid
-  SESubstance* Lactate = bg->GetSubstanceManager().GetSubstance("Lactate");
+  SESubstance* Lactate = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Lactate);
   bg->GetEngineTrack()->GetDataRequestManager().CreateSubstanceDataRequest().Set(*Lactate, "BloodConcentration", MassPerVolumeUnit::ug_Per_mL);
 
   bg->GetEngineTrack()->GetDataRequestManager().SetResultsFilename("HowToMechanicalVentilation.csv");
@@ -304,7 +304,7 @@ int HowToMechanicalVentialtion()
   //Succs
   //Make the patient stop breathing
   // Get the Succinylcholine substance from the substance manager
-  const SESubstance* succs = bg->GetSubstanceManager().GetSubstance("Succinylcholine");
+  const SESubstance* succs = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Succinylcholine);
   // Create a substance bolus action to administer the substance
   SESubstanceBolus bolus(*succs);
   bolus.GetConcentration().SetValue(4820, MassPerVolumeUnit::ug_Per_mL);
@@ -319,9 +319,9 @@ int HowToMechanicalVentialtion()
   SEMechanicalVentilation mechVent;
   mechVent.SetState(SEOnOff::On); // Turn it on
     // Grab the substance fractions so we can quickly modify them
-  SESubstanceFraction& O2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance("Oxygen"));
-  SESubstanceFraction& CO2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance("CarbonDioxide"));
-  SESubstanceFraction& N2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance("Nitrogen"));
+  SESubstanceFraction& O2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance(StandardSubstances::Oxygen));
+  SESubstanceFraction& CO2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonDioxide));
+  SESubstanceFraction& N2frac = mechVent.GetGasFraction(*bg->GetSubstanceManager().GetSubstance(StandardSubstances::Nitrogen));
 
   //We'll mimic inputs from real-time sensors by just driving the mechanical ventilation pressure using a sinusoid
   //Pressure waveform parameters

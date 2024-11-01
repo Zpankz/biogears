@@ -37,7 +37,7 @@ specific language governing permissions and limitations under the License.
 int main(int argc, char* argv[])
 {
   // To run multiple Morphine/Fentanyl overdose values
-  std::string overdoseSubstance = "Fentanyl"; // Morphine or fentanyl
+  std::string overdoseSubstance = biogears::Fentanyl; // Morphine or fentanyl
   double lowestOverDose = 0.02; // mg/mL for a 10 ml bolus push
   double highestOverDose = 0.20; // mg/mL
   double doseInc = 0.01;
@@ -82,7 +82,7 @@ NaloxoneThread::NaloxoneThread(const std::string logFile, double opioidDose, con
     throw std::runtime_error("Could not load state, check the error");
   }
   SESubstance* opioidSub = m_bg->GetSubstanceManager().GetSubstance(opioidName);
-  SESubstance* nal = m_bg->GetSubstanceManager().GetSubstance("Naloxone");
+  SESubstance* nal = m_bg->GetSubstanceManager().GetSubstance(StandardSubstances::Naloxone);
 
   //Create CSV results file and set up data that we want to be tracked (tracking done in AdvanceModelTime)
   double opDose_ug = opioidDose * 1000;

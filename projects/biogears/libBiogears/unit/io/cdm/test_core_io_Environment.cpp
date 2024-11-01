@@ -119,8 +119,8 @@ TEST_F(TEST_FIXTURE_NAME, EnvironmentalConditions)
   SEType source { subMgr }, sink { subMgr };
   CDMType data;
 
-  auto nitrogen = subMgr.GetSubstance("Nitrogen")->GetDefinition();
-  auto sarin = subMgr.GetSubstance("Sarin")->GetDefinition();
+  auto nitrogen = subMgr.GetSubstance(biogears::Nitrogen)->GetDefinition();
+  auto sarin = subMgr.GetSubstance(biogears::Sarin)->GetDefinition();
   ASSERT_NE(nullptr, nitrogen);
   ASSERT_NE(nullptr, sarin);
   source.SetSurroundingType(biogears::SESurroundingType::Water);
@@ -259,8 +259,8 @@ TEST_F(TEST_FIXTURE_NAME, Environment)
   auto& conditions = source.GetConditions();
   source.SetName("Environment");
 
-  auto nitrogen = subMgr.GetSubstance("Nitrogen")->GetDefinition();
-  auto sarin = subMgr.GetSubstance("Sarin")->GetDefinition();
+  auto nitrogen = subMgr.GetSubstance(biogears::Nitrogen)->GetDefinition();
+  auto sarin = subMgr.GetSubstance(biogears::Sarin)->GetDefinition();
   ASSERT_NE(nullptr, nitrogen);
   ASSERT_NE(nullptr, sarin);
   conditions.SetSurroundingType(biogears::SESurroundingType::Water);

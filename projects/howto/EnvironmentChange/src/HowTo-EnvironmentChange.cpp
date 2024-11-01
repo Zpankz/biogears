@@ -68,9 +68,9 @@ int HowToEnvironmentChange()
   }
 
   // Get some substances out we will use
-  auto& N2 = bg->GetSubstanceManager().GetSubstance("Nitrogen")->GetDefinition();
-  auto&  O2 = bg->GetSubstanceManager().GetSubstance("Oxygen")->GetDefinition();
-  auto& CO2 = bg->GetSubstanceManager().GetSubstance("CarbonDioxide")->GetDefinition();
+  auto& N2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Nitrogen)->GetDefinition();
+  auto&  O2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Oxygen)->GetDefinition();
+  auto& CO2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonDioxide)->GetDefinition();
 
   // The tracker is responsible for advancing the engine time and outputting the data requests below at each time step
 

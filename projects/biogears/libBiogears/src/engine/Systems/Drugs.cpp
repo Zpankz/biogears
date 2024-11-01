@@ -137,9 +137,9 @@ void Drugs::SetUp()
   m_liverTissue = m_data.GetCompartments().GetTissueCompartment(BGE::TissueCompartment::Liver);
   m_IVToVenaCava = m_data.GetCircuits().GetCardiovascularCircuit().GetPath(BGE::CardiovascularPath::IVToVenaCava);
   // Need to set up pointers for Sarin and Pralidoxime to handle nerve agent events since they use a different method to calculate effects
-  m_Sarin = m_data.GetSubstances().GetSubstance("Sarin");
-  m_Pralidoxime = m_data.GetSubstances().GetSubstance("Pralidoxime");
-  m_Atropine = m_data.GetSubstances().GetSubstance("Atropine");
+  m_Sarin = m_data.GetSubstances().GetSubstance(StandardSubstances::Sarin);
+  m_Pralidoxime = m_data.GetSubstances().GetSubstance(StandardSubstances::Pralidoxime);
+  m_Atropine = m_data.GetSubstances().GetSubstance(StandardSubstances::Atropine);
   DELETE_MAP_OF_POINTERS(m_BolusAdministrations);
 }
 
@@ -601,7 +601,7 @@ void Drugs::AdministerSubstanceCompoundInfusion()
       subQ->GetMass().IncrementValue(massIncrement_ug, MassUnit::ug);
 
       // Blood Transfusion//
-      if (component.GetSubstance().Name == "RedBloodCell") {
+      if (component.GetSubstance().Name == StandardSubstances::RedBloodCell) {
         /*
          //Transfusiuon-Associated Circulatory Overload (TACO) CHECK
          if (totalRate_mL_Per_s >= 3) { // Rate should not exceed 2 mL/s plus a 50% deviation to be safe (little diagnostic research on the topic/underreported but common reaction)
@@ -612,8 +612,8 @@ void Drugs::AdministerSubstanceCompoundInfusion()
         */
 
         // Check for HTR
-        SESubstance* m_AntigenA = m_data.GetSubstances().GetSubstance("Antigen_A");
-        SESubstance* m_AntigenB = m_data.GetSubstances().GetSubstance("Antigen_B");
+        SESubstance* m_AntigenA = m_data.GetSubstances().GetSubstance(StandardSubstances::Antigen_A);
+        SESubstance* m_AntigenB = m_data.GetSubstances().GetSubstance(StandardSubstances::Antigen_B);
         const double AntigenA_ct_Per_uL = m_venaCavaVascular->GetSubstanceQuantity(*m_AntigenA)->GetMolarity(AmountPerVolumeUnit::ct_Per_uL);
         const double AntigenB_ct_Per_uL = m_venaCavaVascular->GetSubstanceQuantity(*m_AntigenB)->GetMolarity(AmountPerVolumeUnit::ct_Per_uL);
 
@@ -643,7 +643,7 @@ void Drugs::AdministerSubstanceCompoundInfusion()
       patient.SetEvent(SEPatientEventType::HemolyticTransfusionReaction, true, m_data.GetSimulationTime());
     }
 
-    if (compound->GetName() == "Saline" || compound->GetName() == "RingersLactate" || compound->GetName() == "Antibiotic") // Note: Saline and ringers lactate have different densities than pure water
+    if (compound->GetName() == StandardSubstances::Saline || compound->GetName() == StandardSubstances::RingersLactate || compound->GetName() == "Antibiotic") // Note: Saline and ringers lactate have different densities than pure water
     {
       SEScalarTemperature& ambientTemp = m_data.GetEnvironment().GetConditions().GetAmbientTemperature();
       SEScalarMassPerVolume densityFluid;
@@ -869,7 +869,7 @@ void Drugs::CalculateDrugEffects()
   double antibioticEffect_Per_hr = 0.0;
 
   // Naloxone reversal--we will need to get more generic with this code if we add other reversal agents
-  SESubstance* m_Naloxone = m_data.GetSubstances().GetSubstance("Naloxone");
+  SESubstance* m_Naloxone = m_data.GetSubstances().GetSubstance(StandardSubstances::Naloxone);
   double inhibitorConcentration_ug_Per_mL = 0.0;
   double inhibitorConstant_ug_Per_mL = 1.0; // Can't initialize to 0 lest we divide by 0.  Won't matter what it is when there is no inhibitor because this will get mulitplied by 0 anyway
   if (m_data.GetSubstances().IsActive(*m_Naloxone)) {
@@ -896,7 +896,7 @@ void Drugs::CalculateDrugEffects()
       }
       if (sub->GetClassification() == SESubstanceClass::Opioid) {
         effect = eMax * std::pow(effectSiteConcentration_ug_Per_mL, shapeParameter) / (std::pow(ec50_ug_Per_mL, shapeParameter) * (std::pow(1.0 + (inhibitorConcentration_ug_Per_mL / inhibitorConstant_ug_Per_mL), shapeParameter)) + std::pow(effectSiteConcentration_ug_Per_mL, shapeParameter));
-      } else if (sub->GetName() == "Sarin") {
+      } else if (sub->GetName() == StandardSubstances::Sarin) {
         effect = 0.8 * (m_RbcAcetylcholinesteraseFractionInhibited); // 0.8 is a tuning factor, validated by patient expected physiological response
       } else {
         effect = eMax * std::pow(effectSiteConcentration_ug_Per_mL, shapeParameter) / (std::pow(effectSiteConcentration_ug_Per_mL, shapeParameter) + std::pow(ec50_ug_Per_mL, shapeParameter));
@@ -975,8 +975,8 @@ void Drugs::CalculateDrugEffects()
   // we cannot "contact" the eye, but scale them differently.  Sarin pupil effects are large and fast, so it's reasonable to
   // overwrite other drug pupil effects (and we probably aren't modeling opioid addicts inhaling Sarin)
   //
-  // if (m_data.GetSubstances().IsActive(*m_data.GetSubstances().GetSubstance("Sarin"))) {
-  //   leftPupilSizeResponseLevel = GeneralMath::LogisticFunction(-1, 0.0475, 250, m_data.GetSubstances().GetSubstance("Sarin")->GetPlasmaConcentration(MassPerVolumeUnit::ug_Per_L));
+  // if (m_data.GetSubstances().IsActive(*m_data.GetSubstances().GetSubstance(StandardSubstances::Sarin))) {
+  //   leftPupilSizeResponseLevel = GeneralMath::LogisticFunction(-1, 0.0475, 250, m_data.GetSubstances().GetSubstance(StandardSubstances::Sarin)->GetPlasmaConcentration(MassPerVolumeUnit::ug_Per_L));
   //   rightPupilSizeResponseLevel = leftPupilSizeResponseLevel;
   // }
   ////Bound pupil modifiers
@@ -1068,7 +1068,7 @@ void Drugs::CalculatePlasmaSubstanceConcentration()
       sub->GetEffectSiteConcentration().SetValue(effectConcentration, MassPerVolumeUnit::ug_Per_mL);
     }
 
-    if (sub->GetName() == "Sarin" && (m_data.GetSubstances().IsActive(*m_Sarin)))
+    if (sub->GetName() == StandardSubstances::Sarin && (m_data.GetSubstances().IsActive(*m_Sarin)))
       SarinKinetics();
   }
 }

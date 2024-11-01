@@ -95,7 +95,7 @@ TEST_F(TEST_FIXTURE_NAME, GasSubstanceQuantity)
 
   ASSERT_TRUE(subMgr.LoadSubstanceDirectory());
 
-  auto sarin = subMgr.GetSubstance("Sarin");
+  auto sarin = subMgr.GetSubstance(biogears::Sarin);
 
   auto& pRightChestLeak = compMgr.CreateGasCompartment(BGE::PulmonaryCompartment::RightChestLeak);
   auto& pLeftChestLeak = compMgr.CreateGasCompartment(BGE::PulmonaryCompartment::LeftChestLeak);

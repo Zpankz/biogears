@@ -51,7 +51,7 @@ int HowToInfusionDrug()
   // The tracker is responsible for advancing the engine time and outputting the data requests below at each time step
   
 
-  SESubstance* vas = bg->GetSubstanceManager().GetSubstance("Vasopressin");
+  SESubstance* vas = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Vasopressin);
   vas->GetPlasmaConcentration().SetValue(0.0, MassPerVolumeUnit::ug_Per_L);
 
   // Create a substance bolus action to administer the substance
@@ -104,7 +104,7 @@ int HowToInfusionDrug()
   // The tracker is responsible for advancing the engine time and outputting the data requests below at each time step
 
 
-  SESubstance* txa = bg->GetSubstanceManager().GetSubstance("TranexamicAcid");
+  SESubstance* txa = bg->GetSubstanceManager().GetSubstance(StandardSubstances::TranexamicAcid);
   txa->GetPlasmaConcentration().SetValue(0.0, MassPerVolumeUnit::ug_Per_L);
 
   // Create a substance infusion action to administer the substance
@@ -153,9 +153,9 @@ int HowToInfusionDrug()
   //Note that while you can create new SubstanceCompounds while BioGears is running from
   //Existing Substances. You should not modify any substanceCompound in the Substance Manager as it will
   //Affect all existing volumes of that SubstanceCompound.
-  SESubstance* albumin = bg->GetSubstanceManager().GetSubstance("Albumin");
-  SESubstance* morphine = bg->GetSubstanceManager().GetSubstance("Morphine");
-  SESubstance* saline = bg->GetSubstanceManager().GetSubstance("Saline");
+  SESubstance* albumin = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Albumin);
+  SESubstance* morphine = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Morphine);
+  SESubstance* saline = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Saline);
   if (albumin && morphine && saline) {
     auto albuminConcentration = SESubstanceConcentration(albumin->GetDefinition());
     auto morphineConcentration = SESubstanceConcentration(morphine->GetDefinition());

@@ -154,8 +154,8 @@ int HowToEngineUse()
   // So it's a good idea to cache this pointer so you can reuse it when asking at various time steps
   // You can find all substances defined in xml files in the substances directory of your working directory
   // Names are in those xml files. ALL substance xml files are loaded into a substance managers when the engine is created
-  SESubstance* O2 = bg->GetSubstanceManager().GetSubstance("Oxygen");
-  SESubstance* CO2 = bg->GetSubstanceManager().GetSubstance("CarbonDioxide");
+  SESubstance* O2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Oxygen);
+  SESubstance* CO2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonDioxide);
 
   // The tracker is responsible for advancing the engine time AND outputting the data requests below at each time step
   // If you do not wish to write data to a file, you do not need to make any data requests
@@ -261,7 +261,7 @@ int HowToEngineUse()
   bg->GetLogger()->Info(asprintf( "OxygenSaturation : %f", bg->GetBloodChemistrySystem()->GetOxygenSaturation()));
   bg->GetLogger()->Info(asprintf( "ArterialBlood pH : %f", bg->GetBloodChemistrySystem()->GetArterialBloodPH()));
   //  You should save off the SESubstanceQuantity* if you will need it more than once
-  bg->GetLogger()->Info(asprintf( "Lactate Concentration : %f %s", bg->GetSubstanceManager().GetSubstance("Lactate")->GetBloodConcentration(MassPerVolumeUnit::mg_Per_dL), "mg_Per_dL"));
+  bg->GetLogger()->Info(asprintf( "Lactate Concentration : %f %s", bg->GetSubstanceManager().GetSubstance(StandardSubstances::Lactate)->GetBloodConcentration(MassPerVolumeUnit::mg_Per_dL), "mg_Per_dL"));
   bg->GetLogger()->Info(asprintf( "Core Body Temperature : %f %s", bg->GetEnergySystem()->GetCoreTemperature(TemperatureUnit::C), "C"));
 
   // Save the state of the engine

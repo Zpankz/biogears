@@ -83,7 +83,7 @@ TEST_F(TEST_FIXTURE_NAME, ArterialBloodGasAnalysis)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetpH().SetValue(5);
   source.GetPartialPressureOxygen().SetValue(6, biogears::PressureUnit::mmHg);
@@ -116,7 +116,7 @@ TEST_F(TEST_FIXTURE_NAME, PulmonaryFunctionTest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetExpiratoryReserveVolume().SetValue(4, biogears::VolumeUnit::L);
   source.GetForcedVitalCapacity().SetValue(5, biogears::VolumeUnit::L);
@@ -157,7 +157,7 @@ TEST_F(TEST_FIXTURE_NAME, CompleteBloodCount)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetHematocrit().SetValue(.5);
   source.GetHemoglobin().SetValue(5, biogears::MassPerVolumeUnit::g_Per_L);
@@ -193,7 +193,7 @@ TEST_F(TEST_FIXTURE_NAME, ComprehensiveMetabolicPanel)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetAlbumin().SetValue(1, biogears::MassPerVolumeUnit::g_Per_cm3);
   source.GetALP().SetValue(2, biogears::MassPerVolumeUnit::g_Per_cm3);
@@ -233,7 +233,7 @@ TEST_F(TEST_FIXTURE_NAME, Urinalysis)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetColorResult(biogears::SEUrineColor::Pink);
   source.SetAppearanceResult(biogears::SEClarityIndicator::Cloudy);
@@ -285,7 +285,7 @@ TEST_F(TEST_FIXTURE_NAME, UrinalysisMicroscopic)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetObservationType(biogears::SEMicroscopicObservationType::LowPowerField);
   source.GetRedBloodCellsResult().SetValue(1, biogears::AmountUnit::mol);
@@ -323,7 +323,7 @@ TEST_F(TEST_FIXTURE_NAME, ProthrombinTime)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetInternationalNormalizedRatio().SetValue(.1);
  
@@ -351,7 +351,7 @@ TEST_F(TEST_FIXTURE_NAME, PsychomotorVigilanceTask)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetAttentionLapses().SetValue(.1);
   source.GetReactionTime().SetValue(.2, biogears::TimeUnit::s);
@@ -380,7 +380,7 @@ TEST_F(TEST_FIXTURE_NAME, SequentialOrganFailureAssessment)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetRespirationSOFA().SetValue(.1);
   source.GetCoagulationSOFA().SetValue(.2);

@@ -84,7 +84,7 @@ TEST_F(TEST_FIXTURE_NAME, PupillaryResponse)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetReactivityModifier().SetValue(.4);
   source.GetShapeModifier().SetValue(.9);
@@ -114,7 +114,7 @@ TEST_F(TEST_FIXTURE_NAME, InflammatoryResponse)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetLocalPathogen().SetValue(0.14);
   source.GetLocalMacrophage().SetValue(0.13);
@@ -165,7 +165,7 @@ TEST_F(TEST_FIXTURE_NAME, BloodChemistrySystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetArterialBloodPH().SetValue(0.1);
   source.GetArterialBloodPHBaseline().SetValue(0.1);
@@ -254,7 +254,7 @@ TEST_F(TEST_FIXTURE_NAME, CardiovascularSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetHeartRhythm(biogears::SEHeartRhythm::NormalSinus);
   source.GetBloodVolume().SetValue(3.0, biogears::VolumeUnit::L);
@@ -323,7 +323,7 @@ TEST_F(TEST_FIXTURE_NAME, DrugSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetAntibioticActivity().SetValue(1.0);
 
@@ -368,7 +368,7 @@ TEST_F(TEST_FIXTURE_NAME, EndocrineSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetInsulinSynthesisRate().SetValue(1.0, biogears::AmountPerTimeUnit::mmol_Per_min);
   source.GetGlucagonSynthesisRate().SetValue(2.0, biogears::AmountPerTimeUnit::mmol_Per_min);
@@ -396,7 +396,7 @@ TEST_F(TEST_FIXTURE_NAME, EnergySystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetCreatinineProductionRate().SetValue(1.0, biogears::AmountPerTimeUnit::mol_Per_s);
   source.GetLactateProductionRate().SetValue(1.0, biogears::AmountPerTimeUnit::mol_Per_s);
@@ -444,7 +444,7 @@ TEST_F(TEST_FIXTURE_NAME, GastrointestinalSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetChymeAbsorptionRate().SetValue(1.0, biogears::VolumePerTimeUnit::L_Per_s);
 
@@ -496,7 +496,7 @@ TEST_F(TEST_FIXTURE_NAME, HepaticSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetKetoneProductionRate().SetValue(1.0, biogears::AmountPerTimeUnit::mol_Per_day);
   source.GetHepaticGluconeogenesisRate().SetValue(1.0, biogears::MassPerTimeUnit::g_Per_day);
@@ -525,7 +525,7 @@ TEST_F(TEST_FIXTURE_NAME, NervousSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetSleepState(biogears::SESleepState::Sleeping);
 
@@ -578,7 +578,7 @@ TEST_F(TEST_FIXTURE_NAME, RenalSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetBladderPressure().SetValue(1.0, biogears::PressureUnit::mmHg);
 
@@ -671,7 +671,7 @@ TEST_F(TEST_FIXTURE_NAME, RespiratorySystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetInspiratoryExpiratoryRatio().SetValue(1.0);
   source.GetSpecificVentilation().SetValue(1.0);
@@ -727,7 +727,7 @@ TEST_F(TEST_FIXTURE_NAME, TissueSystem)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetIntracellularFluidPH().SetValue(1.0);
   source.GetRespiratoryExchangeRatio().SetValue(1.0);

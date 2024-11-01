@@ -36,9 +36,9 @@ int main(int argc, char* argv[])
   auto substances = std::make_unique<biogears::SESubstanceManager>(logger.get());
   substances->LoadSubstanceDirectory();
 
-      auto substance1 = substances->GetSubstance("Oxygen")->GetDefinition();
-  auto substance2 = substances->GetSubstance("Nitrogen")->GetDefinition();
-  auto substance3 = substances->GetSubstance("Sarin")->GetDefinition();
+      auto substance1 = substances->GetSubstance(biogears::Oxygen)->GetDefinition();
+  auto substance2 = substances->GetSubstance(biogears::Nitrogen)->GetDefinition();
+  auto substance3 = substances->GetSubstance(biogears::Sarin)->GetDefinition();
 
   auto biogears = std::make_unique<biogears::BioGearsEngine>(logger.get());
   auto patient = std::make_unique<biogears::SEPatient>(logger.get());

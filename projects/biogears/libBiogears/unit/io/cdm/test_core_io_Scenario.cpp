@@ -106,7 +106,7 @@ TEST_F(TEST_FIXTURE_NAME, PatientDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetNotation(biogears::DecimalNotation::Fixed);
   source.SetPrecision(3);
@@ -133,7 +133,7 @@ TEST_F(TEST_FIXTURE_NAME, PhysiologyDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetNotation(biogears::DecimalNotation::Fixed);
   source.SetPrecision(3);
@@ -160,7 +160,7 @@ TEST_F(TEST_FIXTURE_NAME, EnvironmentDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetName("Leg");
   source.SetNotation(biogears::DecimalNotation::Fixed);
@@ -188,7 +188,7 @@ TEST_F(TEST_FIXTURE_NAME, EquipmentDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetType("A TYPE");
 
@@ -226,7 +226,7 @@ TEST_F(TEST_FIXTURE_NAME, GasCompartmentDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetCompartment("Leg");
 
@@ -252,7 +252,7 @@ TEST_F(TEST_FIXTURE_NAME, LiquidCompartmentDataRequest)
   SEType source {}, sink {};
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetCompartment("Leg");
 
@@ -278,7 +278,7 @@ TEST_F(TEST_FIXTURE_NAME, ThermalCompartmentDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetCompartment("Leg");
 
@@ -304,7 +304,7 @@ TEST_F(TEST_FIXTURE_NAME, TissueCompartmentDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetCompartment("Leg");
 
@@ -330,7 +330,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceDataRequest)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetCompartment("Leg");
   source.SetSubstance(sarin);
@@ -357,7 +357,7 @@ TEST_F(TEST_FIXTURE_NAME, DataRequestManager)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetSamplesPerSecond(60);
 
@@ -397,7 +397,7 @@ TEST_F(TEST_FIXTURE_NAME, Scenario)
   SEType source { mgr }, sink { mgr };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetName("SetName");
   source.SetDescription("SetDescription");
@@ -516,7 +516,7 @@ TEST_F(TEST_FIXTURE_NAME, ScenarioInitialParameters)
 
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetConfiguration().GetECGInterpolator();
 
@@ -624,7 +624,7 @@ TEST_F(TEST_FIXTURE_NAME, ScenarioAutoSerialization)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetPeriod().SetValue(1.0, biogears::TimeUnit::hr);
 
@@ -658,7 +658,7 @@ TEST_F(TEST_FIXTURE_NAME, AdvanceTime)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetTime().SetValue(1.0, biogears::TimeUnit::hr);
 
@@ -685,7 +685,7 @@ TEST_F(TEST_FIXTURE_NAME, SerializeState)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetComment("SerializeState Test");
   source.SetFilename("State.txt");

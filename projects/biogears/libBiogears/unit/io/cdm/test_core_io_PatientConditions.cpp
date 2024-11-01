@@ -95,7 +95,7 @@ TEST_F(TEST_FIXTURE_NAME, ChronicVentricularSystolicDysfunction)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetComment("ChronicVentricularSystolicDysfunction Serial Test.");
 
@@ -121,7 +121,7 @@ TEST_F(TEST_FIXTURE_NAME, ChronicObstructivePulmonaryDisease)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetBronchitisSeverity().SetValue(0.3);
   source.GetEmphysemaSeverity().SetValue(0.3);
@@ -148,7 +148,7 @@ TEST_F(TEST_FIXTURE_NAME, ChronicPericardialEffusion)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetAccumulatedVolume().SetValue(0.3, biogears::VolumeUnit::L);
 
@@ -175,7 +175,7 @@ TEST_F(TEST_FIXTURE_NAME, ChronicRenalStenosis)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetLeftKidneySeverity().SetValue(0.3);
   source.GetRightKidneySeverity().SetValue(0.3);
@@ -203,7 +203,7 @@ TEST_F(TEST_FIXTURE_NAME, Dehydration)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetDehydrationFraction().SetValue(0.3);
 
@@ -229,7 +229,7 @@ TEST_F(TEST_FIXTURE_NAME, DiabetesType1)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetInsulinProductionSeverity().SetValue(0.3);
 
@@ -255,7 +255,7 @@ TEST_F(TEST_FIXTURE_NAME, DiabetesType2)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetInsulinProductionSeverity().SetValue(0.3);
   source.GetInsulinResistanceSeverity().SetValue(0.3);
@@ -282,7 +282,7 @@ TEST_F(TEST_FIXTURE_NAME, ImpairedAlveolarExchange)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetImpairedFraction().SetValue( 0.3 );
   source.GetImpairedSurfaceArea().SetValue(5, biogears::AreaUnit::cm2);
@@ -309,7 +309,7 @@ TEST_F(TEST_FIXTURE_NAME, LobarPneumonia)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetSeverity().SetValue(0.7);
   source.GetLeftLungAffected().SetValue(0.2);
@@ -337,7 +337,7 @@ TEST_F(TEST_FIXTURE_NAME, Starvation)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetTimeSinceMeal().SetValue(5, biogears::TimeUnit::yr);
 

@@ -105,7 +105,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceAerosolization)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetBronchioleModifier().SetValue(1.0);
   source.GetInflammationCoefficient().SetValue(1.0);
@@ -140,7 +140,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstancePharmacokinetics)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   auto& chemicals = source.GetPhysicochemicals();
   chemicals.SetBindingProtein(biogears::SESubstanceBindingProtein::AAG);
@@ -180,7 +180,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstancePhysicochemical)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetBindingProtein(biogears::SESubstanceBindingProtein::AAG);
   source.GetPrimaryPKA().SetValue(9);
@@ -214,7 +214,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceTissuePharmacokinetics)
   SEType source { "SubstanceTissuePharmcoKineticsTest", &logger }, sink { "SINK", &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetPartitionCoefficient().SetValue(100.0);
 
@@ -288,7 +288,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceClearance)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetSystemic(true);
   source.SetCellular(false);
@@ -410,7 +410,7 @@ TEST_F(TEST_FIXTURE_NAME, Substance)
   source.GetClearance().GetRenalReabsorptionRate().SetValue(1.0, biogears::MassPerTimeUnit::g_Per_s);
   source.GetClearance().GetRenalExcretionRate().SetValue(1.0, biogears::MassPerTimeUnit::g_Per_s);
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetPK();
   source.GetPD();
@@ -438,7 +438,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceCompound)
   SEType source { &logger }, sink { &logger };
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.SetName("SubstanceCompoundTest");
   source.SetClassification(biogears::SESubstanceClass::Anesthetic);
@@ -470,7 +470,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceFraction)
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   SEType source { *sarin }, sink { *sarin };
   CDMType data;
@@ -498,7 +498,7 @@ TEST_F(TEST_FIXTURE_NAME, SubstanceConcentration)
   biogears::SESubstanceManager mgr { &logger };
   ASSERT_TRUE(mgr.LoadSubstanceDirectory());
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   SEType source { sarin->GetDefinition() }, sink { sarin->GetDefinition() };
   CDMType data;
@@ -529,7 +529,7 @@ TEST_F(TEST_FIXTURE_NAME, PharmacodynamicModifier)
   SEType source, sink;
   CDMType data;
 
-  auto sarin = mgr.GetSubstance("Sarin");
+  auto sarin = mgr.GetSubstance(biogears::Sarin);
 
   source.GetEC50().SetValue(1.0, biogears::MassPerVolumeUnit::g_Per_dL);
   source.GetEMax().SetValue(1.0);

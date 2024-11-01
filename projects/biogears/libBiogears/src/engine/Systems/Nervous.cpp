@@ -165,10 +165,10 @@ void Nervous::Initialize()
 void Nervous::SetUp()
 {
   m_dt_s = m_data.GetTimeStep().GetValue(TimeUnit::s);
-  m_Succinylcholine = m_data.GetSubstances().GetSubstance("Succinylcholine");
-  m_Sarin = m_data.GetSubstances().GetSubstance("Sarin");
-  m_Atropine = m_data.GetSubstances().GetSubstance("Atropine");
-  m_Midazolam = m_data.GetSubstances().GetSubstance("Midazolam");
+  m_Succinylcholine = m_data.GetSubstances().GetSubstance(StandardSubstances::Succinylcholine);
+  m_Sarin = m_data.GetSubstances().GetSubstance(StandardSubstances::Sarin);
+  m_Atropine = m_data.GetSubstances().GetSubstance(StandardSubstances::Atropine);
+  m_Midazolam = m_data.GetSubstances().GetSubstance(StandardSubstances::Midazolam);
   m_Patient = &m_data.GetPatient();
   m_Drug = &m_data.GetDrugs();
 

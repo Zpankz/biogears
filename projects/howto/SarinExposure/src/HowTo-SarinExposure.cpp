@@ -53,9 +53,9 @@ int HowToSarinExposure()
   //---Initialize all variables needed for scenario
 
   //Substances
-  auto&  Sarin = bg->GetSubstanceManager().GetSubstance("Sarin")->GetDefinition();
-  auto CO2 = bg->GetSubstanceManager().GetSubstance("CarbonDioxide");
-  auto O2 = bg->GetSubstanceManager().GetSubstance("Oxygen");
+  auto&  Sarin = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Sarin)->GetDefinition();
+  auto CO2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::CarbonDioxide);
+  auto O2 = bg->GetSubstanceManager().GetSubstance(StandardSubstances::Oxygen);
 
   //Numerical values
   double exposureTime = 5.0; //Establish how long the patient will be exposed to Sarin
