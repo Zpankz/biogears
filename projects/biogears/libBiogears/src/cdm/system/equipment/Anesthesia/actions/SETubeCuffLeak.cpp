@@ -26,12 +26,12 @@ SETubeCuffLeak::SETubeCuffLeak()
 //-------------------------------------------------------------------------------
 SETubeCuffLeak::~SETubeCuffLeak()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETubeCuffLeak::Clear()
+void SETubeCuffLeak::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

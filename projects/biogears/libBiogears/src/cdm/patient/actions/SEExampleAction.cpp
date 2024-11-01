@@ -24,13 +24,13 @@ SEExampleAction::SEExampleAction()
 //-------------------------------------------------------------------------------
 SEExampleAction::~SEExampleAction()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEExampleAction::Clear()
+void SEExampleAction::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

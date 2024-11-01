@@ -42,9 +42,9 @@ SESubstanceConcentration::~SESubstanceConcentration()
 {
 }
 //-------------------------------------------------------------------------------
-void SESubstanceConcentration::Clear()
+void SESubstanceConcentration::Invalidate()
 {
-  m_Concentration.Clear();
+  m_Concentration.Invalidate();
 }
 
 //-------------------------------------------------------------------------------

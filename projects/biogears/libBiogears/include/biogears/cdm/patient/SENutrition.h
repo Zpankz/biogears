@@ -28,7 +28,7 @@ public:
   SENutrition(Logger* logger);
   virtual ~SENutrition();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   const SEScalar* GetScalar(const char* name);

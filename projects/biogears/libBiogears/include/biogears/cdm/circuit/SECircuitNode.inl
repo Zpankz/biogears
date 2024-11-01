@@ -35,11 +35,11 @@ SECircuitNode<CIRCUIT_NODE_TYPES>::SECircuitNode(const std::string& name, Logger
 template <CIRCUIT_NODE_TEMPLATE>
 SECircuitNode<CIRCUIT_NODE_TYPES>::~SECircuitNode()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 template <CIRCUIT_NODE_TEMPLATE>
-void SECircuitNode<CIRCUIT_NODE_TYPES>::Clear()
+void SECircuitNode<CIRCUIT_NODE_TYPES>::Invalidate()
 {
   SAFE_DELETE(m_Potential);
   SAFE_DELETE(m_NextPotential);

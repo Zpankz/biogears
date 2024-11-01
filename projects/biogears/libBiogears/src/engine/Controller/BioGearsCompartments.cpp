@@ -36,17 +36,17 @@ BioGearsCompartments::BioGearsCompartments(BioGears& bg)
   : SECompartmentManager(bg.GetSubstances())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 BioGearsCompartments::~BioGearsCompartments()
 {
-  Clear();
+  Invalidate();
 }
 
-void BioGearsCompartments::Clear()
+void BioGearsCompartments::Invalidate()
 {
-  SECompartmentManager::Clear();
+  SECompartmentManager::Invalidate();
   m_CombinedCardiovascularGraph = nullptr;
   m_CardiovascularGraph = nullptr;
   m_CerebralGraph = nullptr;

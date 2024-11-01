@@ -28,10 +28,10 @@ SEDataRequest::SEDataRequest(const SEDecimalFormat* dfault)
 //-------------------------------------------------------------------------------
 SEDataRequest::~SEDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEDataRequest::Clear()
+void SEDataRequest::Invalidate()
 {
   m_Name = "";
   m_RequestedUnit = "";

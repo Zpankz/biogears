@@ -24,12 +24,12 @@ SEEbola::SEEbola()
   //-------------------------------------------------------------------------------
   SEEbola::~SEEbola()
   {
-    Clear();
+    Invalidate();
   }
   //-------------------------------------------------------------------------------
-  void SEEbola::Clear()
+  void SEEbola::Invalidate()
   {
-    SEPatientAction::Clear();
+    SEPatientAction::Invalidate();
     m_Severity = SEInfectionSeverity::Invalid;
   }
   //-------------------------------------------------------------------------------

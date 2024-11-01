@@ -36,12 +36,12 @@ SEFluidCircuitPath::SEFluidCircuitPath(SEFluidCircuitNode& src, SEFluidCircuitNo
 
 SEFluidCircuitPath::~SEFluidCircuitPath()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEFluidCircuitPath::Clear()
+void SEFluidCircuitPath::Invalidate()
 {
-  SECircuitPath::Clear();
+  SECircuitPath::Invalidate();
   m_CardiovascularRegion = SEResistancePathType::Invalid;
 }
 

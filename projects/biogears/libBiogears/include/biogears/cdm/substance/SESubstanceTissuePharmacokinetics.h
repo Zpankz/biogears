@@ -29,7 +29,7 @@ public:
   SESubstanceTissuePharmacokinetics(const std::string& name, Logger* logger = nullptr);
   virtual ~SESubstanceTissuePharmacokinetics();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   const SEScalar* GetScalar(const char* name);

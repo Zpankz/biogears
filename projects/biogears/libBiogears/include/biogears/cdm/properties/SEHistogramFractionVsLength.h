@@ -25,7 +25,7 @@ public:
   SEHistogramFractionVsLength();
   virtual ~SEHistogramFractionVsLength();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
   virtual bool IsVaild() const;
 

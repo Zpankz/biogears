@@ -26,12 +26,12 @@ namespace biogears {
   //-----------------------------------------------------------------------------
   SEConsumeNutrients::~SEConsumeNutrients()
   {
-    Clear();
+    Invalidate();
   }
   //-----------------------------------------------------------------------------
-  void SEConsumeNutrients::Clear()
+  void SEConsumeNutrients::Invalidate()
   {
-    SEPatientAction::Clear();
+    SEPatientAction::Invalidate();
     SAFE_DELETE(m_Nutrition);
     InvalidateNutritionFile();
   }

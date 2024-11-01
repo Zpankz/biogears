@@ -25,13 +25,13 @@ SEAdvanceTime::SEAdvanceTime()
 //-----------------------------------------------------------------------------
 SEAdvanceTime::~SEAdvanceTime()
 {
-  Clear();
+  Invalidate();
   SAFE_DELETE(m_Time);
 }
 //-----------------------------------------------------------------------------
-void SEAdvanceTime::Clear()
+void SEAdvanceTime::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
   if (m_Time) {
     m_Time->Invalidate();
   }

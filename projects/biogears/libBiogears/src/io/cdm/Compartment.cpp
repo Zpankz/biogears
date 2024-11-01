@@ -33,7 +33,7 @@ namespace io {
   // class SECompartment
   void Compartment::UnMarshall(const CDM::CompartmentData& in, SECompartment& out)
   {
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
   }
   //----------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ namespace io {
   // class SECompartmentLink
   void Compartment::UnMarshall(const CDM::CompartmentLinkData& in, SECompartmentLink& out)
   {
-    out.Clear();
+    out.Invalidate();
   }
   //----------------------------------------------------------------------------------
   void Compartment::Marshall(const SECompartmentLink& in, CDM::CompartmentLinkData& out)
@@ -432,7 +432,7 @@ namespace io {
   // class SECompartmentManager
   void Compartment::UnMarshall(CDM::CompartmentManagerData const& in, SECompartmentManager& out, SECircuitManager* circuits)
   {
-    out.Clear();
+    out.Invalidate();
 
     LOAD_COMPARTMENT(Gas);
     LOAD_LINK(Gas);

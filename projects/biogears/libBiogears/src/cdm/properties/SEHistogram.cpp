@@ -33,10 +33,10 @@ SEHistogram::SEHistogram()
 //-------------------------------------------------------------------------------
 SEHistogram::~SEHistogram()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEHistogram::Clear()
+void SEHistogram::Invalidate()
 {
   m_Dependent.clear();
   m_Independent.clear();
@@ -54,11 +54,7 @@ bool SEHistogram::IsValid() const
   }
   return true;
 }
-//-------------------------------------------------------------------------------
-void SEHistogram::Invalidate()
-{
-  Clear();
-}
+
 //-------------------------------------------------------------------------------
 unsigned int SEHistogram::NumberOfBins() const
 {

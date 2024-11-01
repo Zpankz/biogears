@@ -53,25 +53,25 @@ SEExercise::~SEExercise()
 {
 }
 //-------------------------------------------------------------------------------
-void SEExercise::Clear()
+void SEExercise::Invalidate()
 {
   m_mode = NONE;
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
 
   SEGeneric gen;
-  gen.Intensity.Clear();
-  gen.DesiredWorkRate.Clear();
+  gen.Intensity.Invalidate();
+  gen.DesiredWorkRate.Invalidate();
   SECycling cyc;
-  cyc.CadenceCycle.Clear();
-  cyc.PowerCycle.Clear();
-  cyc.AddedWeight.Clear();
+  cyc.CadenceCycle.Invalidate();
+  cyc.PowerCycle.Invalidate();
+  cyc.AddedWeight.Invalidate();
   SERunning run;
-  run.SpeedRun.Clear();
-  run.InclineRun.Clear();
-  run.AddedWeight.Clear();
+  run.SpeedRun.Invalidate();
+  run.InclineRun.Invalidate();
+  run.AddedWeight.Invalidate();
   SEStrengthTraining str;
-  str.WeightStrength.Clear();
-  str.RepsStrength.Clear();
+  str.WeightStrength.Invalidate();
+  str.RepsStrength.Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEExercise::IsValid() const

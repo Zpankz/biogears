@@ -40,7 +40,7 @@ protected:
 public:
   virtual ~SECompartment() override;
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   virtual std::string GetName() const;

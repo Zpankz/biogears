@@ -55,17 +55,17 @@ Environment::Environment(BioGears& bg)
   : SEEnvironment(bg.GetSubstances())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Environment::~Environment()
 {
-  Clear();
+  Invalidate();
 }
 
-void Environment::Clear()
+void Environment::Invalidate()
 {
-  SEEnvironment::Clear();
+  SEEnvironment::Invalidate();
   m_Patient = nullptr;
   m_PatientActions = nullptr;
   m_EnvironmentActions = nullptr;
@@ -170,7 +170,7 @@ void Environment::SetUp()
 /// \details
 /// This is called any time the environment change action/condition.  It sets the ambient node
 /// values needed for the fluid systems.
-#pragma optimize("", off)
+
 void Environment::StateChange()
 {
   using namespace std::string_literals;
@@ -223,7 +223,7 @@ void Environment::StateChange()
     }
   }
 }
-#pragma optimize("", on)
+
 void Environment::AtSteadyState()
 {
   if (m_data.GetState() == EngineState::AtInitialStableState) {

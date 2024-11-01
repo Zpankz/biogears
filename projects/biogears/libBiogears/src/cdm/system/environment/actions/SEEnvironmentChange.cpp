@@ -39,12 +39,12 @@ SEEnvironmentChange::SEEnvironmentChange(SESubstanceManager& substances)
 //-----------------------------------------------------------------------------
 SEEnvironmentChange::~SEEnvironmentChange()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEEnvironmentChange::Clear()
+void SEEnvironmentChange::Invalidate()
 {
-  SEEnvironmentAction::Clear();
+  SEEnvironmentAction::Invalidate();
   InvalidateConditionsFile();
   SAFE_DELETE(m_Conditions);
 }

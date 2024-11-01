@@ -30,10 +30,10 @@ SETestReport::SETestReport(Logger* logger)
 //-------------------------------------------------------------------------------
 SETestReport::~SETestReport()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETestReport::Clear()
+void SETestReport::Invalidate()
 {
   DELETE_VECTOR(m_testSuite);
 }

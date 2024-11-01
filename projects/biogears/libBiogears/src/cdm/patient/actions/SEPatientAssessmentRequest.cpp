@@ -22,12 +22,12 @@ SEPatientAssessmentRequest::SEPatientAssessmentRequest()
 //-------------------------------------------------------------------------------
 SEPatientAssessmentRequest::~SEPatientAssessmentRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPatientAssessmentRequest::Clear()
+void SEPatientAssessmentRequest::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Type = SEPatientAssessmentType::Invalid;
 }
 //-------------------------------------------------------------------------------

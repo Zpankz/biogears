@@ -317,7 +317,7 @@ namespace io {
   void PatientActions::UnMarshall(xsd::cxx::tree::optional<XSD> const& option_in, SE& out)
   {
     if (!option_in.present()) {
-      out.Clear();
+      out.Invalidate();
     } else {
       io::PatientActions::UnMarshall(option_in.get(), out);
     }

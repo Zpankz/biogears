@@ -25,13 +25,13 @@ SEBrainInjury::SEBrainInjury()
 //-------------------------------------------------------------------------------
 SEBrainInjury::~SEBrainInjury()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEBrainInjury::Clear()
+void SEBrainInjury::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
   m_Type = SEBrainInjuryType::Invalid;
 }

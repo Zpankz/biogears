@@ -56,17 +56,17 @@ AnesthesiaMachine::AnesthesiaMachine(BioGears& bg)
   , m_CurrentBreathingCycleTime(0.0, TimeUnit::s)
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 AnesthesiaMachine::~AnesthesiaMachine()
 {
-  Clear();
+  Invalidate();
 }
 
-void AnesthesiaMachine::Clear()
+void AnesthesiaMachine::Invalidate()
 {
-  SEAnesthesiaMachine::Clear();
+  SEAnesthesiaMachine::Invalidate();
   m_actions = nullptr;
   m_ambient = nullptr;
   m_ambientCO2 = nullptr;

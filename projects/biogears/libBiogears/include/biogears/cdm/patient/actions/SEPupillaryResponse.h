@@ -32,7 +32,7 @@ public:
   SEPupillaryResponse();
   virtual ~SEPupillaryResponse();
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   virtual const SEScalar* GetScalar(const char* name);
   virtual const SEScalar* GetScalar(const std::string& name);

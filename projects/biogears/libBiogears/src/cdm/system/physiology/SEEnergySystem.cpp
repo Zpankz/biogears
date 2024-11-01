@@ -79,13 +79,13 @@ SEEnergySystem::SEEnergySystem(Logger* logger)
 
 SEEnergySystem::~SEEnergySystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEEnergySystem::Clear()
+void SEEnergySystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_AchievedExerciseLevel);
   SAFE_DELETE(m_ChlorideLostToSweat);

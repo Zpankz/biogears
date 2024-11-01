@@ -34,7 +34,7 @@ public:
   SEActiveCooling(Logger* logger);
   virtual ~SEActiveCooling();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual void Reset();
 
   bool operator==(SEActiveCooling const&) const;

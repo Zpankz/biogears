@@ -117,7 +117,7 @@ SESubstanceDefinition::SESubstanceDefinition(SESubstanceClearanceDefinition defi
   , RelativeDiffusionCoefficient()
   , SolubilityCoefficient() {};
 //-------------------------------------------------------------------------------
-#pragma optimize("", off)
+
 SESubstanceDefinition& SESubstanceDefinition::operator=(SESubstanceDefinition const& rhs)
 {
   if (this != &rhs) {
@@ -166,7 +166,7 @@ SESubstanceDefinition& SESubstanceDefinition::operator=(SESubstanceDefinition&& 
   return *this;
 }
 //-------------------------------------------------------------------------------
-#pragma optimize("", on)
+
 bool SESubstanceDefinition::operator==(SESubstanceDefinition const& rhs) const
 {
   if (this == &rhs)
@@ -236,7 +236,7 @@ SESubstance::~SESubstance()
 {
 }
 //-----------------------------------------------------------------------------
-void SESubstance::Clear()
+void SESubstance::Invalidate()
 {
   m_BloodConcentration.Invalidate();
   m_EffectSiteConcentration.Invalidate();
@@ -485,7 +485,7 @@ const SESubstanceAerosolization* SESubstance::GetAerosolization() const
 //-----------------------------------------------------------------------------
 void SESubstance::RemoveAerosolization()
 {
-  m_def.Aerosolization.Clear();
+  m_def.Aerosolization.Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SESubstance::HasAreaUnderCurve() const
@@ -732,7 +732,7 @@ const SESubstanceClearance* SESubstance::GetClearance() const
 //-----------------------------------------------------------------------------
 void SESubstance::RemoveClearance()
 {
-  m_Clearance.Clear();
+  m_Clearance.Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SESubstance::HasPK() const
@@ -752,7 +752,7 @@ const SESubstancePharmacokinetics* SESubstance::GetPK() const
 //-----------------------------------------------------------------------------
 void SESubstance::RemovePK()
 {
-  m_def.Pharmacokinetics.Clear();
+  m_def.Pharmacokinetics.Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SESubstance::HasPD() const
@@ -772,7 +772,7 @@ const SESubstancePharmacodynamics* SESubstance::GetPD() const
 //-----------------------------------------------------------------------------
 void SESubstance::RemovePD()
 {
-  m_def.Pharmacodynamics.Clear();
+  m_def.Pharmacodynamics.Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SESubstance::operator==(const SESubstance& rhs) const

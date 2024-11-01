@@ -44,7 +44,7 @@ public:
   const char* classname() const override { return TypeTag(); }
   size_t hash_code() const override { return TypeHash(); }
 
-  void Clear() override;
+  void Invalidate() override;
 
   bool Load(const char* environmentFile);
   bool Load(const std::string& environmentFile);

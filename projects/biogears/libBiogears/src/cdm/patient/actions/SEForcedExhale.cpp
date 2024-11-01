@@ -25,12 +25,12 @@ SEForcedExhale::SEForcedExhale()
 //-------------------------------------------------------------------------------
 SEForcedExhale::~SEForcedExhale()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEForcedExhale::Clear()
+void SEForcedExhale::Invalidate()
 {
-  SEConsciousRespirationCommand::Clear();
+  SEConsciousRespirationCommand::Invalidate();
   SAFE_DELETE(m_ExpiratoryReserveVolumeFraction);
   SAFE_DELETE(m_Period);
 }

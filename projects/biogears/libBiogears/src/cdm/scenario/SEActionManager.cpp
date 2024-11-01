@@ -33,15 +33,15 @@ SEActionManager::SEActionManager(SESubstanceManager& substances)
 //-------------------------------------------------------------------------------
 SEActionManager::~SEActionManager()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEActionManager::Clear()
+void SEActionManager::Invalidate()
 {
-  m_PatientActions.Clear();
-  m_AnesthesiaMachineActions.Clear();
-  m_EnvironmentActions.Clear();
-  m_InhalerActions.Clear();
+  m_PatientActions.Invalidate();
+  m_AnesthesiaMachineActions.Invalidate();
+  m_EnvironmentActions.Invalidate();
+  m_InhalerActions.Invalidate();
 }
 
 //-------------------------------------------------------------------------------

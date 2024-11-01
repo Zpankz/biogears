@@ -23,12 +23,12 @@ SENeedleDecompression::SENeedleDecompression()
 //-------------------------------------------------------------------------------
 SENeedleDecompression::~SENeedleDecompression()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SENeedleDecompression::Clear()
+void SENeedleDecompression::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_State = SEOnOff::Off;
   m_Side = SESide::Invalid;
 }

@@ -37,19 +37,30 @@ SEThermalCompartment::SEThermalCompartment(const std::string& name, Logger* logg
 //-----------------------------------------------------------------------------
 SEThermalCompartment::~SEThermalCompartment()
 {
-  Clear();
-}
-//-----------------------------------------------------------------------------
-void SEThermalCompartment::Clear()
-{
-  SECompartment::Clear();
   SAFE_DELETE(m_HeatTransferRateIn);
   SAFE_DELETE(m_HeatTransferRateOut);
   SAFE_DELETE(m_Heat);
   SAFE_DELETE(m_Temperature);
+}
+//-----------------------------------------------------------------------------
+void SEThermalCompartment::Invalidate()
+{
+  SECompartment::Invalidate();
+  if (m_HeatTransferRateIn && !m_HeatTransferRateIn->IsReadOnly()) {
+    m_HeatTransferRateIn->Invalidate();
+  }
+  if (m_HeatTransferRateOut && !m_HeatTransferRateIn->IsReadOnly()) {
+    m_HeatTransferRateOut->Invalidate();
+  }
+  if (m_Heat && !m_HeatTransferRateIn->IsReadOnly()) {
+    m_Heat->Invalidate();
+  }
+  if (m_Temperature && !m_HeatTransferRateIn->IsReadOnly()) {
+    m_Temperature->Invalidate();
+  }
   m_Links.clear();
   m_Children.clear();
-  m_Nodes.Clear();
+  m_Nodes.Invalidate();
 }
 
 //-----------------------------------------------------------------------------

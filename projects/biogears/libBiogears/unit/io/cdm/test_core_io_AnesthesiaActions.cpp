@@ -103,7 +103,7 @@ void TEST_FIXTURE_NAME::SetUp()
 
 void TEST_FIXTURE_NAME::TearDown()
 {
-  machine->Clear();
+  machine->Invalidate();
 }
 
 #define USING_TYPES(name)             \

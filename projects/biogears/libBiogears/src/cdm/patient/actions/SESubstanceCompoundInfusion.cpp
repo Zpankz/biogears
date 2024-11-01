@@ -32,9 +32,9 @@ SESubstanceCompoundInfusion::~SESubstanceCompoundInfusion()
   SAFE_DELETE(m_BagVolume);
 }
 //-------------------------------------------------------------------------------
-void SESubstanceCompoundInfusion::Clear()
+void SESubstanceCompoundInfusion::Invalidate()
 {
-  SESubstanceAdministration::Clear();
+  SESubstanceAdministration::Invalidate();
   if (m_Rate) {
     m_Rate->Invalidate();
   }

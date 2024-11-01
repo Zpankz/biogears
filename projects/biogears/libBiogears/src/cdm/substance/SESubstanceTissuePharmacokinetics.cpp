@@ -31,18 +31,18 @@ SESubstanceTissuePharmacokinetics::SESubstanceTissuePharmacokinetics(const std::
 {
 }
 //-----------------------------------------------------------------------------
-#pragma optimize("", off)
+
 SESubstanceTissuePharmacokinetics::~SESubstanceTissuePharmacokinetics()
 {
-  Clear();
+  Invalidate();
   SAFE_DELETE(m_PartitionCoefficient)
 }
 //-----------------------------------------------------------------------------
-void SESubstanceTissuePharmacokinetics::Clear()
+void SESubstanceTissuePharmacokinetics::Invalidate()
 {
-  m_PartitionCoefficient->Clear();
+  m_PartitionCoefficient->Invalidate();
 }
-#pragma optimize("", on)
+
 //-----------------------------------------------------------------------------
 const SEScalar* SESubstanceTissuePharmacokinetics::GetScalar(const char* name)
 {

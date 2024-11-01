@@ -215,7 +215,7 @@ public:
   SEPatientActionCollection(SESubstanceManager&);
   ~SEPatientActionCollection();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessAction(const SEPatientAction& action, const PhysiologyEngine& engine);
 

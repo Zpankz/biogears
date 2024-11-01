@@ -29,13 +29,13 @@ SEConsciousRespiration::SEConsciousRespiration()
 
 SEConsciousRespiration::~SEConsciousRespiration()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEConsciousRespiration::Clear()
+void SEConsciousRespiration::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   if (m_ClearCommands)
     DELETE_VECTOR(m_Commands);
 }

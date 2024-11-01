@@ -32,7 +32,7 @@ public:
   BIOGEARS_API const char* classname() const override { return TypeTag(); }
   BIOGEARS_API size_t hash_code() const override { return TypeHash(); }
 
-  BIOGEARS_API void Clear() override;
+  BIOGEARS_API void Invalidate() override;
 
   BIOGEARS_API const SEScalar* GetScalar(const char* name) override;
   BIOGEARS_API const SEScalar* GetScalar(const std::string& name) override;

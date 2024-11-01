@@ -22,7 +22,7 @@ public:
   SEChronicVentricularSystolicDysfunction();
   virtual ~SEChronicVentricularSystolicDysfunction();
 
-  virtual void Clear() override ; //clear memory
+  virtual void Invalidate() override ; //clear memory
 
   virtual bool IsValid() const override ;
 

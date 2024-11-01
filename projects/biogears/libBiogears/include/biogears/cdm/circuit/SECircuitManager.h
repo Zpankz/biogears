@@ -31,7 +31,7 @@ public:
   SECircuitManager(Logger* logger);
   virtual ~SECircuitManager();
 
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 public:
   void SetReadOnly(bool b);

@@ -20,12 +20,12 @@ SEChestCompression::SEChestCompression()
 //-------------------------------------------------------------------------------
 SEChestCompression::~SEChestCompression()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChestCompression::Clear()
+void SEChestCompression::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEChestCompression::IsValid() const

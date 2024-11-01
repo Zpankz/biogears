@@ -106,13 +106,13 @@ SECardiovascularSystem::SECardiovascularSystem(Logger* logger)
 
 SECardiovascularSystem::~SECardiovascularSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SECardiovascularSystem::Clear()
+void SECardiovascularSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_ArterialPressure);
   SAFE_DELETE(m_BloodVolume);

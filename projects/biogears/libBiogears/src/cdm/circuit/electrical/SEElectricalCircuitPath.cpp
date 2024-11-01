@@ -34,9 +34,9 @@ SEElectricalCircuitPath::~SEElectricalCircuitPath()
 {
 }
 
-void SEElectricalCircuitPath::Clear()
+void SEElectricalCircuitPath::Invalidate()
 {
-  SECircuitPath::Clear();
+  SECircuitPath::Invalidate();
 }
 
 ////////////////////////////////

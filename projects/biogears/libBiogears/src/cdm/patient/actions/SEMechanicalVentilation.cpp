@@ -33,12 +33,12 @@ SEMechanicalVentilation::SEMechanicalVentilation()
 //-------------------------------------------------------------------------------
 SEMechanicalVentilation::~SEMechanicalVentilation()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEMechanicalVentilation::Clear()
+void SEMechanicalVentilation::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
 
   m_State = SEOnOff::Invalid;
   SAFE_DELETE(m_Flow);

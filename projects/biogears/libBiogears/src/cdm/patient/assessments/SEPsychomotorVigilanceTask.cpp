@@ -25,12 +25,12 @@ SEPsychomotorVigilanceTask::SEPsychomotorVigilanceTask()
 //-------------------------------------------------------------------------------
 SEPsychomotorVigilanceTask::~SEPsychomotorVigilanceTask()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPsychomotorVigilanceTask::Clear()
+void SEPsychomotorVigilanceTask::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_AttentionLapses);
   SAFE_DELETE(m_ReactionTime);
 }

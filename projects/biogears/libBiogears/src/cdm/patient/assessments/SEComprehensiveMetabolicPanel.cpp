@@ -38,12 +38,12 @@ SEComprehensiveMetabolicPanel::SEComprehensiveMetabolicPanel()
 //-------------------------------------------------------------------------------
 SEComprehensiveMetabolicPanel::~SEComprehensiveMetabolicPanel()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEComprehensiveMetabolicPanel::Clear()
+void SEComprehensiveMetabolicPanel::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_Albumin);
   SAFE_DELETE(m_ALP);
   SAFE_DELETE(m_ALT);

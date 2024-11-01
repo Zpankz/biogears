@@ -66,11 +66,11 @@ SECircuitPath<CIRCUIT_PATH_TYPES>::SECircuitPath(SECircuitNode<PotentialScalar, 
 template <CIRCUIT_PATH_TEMPLATE>
 SECircuitPath<CIRCUIT_PATH_TYPES>::~SECircuitPath()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 template <CIRCUIT_PATH_TEMPLATE>
-void SECircuitPath<CIRCUIT_PATH_TYPES>::Clear()
+void SECircuitPath<CIRCUIT_PATH_TYPES>::Invalidate()
 {
   m_Switch = (SEOpenClosed)-1;
   m_Valve = (SEOpenClosed)-1;

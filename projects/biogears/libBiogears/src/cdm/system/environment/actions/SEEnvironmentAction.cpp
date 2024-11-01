@@ -22,12 +22,12 @@ SEEnvironmentAction::SEEnvironmentAction(Logger* logger)
 
 SEEnvironmentAction::~SEEnvironmentAction()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEEnvironmentAction::Clear()
+void SEEnvironmentAction::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
 }
 
 bool SEEnvironmentAction::IsValid() const

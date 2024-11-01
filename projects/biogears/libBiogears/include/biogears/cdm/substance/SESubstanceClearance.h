@@ -73,7 +73,7 @@ public:
   SESubstanceClearance& operator=(SESubstanceClearance const& rhs);
   SESubstanceClearance& operator=(SESubstanceClearance&& rhs);
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   virtual const SEScalar* GetScalar(const char* name);

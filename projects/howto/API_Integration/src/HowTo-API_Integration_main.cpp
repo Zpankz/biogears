@@ -11,7 +11,7 @@
 #include <biogears/engine/Controller/BioGearsEngine.h>
 #include <biogears/engine/Controller/BioGearsSubstances.h>
 
-#pragma optimize("", off)
+
 int main(int argc, char* argv[])
 {
   // BioGearsPlugin plugin("HowTo-API_Integration");

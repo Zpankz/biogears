@@ -87,17 +87,17 @@ Tissue::Tissue(BioGears& bg)
   : SETissueSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Tissue::~Tissue()
 {
-  Clear();
+  Invalidate();
 }
 
-void Tissue::Clear()
+void Tissue::Invalidate()
 {
-  SETissueSystem::Clear();
+  SETissueSystem::Invalidate();
   m_Albumin = nullptr;
   m_Glucose = nullptr;
   m_Triacylglycerol = nullptr;

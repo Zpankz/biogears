@@ -53,17 +53,17 @@ Nervous::Nervous(BioGears& bg)
   : SENervousSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Nervous::~Nervous()
 {
-  Clear();
+  Invalidate();
 }
 
-void Nervous::Clear()
+void Nervous::Invalidate()
 {
-  SENervousSystem::Clear();
+  SENervousSystem::Invalidate();
 
   m_Patient = nullptr;
   m_Succinylcholine = nullptr;

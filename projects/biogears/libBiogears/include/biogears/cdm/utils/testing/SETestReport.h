@@ -25,7 +25,7 @@ public:
   virtual ~SETestReport();
 
   virtual void Reset(); //reset values
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
   bool operator==(SETestReport const&) const;
   bool operator!=(SETestReport const&) const;

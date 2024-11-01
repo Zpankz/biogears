@@ -23,12 +23,12 @@ SEUseInhaler::SEUseInhaler()
 //-------------------------------------------------------------------------------
 SEUseInhaler::~SEUseInhaler()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEUseInhaler::Clear()
+void SEUseInhaler::Invalidate()
 {
-  SEConsciousRespirationCommand::Clear();
+  SEConsciousRespirationCommand::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEUseInhaler::IsValid() const

@@ -26,10 +26,10 @@ SETestErrorStatistics::SETestErrorStatistics(Logger* logger)
 //-------------------------------------------------------------------------------
 SETestErrorStatistics::~SETestErrorStatistics()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETestErrorStatistics::Clear()
+void SETestErrorStatistics::Invalidate()
 {
   SAFE_DELETE(m_PercentToleranceVsNumErrors);
 }

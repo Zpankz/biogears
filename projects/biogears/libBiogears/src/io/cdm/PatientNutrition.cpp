@@ -13,7 +13,7 @@ namespace io {
   // class SENutrition
   void PatientNutrition::UnMarshall(const CDM::NutritionData& in, SENutrition& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     if (in.Name().present()) {
       out.m_Name = in.Name().get();

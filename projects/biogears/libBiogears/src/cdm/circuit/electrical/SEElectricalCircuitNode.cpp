@@ -29,9 +29,9 @@ SEElectricalCircuitNode::~SEElectricalCircuitNode()
 {
 }
 //-------------------------------------------------------------------------------
-void SEElectricalCircuitNode::Clear()
+void SEElectricalCircuitNode::Invalidate()
 {
-  SECircuitNode::Clear();
+  SECircuitNode::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEElectricalCircuitNode::HasVoltage() const

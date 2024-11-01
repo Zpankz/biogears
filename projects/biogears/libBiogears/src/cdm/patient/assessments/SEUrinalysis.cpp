@@ -39,12 +39,12 @@ SEUrinalysis::SEUrinalysis()
 //-------------------------------------------------------------------------------
 SEUrinalysis::~SEUrinalysis()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEUrinalysis::Clear()
+void SEUrinalysis::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   m_Color = SEUrineColor::Invalid;
   m_Appearance = SEClarityIndicator::Invalid;
   m_Glucose = SEPresenceIndicator::Invalid;

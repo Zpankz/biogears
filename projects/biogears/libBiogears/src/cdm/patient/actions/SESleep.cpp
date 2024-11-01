@@ -21,12 +21,12 @@ namespace biogears
   //-------------------------------------------------------------------------------
   SESleep::~SESleep()
   {
-    Clear();
+    Invalidate();
   }
   //-------------------------------------------------------------------------------
-  void SESleep::Clear()
+  void SESleep::Invalidate()
   {
-    SEPatientAction::Clear();
+    SEPatientAction::Invalidate();
     m_SleepState = SEOnOff::Off;;
   }
   //-------------------------------------------------------------------------------

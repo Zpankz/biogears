@@ -34,7 +34,7 @@ public:
   SEAnesthesiaMachineChamber(SESubstanceManager& substances);
   virtual ~SEAnesthesiaMachineChamber();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual const SEScalar* GetScalar(const char* name);
   virtual const SEScalar* GetScalar(const std::string& name);

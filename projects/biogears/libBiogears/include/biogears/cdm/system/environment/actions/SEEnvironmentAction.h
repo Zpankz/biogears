@@ -23,7 +23,7 @@ public:
   SEEnvironmentAction( Logger* = nullptr);
   virtual ~SEEnvironmentAction();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual bool IsValid() const;
 

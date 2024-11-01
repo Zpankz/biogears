@@ -31,12 +31,12 @@ SEUrinalysisMicroscopic::SEUrinalysisMicroscopic()
 //-------------------------------------------------------------------------------
 SEUrinalysisMicroscopic::~SEUrinalysisMicroscopic()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEUrinalysisMicroscopic::Clear()
+void SEUrinalysisMicroscopic::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   m_ObservationType = SEMicroscopicObservationType::Invalid;
   SAFE_DELETE(m_RedBloodCells);
   SAFE_DELETE(m_WhiteBloodCells);

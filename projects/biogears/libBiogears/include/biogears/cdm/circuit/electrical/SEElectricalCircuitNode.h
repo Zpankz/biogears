@@ -31,7 +31,7 @@ protected:
 public:
   virtual ~SEElectricalCircuitNode();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 public:
   virtual bool HasVoltage() const;

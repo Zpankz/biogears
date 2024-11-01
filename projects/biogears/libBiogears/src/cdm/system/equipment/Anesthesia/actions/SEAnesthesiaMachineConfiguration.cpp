@@ -36,12 +36,12 @@ SEAnesthesiaMachineConfiguration::SEAnesthesiaMachineConfiguration(SESubstanceMa
 //-----------------------------------------------------------------------------
 SEAnesthesiaMachineConfiguration::~SEAnesthesiaMachineConfiguration()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEAnesthesiaMachineConfiguration::Clear()
+void SEAnesthesiaMachineConfiguration::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   InvalidateConfigurationFile();
   SAFE_DELETE(m_Configuration);
 }

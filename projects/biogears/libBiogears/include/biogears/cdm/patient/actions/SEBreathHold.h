@@ -32,7 +32,7 @@ public:
   SEBreathHold();
   virtual ~SEBreathHold();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
   virtual bool IsValid() const;
   virtual bool IsActive() const;

@@ -71,7 +71,7 @@ void TEST_FIXTURE_NAME::TearDown()
 
 TEST_F(TEST_FIXTURE_NAME, Clear)
 {
-  bs->Clear();
+  bs->Invalidate();
 }
 
 TEST_F(TEST_FIXTURE_NAME, Reset)

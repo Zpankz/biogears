@@ -24,13 +24,13 @@ SEAcuteRespiratoryDistress::SEAcuteRespiratoryDistress()
 //-------------------------------------------------------------------------------
 SEAcuteRespiratoryDistress::~SEAcuteRespiratoryDistress()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEAcuteRespiratoryDistress::Clear()
+void SEAcuteRespiratoryDistress::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

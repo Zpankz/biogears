@@ -25,12 +25,12 @@ SELobarPneumonia::SELobarPneumonia()
 //-----------------------------------------------------------------------------
 SELobarPneumonia::~SELobarPneumonia()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SELobarPneumonia::Clear()
+void SELobarPneumonia::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_Severity);
   SAFE_DELETE(m_LeftLungAffected);
   SAFE_DELETE(m_RightLungAffected);

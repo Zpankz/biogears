@@ -76,10 +76,10 @@ DataTrack& DataTrack::operator=(DataTrack&& rhs)
 
 DataTrack::~DataTrack()
 {
-  Clear();
+  Invalidate();
 }
 
-void DataTrack::Clear()
+void DataTrack::Invalidate()
 {
   Reset();
   if (m_FileStream.is_open())

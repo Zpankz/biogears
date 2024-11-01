@@ -14,7 +14,7 @@ namespace io {
   // class SESubstanceQuantity
   void SubstanceQuantity::UnMarshall(const CDM::SubstanceQuantityData& in, SESubstanceQuantity& out)
   {
-    out.Clear();
+    out.Invalidate();
   }
   //-----------------------------------------------------------------------------
   void SubstanceQuantity::Marshall(const SESubstanceQuantity& in, CDM::SubstanceQuantityData& out)

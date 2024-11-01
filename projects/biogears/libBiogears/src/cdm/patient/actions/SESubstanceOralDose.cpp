@@ -25,12 +25,12 @@ SESubstanceOralDose::SESubstanceOralDose(const SESubstance& substance)
 //-------------------------------------------------------------------------------
 SESubstanceOralDose::~SESubstanceOralDose()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceOralDose::Clear()
+void SESubstanceOralDose::Invalidate()
 {
-  SESubstanceAdministration::Clear();
+  SESubstanceAdministration::Invalidate();
   m_AdminRoute = (SEOralAdministrationType)-1;
   SAFE_DELETE(m_Dose);
 }
@@ -116,10 +116,10 @@ SETransmucosalState::SETransmucosalState(const SESubstance& sub)
 //-------------------------------------------------------------------------------
 SETransmucosalState::~SETransmucosalState()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETransmucosalState::Clear()
+void SETransmucosalState::Invalidate()
 {
   SAFE_DELETE(m_MouthSolidMass);
   SAFE_DELETE(m_SalivaConcentration);

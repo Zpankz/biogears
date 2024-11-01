@@ -42,8 +42,8 @@ protected:
 public:
   virtual ~SELiquidSubstanceQuantity();
 
-  virtual void Clear() override;
   virtual void Invalidate() override;
+  virtual void MakeInvalid() override;
 
 
   bool operator==(SELiquidTransportSubstance const&) const override;

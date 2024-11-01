@@ -38,11 +38,11 @@ SEElectroCardioGram::SEElectroCardioGram(Logger* logger)
 
 SEElectroCardioGram::~SEElectroCardioGram()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEElectroCardioGram::Clear()
+void SEElectroCardioGram::Invalidate()
 {
   SAFE_DELETE(m_Lead1ElectricPotential);
   SAFE_DELETE(m_Lead2ElectricPotential);

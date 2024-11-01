@@ -31,11 +31,11 @@ SEAnesthesiaMachineChamber::SEAnesthesiaMachineChamber(SESubstanceManager& subst
 
 SEAnesthesiaMachineChamber::~SEAnesthesiaMachineChamber()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEAnesthesiaMachineChamber::Clear()
+void SEAnesthesiaMachineChamber::Invalidate()
 {
   m_State = SEOnOff::Invalid;
   SAFE_DELETE(m_SubstanceFraction);

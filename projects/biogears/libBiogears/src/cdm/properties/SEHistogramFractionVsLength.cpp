@@ -35,12 +35,12 @@ SEHistogramFractionVsLength::SEHistogramFractionVsLength()
 
 SEHistogramFractionVsLength::~SEHistogramFractionVsLength()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEHistogramFractionVsLength::Clear()
+void SEHistogramFractionVsLength::Invalidate()
 {
-  SEHistogram::Clear();
+  SEHistogram::Invalidate();
   m_LengthUnit = nullptr;
 }
 

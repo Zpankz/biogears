@@ -32,10 +32,10 @@ SESubstanceFraction::SESubstanceFraction(SESubstance const& substance, SEScalarF
 //-------------------------------------------------------------------------------
 SESubstanceFraction::~SESubstanceFraction()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceFraction::Clear()
+void SESubstanceFraction::Invalidate()
 {
   SAFE_DELETE(m_FractionAmount);
 }

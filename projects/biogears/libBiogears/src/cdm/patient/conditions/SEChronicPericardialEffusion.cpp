@@ -23,12 +23,12 @@ SEChronicPericardialEffusion::SEChronicPericardialEffusion()
 //-----------------------------------------------------------------------------
 SEChronicPericardialEffusion::~SEChronicPericardialEffusion()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEChronicPericardialEffusion::Clear()
+void SEChronicPericardialEffusion::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_AccumulatedVolume);
 }
 //-----------------------------------------------------------------------------

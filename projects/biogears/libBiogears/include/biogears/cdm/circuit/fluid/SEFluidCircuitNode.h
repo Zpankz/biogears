@@ -29,7 +29,7 @@ protected:
 public:
   virtual ~SEFluidCircuitNode();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 public:
   virtual bool HasPressure() const;

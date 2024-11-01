@@ -30,7 +30,7 @@ public:
   SESubstancePhysicochemical(Logger* logger);
   virtual ~SESubstancePhysicochemical();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   virtual const SEScalar* GetScalar(const char* name);

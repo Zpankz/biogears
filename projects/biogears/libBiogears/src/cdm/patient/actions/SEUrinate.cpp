@@ -21,12 +21,12 @@ SEUrinate::SEUrinate()
 //-------------------------------------------------------------------------------
 SEUrinate::~SEUrinate()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEUrinate::Clear()
+void SEUrinate::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEUrinate::IsValid() const

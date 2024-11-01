@@ -40,7 +40,7 @@ SEScalarQuantity<Unit>::SEScalarQuantity(SEScalarQuantity const& obj)
 }
 //-------------------------------------------------------------------------------
 template <typename Unit>
-SEScalarQuantity<Unit>::SEScalarQuantity(SEScalarQuantity && obj)
+SEScalarQuantity<Unit>::SEScalarQuantity(SEScalarQuantity&& obj)
   : SEUnitScalar(std::move(obj))
   , m_unit(std::exchange(obj.m_unit, nullptr))
 {
@@ -57,33 +57,19 @@ SEScalarQuantity<Unit>::SEScalarQuantity(double d, Unit const& u, bool ro)
 template <typename Unit>
 SEScalarQuantity<Unit>::~SEScalarQuantity()
 {
-  this->Clear();
-}
-//-------------------------------------------------------------------------------
-template <typename Unit>
-void SEScalarQuantity<Unit>::Clear()
-{
-  SEUnitScalar::Clear();
   m_readOnly = false;
-  Invalidate();
+  m_value = NaN;
   m_unit = nullptr;
 }
 //-------------------------------------------------------------------------------
 template <typename Unit>
 void SEScalarQuantity<Unit>::Invalidate()
 {
-  if (m_readOnly) {
-#if defined(BIOGEARS_THROW_READONLY_EXCEPTIONS)
-    throw CommonDataModelException("Scalar is marked read-only");
-
-#else
-    return;
-#endif
-  }
-  m_value = NaN;
+  SEScalar::Invalidate();
   m_unit = nullptr;
+
 }
-#pragma optimize("", off)
+
 //-------------------------------------------------------------------------------
 template <typename Unit>
 bool SEScalarQuantity<Unit>::IsValid() const
@@ -92,7 +78,7 @@ bool SEScalarQuantity<Unit>::IsValid() const
     return false;
   return !std::isnan(m_value);
 }
-#pragma optimize("", on)
+
 //-------------------------------------------------------------------------------
 template <typename Unit>
 bool SEScalarQuantity<Unit>::Set(SEScalarQuantity<Unit> const& s)
@@ -144,7 +130,7 @@ double SEScalarQuantity<Unit>::GetValue(Unit const& unit) const
 {
 #if defined(BIOGEARS_THROW_NAN_EXCEPTIONS)
   if (std::isnan(m_value) && m_unit != nullptr) {
-     throw CommonDataModelException("Value is NaN");
+    throw CommonDataModelException("Value is NaN");
   }
 #else
   assert(!std::isnan(m_value));
@@ -217,7 +203,7 @@ bool SEScalarQuantity<Unit>::Equals(SEScalarQuantity<Unit> const& rhs) const
     }
 
     if (m_unit == rhs.m_unit) {
-      if (  (std::isinf(m_value) && std::isinf(rhs.m_value)) // This implies -> -inf == +inf
+      if ((std::isinf(m_value) && std::isinf(rhs.m_value)) // This implies -> -inf == +inf
           || ((std::isnan(m_value) && std::isnan(rhs.m_value)))) // This Violates C++ Spec
       {
         return true;
@@ -235,7 +221,7 @@ Unit const* SEScalarQuantity<Unit>::GetCompoundUnit(char const* unit) const
 }
 //-------------------------------------------------------------------------------
 template <typename Unit>
-Unit const* SEScalarQuantity<Unit>::GetCompoundUnit(std::string const& unit)const
+Unit const* SEScalarQuantity<Unit>::GetCompoundUnit(std::string const& unit) const
 {
   return &Unit::GetCompoundUnit(unit);
 }

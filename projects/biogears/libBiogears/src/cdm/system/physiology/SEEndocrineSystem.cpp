@@ -31,13 +31,13 @@ SEEndocrineSystem::SEEndocrineSystem(Logger* logger)
 
 SEEndocrineSystem::~SEEndocrineSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEEndocrineSystem::Clear()
+void SEEndocrineSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
   SAFE_DELETE(m_InsulinSynthesisRate);
   SAFE_DELETE(m_GlucagonSynthesisRate);
 }

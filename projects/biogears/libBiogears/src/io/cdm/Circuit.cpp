@@ -25,7 +25,7 @@ namespace io {
   void Circuit::UnMarshall(const CDM::ElectricalCircuitData& in, SECircuitLedger<ELECTRICAL_LEDGER_TYPES> const& ledger, SEElectricalCircuit& out)
   {
     // note: not clearing here as the derived class needs to clear and call this super class Load last to get the ref node hooked up
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
     for (auto name : in.Node()) {
       auto idx = ledger.nodes.find(name);
@@ -182,7 +182,7 @@ namespace io {
   void Circuit::UnMarshall(const CDM::FluidCircuitData& in, SECircuitLedger<FLUID_LEDGER_TYPES> const& ledger, SEFluidCircuit& out)
   {
     // note: not clearing here as the derived class needs to clear and call this super class Load last to get the ref node hooked up
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
     for (auto name : in.Node()) {
       auto idx = ledger.nodes.find(name);
@@ -336,7 +336,7 @@ namespace io {
   void Circuit::UnMarshall(const CDM::ThermalCircuitData& in, SECircuitLedger<THERMAL_LEDGER_TYPES> const& ledger, SEThermalCircuit& out)
   {
     // note: not clearing here as the derived class needs to clear and call this super class Load last to get the ref node hooked up
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
     for (auto name : in.Node()) {
       auto idx = ledger.nodes.find(name);
@@ -489,7 +489,7 @@ namespace io {
   // class SECircuitManager
   void Circuit::UnMarshall(const CDM::CircuitManagerData& in, SECircuitManager& out)
   {
-    out.Clear();
+    out.Invalidate();
     for (const CDM::ElectricalCircuitNodeData& n : in.ElectricalNode()) {
       io::Circuit::UnMarshall(n, out.m_ElectricalLedger, out.CreateNode<ELECTRICAL_LEDGER_TYPES>(n.Name(), out.m_ElectricalLedger));
     }

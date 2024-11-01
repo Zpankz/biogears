@@ -29,7 +29,7 @@ public:
   SECompartmentSubstanceDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SECompartmentSubstanceDataRequest() override;
 
-  virtual void Clear() override; // clear memory
+  virtual void Invalidate() override; // clear memory
 
  
   bool operator==(SECompartmentSubstanceDataRequest const&) const;

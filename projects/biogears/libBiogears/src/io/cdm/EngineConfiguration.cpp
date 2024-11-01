@@ -23,7 +23,7 @@ namespace io {
   void EngineConfiguration::UnMarshall(const CDM::PhysiologyEngineConfigurationData& in, PhysiologyEngineConfiguration& out)
   {
     if (!out.m_Merge)
-      out.Clear(); // Reset only if we are not merging
+      out.Invalidate(); // Reset only if we are not merging
 
     if (in.TimeStep().present())
       io::Property::UnMarshall(in.TimeStep(), out.GetTimeStep());
@@ -109,7 +109,7 @@ namespace io {
   // class PhysiologyEngineStabilization
   void EngineConfiguration::UnMarshall(const CDM::PhysiologyEngineStabilizationData& in, PhysiologyEngineStabilization& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     if (in.Canceled().present())
       out.m_Canceled = in.Canceled().get();
@@ -164,7 +164,7 @@ namespace io {
   // class PhysiologyEngineTimedConditionStabilization
   void EngineConfiguration::UnMarshall(const CDM::PhysiologyEngineTimedConditionStabilizationData& in, PhysiologyEngineTimedStabilizationCriteria& out)
   {
-    out.Clear();
+    out.Invalidate();
     out.SetName(in.Name());
     io::Property::UnMarshall(in.Time(), out.GetTime());
   }
@@ -213,7 +213,7 @@ namespace io {
   // class PhysiologyEngineDynamicStabilizationCriteria
   void EngineConfiguration::UnMarshall(const CDM::PhysiologyEngineDynamicStabilizationCriteriaData& in, PhysiologyEngineDynamicStabilizationCriteria& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Property::UnMarshall(in.ConvergenceTime(), out.GetConvergenceTime());
     io::Property::UnMarshall(in.MinimumReactionTime(), out.GetMinimumReactionTime());
     io::Property::UnMarshall(in.MaximumAllowedStabilizationTime(), out.GetMaximumAllowedStabilizationTime());

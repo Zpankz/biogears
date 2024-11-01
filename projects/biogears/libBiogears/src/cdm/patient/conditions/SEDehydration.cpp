@@ -23,12 +23,12 @@ SEDehydration::SEDehydration()
 //-----------------------------------------------------------------------------
 SEDehydration::~SEDehydration()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEDehydration::Clear()
+void SEDehydration::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_DehydrationFraction);
 }
 //-----------------------------------------------------------------------------

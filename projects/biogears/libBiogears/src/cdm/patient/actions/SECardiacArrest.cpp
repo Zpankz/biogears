@@ -22,12 +22,12 @@ SECardiacArrest::SECardiacArrest()
 //-------------------------------------------------------------------------------
 SECardiacArrest::~SECardiacArrest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECardiacArrest::Clear()
+void SECardiacArrest::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_State = SEOnOff::Off;
 }
 //-------------------------------------------------------------------------------

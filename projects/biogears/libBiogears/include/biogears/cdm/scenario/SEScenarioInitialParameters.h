@@ -38,7 +38,7 @@ public:
   bool operator==(SEScenarioInitialParameters const&) const;
   bool operator!=(SEScenarioInitialParameters const&) const;
 
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 public:
   virtual bool IsValid() const;

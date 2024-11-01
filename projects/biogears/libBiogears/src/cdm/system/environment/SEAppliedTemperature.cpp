@@ -30,10 +30,10 @@ SEAppliedTemperature::SEAppliedTemperature(Logger* logger)
 //-----------------------------------------------------------------------------
 SEAppliedTemperature::~SEAppliedTemperature()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEAppliedTemperature::Clear()
+void SEAppliedTemperature::Invalidate()
 {
   SAFE_DELETE(m_Temperature);
   SAFE_DELETE(m_SurfaceArea);

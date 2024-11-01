@@ -22,7 +22,6 @@ protected:
 public:
   SEProperty();
   virtual ~SEProperty();
-  virtual void Clear() = 0;
   virtual void Invalidate() = 0;
   virtual bool IsValid() const = 0;
 };

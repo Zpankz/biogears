@@ -65,17 +65,17 @@ Energy::Energy(BioGears& bg)
   , m_data(bg)
   , m_circuitCalculator(GetLogger())
 {
-  Clear();
+  Invalidate();
 }
 
 Energy::~Energy()
 {
-  Clear();
+  Invalidate();
 }
 
-void Energy::Clear()
+void Energy::Invalidate()
 {
-  SEEnergySystem::Clear();
+  SEEnergySystem::Invalidate();
   m_Patient = nullptr;
   m_PatientActions = nullptr;
   m_AortaHCO3 = nullptr;
@@ -250,7 +250,7 @@ void Energy::Exercise()
           exerciseIntensity = 1;
           Warning("Desired work rate over max work rate. Desired work rate can be a value between 0 and 1200 W. Proceeding with max work rate.");
         }
-        genericEx.DesiredWorkRate.Clear();
+        genericEx.DesiredWorkRate.Invalidate();
       } else {
         Warning("Generic Exercise call with no severity. Action ignored.");
       }

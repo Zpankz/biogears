@@ -30,10 +30,10 @@ SEEnvironmentActionCollection::SEEnvironmentActionCollection(SESubstanceManager&
 
 SEEnvironmentActionCollection::~SEEnvironmentActionCollection()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEEnvironmentActionCollection::Clear()
+void SEEnvironmentActionCollection::Invalidate()
 {
   RemoveChange();
   RemoveThermalApplication();

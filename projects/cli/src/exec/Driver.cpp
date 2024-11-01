@@ -59,7 +59,7 @@
 #include <biogears/string/manipulation.h>
 #include <xsd/cxx/tree/exceptions.hxx>
 
-#pragma optimize("", off)
+
 
 #if defined(BIOGEARS_SUBPROCESS_SUPPORT)
 inline std::string fmt_localtime()

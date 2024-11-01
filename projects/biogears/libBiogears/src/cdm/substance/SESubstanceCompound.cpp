@@ -35,7 +35,7 @@ SESubstanceCompound::SESubstanceCompound(Logger* logger)
 //-----------------------------------------------------------------------------
 SESubstanceCompound::~SESubstanceCompound()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 std::unique_ptr<SESubstanceCompound> SESubstanceCompound::make_unique(const std::string& name, Logger* logger)
@@ -43,7 +43,7 @@ std::unique_ptr<SESubstanceCompound> SESubstanceCompound::make_unique(const std:
   return std::make_unique<SESubstanceCompound>(name, logger);
 }
 //-----------------------------------------------------------------------------
-void SESubstanceCompound::Clear()
+void SESubstanceCompound::Invalidate()
 {
   m_Name = "";
   m_Classification = (SESubstanceClass)-1;

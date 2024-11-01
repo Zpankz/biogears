@@ -68,7 +68,7 @@ public:
 
   virtual ~PhysiologyEngineDynamicStabilizationCriteria();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   virtual std::string GetName() const;
@@ -150,7 +150,7 @@ public:
   BIOGEARS_API PhysiologyEngineDynamicStabilization(Logger* logger);
   BIOGEARS_API virtual ~PhysiologyEngineDynamicStabilization();
 
-  BIOGEARS_API virtual void Clear() override;
+  BIOGEARS_API virtual void Invalidate() override;
 
 public:
   BIOGEARS_API virtual bool Load(const char* file) override;

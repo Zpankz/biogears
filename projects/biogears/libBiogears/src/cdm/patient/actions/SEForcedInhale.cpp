@@ -29,9 +29,9 @@ SEForcedInhale::~SEForcedInhale()
   SAFE_DELETE(m_Period);
 }
 //-------------------------------------------------------------------------------
-void SEForcedInhale::Clear()
+void SEForcedInhale::Invalidate()
 {
-  SEConsciousRespirationCommand::Clear();
+  SEConsciousRespirationCommand::Invalidate();
   if (m_InspiratoryCapacityFraction) {
     m_InspiratoryCapacityFraction->Invalidate();
   }

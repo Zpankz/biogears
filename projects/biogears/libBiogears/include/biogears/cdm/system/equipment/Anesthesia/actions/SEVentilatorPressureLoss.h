@@ -27,7 +27,7 @@ public:
   static constexpr const char* TypeTag() { return "SEVentilatorPressureLoss"; };
   const char* classname() const override { return TypeTag(); }
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
   virtual bool IsValid() const override;
   virtual bool IsActive() const override;

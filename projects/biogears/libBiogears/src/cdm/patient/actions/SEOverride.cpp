@@ -99,12 +99,12 @@ SEOverride::SEOverride()
 //-------------------------------------------------------------------------------
 SEOverride::~SEOverride()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEOverride::Clear()
+void SEOverride::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_OverrideState = SEOnOff::Off;
   m_OverrideConformance = SEOnOff::On;
   SAFE_DELETE(m_ArterialBloodPHOverride);

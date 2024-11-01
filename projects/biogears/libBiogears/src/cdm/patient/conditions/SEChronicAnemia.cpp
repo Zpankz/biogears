@@ -23,12 +23,12 @@ SEChronicAnemia::SEChronicAnemia()
 //-------------------------------------------------------------------------------
 SEChronicAnemia::~SEChronicAnemia()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChronicAnemia::Clear()
+void SEChronicAnemia::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_ReductionFactor);
 }
 //-------------------------------------------------------------------------------

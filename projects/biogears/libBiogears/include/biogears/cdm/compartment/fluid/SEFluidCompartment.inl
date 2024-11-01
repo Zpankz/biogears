@@ -22,7 +22,7 @@ specific language governing permissions and limitations under the License.
 namespace biogears {
 template <FLUID_COMPARTMENT_TEMPLATE>
 SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::SEFluidCompartment(const char* name, Logger* logger)
-  : SEFluidCompartment(std::string{ name }, logger)
+  : SEFluidCompartment(std::string { name }, logger)
 {
 }
 //-----------------------------------------------------------------------------
@@ -40,21 +40,35 @@ SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::SEFluidCompartment(const std::strin
 template <FLUID_COMPARTMENT_TEMPLATE>
 SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::~SEFluidCompartment()
 {
-  Clear();
-}
-//-----------------------------------------------------------------------------
-template <FLUID_COMPARTMENT_TEMPLATE>
-void SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::Clear()
-{
-  SECompartment::Clear();
+  DELETE_VECTOR(m_SubstanceQuantities);
   SAFE_DELETE(m_InFlow);
   SAFE_DELETE(m_OutFlow);
   SAFE_DELETE(m_Pressure);
   SAFE_DELETE(m_Volume);
+}
+//-----------------------------------------------------------------------------
+template <FLUID_COMPARTMENT_TEMPLATE>
+void SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::Invalidate()
+{
+  SECompartment::Invalidate();
+
   m_Links.clear();
   m_FluidChildren.clear();
   DELETE_VECTOR(m_SubstanceQuantities);
-  m_Nodes.Clear();
+  m_Nodes.Invalidate();
+
+  if (m_InFlow && !m_InFlow->IsReadOnly()) {
+    m_InFlow->Invalidate();
+  }
+  if (m_OutFlow && !m_OutFlow->IsReadOnly()) {
+    m_OutFlow->Invalidate();
+  }
+  if (m_Pressure && !m_Pressure->IsReadOnly()) {
+    m_Pressure->Invalidate();
+  }
+  if (m_Volume && !m_Volume->IsReadOnly()) {
+    m_Volume->Invalidate();
+  }
 }
 ////-----------------------------------------------------------------------------
 template <FLUID_COMPARTMENT_TEMPLATE>
@@ -72,7 +86,7 @@ const char* SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::GetName_cStr() const
 template <FLUID_COMPARTMENT_TEMPLATE>
 const SEScalar* SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::GetScalar(const char* name)
 {
-  return GetScalar(std::string{ name });
+  return GetScalar(std::string { name });
 }
 //-----------------------------------------------------------------------------s
 template <FLUID_COMPARTMENT_TEMPLATE>
@@ -416,7 +430,7 @@ const std::vector<LinkType*>& SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::GetLi
 template <FLUID_COMPARTMENT_TEMPLATE>
 bool SEFluidCompartment<FLUID_COMPARTMENT_TYPES>::HasChild(const char* name)
 {
-  return HasChild( std::string{ name } );
+  return HasChild(std::string { name });
 }
 //-----------------------------------------------------------------------------
 template <FLUID_COMPARTMENT_TEMPLATE>

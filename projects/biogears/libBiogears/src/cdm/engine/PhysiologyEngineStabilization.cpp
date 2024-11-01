@@ -27,10 +27,10 @@ PhysiologyEngineStabilization::PhysiologyEngineStabilization(Logger* logger)
 //-------------------------------------------------------------------------------
 PhysiologyEngineStabilization::~PhysiologyEngineStabilization()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void PhysiologyEngineStabilization::Clear()
+void PhysiologyEngineStabilization::Invalidate()
 {
   m_LogProgress = true;
   m_Canceled = false;

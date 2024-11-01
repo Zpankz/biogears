@@ -53,17 +53,17 @@ BloodChemistry::BloodChemistry(BioGears& bg)
   : SEBloodChemistrySystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 BloodChemistry::~BloodChemistry()
 {
-  Clear();
+  Invalidate();
 }
 
-void BloodChemistry::Clear()
+void BloodChemistry::Invalidate()
 {
-  SEBloodChemistrySystem::Clear();
+  SEBloodChemistrySystem::Invalidate();
   m_aorta = nullptr;
   m_aortaO2 = nullptr;
   m_aortaCO2 = nullptr;

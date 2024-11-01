@@ -32,7 +32,7 @@ SEDataRequestManager::SEDataRequestManager(Logger* logger)
 //-----------------------------------------------------------------------------
 SEDataRequestManager::~SEDataRequestManager()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 const char* SEDataRequestManager::GetResultsFilename_cStr() const
@@ -77,7 +77,7 @@ void SEDataRequestManager::SetWorkingDir(const std::string& name)
 //-----------------------------------------------------------------------------
 std::string SEDataRequestManager::GetResovedFilePath() const { return m_WorkingDir + m_ResultsFile; }
 //-----------------------------------------------------------------------------
-void SEDataRequestManager::Clear()
+void SEDataRequestManager::Invalidate()
 {
   m_SamplesPerSecond = 1.0; // Sample every time step
   DELETE_VECTOR(m_Requests);

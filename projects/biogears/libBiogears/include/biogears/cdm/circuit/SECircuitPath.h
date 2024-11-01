@@ -59,7 +59,7 @@ protected:
 public:
   virtual ~SECircuitPath();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   bool operator==(SECircuitPath& rhs) const;
   bool operator!=(SECircuitPath& rhs) const;

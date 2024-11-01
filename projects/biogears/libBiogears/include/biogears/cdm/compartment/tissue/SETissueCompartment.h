@@ -42,7 +42,7 @@ protected:
 public:
   virtual ~SETissueCompartment();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
 
 public:

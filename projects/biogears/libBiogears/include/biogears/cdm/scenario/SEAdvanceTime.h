@@ -29,7 +29,7 @@ public:
   static constexpr const char* TypeTag() { return "SEAdvanceTime"; };
   const char* classname() const override { return TypeTag(); }
 
-  virtual void Clear() override; // clear memory
+  virtual void Invalidate() override; // clear memory
 
   virtual bool IsValid() const override;
 

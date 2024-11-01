@@ -20,12 +20,12 @@ SEChronicHeartFailure::SEChronicHeartFailure()
 //-------------------------------------------------------------------------------
 SEChronicHeartFailure::~SEChronicHeartFailure()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChronicHeartFailure::Clear()
+void SEChronicHeartFailure::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEChronicHeartFailure::IsValid() const

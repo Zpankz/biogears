@@ -92,10 +92,10 @@ SEAction::SEAction(Logger* logger)
 //-----------------------------------------------------------------------------
 SEAction::~SEAction()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEAction::Clear()
+void SEAction::Invalidate()
 {
   m_Comment = "";
 }

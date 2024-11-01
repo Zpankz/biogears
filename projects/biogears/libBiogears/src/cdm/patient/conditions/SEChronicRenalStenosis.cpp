@@ -24,12 +24,12 @@ SEChronicRenalStenosis::SEChronicRenalStenosis()
 //-------------------------------------------------------------------------------
 SEChronicRenalStenosis::~SEChronicRenalStenosis()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChronicRenalStenosis::Clear()
+void SEChronicRenalStenosis::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_LeftKidneySeverity);
   SAFE_DELETE(m_RightKidneySeverity);
 }

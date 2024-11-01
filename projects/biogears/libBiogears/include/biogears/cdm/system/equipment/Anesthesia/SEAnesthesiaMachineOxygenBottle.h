@@ -33,7 +33,7 @@ public:
   SEAnesthesiaMachineOxygenBottle(Logger* logger);
   virtual ~SEAnesthesiaMachineOxygenBottle();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   virtual const SEScalar* GetScalar(const char* name);

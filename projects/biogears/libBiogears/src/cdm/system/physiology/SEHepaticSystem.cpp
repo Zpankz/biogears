@@ -31,13 +31,13 @@ SEHepaticSystem::SEHepaticSystem(Logger* logger)
 
 SEHepaticSystem::~SEHepaticSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEHepaticSystem::Clear()
+void SEHepaticSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_KetoneProductionRate);
   SAFE_DELETE(m_HepaticGluconeogenesisRate);

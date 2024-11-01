@@ -43,7 +43,7 @@ public:
   SESubstanceManager(Logger* logger);
   virtual ~SESubstanceManager();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual void Reset();
   virtual bool LoadSubstanceDirectory();
 

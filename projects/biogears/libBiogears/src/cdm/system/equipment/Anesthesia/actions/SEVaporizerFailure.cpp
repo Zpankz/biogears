@@ -26,12 +26,12 @@ SEVaporizerFailure::SEVaporizerFailure()
 //-------------------------------------------------------------------------------
 SEVaporizerFailure::~SEVaporizerFailure()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEVaporizerFailure::Clear()
+void SEVaporizerFailure::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

@@ -26,12 +26,12 @@ SESerializeState::SESerializeState()
 //-----------------------------------------------------------------------------
 SESerializeState::~SESerializeState()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SESerializeState::Clear()
+void SESerializeState::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
   m_Filename = "";
   m_Type = SESerializationType::Invalid;
 }

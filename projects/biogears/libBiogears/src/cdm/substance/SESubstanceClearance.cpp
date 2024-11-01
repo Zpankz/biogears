@@ -55,7 +55,7 @@ SESubstanceClearance::SESubstanceClearance(SESubstanceClearanceDefinition defini
 //-----------------------------------------------------------------------------
 SESubstanceClearance::~SESubstanceClearance()
 {
-  Clear();
+  Invalidate();
 }
 SESubstanceClearance::SESubstanceClearance(SESubstanceClearance const& obj)
   : m_def(obj.m_def)
@@ -103,7 +103,7 @@ SESubstanceClearance& SESubstanceClearance::operator=(SESubstanceClearance&& rhs
   return *this;
 }
 //-----------------------------------------------------------------------------
-void SESubstanceClearance::Clear()
+void SESubstanceClearance::Invalidate()
 {
   m_def.HasSystemic = false;
   m_def.HasCellular = false;

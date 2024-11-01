@@ -46,7 +46,7 @@ public:
   BIOGEARS_API const char* classname() const override { return TypeTag(); }
   BIOGEARS_API size_t hash_code() const override { return TypeHash(); }
 
-  BIOGEARS_API void Clear() override;
+  BIOGEARS_API void Invalidate() override;
 
   // Set members to a stable homeostatic state
   BIOGEARS_API void Initialize() override;

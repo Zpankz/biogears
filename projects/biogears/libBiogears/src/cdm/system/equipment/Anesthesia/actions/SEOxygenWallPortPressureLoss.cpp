@@ -26,12 +26,12 @@ SEOxygenWallPortPressureLoss::SEOxygenWallPortPressureLoss()
 //-------------------------------------------------------------------------------
 SEOxygenWallPortPressureLoss::~SEOxygenWallPortPressureLoss()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEOxygenWallPortPressureLoss::Clear()
+void SEOxygenWallPortPressureLoss::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   m_State = SEOnOff::Invalid;
 }
 //-------------------------------------------------------------------------------

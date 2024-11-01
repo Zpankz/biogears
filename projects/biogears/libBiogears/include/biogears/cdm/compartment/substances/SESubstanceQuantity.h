@@ -26,8 +26,8 @@ public:
 
   virtual ~SESubstanceQuantity() override;
 
-  virtual void Clear() = 0; //clear memory
-  virtual void Invalidate() = 0;
+  virtual void Invalidate() = 0; //clear memory
+  virtual void MakeInvalid() = 0;
 
   virtual bool operator==(SESubstanceQuantity const&) const = 0;
   virtual bool operator!=(SESubstanceQuantity const&) const = 0;

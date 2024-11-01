@@ -307,10 +307,10 @@ SEPatientActionCollection::SEPatientActionCollection(SESubstanceManager& substan
 //-------------------------------------------------------------------------------
 SEPatientActionCollection::~SEPatientActionCollection()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPatientActionCollection::Clear()
+void SEPatientActionCollection::Invalidate()
 {
   RemoveAcuteRespiratoryDistress();
   RemoveAcuteStress();
@@ -616,7 +616,7 @@ bool SEPatientActionCollection::ProcessAction(const SEPatientAction& action, con
         m_Escharotomies[eschData->GetLocation()] = escharotomy;
         eItr = m_Escharotomies.find(eschData->GetLocation());
       } else {
-        escharotomy->Clear();
+        escharotomy->Invalidate();
       }
     }
     auto escharotomy2 = eItr->second;
@@ -888,7 +888,7 @@ bool SEPatientActionCollection::ProcessAction(const SEPatientAction& action, con
           tItr = m_Tourniquets.find(tournData->GetCompartment());
           validCmpt = true;
         } else {
-          tourniquet->Clear();
+          tourniquet->Invalidate();
           warn << "\t Invalid tourniquet location:  Valid options are LeftArm, LeftLeg, RightArm, RightLeg" << std::endl;
         }
       }

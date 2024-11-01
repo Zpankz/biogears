@@ -42,20 +42,20 @@ ECG::ECG(BioGears& bg)
   , m_data(bg)
   , m_Waveforms(bg.GetLogger())
 {
-  Clear();
+  Invalidate();
 }
 
 ECG::~ECG()
 {
-  Clear();
+  Invalidate();
 }
 
 //--------------------------------------------------------------------------------------------------
 /// \brief Cleans up any memory this class is responsible for
 //--------------------------------------------------------------------------------------------------
-void ECG::Clear()
+void ECG::Invalidate()
 {
-  SEElectroCardioGram::Clear();
+  SEElectroCardioGram::Invalidate();
 }
 
 //--------------------------------------------------------------------------------------------------

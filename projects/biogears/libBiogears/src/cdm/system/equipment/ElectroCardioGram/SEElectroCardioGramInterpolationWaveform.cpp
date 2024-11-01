@@ -33,10 +33,10 @@ SEElectroCardioGramInterpolationWaveform::SEElectroCardioGramInterpolationWavefo
 //-----------------------------------------------------------------------------
 SEElectroCardioGramInterpolationWaveform::~SEElectroCardioGramInterpolationWaveform()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEElectroCardioGramInterpolationWaveform::Clear()
+void SEElectroCardioGramInterpolationWaveform::Invalidate()
 {
   m_LeadNumber = 0;
   m_Rhythm = SEHeartRhythm::Invalid;

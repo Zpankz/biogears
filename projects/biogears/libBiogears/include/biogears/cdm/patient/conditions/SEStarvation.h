@@ -24,7 +24,7 @@ public:
   SEStarvation();
   virtual ~SEStarvation();
 
-  virtual void Clear() override ;
+  virtual void Invalidate() override ;
 
   virtual bool IsValid() const override ;
 

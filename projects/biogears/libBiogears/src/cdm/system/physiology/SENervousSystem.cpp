@@ -66,13 +66,13 @@ SENervousSystem::SENervousSystem(Logger* logger)
 
 SENervousSystem::~SENervousSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SENervousSystem::Clear()
+void SENervousSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
   SAFE_DELETE(m_AttentionLapses);
   SAFE_DELETE(m_BiologicalDebt);
   SAFE_DELETE(m_HeartRateScale);

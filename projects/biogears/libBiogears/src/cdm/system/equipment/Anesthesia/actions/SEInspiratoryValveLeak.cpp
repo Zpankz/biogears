@@ -26,12 +26,12 @@ SEInspiratoryValveLeak::SEInspiratoryValveLeak()
 //-------------------------------------------------------------------------------
 SEInspiratoryValveLeak::~SEInspiratoryValveLeak()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEInspiratoryValveLeak::Clear()
+void SEInspiratoryValveLeak::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

@@ -24,13 +24,13 @@ SEPainStimulus::SEPainStimulus()
 //-----------------------------------------------------------------------------
 SEPainStimulus::~SEPainStimulus()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEPainStimulus::Clear()
+void SEPainStimulus::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
   SAFE_DELETE(m_HalfLife);
   m_Location.clear();

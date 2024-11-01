@@ -24,13 +24,13 @@ SERadiationAbsorbedDose::SERadiationAbsorbedDose()
 //-------------------------------------------------------------------------------
 SERadiationAbsorbedDose::~SERadiationAbsorbedDose()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SERadiationAbsorbedDose::Clear()
+void SERadiationAbsorbedDose::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_RadiationDose);
 }
 //-------------------------------------------------------------------------------

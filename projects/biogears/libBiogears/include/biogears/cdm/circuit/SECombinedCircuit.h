@@ -24,7 +24,7 @@ public:
   SECombinedCircuit(const std::string& name, Logger* logger);
   virtual ~SECombinedCircuit() override;
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
 
 
 public:

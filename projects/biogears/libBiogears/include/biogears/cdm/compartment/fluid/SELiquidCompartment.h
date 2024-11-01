@@ -49,7 +49,7 @@ protected:
 public:
   virtual ~SELiquidCompartment();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
   bool operator==(SELiquidCompartment const&) const;
   bool operator!=(SELiquidCompartment const&) const;

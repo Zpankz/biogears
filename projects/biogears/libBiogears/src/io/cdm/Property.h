@@ -149,7 +149,7 @@ namespace io {
   template <typename Unit>
   void Property::UnMarshall(const CDM::ScalarData& in, SEScalarQuantity<Unit>& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.unit().present()) {
       if (in.deviation().present() && rd) {
         auto nd = std::normal_distribution(in.value(), in.deviation().get());

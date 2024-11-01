@@ -31,10 +31,10 @@ SEScenarioAutoSerialization::SEScenarioAutoSerialization(Logger* logger)
 //-----------------------------------------------------------------------------
 SEScenarioAutoSerialization::~SEScenarioAutoSerialization()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEScenarioAutoSerialization::Clear()
+void SEScenarioAutoSerialization::Invalidate()
 {
   SAFE_DELETE(m_Period);
   m_PeriodTimeStamps = SEOnOff::Invalid;

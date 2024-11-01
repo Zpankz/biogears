@@ -36,7 +36,7 @@ public:
   SEAction( Logger* = nullptr);
   virtual ~SEAction();
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   /** Test if the action has all data it needs */
   virtual bool IsValid() const { return true; }

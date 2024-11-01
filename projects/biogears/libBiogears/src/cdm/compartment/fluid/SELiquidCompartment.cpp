@@ -14,9 +14,9 @@ specific language governing permissions and limitations under the License.
 #include "io/cdm/Compartment.h"
 #include <biogears/cdm/compartment/fluid/SEFluidCompartment.inl>
 #include <biogears/cdm/compartment/substances/SELiquidSubstanceQuantity.h>
+#include <biogears/cdm/enums/SESubstanceEnums.h>
 #include <biogears/cdm/properties/SEScalar.h>
 #include <biogears/cdm/properties/SEScalarFraction.h>
-#include <biogears/cdm/enums/SESubstanceEnums.h>
 #include <biogears/cdm/substance/SESubstanceManager.h>
 #include <biogears/cdm/utils/GeneralMath.h>
 
@@ -41,14 +41,19 @@ SELiquidCompartment::SELiquidCompartment(const std::string& name, Logger* logger
 //-----------------------------------------------------------------------------
 SELiquidCompartment::~SELiquidCompartment()
 {
-  Clear();
-}
-//-----------------------------------------------------------------------------
-void SELiquidCompartment::Clear()
-{
-  SEFluidCompartment::Clear();
   SAFE_DELETE(m_pH);
   SAFE_DELETE(m_WaterVolumeFraction);
+}
+//-----------------------------------------------------------------------------
+void SELiquidCompartment::Invalidate()
+{
+  SEFluidCompartment::Invalidate();
+  if (m_pH && !m_pH->IsReadOnly()) {
+    m_pH->Invalidate();
+  };
+  if (m_WaterVolumeFraction && !m_WaterVolumeFraction->IsReadOnly()) {
+    m_WaterVolumeFraction->Invalidate();
+  };
   m_Children.clear();
 }
 

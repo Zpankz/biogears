@@ -25,12 +25,12 @@ namespace biogears
   //-------------------------------------------------------------------------------
   SEInfection::~SEInfection()
   {
-    Clear();
+    Invalidate();
   }
   //-------------------------------------------------------------------------------
-  void SEInfection::Clear()
+  void SEInfection::Invalidate()
   {
-    SEPatientAction::Clear();
+    SEPatientAction::Invalidate();
     m_Location = "";
     m_Severity = SEInfectionSeverity::Invalid;
     SAFE_DELETE(m_MinimumInhibitoryConcentration);

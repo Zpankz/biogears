@@ -186,7 +186,7 @@ namespace io {
       io::Property::UnMarshall(in.MolarMassOfWaterVapor(), out.GetMolarMassOfWaterVapor());
 
     if (out.m_Merge == false) {
-      out.GetInitialEnvironmentalConditions().Clear();
+      out.GetInitialEnvironmentalConditions().Invalidate();
     }
 
     if (in.InitialEnvironmentalConditionsFile().present()) {
@@ -227,7 +227,7 @@ namespace io {
       io::Property::UnMarshall(in.CarbohydrateAbsorptionFraction(), out.GetCarbohydrateAbsorptionFraction());
 
     if (out.m_Merge == false) {
-      out.GetDefaultStomachContents().Clear();
+      out.GetDefaultStomachContents().Invalidate();
     }
 
     if (in.DefaultStomachContentsFile().present()) {

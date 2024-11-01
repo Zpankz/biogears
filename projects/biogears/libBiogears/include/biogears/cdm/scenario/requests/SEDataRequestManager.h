@@ -36,7 +36,7 @@ public:
   SEDataRequestManager(Logger* logger);
   ~SEDataRequestManager();
 
-  void Clear();
+  void Invalidate();
 
   bool operator==(SEDataRequestManager const&) const;
   bool operator!=(SEDataRequestManager const&) const;

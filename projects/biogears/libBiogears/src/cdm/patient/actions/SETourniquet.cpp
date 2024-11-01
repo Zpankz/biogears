@@ -24,12 +24,12 @@ SETourniquet::SETourniquet()
 //-----------------------------------------------------------------------------
 SETourniquet::~SETourniquet()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SETourniquet::Clear()
+void SETourniquet::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Compartment = "";
   m_TourniquetLevel = SETourniquetApplicationType::Invalid;
 }

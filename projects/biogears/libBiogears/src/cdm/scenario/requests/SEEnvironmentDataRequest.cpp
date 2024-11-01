@@ -23,12 +23,12 @@ SEEnvironmentDataRequest::SEEnvironmentDataRequest(const SEDecimalFormat* dfault
 
 SEEnvironmentDataRequest::~SEEnvironmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEEnvironmentDataRequest::Clear()
+void SEEnvironmentDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
 }
 
 size_t SEEnvironmentDataRequest::HashCode() const

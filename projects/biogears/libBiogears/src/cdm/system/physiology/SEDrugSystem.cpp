@@ -65,13 +65,13 @@ SEDrugSystem::SEDrugSystem(Logger* logger)
 
 SEDrugSystem::~SEDrugSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEDrugSystem::Clear()
+void SEDrugSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_AntibioticActivity);
   SAFE_DELETE(m_BronchodilationLevel);

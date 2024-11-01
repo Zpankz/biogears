@@ -126,13 +126,13 @@ SEBloodChemistrySystem::SEBloodChemistrySystem(Logger* logger)
 
 SEBloodChemistrySystem::~SEBloodChemistrySystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEBloodChemistrySystem::Clear()
+void SEBloodChemistrySystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_ArterialBloodPH);
   SAFE_DELETE(m_ArterialBloodPHBaseline);
@@ -1257,10 +1257,10 @@ SEInflammatoryResponse::SEInflammatoryResponse()
 //-------------------------------------------------------------------------------
 SEInflammatoryResponse::~SEInflammatoryResponse()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEInflammatoryResponse::Clear()
+void SEInflammatoryResponse::Invalidate()
 {
   SAFE_DELETE(m_LocalPathogen);
   SAFE_DELETE(m_LocalMacrophage);

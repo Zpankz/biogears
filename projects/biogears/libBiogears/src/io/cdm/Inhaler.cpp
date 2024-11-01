@@ -14,7 +14,7 @@ namespace biogears {
 namespace io {
   void Inhaler::UnMarshall(const CDM::InhalerData& in, SEInhaler& out)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.State().present())
       io::Property::UnMarshall(in.State().get(), out.m_State);
 

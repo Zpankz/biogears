@@ -42,12 +42,12 @@ SEPulmonaryFunctionTest::SEPulmonaryFunctionTest()
 //-------------------------------------------------------------------------------
 SEPulmonaryFunctionTest::~SEPulmonaryFunctionTest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPulmonaryFunctionTest::Clear()
+void SEPulmonaryFunctionTest::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_ExpiratoryReserveVolume);
   SAFE_DELETE(m_ForcedVitalCapacity);
   SAFE_DELETE(m_ForcedExpiratoryVolume);

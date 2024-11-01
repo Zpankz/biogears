@@ -131,8 +131,13 @@ void BioGears::SetUp()
   m_AnesthesiaMachine = AnesthesiaMachine::make_unique(*this);
 
   m_Inhaler = Inhaler::make_unique(*this);
-
+  try {
   m_Compartments = BioGearsCompartments::make_unique(*this);
+
+  }
+  catch (CommonDataModelException ex) {
+      std::cout << ex.what() << std::endl;
+  }
 
   m_Circuits = BioGearsCircuits::make_unique(*this);
 
@@ -190,8 +195,8 @@ bool BioGears::Initialize(const PhysiologyEngineConfiguration* config)
 
   m_SaturationCalculator->Initialize(*m_Substances);
 
-  m_Actions->Clear();
-  m_Conditions->Clear();
+  m_Actions->Invalidate();
+  m_Conditions->Invalidate();
 
   // This will also Initialize the environment
   // Due to needing the initial environment values for circuits to construct properly
@@ -1073,8 +1078,8 @@ bool BioGears::GetPatientAssessment(SEPatientAssessment& assessment)
 
 bool BioGears::CreateCircuitsAndCompartments()
 {
-  m_Circuits->Clear();
-  m_Compartments->Clear();
+  m_Circuits->Invalidate();
+  m_Compartments->Invalidate();
 
   SetupCardiovascular();
   if (m_Configuration->IsCerebralEnabled()) {
@@ -2471,7 +2476,7 @@ void BioGears::SetupCerebral()
   cSpinalFluid.MapNode(nSpinalFluid);
 
   SELiquidCompartment& cBrain = *m_Compartments->GetLiquidCompartment(BGE::VascularCompartment::Brain);
-  cBrain.GetNodeMapping().Clear();
+  cBrain.GetNodeMapping().Invalidate();
   cBrain.AddChild(cCerebralArteries);
   cBrain.AddChild(cCerebralCapillaries);
   cBrain.AddChild(cCerebralVeins);
@@ -3073,7 +3078,7 @@ void BioGears::SetupRenal()
   // Grab these, as cardiovascular already made them
   SELiquidCompartment* vLeftKidney = m_Compartments->GetLiquidCompartment(BGE::VascularCompartment::LeftKidney);
   SELiquidCompartment& vLeftNephron = m_Compartments->CreateLiquidCompartment(BGE::VascularCompartment::LeftNephron);
-  vLeftKidney->GetNodeMapping().Clear(); // Remove the nodes the cardiovascular was using to model the kidney
+  vLeftKidney->GetNodeMapping().Invalidate(); // Remove the nodes the cardiovascular was using to model the kidney
   vLeftKidney->AddChild(vLeftRenalArtery);
   vLeftKidney->AddChild(vLeftNephron);
   vLeftNephron.AddChild(vLeftAfferentArteriole);
@@ -3085,7 +3090,7 @@ void BioGears::SetupRenal()
   vLeftKidney->AddChild(vLeftRenalVein);
   SELiquidCompartment* vRightKidney = m_Compartments->GetLiquidCompartment(BGE::VascularCompartment::RightKidney);
   SELiquidCompartment& vRightNephron = m_Compartments->CreateLiquidCompartment(BGE::VascularCompartment::RightNephron);
-  vRightKidney->GetNodeMapping().Clear(); // Remove the nodes the cardiovascular was using to model the kidney
+  vRightKidney->GetNodeMapping().Invalidate(); // Remove the nodes the cardiovascular was using to model the kidney
   vRightKidney->AddChild(vRightRenalArtery);
   vRightKidney->AddChild(vRightNephron);
   vRightNephron.AddChild(vRightAfferentArteriole);

@@ -121,7 +121,7 @@ namespace io {
   void Compartment::UnMarshall(xsd::cxx::tree::optional<XSD> const& option_in, SE& out)
   {
     if (!option_in.present()) {
-      out.Invalidate();
+      out.MakeInvalid();
     } else {
       UnMarshall(option_in.get(), out);
     }

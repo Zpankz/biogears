@@ -21,10 +21,10 @@ SEConsciousRespirationCommand::SEConsciousRespirationCommand()
 //-------------------------------------------------------------------------------
 SEConsciousRespirationCommand::~SEConsciousRespirationCommand()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEConsciousRespirationCommand::Clear()
+void SEConsciousRespirationCommand::Invalidate()
 {
   m_Comment = "";
 }

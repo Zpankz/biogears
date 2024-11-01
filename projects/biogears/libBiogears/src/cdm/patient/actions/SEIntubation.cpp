@@ -22,12 +22,12 @@ SEIntubation::SEIntubation()
 //-------------------------------------------------------------------------------
 SEIntubation::~SEIntubation()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEIntubation::Clear()
+void SEIntubation::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Type = SEIntubationType::Invalid;
 }
 //-------------------------------------------------------------------------------

@@ -28,7 +28,7 @@
 #include <biogears/engine/Systems/Saturation.h>
 #include <biogears/engine/Systems/Tissue.h>
 
-#pragma optimize("", off)
+
 namespace biogears {
 namespace io {
   std::unique_ptr<SESystem> BiogearsPhysiology::factory(CDM::SystemData const* systemData, biogears::BioGears& bgData)
@@ -185,7 +185,7 @@ namespace io {
   // class BloodChemistry
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsBloodChemistrySystemData& in, const SESubstanceManager& substances, BloodChemistry& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     io::Property::UnMarshall(in.ArterialOxygenAverage_mmHg(), out.m_ArterialOxygenAverage_mmHg);
@@ -249,7 +249,7 @@ namespace io {
   // class Cardiovascular
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsCardiovascularSystemData& in, const SESubstanceManager& substances, Cardiovascular& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     out.m_StartSystole = in.StartSystole();
@@ -339,7 +339,7 @@ namespace io {
   // class DrugSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsDrugSystemData& in, const SESubstanceManager& substances, Drugs& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     out.m_SarinRbcAcetylcholinesteraseComplex_nM = in.SarinRbcAcetylcholinesteraseComplex_nM();
@@ -420,7 +420,7 @@ namespace io {
   // class EndocrineSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsEndocrineSystemData& in, const SESubstanceManager& substances, Endocrine& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
     out.BioGearsSystem::LoadState();
   }
@@ -431,7 +431,7 @@ namespace io {
   // class EnergySystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsEnergySystemData& in, const SESubstanceManager& substances, Energy& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
     io::Property::UnMarshall(in.BloodpH(), out.m_BloodpH);
     io::Property::UnMarshall(in.BicarbonateMolarity_mmol_Per_L(), out.m_BicarbonateMolarity_mmol_Per_L);
@@ -452,7 +452,7 @@ namespace io {
   // class GastrointestinalSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsGastrointestinalSystemData& in, const SESubstanceManager& substances, Gastrointestinal& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     out.BioGearsSystem::LoadState();
@@ -479,7 +479,7 @@ namespace io {
   // class HepaticSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsHepaticSystemData& in, const SESubstanceManager& substances, Hepatic& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
     out.BioGearsSystem::LoadState();
   }
@@ -490,7 +490,7 @@ namespace io {
   // class Cardiovascular
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsNervousSystemData& in, const SESubstanceManager& substances, Nervous& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     // We assume state have to be after all stabilization
@@ -602,7 +602,7 @@ namespace io {
   // class RenalSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsRenalSystemData& in, const SESubstanceManager& substances, Renal& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     out.m_Urinating = in.Urinating();
@@ -644,7 +644,7 @@ namespace io {
   // class RespiratorySystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsRespiratorySystemData& in, const SESubstanceManager& substances, Respiratory& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     out.m_InitialExpiratoryReserveVolume_L = in.InitialExpiratoryReserveVolume_L();
@@ -746,7 +746,7 @@ namespace io {
   // class TissueSystem
   void BiogearsPhysiology::UnMarshall(const CDM::BioGearsTissueSystemData& in, const SESubstanceManager& substances, Tissue& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in, out);
 
     io::Property::UnMarshall(in.O2ConsumedRunningAverage_mL_Per_s(), out.m_O2ConsumedRunningAverage_mL_Per_s);

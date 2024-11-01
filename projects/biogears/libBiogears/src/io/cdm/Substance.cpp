@@ -23,7 +23,7 @@ namespace io {
   // class SESubstanceAerosolization
   void Substance::UnMarshall(const CDM::SubstanceAerosolizationData& in, SESubstanceAerosolization& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Property::UnMarshall(in.BronchioleModifier(), out.GetBronchioleModifier());
     io::Property::UnMarshall(in.InflammationCoefficient(), out.GetInflammationCoefficient());
     io::Property::UnMarshall(in.ParticulateSizeDistribution(), out.GetParticulateSizeDistribution());
@@ -38,7 +38,7 @@ namespace io {
   // class SESubstancePharmacokinetics
   void Substance::UnMarshall(const CDM::SubstancePharmacokineticsData& in, SESubstancePharmacokinetics& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     if (in.Physicochemicals().present()) {
       UnMarshall(in.Physicochemicals(), out.GetPhysicochemicals());
@@ -66,7 +66,7 @@ namespace io {
   // class SESubstancePhysicochemical
   void Substance::UnMarshall(const CDM::SubstancePhysicochemicalData& in, SESubstancePhysicochemical& out)
   {
-    out.Clear();
+    out.Invalidate();
     for (auto pKa : in.AcidDissociationConstant()) {
       out.m_AcidDissociationConstants.push_back(new SEScalar());
       io::Property::UnMarshall(pKa, *out.m_AcidDissociationConstants.back());
@@ -104,7 +104,7 @@ namespace io {
   // class SESubstanceTissuePharmacokinetics
   void Substance::UnMarshall(const CDM::SubstanceTissuePharmacokineticsData& in, SESubstanceTissuePharmacokinetics& out)
   {
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
     io::Property::UnMarshall(in.PartitionCoefficient(), out.GetPartitionCoefficient());
   }
@@ -189,7 +189,7 @@ namespace io {
   // class SESubstanceClearance
   void Substance::UnMarshall(const CDM::SubstanceClearanceData& in, SESubstanceClearance& out)
   {
-    out.Clear();
+    out.Invalidate();
     // Make sure dups match
     if (in.Systemic().present() && in.RenalDynamics().present()) {
       if (in.RenalDynamics()->Clearance().present() && in.Systemic().get().RenalClearance().value() != in.RenalDynamics()->Clearance().get().value()) {
@@ -347,7 +347,7 @@ namespace io {
   // class SESubstance
   void Substance::UnMarshall(const CDM::SubstanceData& in, SESubstance& out)
   {
-    out.Clear();
+    out.Invalidate();
     out.m_def.Name = in.Name();
 
     io::Substance::UnMarshall(in.State(), out.m_def.State);
@@ -461,7 +461,7 @@ namespace io {
   // class SESubstanceCompound
   void Substance::UnMarshall(const CDM::SubstanceCompoundData& in, const SESubstanceManager& subMgr, SESubstanceCompound& out)
   {
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
 
     if (in.BloodRHFactor().present()) {
@@ -524,7 +524,7 @@ namespace io {
   // class SESubstanceConcentration
   void Substance::UnMarshall(const CDM::SubstanceConcentrationData& in, SESubstanceConcentration& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Property::UnMarshall(in.Concentration(), out.GetConcentration());
   }
   void Substance::Marshall(const SESubstanceConcentration& in, CDM::SubstanceConcentrationData& out)

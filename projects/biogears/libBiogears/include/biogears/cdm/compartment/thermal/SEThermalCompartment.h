@@ -43,7 +43,7 @@ protected:
 public:
   virtual ~SEThermalCompartment() override;
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
   bool operator==(SEThermalCompartment const&) const;
   bool operator!=(SEThermalCompartment const&) const;

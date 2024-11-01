@@ -30,8 +30,8 @@ protected:
   SECircuitLedger() {};
 
 public:
-  virtual ~SECircuitLedger() { Clear(); };
-  void Clear()
+  virtual ~SECircuitLedger() { Invalidate(); };
+  void Invalidate()
   {
     DELETE_MAP_OF_POINTERS(nodes);
     DELETE_MAP_OF_POINTERS(paths);

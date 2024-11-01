@@ -22,7 +22,7 @@ public:
   SEAnesthesiaMachineAction();
   virtual ~SEAnesthesiaMachineAction();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual bool IsValid() const;
 

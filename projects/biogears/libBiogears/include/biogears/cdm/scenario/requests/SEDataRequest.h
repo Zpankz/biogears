@@ -32,7 +32,7 @@ public:
   SEDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SEDataRequest() override;
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
   
   bool operator==(SEDataRequest const&) const;

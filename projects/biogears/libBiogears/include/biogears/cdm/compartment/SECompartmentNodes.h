@@ -33,7 +33,7 @@ public:
   SECompartmentNodes(Logger* logger);
   virtual ~SECompartmentNodes();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual void StateChange(); //analyze and cache for optimization
 
   virtual bool HasMapping() const { return !m_AllNodes.empty(); }

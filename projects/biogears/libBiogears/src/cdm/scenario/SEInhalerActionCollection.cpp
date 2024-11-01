@@ -25,10 +25,10 @@ SEInhalerActionCollection::SEInhalerActionCollection(SESubstanceManager& substan
 
 SEInhalerActionCollection::~SEInhalerActionCollection()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEInhalerActionCollection::Clear()
+void SEInhalerActionCollection::Invalidate()
 {
   // State
   RemoveConfiguration();

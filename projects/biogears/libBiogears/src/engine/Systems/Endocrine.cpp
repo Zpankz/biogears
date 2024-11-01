@@ -44,17 +44,17 @@ Endocrine::Endocrine(BioGears& bg)
   : SEEndocrineSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Endocrine::~Endocrine()
 {
-  Clear();
+  Invalidate();
 }
 
-void Endocrine::Clear()
+void Endocrine::Invalidate()
 {
-  SEEndocrineSystem::Clear();
+  SEEndocrineSystem::Invalidate();
   m_AortaGlucose = nullptr;
   m_AortaEpinephrine = nullptr;
   m_SplanchnicInsulin = nullptr;

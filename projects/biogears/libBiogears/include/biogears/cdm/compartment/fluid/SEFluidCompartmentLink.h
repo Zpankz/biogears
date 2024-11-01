@@ -37,7 +37,7 @@ protected:
 public:
   virtual ~SEFluidCompartmentLink();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
   bool operator==(const SEFluidCompartmentLink& rhs) const;
   bool operator!=(const SEFluidCompartmentLink& rhs) const;
@@ -63,7 +63,7 @@ public:
   virtual void RemovePath() { m_Path = nullptr; }
   virtual void MapPath(SEFluidCircuitPath& path)
   {
-    Clear();
+    Invalidate();
     m_Path = &path;
   }
 

@@ -11,39 +11,41 @@ specific language governing permissions and limitations under the License.
 **************************************************************************************/
 #include <biogears/cdm/substance/SESubstanceManager.h>
 
+#include <iostream>
+
 #include "io/cdm/Compartment.h"
 #include <biogears/cdm/compartment/SECompartmentGraph.inl>
 #include <biogears/cdm/compartment/SECompartmentManager.h>
 #include <biogears/cdm/compartment/SECompartmentTransportGraph.inl>
-#include <biogears/cdm/compartment/fluid/SEFluidCompartmentLink.inl>
 #include <biogears/cdm/compartment/fluid/SEFluidCompartment.inl>
+#include <biogears/cdm/compartment/fluid/SEFluidCompartmentLink.inl>
 #include <biogears/cdm/compartment/fluid/SELiquidCompartment.h>
 #include <biogears/cdm/substance/SESubstance.h>
 #include <biogears/schema/cdm/Compartment.hxx>
 
 namespace std {
-  template class vector<biogears::SEGasCompartment*> ;
-  template class map<string, biogears::SEGasCompartment*> ;
-  template class vector<biogears::SEGasCompartmentLink*> ;
-  template class map<string, biogears::SEGasCompartmentLink*> ;
-  template class vector<biogears::SEGasCompartmentGraph*> ;
-  template class map<string, biogears::SEGasCompartmentGraph*> ;
-  template class vector<biogears::SESubstance*> ;
-  
-  template class vector<biogears::SELiquidCompartment*> ;
-  template class map<string, biogears::SELiquidCompartment*> ;
-  template class vector<biogears::SELiquidCompartmentLink*> ;
-  template class map<string, biogears::SELiquidCompartmentLink*> ;
-  template class vector<biogears::SELiquidCompartmentGraph*> ;
-  template class map<string, biogears::SELiquidCompartmentGraph*> ;
-  
-  template class vector<biogears::SEThermalCompartment*> ;
-  template class map<string, biogears::SEThermalCompartment*> ;
-  template class vector<biogears::SEThermalCompartmentLink*> ;
-  template class map<string, biogears::SEThermalCompartmentLink*> ;
-  
-  template class vector<biogears::SETissueCompartment*> ;
-  template class map<string, biogears::SETissueCompartment*> ;
+template class vector<biogears::SEGasCompartment*>;
+template class map<string, biogears::SEGasCompartment*>;
+template class vector<biogears::SEGasCompartmentLink*>;
+template class map<string, biogears::SEGasCompartmentLink*>;
+template class vector<biogears::SEGasCompartmentGraph*>;
+template class map<string, biogears::SEGasCompartmentGraph*>;
+template class vector<biogears::SESubstance*>;
+
+template class vector<biogears::SELiquidCompartment*>;
+template class map<string, biogears::SELiquidCompartment*>;
+template class vector<biogears::SELiquidCompartmentLink*>;
+template class map<string, biogears::SELiquidCompartmentLink*>;
+template class vector<biogears::SELiquidCompartmentGraph*>;
+template class map<string, biogears::SELiquidCompartmentGraph*>;
+
+template class vector<biogears::SEThermalCompartment*>;
+template class map<string, biogears::SEThermalCompartment*>;
+template class vector<biogears::SEThermalCompartmentLink*>;
+template class map<string, biogears::SEThermalCompartmentLink*>;
+
+template class vector<biogears::SETissueCompartment*>;
+template class map<string, biogears::SETissueCompartment*>;
 }
 namespace biogears {
 
@@ -59,16 +61,24 @@ SECompartmentManager::SECompartmentManager(SESubstanceManager& subMgr)
   m_HbCO2 = subMgr.GetSubstance("Carbaminohemoglobin");
   m_HbO2CO2 = subMgr.GetSubstance("OxyCarbaminohemoglobin");
   m_HbCO = subMgr.GetSubstance("Carboxyhemoglobin");
-  Clear();
+  Invalidate();
 }
 SECompartmentManager::~SECompartmentManager()
 {
-  Clear();
+  Invalidate();
 }
-
-void SECompartmentManager::Clear()
+#pragma optimize("", off)
+void SECompartmentManager::Invalidate()
 {
-  DELETE_VECTOR(m_GasCompartments);
+  try {
+    DELETE_VECTOR(m_GasCompartments);
+  } catch (CommonDataModelException ex) {
+    std::cout << ex.what() << std::endl;
+
+  } catch (std::exception ex) {
+    std::cout << ex.what() << std::endl;
+    ;
+  }
   m_GasName2Compartments.clear();
   m_GasLeafCompartments.clear();
   DELETE_VECTOR(m_GasLinks);
@@ -97,7 +107,7 @@ void SECompartmentManager::Clear()
   m_TissueLeafCompartments.clear();
   m_TissueName2Compartments.clear();
 }
-
+#pragma optimize("", on)
 //-------------------------------------------------------------------------------
 bool SECompartmentManager::HasCompartment(SECompartmentType type, const char* name) const
 {

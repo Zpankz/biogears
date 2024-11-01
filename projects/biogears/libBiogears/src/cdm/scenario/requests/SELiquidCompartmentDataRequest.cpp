@@ -25,7 +25,7 @@ SELiquidCompartmentDataRequest::SELiquidCompartmentDataRequest(const SEDecimalFo
 //-------------------------------------------------------------------------------
 SELiquidCompartmentDataRequest::~SELiquidCompartmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SELiquidCompartmentDataRequest ::operator==(SELiquidCompartmentDataRequest const& rhs) const

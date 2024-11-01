@@ -31,7 +31,7 @@ public:
   virtual const char* classname() const = 0;
 
   virtual void Reset();
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
 };

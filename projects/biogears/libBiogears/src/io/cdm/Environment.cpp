@@ -33,7 +33,7 @@ namespace io {
   // class SEEnvironmentalConditions
   void Environment::UnMarshall(const CDM::EnvironmentalConditionsData& in, SEEnvironmentalConditions& out)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.Name().present()) {
       out.SetName(in.Name().get());
     }
@@ -151,7 +151,7 @@ namespace io {
   // class SEAppliedTemperature
   void Environment::UnMarshall(const CDM::AppliedTemperatureData& in, SEAppliedTemperature& out)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.State().present()) {
       io::Property::UnMarshall(in.State().get(), out.m_State);
     }

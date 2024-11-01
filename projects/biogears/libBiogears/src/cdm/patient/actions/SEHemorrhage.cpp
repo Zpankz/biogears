@@ -43,12 +43,12 @@ SEHemorrhage::SEHemorrhage()
 //-----------------------------------------------------------------------------
 SEHemorrhage::~SEHemorrhage()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEHemorrhage::Clear()
+void SEHemorrhage::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Compartment = "";
   m_MCIS.clear();
   SAFE_DELETE(m_BleedResistance);

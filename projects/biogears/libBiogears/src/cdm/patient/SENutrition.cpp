@@ -41,10 +41,10 @@ SENutrition::SENutrition(Logger* logger)
 //-----------------------------------------------------------------------------
 SENutrition::~SENutrition()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SENutrition::Clear()
+void SENutrition::Invalidate()
 {
   m_Name = "";
   SAFE_DELETE(m_Carbohydrate);

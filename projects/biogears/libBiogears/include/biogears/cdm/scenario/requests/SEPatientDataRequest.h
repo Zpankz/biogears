@@ -27,7 +27,7 @@ public:
   SEPatientDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SEPatientDataRequest();
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
   size_t HashCode() const override;
   
 };

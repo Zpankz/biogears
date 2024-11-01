@@ -24,13 +24,13 @@ SEApnea::SEApnea()
 //-------------------------------------------------------------------------------
 SEApnea::~SEApnea()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEApnea::Clear()
+void SEApnea::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

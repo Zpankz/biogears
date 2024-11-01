@@ -26,7 +26,7 @@ public:
   SEImpairedAlveolarExchange();
   virtual ~SEImpairedAlveolarExchange();
 
-  virtual void Clear() override ;
+  virtual void Invalidate() override ;
 
   virtual bool IsValid() const override ;
 

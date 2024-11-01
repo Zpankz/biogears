@@ -21,12 +21,12 @@ SEPatientAction::SEPatientAction()
 //-------------------------------------------------------------------------------
 SEPatientAction::~SEPatientAction()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPatientAction::Clear()
+void SEPatientAction::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEPatientAction::IsValid() const

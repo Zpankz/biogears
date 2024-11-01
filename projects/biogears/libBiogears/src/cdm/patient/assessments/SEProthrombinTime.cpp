@@ -24,12 +24,12 @@ SEProthrombinTime::SEProthrombinTime()
 //-------------------------------------------------------------------------------
 SEProthrombinTime::~SEProthrombinTime()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEProthrombinTime::Clear()
+void SEProthrombinTime::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_InternationalNormalizedRatio);
 }
 //-------------------------------------------------------------------------------

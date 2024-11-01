@@ -80,7 +80,7 @@ namespace io {
   // class SEFunction-------------------------------------------------
   void Property::UnMarshall(const CDM::FunctionData& in, SEFunction& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     for (auto& dv : in.Dependent().DoubleList()) {
       out.m_Dependent.push_back(dv);
     }
@@ -129,7 +129,7 @@ namespace io {
   // class SEHistogram-------------------------------------------------
   void Property::UnMarshall(const CDM::HistogramData& in, SEHistogram& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     for (auto& dv : in.Dependent().DoubleList())
       out.m_Dependent.push_back(dv);
     for (auto& iv : in.Independent().DoubleList())
@@ -359,7 +359,7 @@ namespace io {
   void Property::UnMarshall(const CDM::ScalarData& in, SEScalar& out, std::default_random_engine* rd)
   {
     READ_ONLY_CHECK()
-    out.Clear();
+    out.Invalidate();
     ;
     if (in.deviation().present() && rd) {
       auto nd = std::normal_distribution(in.value(), in.deviation().get());

@@ -65,7 +65,7 @@ void SEGasCompartment::Balance(BalanceGasBy by)
     }
     for (SEGasSubstanceQuantity* subQ : GetSubstanceQuantities()) {
       if (!subQ->HasVolume()) {
-        subQ->Invalidate();
+        subQ->MakeInvalid();
         continue;
       } else {
         subQ->GetVolumeFraction().SetValue(subQ->GetVolume(VolumeUnit::mL) / totalVolume_mL);
@@ -79,7 +79,7 @@ void SEGasCompartment::Balance(BalanceGasBy by)
   case BalanceGasBy::VolumeFraction: {
     if (!HasVolume()) {
       for (SEGasSubstanceQuantity* subQ : GetSubstanceQuantities()) {
-        subQ->Invalidate();
+        subQ->MakeInvalid();
         if (HasPressure())
           GeneralMath::CalculatePartialPressureInGas(subQ->GetVolumeFraction(), GetPressure(), subQ->GetPartialPressure(), m_Logger);
       }
@@ -96,7 +96,7 @@ void SEGasCompartment::Balance(BalanceGasBy by)
       double totalVolume_mL = GetVolume(VolumeUnit::mL);
       for (SEGasSubstanceQuantity* subQ : GetSubstanceQuantities()) {
         if (!subQ->HasVolumeFraction())
-          subQ->Invalidate();
+          subQ->MakeInvalid();
         else {
           totalFraction += subQ->GetVolumeFraction().GetValue();
           subQ->GetVolume().SetValue(subQ->GetVolumeFraction().GetValue() * totalVolume_mL, VolumeUnit::mL);

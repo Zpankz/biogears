@@ -83,7 +83,7 @@ namespace io {
       }
     };
 
-    out.Clear();
+    out.Invalidate();
     if (in.Name().present()) {
       out.m_Name = in.Name().get();
     }
@@ -191,7 +191,7 @@ namespace io {
   // class SEScenarioInitialParameters
   void Scenario::UnMarshall(const CDM::ScenarioInitialParametersData& in, SEScenarioInitialParameters& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     if (in.Configuration().present()) {
       io::EngineConfiguration::UnMarshall(in.Configuration(), out.GetConfiguration());
@@ -231,7 +231,7 @@ namespace io {
   // class SEScenarioAutoSerialization
   void Scenario::UnMarshall(const CDM::ScenarioAutoSerializationData& in, SEScenarioAutoSerialization& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Property::UnMarshall(in.Period(), out.GetPeriod());
 
     auto periodTimeStamp = out.GetPeriodTimeStamps();

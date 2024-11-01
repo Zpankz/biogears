@@ -58,12 +58,12 @@ SEAnesthesiaMachine::SEAnesthesiaMachine(SESubstanceManager& substances)
 //-----------------------------------------------------------------------------
 SEAnesthesiaMachine::~SEAnesthesiaMachine()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEAnesthesiaMachine::Clear()
+void SEAnesthesiaMachine::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   m_EventHandler = nullptr;
   m_EventState.clear();

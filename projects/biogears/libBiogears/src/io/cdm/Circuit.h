@@ -116,7 +116,7 @@ namespace io {
   void Circuit::UnMarshall(xsd::cxx::tree::optional<XSD> const& option_in, SE& out)
   {
     if (!option_in.present()) {
-      out.Clear();
+      out.Invalidate();
     } else {
       UnMarshall(option_in.get(), out);
     }
@@ -133,7 +133,7 @@ namespace io {
   template <typename CircuitBindType, typename NodeType, typename PathType>
   void Circuit::UnMarshall(const CircuitBindType& in, SECircuit<CIRCUIT_TYPES>& out, const std::map<std::string, NodeType*>& nodes, const std::map<std::string, PathType*>& paths)
   {
-    out.Clear();
+    out.Invalidate();
     out.m_Name = in.Name();
     for (auto name : in.Node()) {
       auto idx = nodes.find(name);
@@ -177,7 +177,7 @@ namespace io {
   template <CIRCUIT_NODE_TEMPLATE>
   void Circuit::UnMarshall(const CDM::CircuitNodeData& in, SECircuitNode<CIRCUIT_NODE_TYPES>& out)
   {
-    out.Clear();
+    out.Invalidate();
   }
   //----------------------------------------------------------------------------------
   template <CIRCUIT_NODE_TEMPLATE>
@@ -190,7 +190,7 @@ namespace io {
   template <CIRCUIT_PATH_TEMPLATE>
   void Circuit::UnMarshall(const CDM::CircuitPathData& in, SECircuitPath<CIRCUIT_PATH_TYPES>& out)
   {
-    // out.Clear();
+    // out.Invalidate();
 
     io::Property::UnMarshall(in.Switch(), out.m_Switch);
     io::Property::UnMarshall(in.NextSwitch(), out.m_NextSwitch);

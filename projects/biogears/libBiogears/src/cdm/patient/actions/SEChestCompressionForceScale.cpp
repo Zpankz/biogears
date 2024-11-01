@@ -26,12 +26,12 @@ SEChestCompressionForceScale::SEChestCompressionForceScale()
 //-------------------------------------------------------------------------------
 SEChestCompressionForceScale::~SEChestCompressionForceScale()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChestCompressionForceScale::Clear()
+void SEChestCompressionForceScale::Invalidate()
 {
-  SEChestCompression::Clear();
+  SEChestCompression::Invalidate();
   SAFE_DELETE(m_ForceScale);
   SAFE_DELETE(m_ForcePeriod);
 }

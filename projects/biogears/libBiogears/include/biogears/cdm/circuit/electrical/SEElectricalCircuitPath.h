@@ -39,7 +39,7 @@ protected:
 public:
   virtual ~SEElectricalCircuitPath();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 public:
   virtual SEElectricalCircuitNode& GetSourceNode() const { return m_ElectricalSourceNode; }

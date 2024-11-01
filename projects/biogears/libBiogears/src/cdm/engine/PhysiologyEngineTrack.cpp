@@ -182,10 +182,10 @@ PhysiologyEngineTrack& PhysiologyEngineTrack::operator=(PhysiologyEngineTrack&& 
 }
 PhysiologyEngineTrack::~PhysiologyEngineTrack()
 {
-  Clear();
+  Invalidate();
 }
 
-void PhysiologyEngineTrack::Clear()
+void PhysiologyEngineTrack::Invalidate()
 {
   ResetFile();
   m_ForceConnection = false;

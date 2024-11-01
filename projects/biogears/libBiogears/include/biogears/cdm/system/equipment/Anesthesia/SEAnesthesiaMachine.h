@@ -60,7 +60,7 @@ public:
   const char* classname() const override { return TypeTag(); }
   size_t hash_code() const override { return TypeHash(); }
 
-  void Clear() override;
+  void Invalidate() override;
 
   Tree<const char*> GetPhysiologyRequestGraph() const override;
 

@@ -86,7 +86,7 @@ namespace io {
     out.m_State = EngineState::NotReady;
 
     // if (in.DataRequests).present()) {
-    //   out.m_EngineTrack.GetDataRequestManager().Clear();
+    //   out.m_EngineTrack.GetDataRequestManager().Invalidate();
     //   out.m_EngineTrack.GetDataRequestManager().Load(in.DataRequests().get(), *out.m_Substances);
     //   out.m_EngineTrack.ForceConnection(); // I don't want to rest the file because I would loose all my data
     // }
@@ -118,7 +118,7 @@ namespace io {
       }
     }
     // Conditions //
-    out.m_Conditions->Clear();
+    out.m_Conditions->Invalidate();
     for (const CDM::ConditionData& cData : in.Condition()) {
       auto conditon = io::Conditions::factory(&cData, out.GetSubstanceManager());
       if (!out.m_Conditions->ProcessCondition(*conditon, out)) {
@@ -126,7 +126,7 @@ namespace io {
       }
     }
     // Actions //
-    out.m_Actions->Clear();
+    out.m_Actions->Invalidate();
     for (const CDM::ActionData& aData : in.ActiveAction()) {
       auto action = io::Actions::factory(&aData, out.GetSubstanceManager());
       if (!out.m_Actions->ProcessAction(*action, out)) {

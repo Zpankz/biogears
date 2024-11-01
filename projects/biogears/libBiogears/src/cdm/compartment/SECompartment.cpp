@@ -29,10 +29,10 @@ SECompartment::SECompartment(const std::string& name, Logger* logger)
 //-----------------------------------------------------------------------------
 SECompartment::~SECompartment()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SECompartment::Clear()
+void SECompartment::Invalidate()
 {
 }
 //-----------------------------------------------------------------------------

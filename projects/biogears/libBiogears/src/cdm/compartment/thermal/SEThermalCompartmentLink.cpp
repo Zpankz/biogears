@@ -36,7 +36,7 @@ SEThermalCompartmentLink::~SEThermalCompartmentLink()
 }
 
 //-------------------------------------------------------------------------------
-void SEThermalCompartmentLink::Clear()
+void SEThermalCompartmentLink::Invalidate()
 {
   m_Path = nullptr;
   SAFE_DELETE(m_HeatTransferRate);

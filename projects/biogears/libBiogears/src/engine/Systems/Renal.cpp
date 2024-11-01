@@ -57,17 +57,17 @@ Renal::Renal(BioGears& bg)
   : SERenalSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Renal::~Renal()
 {
-  Clear();
+  Invalidate();
 }
 
-void Renal::Clear()
+void Renal::Invalidate()
 {
-  SERenalSystem::Clear();
+  SERenalSystem::Invalidate();
 
   m_Patient = nullptr;
   m_RenalCircuit = nullptr;

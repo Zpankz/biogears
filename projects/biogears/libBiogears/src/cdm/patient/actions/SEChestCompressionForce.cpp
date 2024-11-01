@@ -24,12 +24,12 @@ SEChestCompressionForce::SEChestCompressionForce()
 //-------------------------------------------------------------------------------
 SEChestCompressionForce::~SEChestCompressionForce()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChestCompressionForce::Clear()
+void SEChestCompressionForce::Invalidate()
 {
-  SEChestCompression::Clear();
+  SEChestCompression::Invalidate();
   SAFE_DELETE(m_Force);
 }
 //-------------------------------------------------------------------------------

@@ -31,11 +31,11 @@ SECombinedCircuit<COMBINED_CIRCUIT_TYPES>::SECombinedCircuit(const std::string& 
 template <COMBINED_CIRCUIT_TEMPLATE>
 SECombinedCircuit<COMBINED_CIRCUIT_TYPES>::~SECombinedCircuit()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 template <COMBINED_CIRCUIT_TEMPLATE>
-void SECombinedCircuit<COMBINED_CIRCUIT_TYPES>::Clear()
+void SECombinedCircuit<COMBINED_CIRCUIT_TYPES>::Invalidate()
 {
   m_Nodes.clear();
   m_Paths.clear();
@@ -44,7 +44,7 @@ void SECombinedCircuit<COMBINED_CIRCUIT_TYPES>::Clear()
   m_RemovedNodes.clear();
   m_RemovedPaths.clear();
   m_Circuits.clear();
-  CircuitType::Clear();
+  CircuitType::Invalidate();
 }
 //-----------------------------------------------------------------------------
 template <COMBINED_CIRCUIT_TEMPLATE>

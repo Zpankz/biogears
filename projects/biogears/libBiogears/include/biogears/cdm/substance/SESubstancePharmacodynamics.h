@@ -50,7 +50,7 @@ public:
 
   virtual ~SESubstancePharmacodynamics();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   virtual const SEScalar* GetScalar(const char* name);
@@ -169,7 +169,7 @@ public:
   SEPharmacodynamicModifier& operator=(SEPharmacodynamicModifier const& rhs);
   SEPharmacodynamicModifier& operator=(SEPharmacodynamicModifier&& rhs);
 
-  void Clear();
+  void Invalidate();
   bool IsValid() const;
   const SEScalar* GetScalar(const char* name);
   const SEScalar* GetScalar(const std::string& name);

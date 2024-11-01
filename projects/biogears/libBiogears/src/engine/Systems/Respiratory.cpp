@@ -74,18 +74,18 @@ Respiratory::Respiratory(BioGears& bg)
   , m_GasTransporter(VolumePerTimeUnit::L_Per_s, VolumeUnit::L, VolumeUnit::L, NoUnit::unitless, GetLogger())
   , m_AerosolTransporter(VolumePerTimeUnit::mL_Per_s, VolumeUnit::mL, MassUnit::ug, MassPerVolumeUnit::ug_Per_mL, GetLogger())
 {
-  Clear();
+  Invalidate();
   m_TuningFile = "";
 }
 
 Respiratory::~Respiratory()
 {
-  Clear();
+  Invalidate();
 }
 
-void Respiratory::Clear()
+void Respiratory::Invalidate()
 {
-  SERespiratorySystem::Clear();
+  SERespiratorySystem::Invalidate();
   m_Patient = nullptr;
   m_PatientActions = nullptr;
 

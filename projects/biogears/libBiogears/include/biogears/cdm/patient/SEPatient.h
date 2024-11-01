@@ -46,7 +46,7 @@ public:
   SEPatient(Logger* logger);
   virtual ~SEPatient();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   bool Load(const char* patientFile);
   bool Load(const std::string& patientFile);

@@ -42,7 +42,7 @@ SEFluidCompartmentLink<FLUID_COMPARTMENT_LINK_TYPES>::~SEFluidCompartmentLink()
 
 //-------------------------------------------------------------------------------
 template <FLUID_COMPARTMENT_LINK_TEMPLATE>
-void SEFluidCompartmentLink<FLUID_COMPARTMENT_LINK_TYPES>::Clear()
+void SEFluidCompartmentLink<FLUID_COMPARTMENT_LINK_TYPES>::Invalidate()
 {
   m_Path = nullptr;
   SAFE_DELETE(m_Flow);

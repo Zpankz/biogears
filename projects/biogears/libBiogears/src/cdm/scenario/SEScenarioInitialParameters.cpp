@@ -31,16 +31,16 @@ SEScenarioInitialParameters::SEScenarioInitialParameters(SESubstanceManager& sub
 {
   m_Configuration = nullptr;
   m_Patient = nullptr;
-  Clear();
+  Invalidate();
 }
 
 //-----------------------------------------------------------------------------
 SEScenarioInitialParameters::~SEScenarioInitialParameters()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEScenarioInitialParameters::Clear()
+void SEScenarioInitialParameters::Invalidate()
 {
   m_PatientFile = "";
   m_DoTrackStabilization = false;

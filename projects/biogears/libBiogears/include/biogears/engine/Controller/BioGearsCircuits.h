@@ -30,7 +30,7 @@ public:
   static auto make_unique(BioGears& bg) -> std::unique_ptr<BioGearsCircuits>;
   BioGearsCircuits(BioGears& data);
   virtual ~BioGearsCircuits();
-  void Clear();
+  void Invalidate();
 
   virtual void SetReadOnlyFluid(bool b);
 

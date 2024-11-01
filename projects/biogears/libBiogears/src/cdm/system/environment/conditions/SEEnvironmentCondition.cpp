@@ -22,6 +22,6 @@ namespace biogears {
   //-----------------------------------------------------------------------------
 	SEEnvironmentCondition::~SEEnvironmentCondition()
 	{
-		Clear();
+		Invalidate();
 	}
 }

@@ -67,18 +67,18 @@ Cardiovascular::Cardiovascular(BioGears& bg)
   , m_circuitCalculator(FlowComplianceUnit::mL_Per_mmHg, VolumePerTimeUnit::mL_Per_s, FlowInertanceUnit::mmHg_s2_Per_mL, PressureUnit::mmHg, VolumeUnit::mL, FlowResistanceUnit::mmHg_s_Per_mL, bg.GetLogger())
   , m_transporter(VolumePerTimeUnit::mL_Per_s, VolumeUnit::mL, MassUnit::ug, MassPerVolumeUnit::ug_Per_mL, bg.GetLogger())
 {
-  Clear();
+  Invalidate();
   m_TuningFile = "";
 }
 
 Cardiovascular::~Cardiovascular()
 {
-  Clear();
+  Invalidate();
 }
 
-void Cardiovascular::Clear()
+void Cardiovascular::Invalidate()
 {
-  SECardiovascularSystem::Clear();
+  SECardiovascularSystem::Invalidate();
   m_patient = nullptr;
 
   m_CirculatoryCircuit = nullptr;

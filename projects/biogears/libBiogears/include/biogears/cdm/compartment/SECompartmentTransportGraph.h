@@ -29,7 +29,7 @@ public:
   SECompartmentTransportGraph(const std::string& name, Logger* logger);
   virtual ~SECompartmentTransportGraph();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
 public:
   virtual std::string GetName() const override;

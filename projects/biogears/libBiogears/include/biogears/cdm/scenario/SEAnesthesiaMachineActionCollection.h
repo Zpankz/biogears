@@ -41,7 +41,7 @@ public:
   SEAnesthesiaMachineActionCollection(SESubstanceManager&);
   ~SEAnesthesiaMachineActionCollection();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessAction(const SEAnesthesiaMachineAction& action, const PhysiologyEngine& engine);
 

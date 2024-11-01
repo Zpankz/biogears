@@ -26,12 +26,12 @@ SESodaLimeFailure::SESodaLimeFailure()
 //-------------------------------------------------------------------------------
 SESodaLimeFailure::~SESodaLimeFailure()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESodaLimeFailure::Clear()
+void SESodaLimeFailure::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

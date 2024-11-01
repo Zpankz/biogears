@@ -24,12 +24,12 @@ SESubstanceNasalDose::SESubstanceNasalDose(const SESubstance& substance)
 //-------------------------------------------------------------------------------
 SESubstanceNasalDose::~SESubstanceNasalDose()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceNasalDose::Clear()
+void SESubstanceNasalDose::Invalidate()
 {
-  SESubstanceAdministration::Clear();
+  SESubstanceAdministration::Invalidate();
   SAFE_DELETE(m_Dose);
 }
 //-------------------------------------------------------------------------------
@@ -95,10 +95,10 @@ SENasalState::SENasalState(const SESubstance& sub)
 //-------------------------------------------------------------------------------
 SENasalState::~SENasalState()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SENasalState::Clear()
+void SENasalState::Invalidate()
 {
   SAFE_DELETE(m_TotalNasalDose);
   // SAFE_DELETE(m_VenaCavaConcentration);

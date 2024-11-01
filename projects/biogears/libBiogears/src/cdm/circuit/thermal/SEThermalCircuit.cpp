@@ -40,7 +40,7 @@ SEThermalCircuit::SEThermalCircuit(const std::string& name, SECircuitManager& mg
 //-------------------------------------------------------------------------------
 SEThermalCircuit::~SEThermalCircuit()
 {
-  Clear();
+  Invalidate();
 }
 
 //-------------------------------------------------------------------------------

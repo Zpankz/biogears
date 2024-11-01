@@ -34,7 +34,7 @@ public:
   const char* classname() const override { return TypeTag(); }
 
   virtual void Reset() override;
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
 public:
   virtual bool HaspH();

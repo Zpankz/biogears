@@ -32,12 +32,12 @@ SESequentialOrganFailureAssessment::SESequentialOrganFailureAssessment()
 //-------------------------------------------------------------------------------
 SESequentialOrganFailureAssessment::~SESequentialOrganFailureAssessment()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESequentialOrganFailureAssessment::Clear()
+void SESequentialOrganFailureAssessment::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_RespirationSOFA);
   SAFE_DELETE(m_CoagulationSOFA);
   SAFE_DELETE(m_LiverSOFA);

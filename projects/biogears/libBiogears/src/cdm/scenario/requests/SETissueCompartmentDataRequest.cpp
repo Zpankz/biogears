@@ -24,12 +24,12 @@ SETissueCompartmentDataRequest::SETissueCompartmentDataRequest(const SEDecimalFo
 //-------------------------------------------------------------------------------
 SETissueCompartmentDataRequest::~SETissueCompartmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETissueCompartmentDataRequest::Clear()
+void SETissueCompartmentDataRequest::Invalidate()
 {
-  SECompartmentDataRequest::Clear();
+  SECompartmentDataRequest::Invalidate();
 }
 //-------------------------------------------------------------------------------
 size_t SETissueCompartmentDataRequest::HashCode()

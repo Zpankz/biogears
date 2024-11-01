@@ -26,7 +26,7 @@ public:
   SEEnvironmentDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SEEnvironmentDataRequest();
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
   size_t HashCode() const override;
   
 public:

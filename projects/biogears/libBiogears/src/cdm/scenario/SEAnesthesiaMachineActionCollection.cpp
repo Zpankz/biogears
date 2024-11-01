@@ -48,10 +48,10 @@ SEAnesthesiaMachineActionCollection::SEAnesthesiaMachineActionCollection(SESubst
 //-------------------------------------------------------------------------------
 SEAnesthesiaMachineActionCollection::~SEAnesthesiaMachineActionCollection()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEAnesthesiaMachineActionCollection::Clear()
+void SEAnesthesiaMachineActionCollection::Invalidate()
 {
   // State
   RemoveConfiguration();

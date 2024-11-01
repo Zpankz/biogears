@@ -33,7 +33,7 @@ public:
   SECircuit(const std::string& name, Logger* logger);
   virtual ~SECircuit();
 
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 public:
   virtual std::string GetName() const;

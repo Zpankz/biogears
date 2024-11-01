@@ -32,7 +32,7 @@ public:
   BIOGEARS_API PhysiologyEngineStabilization(Logger* logger);
   BIOGEARS_API virtual ~PhysiologyEngineStabilization();
 
-  BIOGEARS_API virtual void Clear();
+  BIOGEARS_API virtual void Invalidate();
 
   BIOGEARS_API bool operator==(PhysiologyEngineStabilization const&) const;
   BIOGEARS_API bool operator!=(PhysiologyEngineStabilization const&) const;

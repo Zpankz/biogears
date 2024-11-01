@@ -32,12 +32,12 @@ SESubstanceBolus::SESubstanceBolus(const SESubstance& substance)
 //-------------------------------------------------------------------------------
 SESubstanceBolus::~SESubstanceBolus()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceBolus::Clear()
+void SESubstanceBolus::Invalidate()
 {
-  SESubstanceAdministration::Clear();
+  SESubstanceAdministration::Invalidate();
   m_AdminRoute = (SEBolusAdministration)-1;
   SAFE_DELETE(m_AdminTime);
   SAFE_DELETE(m_Dose);

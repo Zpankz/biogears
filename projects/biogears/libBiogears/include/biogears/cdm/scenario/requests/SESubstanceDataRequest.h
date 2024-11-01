@@ -30,7 +30,7 @@ public:
   SESubstanceDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SESubstanceDataRequest();
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
 
 public:
   size_t HashCode() const override;

@@ -25,10 +25,10 @@ SEImpairedAlveolarExchange::SEImpairedAlveolarExchange()
 //-----------------------------------------------------------------------------
 SEImpairedAlveolarExchange::~SEImpairedAlveolarExchange()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEImpairedAlveolarExchange::Clear()
+void SEImpairedAlveolarExchange::Invalidate()
 {
   SAFE_DELETE(m_ImpairedSurfaceArea);
   SAFE_DELETE(m_ImpairedFraction);

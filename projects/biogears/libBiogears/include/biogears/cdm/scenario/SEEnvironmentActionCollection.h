@@ -27,7 +27,7 @@ public:
   SEEnvironmentActionCollection(SESubstanceManager&);
   ~SEEnvironmentActionCollection();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessAction(const SEEnvironmentAction& action, const PhysiologyEngine& engine);
 

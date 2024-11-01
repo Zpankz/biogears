@@ -24,12 +24,12 @@ SEBronchoconstriction::SEBronchoconstriction()
 //-------------------------------------------------------------------------------
 SEBronchoconstriction::~SEBronchoconstriction()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEBronchoconstriction::Clear()
+void SEBronchoconstriction::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

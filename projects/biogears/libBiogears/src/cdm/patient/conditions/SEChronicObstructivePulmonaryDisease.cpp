@@ -24,12 +24,12 @@ SEChronicObstructivePulmonaryDisease::SEChronicObstructivePulmonaryDisease()
 //-----------------------------------------------------------------------------
 SEChronicObstructivePulmonaryDisease::~SEChronicObstructivePulmonaryDisease()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEChronicObstructivePulmonaryDisease::Clear()
+void SEChronicObstructivePulmonaryDisease::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_BronchitisSeverity);
   SAFE_DELETE(m_EmphysemaSeverity);
 }

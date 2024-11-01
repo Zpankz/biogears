@@ -48,10 +48,10 @@ SEEnvironmentalConditions::SEEnvironmentalConditions(SESubstanceManager& substan
 //-----------------------------------------------------------------------------
 SEEnvironmentalConditions::~SEEnvironmentalConditions()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEEnvironmentalConditions::Clear()
+void SEEnvironmentalConditions::Invalidate()
 {
   m_SurroundingType = SESurroundingType::Invalid;
   SAFE_DELETE(m_AirDensity);

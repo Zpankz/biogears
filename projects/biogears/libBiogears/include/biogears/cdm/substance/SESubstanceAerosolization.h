@@ -34,7 +34,7 @@ public:
   SESubstanceAerosolization(Logger* logger = nullptr);
   virtual ~SESubstanceAerosolization();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   virtual const SEScalar* GetScalar(const char* name);

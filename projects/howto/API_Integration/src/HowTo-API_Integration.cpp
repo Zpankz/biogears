@@ -102,7 +102,7 @@ bool action_env_change(std::unique_ptr<biogears::BioGearsEngine>& engine, biogea
   auto CO2 = engine->GetSubstanceManager().GetSubstance("CarbonDioxide")->GetDefinition();
 
   auto conditions = environment.GetConditions();
-  conditions.Clear(); // Reset he existing conditions
+  conditions.Invalidate(); // Reset he existing conditions
   conditions.SetSurroundingType(new_conditions.GetSurroundingType());
   conditions.GetAirVelocity().SetValue(new_conditions.GetAirVelocity().GetValue(biogears::LengthPerTimeUnit::m_Per_s), biogears::LengthPerTimeUnit::m_Per_s);
   conditions.GetAmbientTemperature().SetValue(new_conditions.GetAmbientTemperature().GetValue(biogears::TemperatureUnit::C), biogears::TemperatureUnit::C);

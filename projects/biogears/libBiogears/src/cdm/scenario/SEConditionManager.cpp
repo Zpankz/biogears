@@ -52,10 +52,10 @@ SEConditionManager::SEConditionManager(SESubstanceManager& substances)
 
 SEConditionManager::~SEConditionManager()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEConditionManager::Clear()
+void SEConditionManager::Invalidate()
 {
   m_Anemia = nullptr;
   m_COPD = nullptr;

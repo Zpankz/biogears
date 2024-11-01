@@ -98,7 +98,7 @@ SEPatient::SEPatient(Logger* logger)
 //-----------------------------------------------------------------------------
 SEPatient::~SEPatient()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SEPatient::Load(const char* patientFile)
@@ -137,7 +137,7 @@ bool SEPatient::Load(const std::string& patientFile)
   return true;
 }
 //-----------------------------------------------------------------------------
-void SEPatient::Clear()
+void SEPatient::Invalidate()
 {
   m_EventHandler = nullptr;
 

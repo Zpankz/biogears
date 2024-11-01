@@ -30,7 +30,7 @@ public:
   SEAppliedTemperature(const SEAppliedTemperature& other) = delete;
   virtual ~SEAppliedTemperature();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   bool operator==(SEAppliedTemperature const&) const;
   bool operator!=(SEAppliedTemperature const&) const;

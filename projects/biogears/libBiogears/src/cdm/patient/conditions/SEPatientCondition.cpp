@@ -20,12 +20,12 @@ SEPatientCondition::SEPatientCondition()
 //-------------------------------------------------------------------------------
 SEPatientCondition::~SEPatientCondition()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPatientCondition::Clear()
+void SEPatientCondition::Invalidate()
 {
-  SECondition::Clear();
+  SECondition::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEPatientCondition::IsValid() const

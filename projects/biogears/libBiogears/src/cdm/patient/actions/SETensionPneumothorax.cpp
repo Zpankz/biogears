@@ -30,9 +30,9 @@ SETensionPneumothorax::~SETensionPneumothorax()
   m_Severity = nullptr;
 }
 //-------------------------------------------------------------------------------
-void SETensionPneumothorax::Clear()
+void SETensionPneumothorax::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Type = SEPneumothoraxType::Invalid;
   m_Side = SESide::Invalid;
   if (m_Severity)

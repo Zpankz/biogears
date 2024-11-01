@@ -44,11 +44,11 @@ SESubstancePharmacokinetics::~SESubstancePharmacokinetics()
   }
 }
 //-----------------------------------------------------------------------------
-#pragma optimize("", off)
-void SESubstancePharmacokinetics::Clear()
+
+void SESubstancePharmacokinetics::Invalidate()
 {
   if (m_Physicochemicals) {
-    m_Physicochemicals->Clear();
+    m_Physicochemicals->Invalidate();
   }
 
   for (auto& [key, value] : m_TissueKinetics) {
@@ -57,7 +57,7 @@ void SESubstancePharmacokinetics::Clear()
   }
   m_TissueKinetics.clear();
 }
-#pragma optimize("", on)
+
 //-----------------------------------------------------------------------------
 bool SESubstancePharmacokinetics::IsValid() const
 {

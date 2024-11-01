@@ -26,12 +26,12 @@ SEFunctionVolumeVsTime::SEFunctionVolumeVsTime()
 
 SEFunctionVolumeVsTime::~SEFunctionVolumeVsTime()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEFunctionVolumeVsTime::Clear()
+void SEFunctionVolumeVsTime::Invalidate()
 {
-  SEFunction::Clear();
+  SEFunction::Invalidate();
   m_TimeUnit = nullptr;
   m_VolumeUnit = nullptr;
 }

@@ -37,7 +37,7 @@ public:
   SESubstanceConcentration(SESubstanceDefinition substance, double concentration, const MassPerVolumeUnit& unit);
   virtual ~SESubstanceConcentration();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   virtual bool HasConcentration() const;

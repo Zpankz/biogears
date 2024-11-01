@@ -26,12 +26,12 @@ SEVentilatorPressureLoss::SEVentilatorPressureLoss()
 //-------------------------------------------------------------------------------
 SEVentilatorPressureLoss::~SEVentilatorPressureLoss()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEVentilatorPressureLoss::Clear()
+void SEVentilatorPressureLoss::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

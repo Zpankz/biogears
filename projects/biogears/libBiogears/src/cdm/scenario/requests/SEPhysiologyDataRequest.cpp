@@ -22,12 +22,12 @@ SEPhysiologyDataRequest::SEPhysiologyDataRequest(const SEDecimalFormat* dfault)
 
 SEPhysiologyDataRequest::~SEPhysiologyDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEPhysiologyDataRequest::Clear()
+void SEPhysiologyDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
 }
 
 

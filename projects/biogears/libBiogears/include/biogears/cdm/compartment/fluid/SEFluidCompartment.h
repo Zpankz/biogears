@@ -58,7 +58,7 @@ protected:
 public:
   virtual ~SEFluidCompartment();
 
-  void Clear() override;
+  void Invalidate() override;
 
   virtual bool operator==(SEFluidCompartment const&) const = 0;
   virtual bool operator!=(SEFluidCompartment const&) const = 0;

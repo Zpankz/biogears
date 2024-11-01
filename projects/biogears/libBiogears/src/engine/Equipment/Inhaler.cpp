@@ -42,17 +42,17 @@ Inhaler::Inhaler(BioGears& bg)
   : SEInhaler(bg.GetSubstances())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 //--------------------------------------------------------------------------------------------------
 Inhaler::~Inhaler()
 {
-  Clear();
+  Invalidate();
 }
 //--------------------------------------------------------------------------------------------------
-void Inhaler::Clear()
+void Inhaler::Invalidate()
 {
-  SEInhaler::Clear();
+  SEInhaler::Invalidate();
   m_Mouthpiece = nullptr;
   m_AerosolMouthpiece = nullptr;
   m_AmbientEnv = nullptr;

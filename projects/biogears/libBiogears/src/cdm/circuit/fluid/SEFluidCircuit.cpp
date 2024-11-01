@@ -40,7 +40,7 @@ SEFluidCircuit::SEFluidCircuit(const std::string& name, SECircuitManager& mgr)
 //-----------------------------------------------------------------------------
 SEFluidCircuit::~SEFluidCircuit()
 {
-  Clear();
+  Invalidate();
 }
 
 //-----------------------------------------------------------------------------

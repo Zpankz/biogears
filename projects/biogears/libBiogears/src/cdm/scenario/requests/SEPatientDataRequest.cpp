@@ -21,12 +21,12 @@ SEPatientDataRequest::SEPatientDataRequest(const SEDecimalFormat* dfault)
 
 SEPatientDataRequest::~SEPatientDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEPatientDataRequest::Clear()
+void SEPatientDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
 }
 
 

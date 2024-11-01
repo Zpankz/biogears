@@ -25,7 +25,7 @@ SEGasCompartmentDataRequest::SEGasCompartmentDataRequest(const SEDecimalFormat* 
 //-------------------------------------------------------------------------------
 SEGasCompartmentDataRequest::~SEGasCompartmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 
 //-------------------------------------------------------------------------------

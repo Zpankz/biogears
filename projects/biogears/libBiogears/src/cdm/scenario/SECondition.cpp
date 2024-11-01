@@ -41,10 +41,10 @@ SECondition::SECondition()
 //-------------------------------------------------------------------------------
 SECondition::~SECondition()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECondition::Clear()
+void SECondition::Invalidate()
 {
   m_Comment = "";
 }

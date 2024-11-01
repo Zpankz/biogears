@@ -26,12 +26,12 @@ SEOxygenTankPressureLoss::SEOxygenTankPressureLoss()
 //-------------------------------------------------------------------------------
 SEOxygenTankPressureLoss::~SEOxygenTankPressureLoss()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEOxygenTankPressureLoss::Clear()
+void SEOxygenTankPressureLoss::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   m_State = SEOnOff::Invalid;
 }
 //-------------------------------------------------------------------------------

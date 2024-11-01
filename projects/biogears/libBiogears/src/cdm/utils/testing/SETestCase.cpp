@@ -33,10 +33,10 @@ SETestCase::SETestCase(const std::string& name, Logger* logger)
 //-----------------------------------------------------------------------------
 SETestCase::~SETestCase()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SETestCase::Clear()
+void SETestCase::Invalidate()
 {
   m_Failure.clear();
   DELETE_VECTOR(m_CaseEqualsErrors);

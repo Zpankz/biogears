@@ -25,12 +25,12 @@ SEStarvation::SEStarvation()
 //-----------------------------------------------------------------------------
 SEStarvation::~SEStarvation()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEStarvation::Clear()
+void SEStarvation::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_TimeSinceMeal);
 }
 //-----------------------------------------------------------------------------

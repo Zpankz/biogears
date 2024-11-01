@@ -87,7 +87,7 @@ public:
   {
   }
 
-  using SEEnvironment::Clear;
+  using SEEnvironment::Invalidate;
   using SEEnvironment::Load;
   using SEEnvironment::ProcessChange;
 

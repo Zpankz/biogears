@@ -37,7 +37,7 @@ protected:
 public:
   virtual ~SEThermalCompartmentLink();
 
-  virtual void Clear() override;
+  virtual void Invalidate() override;
 
 
   bool operator==(const SEThermalCompartmentLink& rhs) const;
@@ -61,7 +61,7 @@ public:
   virtual void RemovePath() { m_Path = nullptr; }
   virtual void MapPath(SEThermalCircuitPath& path)
   {
-    Clear();
+    Invalidate();
     m_Path = &path;
   }
 

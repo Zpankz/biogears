@@ -22,12 +22,12 @@ SEInhalerAction::SEInhalerAction()
 
 SEInhalerAction::~SEInhalerAction()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEInhalerAction::Clear()
+void SEInhalerAction::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
 }
 
 bool SEInhalerAction::IsValid() const

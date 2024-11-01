@@ -68,17 +68,17 @@ Drugs::Drugs(BioGears& bg)
   : SEDrugSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Drugs::~Drugs()
 {
-  Clear();
+  Invalidate();
 }
 
-void Drugs::Clear()
+void Drugs::Invalidate()
 {
-  SEDrugSystem::Clear();
+  SEDrugSystem::Invalidate();
   m_aortaVascular = nullptr;
   m_venaCavaVascular = nullptr;
   m_muscleIntracellular = nullptr;

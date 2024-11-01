@@ -42,7 +42,7 @@ public:
   SEConditionManager(SESubstanceManager&);
   ~SEConditionManager();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessCondition(const SECondition& condition, const PhysiologyEngine& engine);\
 

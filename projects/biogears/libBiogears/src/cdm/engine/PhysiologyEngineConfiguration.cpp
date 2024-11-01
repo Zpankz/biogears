@@ -42,10 +42,10 @@ PhysiologyEngineConfiguration::PhysiologyEngineConfiguration(Logger* logger)
 //-----------------------------------------------------------------------------
 PhysiologyEngineConfiguration::~PhysiologyEngineConfiguration()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void PhysiologyEngineConfiguration::Clear()
+void PhysiologyEngineConfiguration::Invalidate()
 {
   SAFE_DELETE(m_ECGInterpolator);
   RemoveStabilizationCriteria();

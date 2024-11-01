@@ -40,7 +40,7 @@ public:
   SESubstancePharmacokinetics(Logger* logger = nullptr);
   virtual ~SESubstancePharmacokinetics();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   virtual const SEScalar* GetScalar(const std::string& name);

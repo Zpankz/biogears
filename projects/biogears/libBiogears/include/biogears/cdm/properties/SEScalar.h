@@ -47,12 +47,11 @@ public:
 
   virtual ~SEScalar();
 
-  virtual void Clear();
+  virtual void Invalidate();
   /**
   Sets the value to NaN and removes the unit
   Note that this does not affect bounds
   */
-  virtual void Invalidate();
 
   /**
    * Copies ONLY the value and unit

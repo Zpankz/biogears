@@ -37,7 +37,7 @@ public:
   virtual ~SESubstanceCompound();
 
   static std::unique_ptr<SESubstanceCompound> make_unique(const std::string& name, Logger* logger);
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   virtual std::string GetName() const;

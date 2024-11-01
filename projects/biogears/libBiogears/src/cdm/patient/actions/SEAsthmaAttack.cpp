@@ -24,12 +24,12 @@ SEAsthmaAttack::SEAsthmaAttack()
 //-------------------------------------------------------------------------------
 SEAsthmaAttack::~SEAsthmaAttack()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEAsthmaAttack::Clear()
+void SEAsthmaAttack::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

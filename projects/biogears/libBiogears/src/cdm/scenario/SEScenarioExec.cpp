@@ -358,7 +358,7 @@ bool SEScenarioExec::ProcessActions(SEScenario& scenario)
       return false; // Patient is for all intents and purposes dead, or out at least out of its methodology bounds, quit running
   }
   m_ss << "It took " << profiler.GetElapsedTime_s("Total") << "s to run this simulation";
-  profiler.Clear();
+  profiler.Invalidate();
   Info(m_ss);
 
   return !err;

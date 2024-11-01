@@ -21,12 +21,12 @@ SESubstanceAdministration::SESubstanceAdministration()
 }
 SESubstanceAdministration::~SESubstanceAdministration()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceAdministration::Clear()
+void SESubstanceAdministration::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SESubstanceAdministration::IsValid() const

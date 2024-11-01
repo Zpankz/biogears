@@ -18,7 +18,7 @@ public:
   SEInhalerAction();
   virtual ~SEInhalerAction();
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   virtual bool IsValid() const;
 

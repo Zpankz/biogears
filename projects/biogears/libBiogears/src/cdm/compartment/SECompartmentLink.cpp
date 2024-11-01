@@ -29,10 +29,10 @@ SECompartmentLink::SECompartmentLink(const std::string& name, Logger* logger)
 //-------------------------------------------------------------------------------
 SECompartmentLink::~SECompartmentLink()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECompartmentLink::Clear()
+void SECompartmentLink::Invalidate()
 {
 }
 

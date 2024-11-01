@@ -26,13 +26,13 @@ SENasalCannula::SENasalCannula()
 //-------------------------------------------------------------------------------
 SENasalCannula::~SENasalCannula()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SENasalCannula::Clear()
+void SENasalCannula::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_FlowRate);
 }
 //-------------------------------------------------------------------------------

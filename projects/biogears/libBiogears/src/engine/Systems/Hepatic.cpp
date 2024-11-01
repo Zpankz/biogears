@@ -36,17 +36,17 @@ Hepatic::Hepatic(BioGears& bg)
   : SEHepaticSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 Hepatic::~Hepatic()
 {
-  Clear();
+  Invalidate();
 }
 
-void Hepatic::Clear()
+void Hepatic::Invalidate()
 {
-  SEHepaticSystem::Clear();
+  SEHepaticSystem::Invalidate();
   m_liverInsulin = nullptr;
   m_liverGlucagon = nullptr;
   m_liverVascularGlucose = nullptr;

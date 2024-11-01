@@ -71,10 +71,10 @@ SETissueSystem::SETissueSystem(Logger* logger)
 //-------------------------------------------------------------------------------
 SETissueSystem::~SETissueSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETissueSystem::Clear()
+void SETissueSystem::Invalidate()
 {
   SAFE_DELETE(m_CarbonDioxideProductionRate);
   SAFE_DELETE(m_DehydrationFraction);

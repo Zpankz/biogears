@@ -27,17 +27,17 @@ BioGearsCircuits::BioGearsCircuits(BioGears& bg)
   : SECircuitManager(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
 }
 
 BioGearsCircuits::~BioGearsCircuits()
 {
-  Clear();
+  Invalidate();
 }
 
-void BioGearsCircuits::Clear()
+void BioGearsCircuits::Invalidate()
 {
-  SECircuitManager::Clear();
+  SECircuitManager::Invalidate();
   m_CombinedCardiovascularCircuit = nullptr;
   m_CardiovascularCircuit = nullptr;
   m_CerebralCircuit = nullptr;

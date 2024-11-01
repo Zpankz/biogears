@@ -32,7 +32,7 @@ public:
   SEElectroCardioGramInterpolationWaveform(Logger* logger);
   virtual ~SEElectroCardioGramInterpolationWaveform();
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   bool operator==(SEElectroCardioGramInterpolationWaveform const&) const;
   bool operator!=(SEElectroCardioGramInterpolationWaveform const&) const;

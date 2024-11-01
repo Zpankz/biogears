@@ -28,7 +28,7 @@ public:
   SEDiabetesType2();
   virtual ~SEDiabetesType2();
 
-  virtual void Clear() override ; //clear memory
+  virtual void Invalidate() override ; //clear memory
 
   virtual bool IsValid() const override ;
 

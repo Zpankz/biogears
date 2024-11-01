@@ -23,12 +23,12 @@ SEChestOcclusiveDressing::SEChestOcclusiveDressing()
 //-------------------------------------------------------------------------------
 SEChestOcclusiveDressing::~SEChestOcclusiveDressing()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChestOcclusiveDressing::Clear()
+void SEChestOcclusiveDressing::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_State = SEOnOff::Off;
   m_Side = SESide::Invalid;
 }

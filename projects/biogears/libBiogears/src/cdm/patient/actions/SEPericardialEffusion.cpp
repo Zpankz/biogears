@@ -24,12 +24,12 @@ SEPericardialEffusion::SEPericardialEffusion()
 //-------------------------------------------------------------------------------
 SEPericardialEffusion::~SEPericardialEffusion()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPericardialEffusion::Clear()
+void SEPericardialEffusion::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_EffusionRate);
 }
 //-------------------------------------------------------------------------------

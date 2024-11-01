@@ -30,14 +30,14 @@ SECircuitManager::SECircuitManager(Logger* logger)
 //-------------------------------------------------------------------------------
 SECircuitManager::~SECircuitManager()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECircuitManager::Clear()
+void SECircuitManager::Invalidate()
 {
-  m_ElectricalLedger.Clear();
-  m_FluidLedger.Clear();
-  m_ThermalLedger.Clear();
+  m_ElectricalLedger.Invalidate();
+  m_FluidLedger.Invalidate();
+  m_ThermalLedger.Invalidate();
 }
 
 //-------------------------------------------------------------------------------

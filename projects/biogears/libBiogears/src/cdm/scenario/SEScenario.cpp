@@ -34,15 +34,15 @@ SEScenario::SEScenario(SESubstanceManager& subMgr)
 {
   m_InitialParameters = nullptr;
   m_AutoSerialization = nullptr;
-  SEScenario::Clear();
+  SEScenario::Invalidate();
 }
 //-----------------------------------------------------------------------------
 SEScenario::~SEScenario()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEScenario::Clear()
+void SEScenario::Invalidate()
 {
   m_Name = "";
   m_Description = "";
@@ -50,7 +50,7 @@ void SEScenario::Clear()
   SAFE_DELETE(m_InitialParameters);
   SAFE_DELETE(m_AutoSerialization);
   DELETE_CONTAINER_OF_POINTERS(m_Actions);
-  m_DataRequestMgr.Clear();
+  m_DataRequestMgr.Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SEScenario::Load(char const* scenarioFile)

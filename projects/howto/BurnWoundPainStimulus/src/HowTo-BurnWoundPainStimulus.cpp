@@ -232,7 +232,7 @@ void BurnThread::AdvanceTime()
       if (m_ivBagVolume_mL < 0.0) {
         m_bg->GetLogger()->Info("Ringers Lactate IV bag is empty \n");
         m_ivBagVolume_mL = 0.0;
-        m_ringers->Clear();
+        m_ringers->Invalidate();
       }
     }
     m_bg->GetEngineTrack()->TrackData(m_bg->GetSimulationTime(TimeUnit::s));

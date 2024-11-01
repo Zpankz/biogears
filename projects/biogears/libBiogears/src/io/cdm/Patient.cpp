@@ -13,7 +13,7 @@ namespace io {
   // class SEPatient
   void Patient::UnMarshall(const CDM::PatientData& in, SEPatient& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     out.m_Name = in.Name();
     if (in.Annotation().present()) {

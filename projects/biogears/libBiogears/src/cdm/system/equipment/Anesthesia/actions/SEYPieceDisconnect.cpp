@@ -26,12 +26,12 @@ SEYPieceDisconnect::SEYPieceDisconnect()
 //-------------------------------------------------------------------------------
 SEYPieceDisconnect::~SEYPieceDisconnect()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEYPieceDisconnect::Clear()
+void SEYPieceDisconnect::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

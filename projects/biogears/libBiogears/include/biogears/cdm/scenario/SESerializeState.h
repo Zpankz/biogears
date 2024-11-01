@@ -31,7 +31,7 @@ public:
   static constexpr const char* TypeTag() { return "SESerializeState"; };
   const char* classname() const override { return TypeTag(); }
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
 
   virtual bool IsValid() const override;
 

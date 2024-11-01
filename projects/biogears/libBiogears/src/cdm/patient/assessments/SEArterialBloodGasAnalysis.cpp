@@ -32,12 +32,12 @@ SEArterialBloodGasAnalysis::SEArterialBloodGasAnalysis()
 //-------------------------------------------------------------------------------
 SEArterialBloodGasAnalysis::~SEArterialBloodGasAnalysis()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEArterialBloodGasAnalysis::Clear()
+void SEArterialBloodGasAnalysis::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_pH);
   SAFE_DELETE(m_PartialPressureOxygen);
   SAFE_DELETE(m_PartialPressureCarbonDioxide);

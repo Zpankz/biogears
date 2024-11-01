@@ -24,13 +24,13 @@ SEPulmonaryShunt::SEPulmonaryShunt()
 //-------------------------------------------------------------------------------
 SEPulmonaryShunt::~SEPulmonaryShunt()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEPulmonaryShunt::Clear()
+void SEPulmonaryShunt::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_FlowRateScaling);
 }
 //-------------------------------------------------------------------------------

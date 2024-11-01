@@ -28,7 +28,7 @@ public:
   SEEquipmentDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SEEquipmentDataRequest();
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
   size_t HashCode() const override;
   
   bool operator==(SEEquipmentDataRequest const&) const;

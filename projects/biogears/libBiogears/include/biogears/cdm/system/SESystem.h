@@ -33,7 +33,7 @@ public:
   virtual const char* classname() const = 0;
   virtual size_t hash_code() const = 0;
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   /** @name GetScalar
    *   @brief - A reflextion type call that will return the Scalar associated

@@ -128,12 +128,12 @@ PhysiologyEngineTimedStabilization::PhysiologyEngineTimedStabilization(Logger* l
 //-------------------------------------------------------------------------------
 PhysiologyEngineTimedStabilization::~PhysiologyEngineTimedStabilization()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void PhysiologyEngineTimedStabilization::Clear()
+void PhysiologyEngineTimedStabilization::Invalidate()
 {
-  PhysiologyEngineStabilization::Clear();
+  PhysiologyEngineStabilization::Invalidate();
   m_RestingStabilizationTime.Invalidate();
   SAFE_DELETE(m_FeedbackStabilizationTime);
   DELETE_VECTOR(m_ConditionCriteria);
@@ -275,15 +275,15 @@ const std::vector<PhysiologyEngineTimedStabilizationCriteria*>& PhysiologyEngine
 PhysiologyEngineTimedStabilizationCriteria::PhysiologyEngineTimedStabilizationCriteria(Logger* logger)
   : Loggable(logger)
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 PhysiologyEngineTimedStabilizationCriteria::~PhysiologyEngineTimedStabilizationCriteria()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void PhysiologyEngineTimedStabilizationCriteria::Clear()
+void PhysiologyEngineTimedStabilizationCriteria::Invalidate()
 {
   InvalidateName();
   m_Time.Invalidate();

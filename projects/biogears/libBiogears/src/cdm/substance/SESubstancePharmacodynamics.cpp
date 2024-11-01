@@ -256,61 +256,61 @@ SESubstancePharmacodynamics::~SESubstancePharmacodynamics()
   SAFE_DELETE(m_EffectSiteRateConstant);
 }
 //-----------------------------------------------------------------------------
-void SESubstancePharmacodynamics::Clear()
+void SESubstancePharmacodynamics::Invalidate()
 {
   if (m_AntibacterialEffect) {
-    m_AntibacterialEffect->Clear();
+    m_AntibacterialEffect->Invalidate();
   }
   if (m_Bronchodilation) {
-    m_Bronchodilation->Clear();
+    m_Bronchodilation->Invalidate();
   }
   if (m_DiastolicPressureModifier) {
-    m_DiastolicPressureModifier->Clear();
+    m_DiastolicPressureModifier->Invalidate();
   }
   if (m_EMaxShapeParameter) {
-    m_EMaxShapeParameter->Clear();
+    m_EMaxShapeParameter->Invalidate();
   }
   if (m_FeverModifier) {
-    m_FeverModifier->Clear();
+    m_FeverModifier->Invalidate();
   }
   if (m_HeartRateModifier) {
-    m_HeartRateModifier->Clear();
+    m_HeartRateModifier->Invalidate();
   }
   if (m_HemorrhageModifier) {
-    m_HemorrhageModifier->Clear();
+    m_HemorrhageModifier->Invalidate();
   }
   if (m_NeuromuscularBlock) {
-    m_NeuromuscularBlock->Clear();
+    m_NeuromuscularBlock->Invalidate();
   }
   if (m_PainModifier) {
-    m_PainModifier->Clear();
+    m_PainModifier->Invalidate();
   }
   if (m_PupilReactivityModifier) {
-    m_PupilReactivityModifier->Clear();
+    m_PupilReactivityModifier->Invalidate();
   }
   if (m_PupilSizeModifier) {
-    m_PupilSizeModifier->Clear();
+    m_PupilSizeModifier->Invalidate();
   }
   if (m_RespirationRateModifier) {
-    m_RespirationRateModifier->Clear();
+    m_RespirationRateModifier->Invalidate();
   }
   if (m_Sedation) {
-    m_Sedation->Clear();
+    m_Sedation->Invalidate();
   }
   if (m_SystolicPressureModifier) {
-    m_SystolicPressureModifier->Clear();
+    m_SystolicPressureModifier->Invalidate();
   }
   if (m_TidalVolumeModifier) {
-    m_TidalVolumeModifier->Clear();
+    m_TidalVolumeModifier->Invalidate();
   }
   if (m_TubularPermeabilityModifier) {
-    m_TubularPermeabilityModifier->Clear();
+    m_TubularPermeabilityModifier->Invalidate();
   }
   if (m_CentralNervousModifier) {
-    m_CentralNervousModifier->Clear();
+    m_CentralNervousModifier->Invalidate();
   }
   if (m_EffectSiteRateConstant) {
-    m_EffectSiteRateConstant->Clear();
+    m_EffectSiteRateConstant->Invalidate();
   }
 }
 //-----------------------------------------------------------------------------
@@ -811,16 +811,16 @@ SEPharmacodynamicModifier::~SEPharmacodynamicModifier()
   SAFE_DELETE(m_EC50);
 }
 //-----------------------------------------------------------------------------
-void SEPharmacodynamicModifier::Clear()
+void SEPharmacodynamicModifier::Invalidate()
 {
   if (m_EMax) {
-    m_EMax->Clear();
+    m_EMax->Invalidate();
   }
   if (m_EC50) {
-    m_EC50->Clear();
+    m_EC50->Invalidate();
   }
 }
-#pragma optimize("", off)
+
 //-----------------------------------------------------------------------------
 bool SEPharmacodynamicModifier::IsValid() const
 {
@@ -842,7 +842,7 @@ const SEScalar* SEPharmacodynamicModifier::GetScalar(const std::string& name)
   }
   return nullptr;
 }
-#pragma optimize("", off)
+
 //-----------------------------------------------------------------------------
 bool SEPharmacodynamicModifier::HasEMax() const
 {
@@ -864,7 +864,7 @@ double SEPharmacodynamicModifier::GetEMax() const
   }
   return m_EMax->GetValue();
 }
-#pragma optimize("", off)
+
 //-----------------------------------------------------------------------------
 bool SEPharmacodynamicModifier::HasEC50() const
 {

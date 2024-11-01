@@ -99,7 +99,7 @@ namespace io {
   void Conditions::UnMarshall(xsd::cxx::tree::optional<XSD> const& option_in, SE& out, std::default_random_engine* rd)
   {
     if (!option_in.present()) {
-      out.Clear();
+      out.Invalidate();
     } else {
       io::Conditions::UnMarshall(option_in.get(), out, rd);
     }

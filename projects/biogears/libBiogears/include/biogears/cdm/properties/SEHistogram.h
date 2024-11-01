@@ -26,12 +26,11 @@ public:
   SEHistogram();
   virtual ~SEHistogram();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 
 public:
   virtual bool IsValid() const;
-  virtual void Invalidate();
 
   virtual unsigned int NumberOfBins() const;
   virtual unsigned int NumberOfBoundaries() const;

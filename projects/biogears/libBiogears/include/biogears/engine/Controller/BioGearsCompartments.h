@@ -33,7 +33,7 @@ public:
   BioGearsCompartments(BioGears& data);
   virtual ~BioGearsCompartments();
 
-  void Clear();
+  void Invalidate();
 
   void StateChange();
   void UpdateAirwayGraph()

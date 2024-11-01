@@ -24,12 +24,12 @@ SECompartmentDataRequest::SECompartmentDataRequest(const SEDecimalFormat* dfault
 //-------------------------------------------------------------------------------
 SECompartmentDataRequest::~SECompartmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECompartmentDataRequest::Clear()
+void SECompartmentDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
   m_Compartment = "";
 }
 //-------------------------------------------------------------------------------

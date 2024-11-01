@@ -30,7 +30,7 @@ protected:
 public:
   virtual ~SECompartmentLink();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual bool operator==(const SECompartmentLink& rhs) const = 0;
   virtual bool operator!=(const SECompartmentLink& rhs) const = 0;

@@ -156,13 +156,13 @@ SERenalSystem::SERenalSystem(Logger* logger)
 
 SERenalSystem::~SERenalSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SERenalSystem::Clear()
+void SERenalSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_BladderPressure);
   SAFE_DELETE(m_GlomerularFiltrationRate);

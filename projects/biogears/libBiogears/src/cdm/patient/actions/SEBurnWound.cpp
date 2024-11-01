@@ -33,18 +33,18 @@ SEBurnWound::SEBurnWound()
 //-----------------------------------------------------------------------------
 SEBurnWound::~SEBurnWound()
 {
-  Clear();
+  Invalidate();
   SAFE_DELETE(m_TBSA);
 }
 //-----------------------------------------------------------------------------
-void SEBurnWound::Clear()
+void SEBurnWound::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Inflammation = false;
   m_compartmentsAffected.clear();
   m_DegreeOfBurn = SEBurnDegree::Invalid;
   m_burnInitiationTime = 0.;
-  m_TBSA->Clear();
+  m_TBSA->Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SEBurnWound::IsValid() const

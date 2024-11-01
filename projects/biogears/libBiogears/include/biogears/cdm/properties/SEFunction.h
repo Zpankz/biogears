@@ -29,11 +29,10 @@ public:
 
   virtual ~SEFunction();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 
   virtual bool IsValid() const;
-  virtual void Invalidate();
 
   virtual unsigned int Length();
 

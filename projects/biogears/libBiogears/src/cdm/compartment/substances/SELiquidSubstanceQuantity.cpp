@@ -73,7 +73,7 @@ SELiquidSubstanceQuantity::~SELiquidSubstanceQuantity()
   SAFE_DELETE(m_Saturation);
 }
 //-----------------------------------------------------------------------------
-void SELiquidSubstanceQuantity::Invalidate()
+void SELiquidSubstanceQuantity::MakeInvalid()
 {
   if (m_Concentration != nullptr)
     m_Concentration->Invalidate();
@@ -91,7 +91,7 @@ void SELiquidSubstanceQuantity::Invalidate()
     m_Saturation->Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SELiquidSubstanceQuantity::Clear()
+void SELiquidSubstanceQuantity::Invalidate()
 {
   SAFE_DELETE(m_Concentration);
   SAFE_DELETE(m_Mass);
@@ -149,7 +149,7 @@ void SELiquidSubstanceQuantity::Balance(BalanceLiquidBy by)
 {
   SEScalarVolume& volume = m_Compartment.GetVolume();
   if (!volume.IsValid()) {
-    Invalidate();
+    MakeInvalid();
     return;
   }
   if (!m_Children.empty()) {

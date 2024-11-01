@@ -21,10 +21,10 @@ SEPatientAssessment::SEPatientAssessment()
 
 SEPatientAssessment::~SEPatientAssessment()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEPatientAssessment::Clear()
+void SEPatientAssessment::Invalidate()
 {
 }
 

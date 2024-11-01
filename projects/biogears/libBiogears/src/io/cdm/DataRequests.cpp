@@ -22,7 +22,7 @@ namespace io {
   // class SEDataRequestManager
   void DataRequests::UnMarshall(const CDM::DataRequestManagerData& in, SESubstanceManager const& subMgr, SEDataRequestManager& out, std::default_random_engine* re)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.Filename().present())
       out.m_ResultsFile = in.Filename().get();
     if (in.WorkingDir().present())

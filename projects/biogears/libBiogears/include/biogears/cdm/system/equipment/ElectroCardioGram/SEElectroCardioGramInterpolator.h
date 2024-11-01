@@ -46,7 +46,7 @@ public:
   BIOGEARS_API SEElectroCardioGramInterpolator(Logger* logger);
   BIOGEARS_API virtual ~SEElectroCardioGramInterpolator();
 
-  BIOGEARS_API virtual void Clear(); // Deletes all members
+  BIOGEARS_API virtual void Invalidate(); // Deletes all members
 
   BIOGEARS_API virtual bool LoadWaveforms(const char* file, const SEScalarTime* timeStep = nullptr);
   BIOGEARS_API virtual bool LoadWaveforms(const std::string& file, const SEScalarTime* timeStep = nullptr);

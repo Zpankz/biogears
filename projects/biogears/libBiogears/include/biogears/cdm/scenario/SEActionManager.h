@@ -30,7 +30,7 @@ public:
   SEActionManager(SESubstanceManager&);
   ~SEActionManager();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessAction(const SEAction& action, const PhysiologyEngine& engine);
 

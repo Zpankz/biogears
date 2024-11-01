@@ -111,7 +111,7 @@ public:
   PhysiologyEngineTrack& operator=(PhysiologyEngineTrack&& rhs);
   virtual ~PhysiologyEngineTrack();
 
-  void Clear(); // Remove all requests and close the results file
+  void Invalidate(); // Remove all requests and close the results file
 
   DataTrack& GetDataTrack();
   DataTrack const& GetDataTrack() const;

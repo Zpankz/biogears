@@ -25,12 +25,12 @@ SEBreathHold::SEBreathHold()
 //-------------------------------------------------------------------------------
 SEBreathHold::~SEBreathHold()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEBreathHold::Clear()
+void SEBreathHold::Invalidate()
 {
-  SEConsciousRespirationCommand::Clear();
+  SEConsciousRespirationCommand::Invalidate();
   SAFE_DELETE(m_Period);
 }
 //-------------------------------------------------------------------------------

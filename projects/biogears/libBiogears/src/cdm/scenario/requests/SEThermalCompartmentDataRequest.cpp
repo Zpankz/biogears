@@ -24,7 +24,7 @@ SEThermalCompartmentDataRequest::SEThermalCompartmentDataRequest(const SEDecimal
 
 SEThermalCompartmentDataRequest::~SEThermalCompartmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 
 //-------------------------------------------------------------------------------

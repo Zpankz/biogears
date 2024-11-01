@@ -35,7 +35,7 @@ public:
   SESubstanceFraction(SESubstance const&, SEScalarFraction const& );
   virtual ~SESubstanceFraction();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual bool HasFractionAmount() const;
   virtual SEScalarFraction& GetFractionAmount();

@@ -104,7 +104,7 @@ namespace io {
   // class SEAction
   void Actions::UnMarshall(const CDM::ActionData& in, SEAction& out)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.Comment().present()) {
       out.m_Comment = in.Comment().get();
     }

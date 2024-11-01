@@ -26,12 +26,12 @@ SEMaskLeak::SEMaskLeak()
 //-------------------------------------------------------------------------------
 SEMaskLeak::~SEMaskLeak()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEMaskLeak::Clear()
+void SEMaskLeak::Invalidate()
 {
-  SEAnesthesiaMachineAction::Clear();
+  SEAnesthesiaMachineAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

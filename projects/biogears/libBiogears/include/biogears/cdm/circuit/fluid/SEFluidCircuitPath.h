@@ -41,7 +41,7 @@ protected:
 public:
   virtual ~SEFluidCircuitPath();
 
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 public:
   virtual SEFluidCircuitNode& GetSourceNode() const { return m_FluidSourceNode; }

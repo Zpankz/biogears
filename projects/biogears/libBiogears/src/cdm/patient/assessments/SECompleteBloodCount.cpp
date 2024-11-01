@@ -37,12 +37,12 @@ SECompleteBloodCount::SECompleteBloodCount()
 //-------------------------------------------------------------------------------
 SECompleteBloodCount::~SECompleteBloodCount()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SECompleteBloodCount::Clear()
+void SECompleteBloodCount::Invalidate()
 {
-  SEPatientAssessment::Clear();
+  SEPatientAssessment::Invalidate();
   SAFE_DELETE(m_Hematocrit);
   SAFE_DELETE(m_Hemoglobin);
   SAFE_DELETE(m_LymphocyteCellCount);

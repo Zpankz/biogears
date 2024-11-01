@@ -32,12 +32,12 @@ SEInhalerConfiguration::SEInhalerConfiguration(SESubstanceManager& substances)
 //-----------------------------------------------------------------------------
 SEInhalerConfiguration::~SEInhalerConfiguration()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEInhalerConfiguration::Clear()
+void SEInhalerConfiguration::Invalidate()
 {
-  SEInhalerAction::Clear();
+  SEInhalerAction::Invalidate();
   InvalidateConfigurationFile();
   SAFE_DELETE(m_Configuration);
 }

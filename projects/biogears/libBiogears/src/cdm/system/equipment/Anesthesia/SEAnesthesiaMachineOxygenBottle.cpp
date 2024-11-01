@@ -31,11 +31,11 @@ SEAnesthesiaMachineOxygenBottle::SEAnesthesiaMachineOxygenBottle(Logger* logger)
 
 SEAnesthesiaMachineOxygenBottle::~SEAnesthesiaMachineOxygenBottle()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEAnesthesiaMachineOxygenBottle::Clear()
+void SEAnesthesiaMachineOxygenBottle::Invalidate()
 {
   SAFE_DELETE(m_Volume);
 }

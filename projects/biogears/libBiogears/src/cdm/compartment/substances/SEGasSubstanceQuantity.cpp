@@ -38,10 +38,10 @@ SEGasSubstanceQuantity::SEGasSubstanceQuantity(SESubstance& sub, SEGasCompartmen
 //-------------------------------------------------------------------------------
 SEGasSubstanceQuantity::~SEGasSubstanceQuantity()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEGasSubstanceQuantity::Invalidate()
+void SEGasSubstanceQuantity::MakeInvalid()
 {
   if (m_PartialPressure != nullptr)
     m_PartialPressure->Invalidate();
@@ -51,7 +51,7 @@ void SEGasSubstanceQuantity::Invalidate()
     m_VolumeFraction->Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEGasSubstanceQuantity::Clear()
+void SEGasSubstanceQuantity::Invalidate()
 {
   SAFE_DELETE(m_PartialPressure);
   SAFE_DELETE(m_Volume);

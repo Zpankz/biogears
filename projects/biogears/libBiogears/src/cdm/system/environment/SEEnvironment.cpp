@@ -54,12 +54,12 @@ SEEnvironment::SEEnvironment(SESubstanceManager& substances)
 //-------------------------------------------------------------------------------
 SEEnvironment::~SEEnvironment()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEEnvironment::Clear()
+void SEEnvironment::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
   m_Name = "";
   SAFE_DELETE(m_Conditions);
   SAFE_DELETE(m_ConvectiveHeatLoss);

@@ -31,7 +31,7 @@ protected:
 public:
   virtual ~SEThermalCircuitNode();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
 public:
   virtual bool HasTemperature() const;

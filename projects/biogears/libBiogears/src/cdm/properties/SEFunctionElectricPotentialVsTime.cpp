@@ -28,12 +28,12 @@ SEFunctionElectricPotentialVsTime::SEFunctionElectricPotentialVsTime()
 
 SEFunctionElectricPotentialVsTime::~SEFunctionElectricPotentialVsTime()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEFunctionElectricPotentialVsTime::Clear()
+void SEFunctionElectricPotentialVsTime::Invalidate()
 {
-  SEFunction::Clear();
+  SEFunction::Invalidate();
   m_TimeUnit = nullptr;
   m_ElectricPotentialUnit = nullptr;
 }

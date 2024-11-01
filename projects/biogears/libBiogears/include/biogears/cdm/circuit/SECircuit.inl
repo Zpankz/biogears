@@ -35,11 +35,11 @@ SECircuit<CIRCUIT_TYPES>::SECircuit(const std::string& name, Logger* logger)
 template <CIRCUIT_TEMPLATE>
 SECircuit<CIRCUIT_TYPES>::~SECircuit()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 template <CIRCUIT_TEMPLATE>
-void SECircuit<CIRCUIT_TYPES>::Clear()
+void SECircuit<CIRCUIT_TYPES>::Invalidate()
 {
   m_ReferenceNodes.clear();
   for (auto& itr : m_TargetPathMap)

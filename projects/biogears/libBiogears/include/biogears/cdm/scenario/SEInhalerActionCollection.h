@@ -28,7 +28,7 @@ public:
   SEInhalerActionCollection(SESubstanceManager&);
   ~SEInhalerActionCollection();
 
-  void Clear();
+  void Invalidate();
 
   bool ProcessAction(const SEInhalerAction& action, const PhysiologyEngine& engine);
  

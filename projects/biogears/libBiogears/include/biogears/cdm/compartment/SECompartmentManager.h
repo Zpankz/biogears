@@ -67,7 +67,7 @@ public:
   SECompartmentManager(SESubstanceManager& subMgr);
   virtual ~SECompartmentManager();
 
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 public:
   virtual void StateChange(); // Identify leaves and other bookkeeping

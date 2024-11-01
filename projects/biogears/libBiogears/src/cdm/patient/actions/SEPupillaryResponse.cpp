@@ -24,10 +24,10 @@ SEPupillaryResponse::SEPupillaryResponse()
 //-----------------------------------------------------------------------------
 SEPupillaryResponse::~SEPupillaryResponse()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEPupillaryResponse::Clear()
+void SEPupillaryResponse::Invalidate()
 {
   SAFE_DELETE(m_ReactivityModifier);
   SAFE_DELETE(m_ShapeModifier);

@@ -25,12 +25,12 @@ SEEscharotomy::SEEscharotomy()
 //-------------------------------------------------------------------------------
 SEEscharotomy::~SEEscharotomy()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEEscharotomy::Clear()
+void SEEscharotomy::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_Location = "";
 }
 //-------------------------------------------------------------------------------

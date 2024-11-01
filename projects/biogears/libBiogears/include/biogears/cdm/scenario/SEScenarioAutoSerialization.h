@@ -26,7 +26,7 @@ public:
   SEScenarioAutoSerialization(Logger* logger);
   virtual ~SEScenarioAutoSerialization();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual bool IsValid() const;
 
   bool operator==(SEScenarioAutoSerialization const&) const;

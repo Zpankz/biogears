@@ -24,13 +24,13 @@ SEAirwayObstruction::SEAirwayObstruction()
 //-------------------------------------------------------------------------------
 SEAirwayObstruction::~SEAirwayObstruction()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEAirwayObstruction::Clear()
+void SEAirwayObstruction::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

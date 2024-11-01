@@ -37,12 +37,12 @@ SEInitialEnvironment::SEInitialEnvironment(SESubstanceManager& substances)
 //-----------------------------------------------------------------------------
 SEInitialEnvironment::~SEInitialEnvironment()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEInitialEnvironment::Clear()
+void SEInitialEnvironment::Invalidate()
 {
-  SEEnvironmentCondition::Clear();
+  SEEnvironmentCondition::Invalidate();
   InvalidateConditionsFile();
   SAFE_DELETE(m_Conditions);
 }

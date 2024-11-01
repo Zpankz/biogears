@@ -55,7 +55,7 @@ namespace io {
   // class SEElectroCardioGramInterpolationWaveform
   void ElectroCardioGram::UnMarshall(const CDM::ElectroCardioGramInterpolationWaveformData& in, SEElectroCardioGramInterpolationWaveform& out)
   {
-    out.Clear();
+    out.Invalidate();
     io::Physiology::UnMarshall(in.Rhythm(), out.m_Rhythm);
 
     out.m_LeadNumber = SEElectroCardioGramWaveformLeadNumber(in.Lead());
@@ -90,7 +90,7 @@ namespace io {
   // class SEElectroCardioGramInterpolator
   void ElectroCardioGram::UnMarshall(const CDM::ElectroCardioGramInterpolatorData& in, SEElectroCardioGramInterpolator& out)
   {
-    out.Clear();
+    out.Invalidate();
     for (auto w : in.Waveform()) {
       SEElectroCardioGramInterpolationWaveform* waveform = new SEElectroCardioGramInterpolationWaveform(out.GetLogger());
       UnMarshall(w, *waveform);

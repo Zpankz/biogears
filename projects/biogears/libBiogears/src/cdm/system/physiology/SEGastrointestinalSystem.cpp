@@ -42,12 +42,12 @@ SEGastrointestinalSystem::SEGastrointestinalSystem(Logger* logger)
 //-------------------------------------------------------------------------------
 SEGastrointestinalSystem::~SEGastrointestinalSystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEGastrointestinalSystem::Clear()
+void SEGastrointestinalSystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
   SAFE_DELETE(m_ChymeAbsorptionRate);
   SAFE_DELETE(m_StomachContents);
 }
@@ -169,10 +169,10 @@ SEDrugTransitState::SEDrugTransitState(const SESubstance& sub)
 //-------------------------------------------------------------------------------
 SEDrugTransitState::~SEDrugTransitState()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEDrugTransitState::Clear()
+void SEDrugTransitState::Invalidate()
 {
   m_LumenSolidMasses.clear();
   m_LumenDissolvedMasses.clear();

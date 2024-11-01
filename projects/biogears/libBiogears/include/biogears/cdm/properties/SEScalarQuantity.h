@@ -35,7 +35,6 @@ public:
 
   ~SEScalarQuantity() override;
 
-  void Clear() override;
   void Invalidate() override;
   bool IsValid() const override;
 

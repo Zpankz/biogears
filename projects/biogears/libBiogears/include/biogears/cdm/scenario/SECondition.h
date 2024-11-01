@@ -29,7 +29,7 @@ public:
   SECondition();
   virtual ~SECondition();
 
-  virtual void Clear(); // Deletes all members
+  virtual void Invalidate(); // Deletes all members
 
   virtual bool operator==(SECondition const&) const = 0;
   virtual bool operator!=(SECondition const&) const = 0;

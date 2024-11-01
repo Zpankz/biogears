@@ -31,12 +31,12 @@ SEThermalCircuitPath::SEThermalCircuitPath(SEThermalCircuitNode& src, SEThermalC
 //-------------------------------------------------------------------------------
 SEThermalCircuitPath::~SEThermalCircuitPath()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEThermalCircuitPath::Clear()
+void SEThermalCircuitPath::Invalidate()
 {
-  SECircuitPath::Clear();
+  SECircuitPath::Invalidate();
 }
 //-------------------------------------------------------------------------------
 

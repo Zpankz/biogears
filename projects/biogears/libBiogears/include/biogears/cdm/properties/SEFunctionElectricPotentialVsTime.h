@@ -25,7 +25,7 @@ public:
   SEFunctionElectricPotentialVsTime();
   virtual ~SEFunctionElectricPotentialVsTime();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
 public:
   double GetIndependentValue(unsigned int index) = delete;

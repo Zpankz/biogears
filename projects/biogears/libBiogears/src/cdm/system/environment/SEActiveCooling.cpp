@@ -28,10 +28,10 @@ SEActiveCooling::SEActiveCooling(Logger* logger)
 //-----------------------------------------------------------------------------
 SEActiveCooling::~SEActiveCooling()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEActiveCooling::Clear()
+void SEActiveCooling::Invalidate()
 {
   SAFE_DELETE(m_Power);
   SAFE_DELETE(m_SurfaceArea);
@@ -40,7 +40,7 @@ void SEActiveCooling::Clear()
 //-----------------------------------------------------------------------------
 void SEActiveCooling::Reset()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
 const SEScalar* SEActiveCooling::GetScalar(const char* name)

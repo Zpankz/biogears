@@ -29,12 +29,12 @@ SESubstanceInfusion::SESubstanceInfusion(const SESubstance& substance)
 //-------------------------------------------------------------------------------
 SESubstanceInfusion::~SESubstanceInfusion()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SESubstanceInfusion::Clear()
+void SESubstanceInfusion::Invalidate()
 {
-  SESubstanceAdministration::Clear();
+  SESubstanceAdministration::Invalidate();
   m_Rate = nullptr;
   m_Concentration = nullptr;
 }

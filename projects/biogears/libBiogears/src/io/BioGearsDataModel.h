@@ -47,7 +47,7 @@ namespace io {
   void BiogearsDataModel::UnMarshall(xsd::cxx::tree::optional<XSD> const& option_in, SE& out)
   {
     if (!option_in.present()) {
-      out.Clear();
+      out.Invalidate();
     } else {
       UnMarshall(option_in.get(), out);
     }

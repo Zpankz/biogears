@@ -27,7 +27,7 @@ public:
   virtual ~SETestSuite();
 
   virtual void Reset(); //reset values
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
 
   bool operator==(SETestSuite const&) const;
   bool operator!=(SETestSuite const&) const;

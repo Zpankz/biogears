@@ -27,7 +27,7 @@ public:
   PhysiologyEngineTimedStabilizationCriteria(Logger* logger);
   virtual ~PhysiologyEngineTimedStabilizationCriteria();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   bool operator==(PhysiologyEngineTimedStabilizationCriteria const&) const;
   bool operator!=(PhysiologyEngineTimedStabilizationCriteria const&) const;
@@ -55,7 +55,7 @@ public:
   BIOGEARS_API PhysiologyEngineTimedStabilization(Logger* logger);
   BIOGEARS_API virtual ~PhysiologyEngineTimedStabilization();
 
-  BIOGEARS_API virtual void Clear() override;
+  BIOGEARS_API virtual void Invalidate() override;
 
   BIOGEARS_API bool operator==(PhysiologyEngineTimedStabilization const&) const;
   BIOGEARS_API bool operator!=(PhysiologyEngineTimedStabilization const&) const;

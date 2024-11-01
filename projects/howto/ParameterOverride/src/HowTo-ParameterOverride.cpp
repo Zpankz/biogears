@@ -94,7 +94,7 @@ int HowToParameterOverride()
   // Turn off and add another, this time with conformance off. NOTE: unlike in a patient action, here the heart rate override must be cleared to not be listed in the logger
   override.SetOverrideState(SEOnOff::Off);
   override.SetOverrideConformance(SEOnOff::On);
-  override.GetHeartRateOverride().Clear();
+  override.GetHeartRateOverride().Invalidate();
   bg->ProcessAction(override);
   bg->GetLogger()->Info("Override Turning Off.");
 

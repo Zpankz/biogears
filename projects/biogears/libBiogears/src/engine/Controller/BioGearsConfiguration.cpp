@@ -142,12 +142,12 @@ BioGearsConfiguration::BioGearsConfiguration(SESubstanceManager& substances)
 
 BioGearsConfiguration::~BioGearsConfiguration()
 {
-  Clear();
+  Invalidate();
 }
 
-void BioGearsConfiguration::Clear()
+void BioGearsConfiguration::Invalidate()
 {
-  PhysiologyEngineConfiguration::Clear();
+  PhysiologyEngineConfiguration::Invalidate();
 
   // Blood Chemistry
   SAFE_DELETE(m_MeanCorpuscularHemoglobin);
@@ -243,7 +243,7 @@ void BioGearsConfiguration::Clear()
 
 void BioGearsConfiguration::Initialize()
 {
-  Clear();
+  Invalidate();
   m_WritePatientBaselineFile = SEOnOff::Off;
 
   // Reset to default values

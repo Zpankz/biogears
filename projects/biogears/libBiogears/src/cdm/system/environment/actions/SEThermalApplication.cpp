@@ -34,12 +34,12 @@ SEThermalApplication::SEThermalApplication(Logger* logger)
 //-------------------------------------------------------------------------------
 SEThermalApplication::~SEThermalApplication()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEThermalApplication::Clear()
+void SEThermalApplication::Invalidate()
 {
-  SEEnvironmentAction::Clear();
+  SEEnvironmentAction::Invalidate();
   SAFE_DELETE(m_ActiveHeating);
   SAFE_DELETE(m_ActiveCooling);
   SAFE_DELETE(m_AppliedTemperature);

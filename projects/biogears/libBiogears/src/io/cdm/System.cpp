@@ -7,7 +7,7 @@ namespace io {
   // class SESystem
   void System::UnMarshall(const CDM::SystemData& in, SESystem& out)
   {
-    out.Clear();
+    out.Invalidate();
   }
   //-----------------------------------------------------------------------------
   void System::Marshall(const SESystem& in, CDM::SystemData& out)

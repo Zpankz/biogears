@@ -34,7 +34,7 @@ public:
   const char* classname() const override { return TypeTag(); }
 
   virtual void Reset() override ; // reset values
-  virtual void Clear() override ; // clear memory
+  virtual void Invalidate() override ; // clear memory
 
 public:
   bool HasAttentionLapses();

@@ -54,7 +54,7 @@ SESubstanceManager::~SESubstanceManager()
   DELETE_CONTAINER_OF_POINTERS(m_Compounds);
 }
 //-----------------------------------------------------------------------------
-void SESubstanceManager::Clear()
+void SESubstanceManager::Invalidate()
 {
   m_ActiveSubstances.clear();
   m_ActiveCompounds.clear();
@@ -67,7 +67,7 @@ void SESubstanceManager::Clear()
   DELETE_CONTAINER_OF_POINTERS(m_Compounds);
 }
 //-----------------------------------------------------------------------------
-#pragma optimize("", off)
+
 void SESubstanceManager::Reset()
 {
   m_ActiveCompounds.clear();
@@ -75,7 +75,7 @@ void SESubstanceManager::Reset()
   m_ActiveGases.clear();
   m_ActiveLiquids.clear();
   for (auto& [key, definition]: m_OriginalSubstanceData) {
-    key->Clear();
+    key->Invalidate();
     key->m_def = definition;
   }
   for (auto& [key, definition]: m_OriginalCompoundData) {
@@ -83,7 +83,7 @@ void SESubstanceManager::Reset()
   }
 }
 //-----------------------------------------------------------------------------
-#pragma optimize("", on)
+
 /**
  * TRANSFERS OWNERSHIP TO THE MANAGER
  */
@@ -303,7 +303,7 @@ SESubstance* SESubstanceManager::ReadSubstanceFile(const std::string& xmlFile)
 bool SESubstanceManager::LoadSubstanceDirectory()
 {
   bool succeeded = true;
-  Clear();
+  Invalidate();
   std::stringstream ss;
 
   auto io = m_Logger->GetIoManager().lock();

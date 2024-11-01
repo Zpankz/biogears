@@ -252,7 +252,7 @@ bool PhysiologyEngineDynamicStabilization::Merge()
   // From there find the PropertyConvergence with the largest %diff
   // Add that pointer to the m_MergedConditions (will need new friend method as that method should not be public)
   Info("Merging Conditions");
-  m_MergedConditions.Clear();
+  m_MergedConditions.Invalidate();
   m_MergedConditions.SetName("MergedCondition"); // May want to include what conditions we are combining in the name?
   double time_s;
   double maxConv_s = 0;
@@ -352,16 +352,16 @@ PhysiologyEngineDynamicStabilization::PhysiologyEngineDynamicStabilization(Logge
 //-----------------------------------------------------------------------------
 PhysiologyEngineDynamicStabilization::~PhysiologyEngineDynamicStabilization()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void PhysiologyEngineDynamicStabilization::Clear()
+void PhysiologyEngineDynamicStabilization::Invalidate()
 {
-  PhysiologyEngineStabilization::Clear();
+  PhysiologyEngineStabilization::Invalidate();
   m_MergedConditions.m_PropertyConvergence.clear(); // \todo Make copies of stabilization criteria
-  m_MergedConditions.Clear();
+  m_MergedConditions.Invalidate();
   m_ActiveConditions.clear();
-  m_RestingCriteria.Clear();
+  m_RestingCriteria.Invalidate();
   SAFE_DELETE(m_FeedbackCriteria);
   DELETE_VECTOR(m_ConditionCriteria);
 }
@@ -485,10 +485,10 @@ PhysiologyEngineDynamicStabilizationCriteria::PhysiologyEngineDynamicStabilizati
 //-----------------------------------------------------------------------------
 PhysiologyEngineDynamicStabilizationCriteria::~PhysiologyEngineDynamicStabilizationCriteria()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void PhysiologyEngineDynamicStabilizationCriteria::Clear()
+void PhysiologyEngineDynamicStabilizationCriteria::Invalidate()
 {
   SAFE_DELETE(m_ConvergenceTime);
   SAFE_DELETE(m_MinimumReactionTime);

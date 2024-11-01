@@ -58,7 +58,7 @@ namespace io {
   // class SECondition;
   void Conditions::UnMarshall(const CDM::ConditionData& in, SECondition& out)
   {
-    out.Clear();
+    out.Invalidate();
     if (in.Comment().present()) {
       out.m_Comment = in.Comment().get();
     }

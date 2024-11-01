@@ -24,13 +24,13 @@ SEAcuteStress::SEAcuteStress()
 //-------------------------------------------------------------------------------
 SEAcuteStress::~SEAcuteStress()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEAcuteStress::Clear()
+void SEAcuteStress::Invalidate()
 {
 
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   SAFE_DELETE(m_Severity);
 }
 //-------------------------------------------------------------------------------

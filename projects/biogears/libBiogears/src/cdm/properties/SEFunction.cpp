@@ -26,10 +26,10 @@ SEFunction::SEFunction()
 
 SEFunction::~SEFunction()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEFunction::Clear()
+void SEFunction::Invalidate()
 {
   m_Dependent.clear();
   m_Independent.clear();
@@ -44,10 +44,6 @@ bool SEFunction::IsValid() const
   return true;
 }
 
-void SEFunction::Invalidate()
-{
-  Clear();
-}
 
 unsigned int SEFunction::Length()
 {

@@ -63,7 +63,7 @@ public:
   BioGearsSubstances(BioGears& data);
   virtual ~BioGearsSubstances();
 
-  void Clear() override;
+  void Invalidate() override;
 
   bool LoadSubstanceDirectory() override;
   void InitializeSubstances();

@@ -30,7 +30,7 @@ public:
   SETissueCompartmentDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SETissueCompartmentDataRequest();
 
-  virtual void Clear(); //clear memory
+  virtual void Invalidate(); //clear memory
   
   bool operator==(SETissueCompartmentDataRequest const&) const;
   bool operator!=(SETissueCompartmentDataRequest const&) const;

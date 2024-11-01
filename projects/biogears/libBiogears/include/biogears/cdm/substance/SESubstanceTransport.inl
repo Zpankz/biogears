@@ -178,7 +178,7 @@ void SESubstanceTransporter<GraphType, FluxUnit, QuantityUnit, ExtensiveUnit, In
       auto* q = v->GetTransportSubstances()[s];
       if (q->HasExtensive()) {
         if (!v->HasQuantity()) {
-          q->Invalidate();
+          q->MakeInvalid();
           continue;
         }
         double newIntensiveVlaue = xVector(i);

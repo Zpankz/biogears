@@ -84,13 +84,13 @@ SERespiratorySystem::SERespiratorySystem(Logger* logger)
 
 SERespiratorySystem::~SERespiratorySystem()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SERespiratorySystem::Clear()
+void SERespiratorySystem::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   SAFE_DELETE(m_AlveolarArterialGradient);
   SAFE_DELETE(m_CarricoIndex);

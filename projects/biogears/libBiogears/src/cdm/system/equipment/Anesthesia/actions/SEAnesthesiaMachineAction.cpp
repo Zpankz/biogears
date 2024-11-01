@@ -23,12 +23,12 @@ SEAnesthesiaMachineAction::SEAnesthesiaMachineAction()
 
 SEAnesthesiaMachineAction::~SEAnesthesiaMachineAction()
 {
-  Clear();
+  Invalidate();
 }
 
-void SEAnesthesiaMachineAction::Clear()
+void SEAnesthesiaMachineAction::Invalidate()
 {
-  SEAction::Clear();
+  SEAction::Invalidate();
 }
 
 bool SEAnesthesiaMachineAction::IsValid() const

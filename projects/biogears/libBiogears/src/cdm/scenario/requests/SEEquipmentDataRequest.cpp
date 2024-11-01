@@ -24,12 +24,12 @@ SEEquipmentDataRequest::SEEquipmentDataRequest(const SEDecimalFormat* dfault)
 //-----------------------------------------------------------------------------
 SEEquipmentDataRequest::~SEEquipmentDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEEquipmentDataRequest::Clear()
+void SEEquipmentDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
   m_Type = "";
 }
 

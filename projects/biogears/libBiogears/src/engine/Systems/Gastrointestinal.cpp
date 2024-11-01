@@ -53,7 +53,7 @@ Gastrointestinal::Gastrointestinal(BioGears& bg)
   : SEGastrointestinalSystem(bg.GetLogger())
   , m_data(bg)
 {
-  Clear();
+  Invalidate();
   /* Move to a unit test
   SENutrition one(m_Logger);
   SENutrition two(m_Logger);
@@ -69,12 +69,12 @@ Gastrointestinal::Gastrointestinal(BioGears& bg)
 
 Gastrointestinal::~Gastrointestinal()
 {
-  Clear();
+  Invalidate();
 }
 
-void Gastrointestinal::Clear()
+void Gastrointestinal::Invalidate()
 {
-  SEGastrointestinalSystem::Clear();
+  SEGastrointestinalSystem::Invalidate();
 }
 
 //--------------------------------------------------------------------------------------------------

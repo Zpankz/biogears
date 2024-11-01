@@ -39,14 +39,14 @@ SESubstanceAerosolization::SESubstanceAerosolization(Logger* logger)
 //-----------------------------------------------------------------------------
 SESubstanceAerosolization::~SESubstanceAerosolization()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SESubstanceAerosolization::Clear()
+void SESubstanceAerosolization::Invalidate()
 {
-  (m_BronchioleModifier.Clear());
-  (m_InflammationCoefficient.Clear());
-  (m_ParticulateSizeDistribution.Clear());
+  (m_BronchioleModifier.Invalidate());
+  (m_InflammationCoefficient.Invalidate());
+  (m_ParticulateSizeDistribution.Invalidate());
 }
 //-----------------------------------------------------------------------------
 bool SESubstanceAerosolization::IsValid() const

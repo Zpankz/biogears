@@ -27,12 +27,12 @@ SEThermalCircuitNode::SEThermalCircuitNode(const std::string& name, Logger* logg
 //-------------------------------------------------------------------------------
 SEThermalCircuitNode::~SEThermalCircuitNode()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEThermalCircuitNode::Clear()
+void SEThermalCircuitNode::Invalidate()
 {
-  SECircuitNode::Clear();
+  SECircuitNode::Invalidate();
 }
 //-------------------------------------------------------------------------------
 bool SEThermalCircuitNode::HasTemperature() const

@@ -27,12 +27,12 @@ SEFluidCircuitNode::SEFluidCircuitNode(const std::string& name, Logger* logger)
 //-----------------------------------------------------------------------------
 SEFluidCircuitNode::~SEFluidCircuitNode()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEFluidCircuitNode::Clear()
+void SEFluidCircuitNode::Invalidate()
 {
-  SECircuitNode::Clear();
+  SECircuitNode::Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SEFluidCircuitNode::HasPressure() const

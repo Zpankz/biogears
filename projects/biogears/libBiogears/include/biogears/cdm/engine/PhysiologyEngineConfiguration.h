@@ -32,7 +32,7 @@ public:
 
   virtual ~PhysiologyEngineConfiguration();
 
-  virtual void Clear();
+  virtual void Invalidate();
 
   virtual void Merge(const PhysiologyEngineConfiguration& from);
 

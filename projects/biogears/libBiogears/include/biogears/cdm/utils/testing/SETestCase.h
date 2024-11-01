@@ -30,7 +30,7 @@ public:
   virtual ~SETestCase();
 
   virtual void Reset(); // reset values
-  virtual void Clear(); // clear memory
+  virtual void Invalidate(); // clear memory
 
 
   void SetName(const std::string& name);

@@ -56,7 +56,7 @@ public:
   SEEnvironmentalConditions(SESubstanceManager& substances);
   virtual ~SEEnvironmentalConditions();
 
-  void Clear();
+  void Invalidate();
   bool IsValid() const;
 
   bool operator==(SEEnvironmentalConditions const& rhs) const;

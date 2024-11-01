@@ -27,12 +27,12 @@ SECompartmentSubstanceDataRequest::SECompartmentSubstanceDataRequest(const SEDec
 //-----------------------------------------------------------------------------
 SECompartmentSubstanceDataRequest::~SECompartmentSubstanceDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SECompartmentSubstanceDataRequest::Clear()
+void SECompartmentSubstanceDataRequest::Invalidate()
 {
-  SECompartmentDataRequest::Clear();
+  SECompartmentDataRequest::Invalidate();
   m_Substance = nullptr;
 }
 //-----------------------------------------------------------------------------

@@ -24,12 +24,12 @@ SEDiabetesType2::SEDiabetesType2()
 //-----------------------------------------------------------------------------
 SEDiabetesType2::~SEDiabetesType2()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEDiabetesType2::Clear()
+void SEDiabetesType2::Invalidate()
 {
-  SEPatientCondition::Clear();
+  SEPatientCondition::Invalidate();
   SAFE_DELETE(m_InsulinProductionSeverity);
   SAFE_DELETE(m_InsulinResistanceSeverity);
 }

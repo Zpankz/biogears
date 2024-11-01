@@ -411,7 +411,7 @@ namespace io {
   // class SEPatientAssessmentRequest
   void PatientActions::UnMarshall(const CDM::PatientAssessmentRequestData& in, SEPatientAssessmentRequest& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     PatientActions::UnMarshall(in.Type(), out.m_Type);
@@ -424,7 +424,7 @@ namespace io {
   // class SEAcuteRespiratoryDistressStress;
   void PatientActions::UnMarshall(const CDM::AcuteRespiratoryDistressData& in, SEAcuteRespiratoryDistress& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -439,7 +439,7 @@ namespace io {
   // class SEAcuteStress
   void PatientActions::UnMarshall(const CDM::AcuteStressData& in, SEAcuteStress& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -455,7 +455,7 @@ namespace io {
 
   void PatientActions::UnMarshall(const CDM::ExampleActionData& in, SEExampleAction& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -471,7 +471,7 @@ namespace io {
   // class SEAirwayObstruction
   void PatientActions::UnMarshall(const CDM::AirwayObstructionData& in, SEAirwayObstruction& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -486,7 +486,7 @@ namespace io {
   // class SEApnea
   void PatientActions::UnMarshall(const CDM::ApneaData& in, SEApnea& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -501,7 +501,7 @@ namespace io {
   // class SEAsthmaAttack
   void PatientActions::UnMarshall(const CDM::AsthmaAttackData& in, SEAsthmaAttack& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -516,7 +516,7 @@ namespace io {
   // class SEBrainInjury
   void PatientActions::UnMarshall(const CDM::BrainInjuryData& in, SEBrainInjury& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -533,7 +533,7 @@ namespace io {
   // class SEBronchoconstriction
   void PatientActions::UnMarshall(const CDM::BronchoconstrictionData& in, SEBronchoconstriction& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -549,7 +549,7 @@ namespace io {
   void PatientActions::UnMarshall(const CDM::BurnWoundData& in, SEBurnWound& out, std::default_random_engine* rd)
   {
     // TODO: UPDATE TO SUPPORT NEW MEMBERS
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -577,7 +577,7 @@ namespace io {
   // class SECardiacArrest
   void PatientActions::UnMarshall(const CDM::CardiacArrestData& in, SECardiacArrest& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     Property::UnMarshall(in.State(), out.m_State);
@@ -592,7 +592,7 @@ namespace io {
   // class SEChestCompression
   void PatientActions::UnMarshall(const CDM::ChestCompressionData& in, SEChestCompression& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
   }
@@ -604,7 +604,7 @@ namespace io {
   // class SEChestCompressionForce
   void PatientActions::UnMarshall(const CDM::ChestCompressionForceData& in, SEChestCompressionForce& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -619,7 +619,7 @@ namespace io {
   // class SEChestCompressionForceScale
   void PatientActions::UnMarshall(const CDM::ChestCompressionForceScaleData& in, SEChestCompressionForceScale& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -638,7 +638,7 @@ namespace io {
   // class SEChestOcclusiveDressing
   void PatientActions::UnMarshall(const CDM::ChestOcclusiveDressingData& in, SEChestOcclusiveDressing& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -659,7 +659,7 @@ namespace io {
   // class SEConsciousRespirationCommand
   void PatientActions::UnMarshall(const CDM::ConsciousRespirationCommandData& in, SEConsciousRespirationCommand& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     if (in.Comment().present()) {
       out.m_Comment = in.Comment().get();
@@ -673,7 +673,7 @@ namespace io {
   // class SEEbola
   void PatientActions::UnMarshall(const CDM::EbolaData& in, SEEbola& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     PatientActions::UnMarshall(in.Severity(), out.m_Severity);
@@ -687,7 +687,7 @@ namespace io {
   // class SEEscharotomy
   void PatientActions::UnMarshall(const CDM::EscharotomyData& in, SEEscharotomy& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     out.m_Location = in.Location();
@@ -701,7 +701,7 @@ namespace io {
   // class SEForcedInhale
   void PatientActions::UnMarshall(const CDM::ForcedInhaleData& in, SEForcedInhale& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::ConsciousRespirationCommandData&>(in), static_cast<SEConsciousRespirationCommand&>(out));
     io::Property::UnMarshall(in.InspiratoryCapacityFraction(), out.GetInspiratoryCapacityFraction(), rd);
@@ -717,7 +717,7 @@ namespace io {
   // class SEForcedExhale
   void PatientActions::UnMarshall(const CDM::ForcedExhaleData& in, SEForcedExhale& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::ConsciousRespirationCommandData&>(in), static_cast<SEConsciousRespirationCommand&>(out));
     io::Property::UnMarshall(in.ExpiratoryReserveVolumeFraction(), out.GetExpiratoryReserveVolumeFraction(), rd);
@@ -733,7 +733,7 @@ namespace io {
   // class SEBreathHold
   void PatientActions::UnMarshall(const CDM::BreathHoldData& in, SEBreathHold& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::ConsciousRespirationCommandData&>(in), static_cast<SEConsciousRespirationCommand&>(out));
     io::Property::UnMarshall(in.Period(), out.GetPeriod(), rd);
@@ -747,7 +747,7 @@ namespace io {
   // class SEUseInhaler
   void PatientActions::UnMarshall(const CDM::UseInhalerData& in, SEUseInhaler& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<const CDM::ConsciousRespirationCommandData&>(in), static_cast<SEConsciousRespirationCommand&>(out));
   }
   void PatientActions::Marshall(const SEUseInhaler& in, CDM::UseInhalerData& out)
@@ -758,7 +758,7 @@ namespace io {
   // class SEConsciousRespiration
   void PatientActions::UnMarshall(const CDM::ConsciousRespirationData& in, SEConsciousRespiration& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     // Set this before our super class tells us to Clear if the action wants us to keep our current data
@@ -808,7 +808,7 @@ namespace io {
   // class SEConsumeNutrients
   void PatientActions::UnMarshall(const CDM::ConsumeNutrientsData& in, SEConsumeNutrients& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     if (in.Nutrition().present()) {
       io::PatientNutrition::UnMarshall(in.Nutrition(), out.GetNutrition());
@@ -856,7 +856,7 @@ namespace io {
   }
   void PatientActions::UnMarshall(const CDM::ExerciseData& in, SEExercise& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -945,7 +945,7 @@ namespace io {
   // class SEHemorrhage
   void PatientActions::UnMarshall(const CDM::HemorrhageData& in, SEHemorrhage& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -965,7 +965,7 @@ namespace io {
   // class SEInfection
   void PatientActions::UnMarshall(const CDM::InfectionData& in, SEInfection& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -985,7 +985,7 @@ namespace io {
   // class SEIntubation
   void PatientActions::UnMarshall(const CDM::IntubationData& in, SEIntubation& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1000,7 +1000,7 @@ namespace io {
   // class SEMechanicalVentilation
   void PatientActions::UnMarshall(const CDM::MechanicalVentilationData& in, const SESubstanceManager& substances, SEMechanicalVentilation& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     Property::UnMarshall(in.State(), out.m_State);
@@ -1054,7 +1054,7 @@ namespace io {
   // class SENasalCannula
   void PatientActions::UnMarshall(const CDM::NasalCannulaData& in, SENasalCannula& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     io::Property::UnMarshall(in.FlowRate(), out.GetFlowRate(), rd);
@@ -1068,7 +1068,7 @@ namespace io {
   // class SENasalStates
   void PatientActions::UnMarshall(const CDM::NasalStateData& in, SENasalState& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     io::Property::UnMarshall(in.TotalNasalDose(), out.GetTotalNasalDose(), rd);
     out.m_UnreleasedDrugMasses.clear();
@@ -1105,7 +1105,7 @@ namespace io {
   // class SENeedleDecompression
   void PatientActions::UnMarshall(const CDM::NeedleDecompressionData& in, SENeedleDecompression& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     ;
@@ -1124,7 +1124,7 @@ namespace io {
   // class SEOverride
   void PatientActions::UnMarshall(const CDM::OverrideData& in, SEOverride& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1420,7 +1420,7 @@ namespace io {
   // class SEPainStimulus
   void PatientActions::UnMarshall(const CDM::PainStimulusData& in, SEPainStimulus& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1438,7 +1438,7 @@ namespace io {
   // class SEPericardialEffusion
   void PatientActions::UnMarshall(const CDM::PericardialEffusionData& in, SEPericardialEffusion& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1453,7 +1453,7 @@ namespace io {
   // class SEPulmonaryShunt
   void PatientActions::UnMarshall(const CDM::PulmonaryShuntData& in, SEPulmonaryShunt& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1468,7 +1468,7 @@ namespace io {
   // class SERadiationAbsorbedDose
   void PatientActions::UnMarshall(const CDM::RadiationAbsorbedDoseData& in, SERadiationAbsorbedDose& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1483,7 +1483,7 @@ namespace io {
   // class SESleep
   void PatientActions::UnMarshall(const CDM::SleepData& in, SESleep& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
     Property::UnMarshall(in.Sleep(), out.m_SleepState);
@@ -1498,7 +1498,7 @@ namespace io {
   // class SESubstanceAdministration
   void PatientActions::UnMarshall(const CDM::SubstanceAdministrationData& in, SESubstanceAdministration& out)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
   }
@@ -1510,7 +1510,7 @@ namespace io {
   // class SESubstanceBolus
   void PatientActions::UnMarshall(const CDM::SubstanceBolusData& in, SESubstanceBolus& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<const CDM::SubstanceAdministrationData&>(in), static_cast<SESubstanceAdministration&>(out));
     io::Property::UnMarshall(in.Dose(), out.GetDose(), rd);
     io::Property::UnMarshall(in.Concentration(), out.GetConcentration(), rd);
@@ -1550,7 +1550,7 @@ namespace io {
   // class SESubstanceCompoundInfusion
   void PatientActions::UnMarshall(const CDM::SubstanceCompoundInfusionData& in, SESubstanceCompoundInfusion& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<const CDM::SubstanceAdministrationData&>(in), static_cast<SESubstanceAdministration&>(out));
     io::Property::UnMarshall(in.Rate(), out.GetRate(), rd);
     io::Property::UnMarshall(in.BagVolume(), out.GetBagVolume(), rd);
@@ -1566,7 +1566,7 @@ namespace io {
   // class SESubstanceInfusion
   void PatientActions::UnMarshall(const CDM::SubstanceInfusionData& in, SESubstanceInfusion& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<const CDM::SubstanceAdministrationData&>(in), static_cast<SESubstanceAdministration&>(out));
     io::Property::UnMarshall(in.Rate(), out.GetRate(), rd);
     io::Property::UnMarshall(in.Concentration(), out.GetConcentration(), rd);
@@ -1582,7 +1582,7 @@ namespace io {
   // class SESubstanceNasalDose
   void PatientActions::UnMarshall(const CDM::SubstanceNasalDoseData& in, SESubstanceNasalDose& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     PatientActions::UnMarshall(static_cast<CDM::SubstanceAdministrationData const&>(in), static_cast<SESubstanceAdministration&>(out));
     io::Property::UnMarshall(in.Dose(), out.GetDose(), rd);
   }
@@ -1596,7 +1596,7 @@ namespace io {
   // class SESubstanceOralDose
   void PatientActions::UnMarshall(const CDM::SubstanceOralDoseData& in, SESubstanceOralDose& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
     io::PatientActions::UnMarshall((CDM::SubstanceAdministrationData const&)in, (SESubstanceAdministration&)out);
     io::Property::UnMarshall(in.Dose(), out.GetDose(), rd);
     io::PatientActions::UnMarshall(in.AdminRoute(), out.m_AdminRoute);
@@ -1613,7 +1613,7 @@ namespace io {
   // class SETensionPneumothorax
   void PatientActions::UnMarshall(const CDM::TensionPneumothoraxData& in, SETensionPneumothorax& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
 
@@ -1633,7 +1633,7 @@ namespace io {
   // class SETransmucosalStates
   void PatientActions::UnMarshall(const CDM::TransmucosalStateData& in, SETransmucosalState& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     io::Property::UnMarshall(in.MouthSolidMass(), out.GetMouthSolidMass(), rd);
     io::Property::UnMarshall(in.SalivaConcentration(), out.GetSalivaConcentration(), rd);
@@ -1670,7 +1670,7 @@ namespace io {
   // class SETourniquet;
   void PatientActions::UnMarshall(const CDM::TourniquetData& in, SETourniquet& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     io::PatientActions::UnMarshall((CDM::TourniquetData const&)in, (SEPatientAction&)out);
     out.m_Compartment = in.Compartment();
@@ -1687,7 +1687,7 @@ namespace io {
   // class SEUrinate
   void PatientActions::UnMarshall(const CDM::UrinateData& in, SEUrinate& out, std::default_random_engine* rd)
   {
-    out.Clear();
+    out.Invalidate();
 
     PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
   }

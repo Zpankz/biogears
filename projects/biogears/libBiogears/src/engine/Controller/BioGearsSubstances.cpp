@@ -73,9 +73,9 @@ BioGearsSubstances::~BioGearsSubstances()
 {
 }
 //-------------------------------------------------------------------------------
-void BioGearsSubstances::Clear()
+void BioGearsSubstances::Invalidate()
 {
-  SESubstanceManager::Clear();
+  SESubstanceManager::Invalidate();
   m_O2 = nullptr;
   m_CO = nullptr;
   m_CO2 = nullptr;

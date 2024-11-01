@@ -53,7 +53,7 @@ SEScalar::SEScalar()
   , m_readOnly(false)
   , m_value(1.0)
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 SEScalar::SEScalar(SEScalar const& obj) 
@@ -77,10 +77,17 @@ SEScalar::~SEScalar()
 }
 
 //-------------------------------------------------------------------------------
-void SEScalar::Clear()
+void SEScalar::Invalidate()
 {
+  if (m_readOnly) {
+#if defined(BIOGEARS_THROW_READONLY_EXCEPTIONS)
+    throw CommonDataModelException("Scalar is marked read-only");
+#else
+    return;
+#endif
+  }
   m_readOnly = false;
-  Invalidate();
+  m_value = NaN;
 }
 
 //-------------------------------------------------------------------------------
@@ -113,25 +120,14 @@ void SEScalar::Copy(const SEScalar& s)
   m_value = s.m_value;
 }
 
-//-------------------------------------------------------------------------------
-void SEScalar::Invalidate()
-{
-  if (m_readOnly) {
-#if defined(BIOGEARS_THROW_READONLY_EXCEPTIONS)
-    throw CommonDataModelException("Scalar is marked read-only");
-#else
-    return;
-#endif
-  }
-  m_value = NaN;
-}
-#pragma optimize("", off)
+
+
 //-------------------------------------------------------------------------------
 bool SEScalar::IsValid() const
 {
   return !std::isnan(m_value);
 }
-#pragma optimize("", on)
+
 //-------------------------------------------------------------------------------
 bool SEScalar::IsZero(double limit) const
 {

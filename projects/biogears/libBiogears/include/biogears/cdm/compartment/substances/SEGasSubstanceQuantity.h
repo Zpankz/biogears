@@ -32,8 +32,8 @@ protected:
 public:
   virtual ~SEGasSubstanceQuantity();
 
-  virtual void Clear() override;
   virtual void Invalidate() override;
+  virtual void MakeInvalid() override;
 
   bool operator==(SEGasTransportSubstance const&) const override;
   bool operator!=(SEGasTransportSubstance const&) const override;

@@ -27,12 +27,12 @@ SESubstanceDataRequest::SESubstanceDataRequest(const SEDecimalFormat* dfault)
 //-----------------------------------------------------------------------------
 SESubstanceDataRequest::~SESubstanceDataRequest()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SESubstanceDataRequest::Clear()
+void SESubstanceDataRequest::Invalidate()
 {
-  SEDataRequest::Clear();
+  SEDataRequest::Invalidate();
   m_Compartment = "";
   m_Substance = nullptr;
 }

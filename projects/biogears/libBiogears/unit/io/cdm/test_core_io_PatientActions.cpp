@@ -592,7 +592,7 @@ TEST_F(TEST_FIXTURE_NAME, Exercise)
 
   /*   Generic Exercise */
   data = CDMType {};
-  source.Clear();
+  source.Invalidate();
   source.SetComment("SEGeneric");
   biogears::SEExercise::SEGeneric generic;
 
@@ -609,7 +609,7 @@ TEST_F(TEST_FIXTURE_NAME, Exercise)
 
   /*   Strength  Training*/
   data = CDMType {};
-  source.Clear();
+  source.Invalidate();
   source.SetComment("SEStrengthTraining");
   biogears::SEExercise::SEStrengthTraining strength;
 
@@ -626,7 +626,7 @@ TEST_F(TEST_FIXTURE_NAME, Exercise)
 
   /*   Running  Training*/
   data = CDMType {};
-  source.Clear();
+  source.Invalidate();
   source.SetComment("SERunning");
   biogears::SEExercise::SERunning running;
 
@@ -644,7 +644,7 @@ TEST_F(TEST_FIXTURE_NAME, Exercise)
 
   /*   Running  ALL*/
   data = CDMType {};
-  source.Clear();
+  source.Invalidate();
   source.SetComment("SERunning");
   source.SetCyclingExercise(cycling);
   source.SetRunningExercise(running);

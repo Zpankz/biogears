@@ -21,12 +21,12 @@ SEChronicVentricularSystolicDysfunction::SEChronicVentricularSystolicDysfunction
 //-----------------------------------------------------------------------------
 SEChronicVentricularSystolicDysfunction::~SEChronicVentricularSystolicDysfunction()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SEChronicVentricularSystolicDysfunction::Clear()
+void SEChronicVentricularSystolicDysfunction::Invalidate()
 {
-  SEChronicHeartFailure::Clear();
+  SEChronicHeartFailure::Invalidate();
 }
 //-----------------------------------------------------------------------------
 bool SEChronicVentricularSystolicDysfunction::IsValid() const

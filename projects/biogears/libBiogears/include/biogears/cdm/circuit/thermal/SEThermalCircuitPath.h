@@ -40,7 +40,7 @@ protected:
 public:
   virtual ~SEThermalCircuitPath() override;
 
-  virtual void Clear() override; //clear memory
+  virtual void Invalidate() override; //clear memory
 
 public:
   virtual SEThermalCircuitNode& GetSourceNode() const override { return m_ThermalSourceNode; }

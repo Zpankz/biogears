@@ -47,7 +47,7 @@ public:
   TimingProfile(Logger* logger);
   virtual ~TimingProfile();
 
-  void Clear();
+  void Invalidate();
 
   /**
      * Resets the timer, this can have different effects based on the state of the timer:

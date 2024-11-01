@@ -40,13 +40,13 @@ SEInhaler::SEInhaler(SESubstanceManager& substances)
 
 SEInhaler::~SEInhaler()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
 
-void SEInhaler::Clear()
+void SEInhaler::Invalidate()
 {
-  SESystem::Clear();
+  SESystem::Invalidate();
 
   m_State = SEOnOff(-1);
   SAFE_DELETE(m_MeteredDose);

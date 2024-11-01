@@ -28,7 +28,7 @@ public:
   SEChronicPericardialEffusion();
   virtual ~SEChronicPericardialEffusion();
 
-  virtual void Clear() override ;
+  virtual void Invalidate() override ;
 
   virtual bool IsValid() const override ;
 

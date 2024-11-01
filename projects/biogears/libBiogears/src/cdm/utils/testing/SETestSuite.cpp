@@ -28,10 +28,10 @@ SETestSuite::SETestSuite(Logger* logger)
 //-------------------------------------------------------------------------------
 SETestSuite::~SETestSuite()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SETestSuite::Clear()
+void SETestSuite::Invalidate()
 {
   DELETE_VECTOR(m_SuiteEqualError);
   DELETE_VECTOR(m_TestCase);

@@ -47,7 +47,7 @@ SEElectroCardioGramInterpolator::~SEElectroCardioGramInterpolator()
   m_Waveforms.clear();
 }
 //-------------------------------------------------------------------------------
-void SEElectroCardioGramInterpolator::Clear()
+void SEElectroCardioGramInterpolator::Invalidate()
 {
   for (auto i : m_Waveforms)
     for (auto j : i.second)
@@ -63,14 +63,14 @@ bool SEElectroCardioGramInterpolator::LoadWaveforms(const char* file, const SESc
 //-------------------------------------------------------------------------------
 bool SEElectroCardioGramInterpolator::LoadWaveforms(const std::string& given_path, const SEScalarTime* timeStep)
 {
-  Clear();
+  Invalidate();
   std::stringstream ss;
   if (given_path.empty()) {
     ss << "Waveform file not provided: " << given_path << std::endl;
     Error(ss);
     return false;
   }
-  Clear();
+  Invalidate();
 
   std::unique_ptr<CDM::ObjectData> data;
 

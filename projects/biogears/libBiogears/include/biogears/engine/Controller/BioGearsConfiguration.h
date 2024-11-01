@@ -72,7 +72,7 @@ public:
   BioGearsConfiguration(SESubstanceManager& substances);
   virtual ~BioGearsConfiguration();
 
-  virtual void Clear();
+  virtual void Invalidate();
   virtual void Initialize();
 
   virtual void Merge(const PhysiologyEngineConfiguration& from);

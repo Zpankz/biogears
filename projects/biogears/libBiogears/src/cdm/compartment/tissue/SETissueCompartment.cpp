@@ -45,12 +45,12 @@ SETissueCompartment::SETissueCompartment(const std::string& name, Logger* logger
 //-----------------------------------------------------------------------------
 SETissueCompartment::~SETissueCompartment()
 {
-  Clear();
+  Invalidate();
 }
 //-----------------------------------------------------------------------------
-void SETissueCompartment::Clear()
+void SETissueCompartment::Invalidate()
 {
-  SECompartment::Clear();
+  SECompartment::Invalidate();
   SAFE_DELETE(m_AcidicPhospohlipidConcentration);
   SAFE_DELETE(m_MatrixVolume);
   SAFE_DELETE(m_MembranePotential);

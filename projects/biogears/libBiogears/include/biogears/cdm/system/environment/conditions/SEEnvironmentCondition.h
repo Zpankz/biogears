@@ -23,7 +23,7 @@ public:
   SEEnvironmentCondition();
   virtual ~SEEnvironmentCondition();
 
-  using SECondition::Clear;
+  using SECondition::Invalidate;
 
   using SECondition::IsValid;
 

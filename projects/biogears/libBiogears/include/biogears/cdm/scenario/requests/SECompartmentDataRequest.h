@@ -29,7 +29,7 @@ public:
   SECompartmentDataRequest(const SEDecimalFormat* dfault = nullptr);
   virtual ~SECompartmentDataRequest();
 
-  virtual void Clear() override; // clear memory
+  virtual void Invalidate() override; // clear memory
 
   size_t HashCode() const override;
 
