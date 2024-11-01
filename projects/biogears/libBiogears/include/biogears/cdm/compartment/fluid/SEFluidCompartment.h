@@ -28,10 +28,6 @@ specific language governing permissions and limitations under the License.
 namespace biogears {
 
 class SESubstance;
-class SEScalarPressure;
-class PressureUnit;
-class SEScalarVolumePerTime;
-class VolumePerTimeUnit;
 
 namespace io {
   class Compartment;

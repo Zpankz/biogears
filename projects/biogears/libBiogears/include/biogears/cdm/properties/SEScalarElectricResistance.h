@@ -34,17 +34,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<ElectricResistanceUnit>;
-
-class BIOGEARS_API SEScalarElectricResistance : public SEScalarQuantity<ElectricResistanceUnit> {
-public:
-  SEScalarElectricResistance();
-  virtual ~SEScalarElectricResistance();
-
-  using SEScalarQuantity<ElectricResistanceUnit>::SetValue;
-  using SEScalarQuantity<ElectricResistanceUnit>::GetValue;
-
-  bool operator==(const SEScalarElectricResistance&) const;
-  bool operator!=(const SEScalarElectricResistance&) const;
-};
+using SEScalarElectricResistance = SEScalarQuantity<ElectricResistanceUnit>;
 #pragma warning(default : 4661)
 }

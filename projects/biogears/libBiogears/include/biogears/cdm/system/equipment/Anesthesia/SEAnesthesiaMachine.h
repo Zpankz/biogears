@@ -14,8 +14,11 @@ specific language governing permissions and limitations under the License.
 #include <biogears/exports.h>
 
 #include <biogears/cdm/CommonDataModel.h>
-#include <biogears/cdm/system/SESystem.h>
 #include <biogears/cdm/enums/SEAnesthesiaEnums.h>
+#include <biogears/cdm/properties/SEScalarFrequency.h>
+#include <biogears/cdm/properties/SEScalarPressure.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTime.h>
+#include <biogears/cdm/system/SESystem.h>
 
 namespace biogears {
 
@@ -26,12 +29,6 @@ class SEAnesthesiaMachineOxygenBottle;
 class SEAnesthesiaMachineConfiguration;
 class Serializer;
 class TimeUnit;
-class SEScalarVolumePerTime;
-class VolumePerTimeUnit;
-class SEScalarPressure;
-class PressureUnit;
-class SEScalarFrequency;
-class FrequencyUnit;
 class SEScalarFraction;
 
 namespace io {
@@ -64,7 +61,6 @@ public:
 
   Tree<const char*> GetPhysiologyRequestGraph() const override;
 
-
   /** @name StateChange
    *   @brief - This method is called when ever there is a state change
    *            Specically a new file has been loaded, configuration action, or the system reset
@@ -73,7 +69,6 @@ public:
   virtual void StateChange();
   void Merge(const SEAnesthesiaMachine& from);
   void ProcessConfiguration(const SEAnesthesiaMachineConfiguration& config);
-
 
   bool Load(const std::string& file);
 

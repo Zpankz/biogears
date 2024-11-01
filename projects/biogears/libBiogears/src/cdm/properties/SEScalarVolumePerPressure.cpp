@@ -35,17 +35,6 @@ VolumePerPressureUnit::~VolumePerPressureUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarVolumePerPressure::SEScalarVolumePerPressure()
-{
-
-}
-//-------------------------------------------------------------------------------
-SEScalarVolumePerPressure::~SEScalarVolumePerPressure()
-{
-
-}
-
-//-------------------------------------------------------------------------------
 bool VolumePerPressureUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(L_Per_Pa.GetString(), unit) == 0)

@@ -33,15 +33,7 @@ MassPerMassUnit::MassPerMassUnit(const std::string& u)
 //-------------------------------------------------------------------------------
 MassPerMassUnit::~MassPerMassUnit()
 {
-} //-------------------------------------------------------------------------------
-SEScalarMassPerMass::SEScalarMassPerMass()
-{
 }
-//-------------------------------------------------------------------------------
-SEScalarMassPerMass::~SEScalarMassPerMass()
-{
-}
-
 //-------------------------------------------------------------------------------
 bool MassPerMassUnit::IsValidUnit(const char* unit)
 {

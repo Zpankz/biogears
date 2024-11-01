@@ -34,15 +34,6 @@ PowerPerAreaTemperatureToTheFourthUnit::~PowerPerAreaTemperatureToTheFourthUnit(
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarPowerPerAreaTemperatureToTheFourth::SEScalarPowerPerAreaTemperatureToTheFourth()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarPowerPerAreaTemperatureToTheFourth::~SEScalarPowerPerAreaTemperatureToTheFourth()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool PowerPerAreaTemperatureToTheFourthUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(W_Per_m2_K4.GetString(), unit) == 0)

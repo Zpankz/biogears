@@ -32,14 +32,6 @@ VolumePerTimePressureAreaUnit::VolumePerTimePressureAreaUnit(const std::string& 
 //-------------------------------------------------------------------------------
 VolumePerTimePressureAreaUnit::~VolumePerTimePressureAreaUnit(){
 }
-//-------------------------------------------------------------------------------
-SEScalarVolumePerTimePressureArea::SEScalarVolumePerTimePressureArea()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarVolumePerTimePressureArea::~SEScalarVolumePerTimePressureArea()
-{
-}
 
 //-------------------------------------------------------------------------------
 bool VolumePerTimePressureAreaUnit::IsValidUnit(const char* unit)

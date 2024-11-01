@@ -34,13 +34,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<PowerPerAreaTemperatureToTheFourthUnit>;
-
-class BIOGEARS_API SEScalarPowerPerAreaTemperatureToTheFourth : public SEScalarQuantity<PowerPerAreaTemperatureToTheFourthUnit> {
-public:
-  SEScalarPowerPerAreaTemperatureToTheFourth();
-  virtual ~SEScalarPowerPerAreaTemperatureToTheFourth();
-
-  using SEScalarQuantity<PowerPerAreaTemperatureToTheFourthUnit>::SetValue;
-  using SEScalarQuantity<PowerPerAreaTemperatureToTheFourthUnit>::GetValue;
-};
+using SEScalarPowerPerAreaTemperatureToTheFourth  = SEScalarQuantity<PowerPerAreaTemperatureToTheFourthUnit>;
+#pragma warning(default : 4661)
 }

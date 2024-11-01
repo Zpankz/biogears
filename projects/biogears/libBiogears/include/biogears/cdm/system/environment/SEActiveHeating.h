@@ -15,16 +15,13 @@ specific language governing permissions and limitations under the License.
 
 #include <biogears/cdm/enums/SEEnvironmentEnums.h>
 #include <biogears/cdm/system/environment/actions/SEEnvironmentAction.h>
-
+#include <biogears/cdm/properties/SEScalarPower.h>
+#include <biogears/cdm/properties/SEScalarArea.h>
 #include <random>
 
 namespace biogears {
 class SEScalar;
 class SEScalarFraction;
-class SEScalarPower;
-class PowerUnit;
-class SEScalarArea;
-class AreaUnit;
 namespace io {
   class Environment;
 }

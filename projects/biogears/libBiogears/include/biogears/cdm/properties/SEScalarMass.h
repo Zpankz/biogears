@@ -37,16 +37,6 @@ public:
 };
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<MassUnit>;
-
 using SEScalarMass = SEScalarQuantity<MassUnit>;
-//class BIOGEARS_API SEScalarMass : public SEScalarQuantity<MassUnit> {
-//public:
-//  SEScalarMass();
-//  SEScalarMass( double value, MassUnit const& unit);
-//  virtual ~SEScalarMass();
-//
-//  using SEScalarQuantity<MassUnit>::SetValue;
-//  using SEScalarQuantity<MassUnit>::GetValue;
-//};
 #pragma warning(default:4661)
 }

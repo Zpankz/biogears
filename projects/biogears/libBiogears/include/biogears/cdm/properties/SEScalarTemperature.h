@@ -37,13 +37,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<TemperatureUnit>;
-
-class BIOGEARS_API SEScalarTemperature : public SEScalarQuantity<TemperatureUnit> {
-public:
-  SEScalarTemperature();
-  virtual ~SEScalarTemperature();
-
-  using SEScalarQuantity<TemperatureUnit>::SetValue;
-  double GetValue(const TemperatureUnit& unit) const override; // Zero is not Zero for all units, gotta remove that logic for this scalar type    
-};
+using SEScalarTemperature  = SEScalarQuantity<TemperatureUnit>;
+#pragma warning(default : 4661)
 }

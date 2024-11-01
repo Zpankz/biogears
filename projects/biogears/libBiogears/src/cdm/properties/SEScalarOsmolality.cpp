@@ -34,14 +34,6 @@ OsmolalityUnit::OsmolalityUnit(const std::string& u)
 OsmolalityUnit::~OsmolalityUnit()
 {
 }
-//-------------------------------------------------------------------------------
-SEScalarOsmolality::SEScalarOsmolality()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarOsmolality::~SEScalarOsmolality()
-{
-}
 
 //-------------------------------------------------------------------------------
 bool OsmolalityUnit::IsValidUnit(const char* unit)

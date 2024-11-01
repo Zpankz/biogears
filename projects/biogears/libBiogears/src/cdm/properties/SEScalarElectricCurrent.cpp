@@ -34,15 +34,6 @@ ElectricCurrentUnit::~ElectricCurrentUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarElectricCurrent::SEScalarElectricCurrent()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarElectricCurrent::~SEScalarElectricCurrent()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool ElectricCurrentUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(A.GetString(), unit) == 0)

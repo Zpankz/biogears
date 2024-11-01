@@ -19,16 +19,6 @@ namespace biogears {
 const AmountUnit AmountUnit::mol("mol");
 const AmountUnit AmountUnit::pmol("pmol");
 template class BIOGEARS_API SEScalarQuantity<AmountUnit>;
-
-//-----------------------------------------------------------------------------
-SEScalarAmount::SEScalarAmount()
-  : SEScalarQuantity()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarAmount::~SEScalarAmount()  {
-
-}
 //-----------------------------------------------------------------------------
 AmountUnit::AmountUnit(const char* u)
   : AmountUnit(std::string{ u })

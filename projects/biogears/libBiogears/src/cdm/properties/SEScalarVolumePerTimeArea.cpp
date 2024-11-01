@@ -36,17 +36,6 @@ VolumePerTimeAreaUnit::~VolumePerTimeAreaUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarVolumePerTimeArea::SEScalarVolumePerTimeArea()
-{
-
-}
-//-------------------------------------------------------------------------------
-SEScalarVolumePerTimeArea::~SEScalarVolumePerTimeArea()
-{
-
-}
-
-//-------------------------------------------------------------------------------
 bool VolumePerTimeAreaUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mL_Per_min_m2.GetString(), unit) == 0)

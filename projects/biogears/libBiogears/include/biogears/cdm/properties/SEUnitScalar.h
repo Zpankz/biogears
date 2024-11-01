@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 
+#include <biogears/cdm/utils/unitconversion/CompoundUnit.h>
 #include <biogears/cdm/properties/SEScalar.h>
 
 namespace biogears {

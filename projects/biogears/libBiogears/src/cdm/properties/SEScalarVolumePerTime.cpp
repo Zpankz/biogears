@@ -41,15 +41,6 @@ VolumePerTimeUnit::~VolumePerTimeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarVolumePerTime::SEScalarVolumePerTime()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarVolumePerTime::~SEScalarVolumePerTime()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool VolumePerTimeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(L_Per_s.GetString(), unit) == 0)

@@ -37,15 +37,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<FlowComplianceUnit>;
-
-class BIOGEARS_API SEScalarFlowCompliance : public SEScalarQuantity<FlowComplianceUnit> {
-public:
-  SEScalarFlowCompliance();
-  virtual ~SEScalarFlowCompliance();
-
-  using SEScalarQuantity<FlowComplianceUnit>::SetValue;
-  using SEScalarQuantity<FlowComplianceUnit>::GetValue;
-
-};
+using SEScalarFlowCompliance  = SEScalarQuantity<FlowComplianceUnit>;
 #pragma warning(default : 4661)
 }

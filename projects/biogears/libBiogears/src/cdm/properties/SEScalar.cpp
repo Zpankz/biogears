@@ -19,8 +19,6 @@ specific language governing permissions and limitations under the License.
 
 #include "io/cdm/Property.h"
 
-#include <biogears/cdm/utils/GeneralMath.h>
-
 namespace biogears {
 double SEScalar::NaN = std::numeric_limits<double>::quiet_NaN();
 

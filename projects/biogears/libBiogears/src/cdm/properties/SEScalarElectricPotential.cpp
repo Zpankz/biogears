@@ -30,17 +30,10 @@ ElectricPotentialUnit::ElectricPotentialUnit(const std::string& u)
   : CCompoundUnit(u)
 {
 }
-//-----------------------------------------------------------------------------
-ElectricPotentialUnit::~ElectricPotentialUnit()
-{
-}
+ElectricPotentialUnit::~ElectricPotentialUnit() {
 
-//-----------------------------------------------------------------------------
-SEScalarElectricPotential::~SEScalarElectricPotential()
-{
 }
-
-//-----------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------
 bool ElectricPotentialUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(V.GetString(), unit) == 0)

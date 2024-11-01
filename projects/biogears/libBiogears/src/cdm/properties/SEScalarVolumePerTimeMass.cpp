@@ -38,17 +38,6 @@ VolumePerTimeMassUnit::VolumePerTimeMassUnit(const std::string& u)
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarVolumePerTimeMass::SEScalarVolumePerTimeMass()
-{
-
-}
-//-------------------------------------------------------------------------------
-SEScalarVolumePerTimeMass::~SEScalarVolumePerTimeMass()
-{
-
-}
-
-//-------------------------------------------------------------------------------
 bool VolumePerTimeMassUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(L_Per_s_g.GetString(), unit) == 0)

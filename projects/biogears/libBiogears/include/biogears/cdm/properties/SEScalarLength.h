@@ -39,13 +39,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<LengthUnit>;
-
-class BIOGEARS_API SEScalarLength : public SEScalarQuantity<LengthUnit> {
-public:
-  SEScalarLength();
-  virtual ~SEScalarLength();
-
-  using SEScalarQuantity<LengthUnit>::SetValue;
-  using SEScalarQuantity<LengthUnit>::GetValue;
-};
+using SEScalarLength  = SEScalarQuantity<LengthUnit>;
+#pragma warning(default : 4661)
 }

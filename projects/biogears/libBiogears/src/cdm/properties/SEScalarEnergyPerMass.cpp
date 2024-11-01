@@ -36,15 +36,6 @@ EnergyPerMassUnit::~EnergyPerMassUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarEnergyPerMass::SEScalarEnergyPerMass()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarEnergyPerMass::~SEScalarEnergyPerMass()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool EnergyPerMassUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(J_Per_kg.GetString(), unit) == 0)

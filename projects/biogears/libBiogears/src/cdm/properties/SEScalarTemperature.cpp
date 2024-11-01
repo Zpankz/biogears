@@ -75,17 +75,6 @@ const TemperatureUnit& TemperatureUnit::GetCompoundUnit(const std::string& unit)
   return GetCompoundUnit(unit.c_str());
 }
 //-------------------------------------------------------------------------------
-double SEScalarTemperature::GetValue(const TemperatureUnit& unit) const
-{
-  if (std::isnan(m_value))
-    throw CommonDataModelException("Value is NaN");
-  if (std::isinf(m_value))
-    return m_value;
-  if (m_unit == &unit)
-    return m_value;
-  return Convert(m_value, *m_unit, unit);
-}
-//-------------------------------------------------------------------------------
 bool TemperatureUnit::operator==(const TemperatureUnit& obj) const
 {
   return CCompoundUnit::operator==(obj);
@@ -95,10 +84,5 @@ bool TemperatureUnit::operator!=(const TemperatureUnit& obj) const
 {
   return !(*this == obj);
 }
-//-------------------------------------------------------------------------------
-SEScalarTemperature::SEScalarTemperature()
-:SEScalarQuantity()
-{}
-SEScalarTemperature::~SEScalarTemperature(){}
 //-------------------------------------------------------------------------------
 }

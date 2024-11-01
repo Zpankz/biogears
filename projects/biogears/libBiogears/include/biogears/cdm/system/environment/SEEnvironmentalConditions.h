@@ -18,6 +18,12 @@ specific language governing permissions and limitations under the License.
 
 #include <random>
 
+#include <biogears/cdm/properties/SEScalarMassPerVolume.h>
+#include <biogears/cdm/properties/SEScalarLengthPerTime.h>
+#include <biogears/cdm/properties/SEScalarTemperature.h>
+#include <biogears/cdm/properties/SEScalarHeatResistanceArea.h>
+#include <biogears/cdm/properties/SEScalarPressure.h>
+
 namespace biogears {
 class SESubstance;
 class SESubstanceDefinition;
@@ -29,16 +35,6 @@ class SEEnvironmentChange;
 class SEInitialEnvironment;
 
 class SEScalar;
-class SEScalarMassPerVolume;
-class MassPerVolumeUnit;
-class SEScalarLengthPerTime;
-class LengthPerTimeUnit;
-class SEScalarTemperature;
-class TemperatureUnit;
-class SEScalarHeatResistanceArea;
-class HeatResistanceAreaUnit;
-class SEScalarPressure;
-class PressureUnit;
 class SEScalarFraction;
 
 namespace io {

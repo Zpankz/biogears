@@ -38,15 +38,6 @@ namespace biogears
   {
   }
   //-------------------------------------------------------------------------------
-  SEScalarVolumePerTimePressure::SEScalarVolumePerTimePressure()
-  {
-  }
-  //-------------------------------------------------------------------------------
-  SEScalarVolumePerTimePressure::~SEScalarVolumePerTimePressure()
-  {
-  }
-
-  //-------------------------------------------------------------------------------
   bool VolumePerTimePressureUnit::IsValidUnit(const char* unit)
   {
     if (strcmp(L_Per_s_mmHg.GetString(), unit) == 0)

@@ -36,15 +36,6 @@ FlowElastanceUnit::~FlowElastanceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarFlowElastance::SEScalarFlowElastance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarFlowElastance::~SEScalarFlowElastance()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool FlowElastanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(cmH2O_Per_L.GetString(), unit) == 0)

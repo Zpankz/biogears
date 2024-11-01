@@ -244,23 +244,21 @@ TEST_F(TEST_FIXTURE_NAME, SubstancePharmacodynamics)
   auto modifier = std::make_unique<biogears::SEPharmacodynamicModifier>(biogears::SEScalarMassPerVolume { 1.0, biogears::MassPerVolumeUnit::g_Per_dL }, 1.0);
   source.GetPharmacodynamicModifiers()["TEST"] = modifier.release();
 
-  source.GetBronchodilation().Set({ 1.0 }, { 1.0, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetDiastolicPressureModifier().Set({ 2.0 }, { 3.0, biogears::MassPerVolumeUnit::g_Per_dL });
-
-  source.GetFeverModifier().Set({ 5 }, { 10, biogears::MassPerVolumeUnit::g_Per_dL });
-
-  source.GetHeartRateModifier().Set({ 5 }, { 110, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetHemorrhageModifier().Set({ 6 }, { 210, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetNeuromuscularBlock().Set({ 7 }, { 310, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetPainModifier().Set({ 8 }, { 410, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetPupilReactivityModifier().Set({ 5 }, { 510, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetPupilSizeModifier().Set({ 9 }, { 610, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetRespirationRateModifier().Set({ 10 }, { 710, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetSystolicPressureModifier().Set({ 11 }, { 810, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetTidalVolumeModifier().Set({ 12 }, { 910, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetCentralNervousModifier().Set({ 13 }, { 190, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetTubularPermeabilityModifier().Set({ 14 }, { 180, biogears::MassPerVolumeUnit::g_Per_dL });
-  source.GetSedation().Set({ 15 }, { 10, biogears::MassPerVolumeUnit::g_Per_dL });
+  source.GetBronchodilation().Set({ 1.0 }, biogears::SEScalarMassPerVolume(1.0, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetDiastolicPressureModifier().Set({ 2.0 }, biogears::SEScalarMassPerVolume( 3.0, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetFeverModifier().Set({ 5 }, biogears::SEScalarMassPerVolume(10, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetHeartRateModifier().Set({ 5 }, biogears::SEScalarMassPerVolume(110, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetHemorrhageModifier().Set({ 6 }, biogears::SEScalarMassPerVolume(210, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetNeuromuscularBlock().Set({ 7 }, biogears::SEScalarMassPerVolume(310, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetPainModifier().Set({ 8 }, biogears::SEScalarMassPerVolume(410, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetPupilReactivityModifier().Set({ 5 }, biogears::SEScalarMassPerVolume(510, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetPupilSizeModifier().Set({ 9 }, biogears::SEScalarMassPerVolume(610, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetRespirationRateModifier().Set({ 10 }, biogears::SEScalarMassPerVolume(710, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetSystolicPressureModifier().Set({ 11 }, biogears::SEScalarMassPerVolume(810, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetTidalVolumeModifier().Set({ 12 }, biogears::SEScalarMassPerVolume(910, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetCentralNervousModifier().Set({ 13 }, biogears::SEScalarMassPerVolume(190, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetTubularPermeabilityModifier().Set({ 14 }, biogears::SEScalarMassPerVolume(180, biogears::MassPerVolumeUnit::g_Per_dL));
+  source.GetSedation().Set({ 15 }, biogears::SEScalarMassPerVolume(10, biogears::MassPerVolumeUnit::g_Per_dL));
 
   source.GetEffectSiteRateConstant().SetValue(1.0, biogears::FrequencyUnit::Per_min);
   source.GetAntibacterialEffect().SetValue(1.0, biogears::FrequencyUnit::Per_min);

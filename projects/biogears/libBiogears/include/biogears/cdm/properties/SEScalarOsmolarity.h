@@ -35,13 +35,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<OsmolarityUnit>;
-
-class BIOGEARS_API SEScalarOsmolarity : public SEScalarQuantity<OsmolarityUnit> {
-public:
-  SEScalarOsmolarity();
-  virtual ~SEScalarOsmolarity();
-
-  using SEScalarQuantity<OsmolarityUnit>::SetValue;
-  using SEScalarQuantity<OsmolarityUnit>::GetValue;
-};
+using SEScalarOsmolarity  = SEScalarQuantity<OsmolarityUnit>;
+#pragma warning(default : 4661)
 }

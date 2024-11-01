@@ -81,7 +81,7 @@ class SEConditionManager;
 class BioGearsCircuits;
 class BioGearsCompartments;
 class BioGearsConfiguration;
-class SEScalarTime;
+
 namespace io {
   class BioGears;
 }
@@ -222,7 +222,6 @@ protected:
   std::unique_ptr<BioGearsConfiguration> m_Configuration;
   std::unique_ptr<SaturationCalculator> m_SaturationCalculator;
   std::unique_ptr<DiffusionCalculator> m_DiffusionCalculator;
-
 
   std::unique_ptr<SEActionManager> m_Actions;
   std::unique_ptr<SEConditionManager> m_Conditions;

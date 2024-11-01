@@ -41,15 +41,6 @@ MassPerTimeUnit::~MassPerTimeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarMassPerTime::SEScalarMassPerTime()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerTime::~SEScalarMassPerTime()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool MassPerTimeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(g_Per_s.GetString(), unit) == 0)

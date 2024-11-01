@@ -35,14 +35,6 @@ PressureTimePerVolumeAreaUnit::PressureTimePerVolumeAreaUnit(const std::string& 
 PressureTimePerVolumeAreaUnit::~PressureTimePerVolumeAreaUnit()
 {
 }
-//-------------------------------------------------------------------------------
-SEScalarPressureTimePerVolumeArea::SEScalarPressureTimePerVolumeArea()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarPressureTimePerVolumeArea::~SEScalarPressureTimePerVolumeArea()
-{
-}
 
 //-------------------------------------------------------------------------------
 bool PressureTimePerVolumeAreaUnit::IsValidUnit(const char* unit)

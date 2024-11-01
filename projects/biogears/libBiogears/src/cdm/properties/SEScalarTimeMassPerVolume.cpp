@@ -39,15 +39,6 @@ TimeMassPerVolumeUnit::~TimeMassPerVolumeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarTimeMassPerVolume::SEScalarTimeMassPerVolume()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarTimeMassPerVolume::~SEScalarTimeMassPerVolume()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool TimeMassPerVolumeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(s_g_Per_L.GetString(), unit) == 0)

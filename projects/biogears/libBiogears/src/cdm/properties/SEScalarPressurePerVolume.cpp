@@ -35,15 +35,6 @@ PressurePerVolumeUnit::~PressurePerVolumeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarPressurePerVolume::SEScalarPressurePerVolume()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarPressurePerVolume::~SEScalarPressurePerVolume(){
-
-}
-
-//-------------------------------------------------------------------------------
 bool PressurePerVolumeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mmHg_Per_mL.GetString(), unit) == 0)

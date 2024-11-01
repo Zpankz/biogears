@@ -35,15 +35,6 @@ HeatResistanceAreaUnit::HeatResistanceAreaUnit(const std::string& u)
 HeatResistanceAreaUnit::~HeatResistanceAreaUnit(){
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatResistanceArea::SEScalarHeatResistanceArea()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatResistanceArea::~SEScalarHeatResistanceArea()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatResistanceAreaUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(rsi.GetString(), unit) == 0)

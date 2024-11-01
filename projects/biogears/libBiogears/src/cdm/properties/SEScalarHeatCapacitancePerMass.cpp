@@ -37,15 +37,6 @@ HeatCapacitancePerMassUnit::~HeatCapacitancePerMassUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatCapacitancePerMass::SEScalarHeatCapacitancePerMass()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatCapacitancePerMass::~SEScalarHeatCapacitancePerMass()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatCapacitancePerMassUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(J_Per_K_kg.GetString(), unit) == 0)

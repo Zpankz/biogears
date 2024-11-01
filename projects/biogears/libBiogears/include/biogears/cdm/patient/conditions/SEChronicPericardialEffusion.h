@@ -15,9 +15,9 @@ specific language governing permissions and limitations under the License.
 
 #include <biogears/cdm/patient/conditions/SEPatientCondition.h>
 #include <biogears/exports.h>
+#include <biogears/cdm/properties/SEScalarVolume.h>
 
 namespace biogears {
-class SEScalarVolume;
 namespace io {
   class PatientConditions;
 }

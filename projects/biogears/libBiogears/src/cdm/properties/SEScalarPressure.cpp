@@ -38,15 +38,6 @@ PressureUnit::~PressureUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarPressure::SEScalarPressure()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarPressure::~SEScalarPressure()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool PressureUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Pa.GetString(), unit) == 0)

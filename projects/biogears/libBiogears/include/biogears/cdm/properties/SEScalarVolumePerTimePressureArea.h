@@ -33,17 +33,8 @@ public:
   bool operator!=(const VolumePerTimePressureAreaUnit&) const;
 };
 #pragma warning(disable : 4661)
-
 extern template class SEScalarQuantity<VolumePerTimePressureAreaUnit>;
-
-class BIOGEARS_API SEScalarVolumePerTimePressureArea : public SEScalarQuantity<VolumePerTimePressureAreaUnit> {
-public:
-  SEScalarVolumePerTimePressureArea();
-  virtual ~SEScalarVolumePerTimePressureArea();
-
-  using SEScalarQuantity<VolumePerTimePressureAreaUnit>::SetValue;
-  using SEScalarQuantity<VolumePerTimePressureAreaUnit>::GetValue;
-};
+using SEScalarVolumePerTimePressureArea  = SEScalarQuantity<VolumePerTimePressureAreaUnit>;
 #pragma warning(default : 4661)
 
 }

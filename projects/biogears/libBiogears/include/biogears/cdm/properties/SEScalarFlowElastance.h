@@ -36,14 +36,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<FlowElastanceUnit>;
-
-class BIOGEARS_API SEScalarFlowElastance : public SEScalarQuantity<FlowElastanceUnit> {
-public:
-  SEScalarFlowElastance();
-  virtual ~SEScalarFlowElastance();
-
-  using SEScalarQuantity<FlowElastanceUnit>::SetValue;
-  using SEScalarQuantity<FlowElastanceUnit>::GetValue;
-};
+using SEScalarFlowElastance  = SEScalarQuantity<FlowElastanceUnit>;
 #pragma warning(default : 4661)
 }

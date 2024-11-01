@@ -36,14 +36,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<VolumePerTimeAreaUnit>;
-
-class BIOGEARS_API SEScalarVolumePerTimeArea : public SEScalarQuantity<VolumePerTimeAreaUnit> {
-public:
-  SEScalarVolumePerTimeArea();
-  virtual ~SEScalarVolumePerTimeArea();
-
-  using SEScalarQuantity<VolumePerTimeAreaUnit>::SetValue;
-  using SEScalarQuantity<VolumePerTimeAreaUnit>::GetValue;
-
-};
+using SEScalarVolumePerTimeArea  = SEScalarQuantity<VolumePerTimeAreaUnit>;
+#pragma warning(default : 4661)
 }

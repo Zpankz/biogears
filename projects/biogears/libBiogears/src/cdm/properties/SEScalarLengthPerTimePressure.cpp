@@ -37,15 +37,6 @@ LengthPerTimePressureUnit::~LengthPerTimePressureUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarLengthPerTimePressure::SEScalarLengthPerTimePressure()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarLengthPerTimePressure::~SEScalarLengthPerTimePressure()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool LengthPerTimePressureUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(m_Per_s_mmHg.GetString(), unit) == 0)

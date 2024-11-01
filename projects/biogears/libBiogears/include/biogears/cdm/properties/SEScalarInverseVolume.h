@@ -35,10 +35,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<InverseVolumeUnit>;
-
-class BIOGEARS_API SEScalarInverseVolume : public SEScalarQuantity<InverseVolumeUnit> {
-public:
-  SEScalarInverseVolume();
-  virtual ~SEScalarInverseVolume();
-};
+using SEScalarInverseVolume = SEScalarQuantity<InverseVolumeUnit>;
+#pragma warning(default : 4661)
 }

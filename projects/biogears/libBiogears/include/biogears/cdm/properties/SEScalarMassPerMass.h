@@ -35,13 +35,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<MassPerMassUnit>;
-
-class BIOGEARS_API SEScalarMassPerMass : public SEScalarQuantity<MassPerMassUnit> {
-public:
-  SEScalarMassPerMass();
-  virtual ~SEScalarMassPerMass();
-
-  using SEScalarQuantity<MassPerMassUnit>::SetValue;
-  using SEScalarQuantity<MassPerMassUnit>::GetValue;
-};
+using SEScalarMassPerMass  = SEScalarQuantity<MassPerMassUnit>;
+#pragma warning(default : 4661)
 }

@@ -44,16 +44,6 @@ MassPerAmountUnit::~MassPerAmountUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarMassPerAmount::SEScalarMassPerAmount()
-  : SEScalarQuantity()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerAmount::~SEScalarMassPerAmount()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool MassPerAmountUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(g_Per_ct.GetString(), unit) == 0)

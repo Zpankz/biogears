@@ -34,13 +34,5 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<HeatCapacitancePerAmountUnit>;
-
-class BIOGEARS_API SEScalarHeatCapacitancePerAmount : public SEScalarQuantity<HeatCapacitancePerAmountUnit> {
-public:
-  SEScalarHeatCapacitancePerAmount();
-  virtual ~SEScalarHeatCapacitancePerAmount();
-
-  using SEScalarQuantity<HeatCapacitancePerAmountUnit>::SetValue;
-  using SEScalarQuantity<HeatCapacitancePerAmountUnit>::GetValue;
-};
+using SEScalarHeatCapacitancePerAmount  = SEScalarQuantity<HeatCapacitancePerAmountUnit>;
 }

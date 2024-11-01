@@ -13,7 +13,7 @@ specific language governing permissions and limitations under the License.
 #include <biogears/cdm/circuit/thermal/SEThermalCircuitNode.h>
 #include <biogears/cdm/compartment/SECompartment.h>
 #include <biogears/cdm/compartment/SECompartmentNodes.h>
-
+#include <biogears/cdm/properties/SEScalarPower.h>
 
 #include <map>
 #include <string>
@@ -22,8 +22,6 @@ specific language governing permissions and limitations under the License.
 
 namespace biogears {
 class SEThermalCompartmentLink;
-class SEScalarPower;
-class PowerUnit;
 class SECompartmentManager;
 
 namespace io {

@@ -39,15 +39,6 @@ LengthUnit::~LengthUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarLength::SEScalarLength()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarLength::~SEScalarLength()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool LengthUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(m.GetString(), unit) == 0)

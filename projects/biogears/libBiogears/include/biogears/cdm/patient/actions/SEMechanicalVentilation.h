@@ -11,10 +11,11 @@ specific language governing permissions and limitations under the License.
 **************************************************************************************/
 
 #pragma once
-#include <biogears/cdm/patient/actions/SEPatientAction.h>
 #include <biogears/cdm/enums/SEPatientActionsEnums.h>
 #include <biogears/cdm/enums/SEPropertyEnums.h>
-
+#include <biogears/cdm/patient/actions/SEPatientAction.h>
+#include <biogears/cdm/properties/SEScalarPressure.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTime.h>
 
 #include <random>
 
@@ -23,10 +24,7 @@ class Serializer;
 class SESubstance;
 class SESubstanceFraction;
 class SEMechanicalVentilationConfiguration;
-class SEScalarVolumePerTime;
-class VolumePerTimeUnit;
-class SEScalarPressure;
-class PressureUnit;
+
 namespace io {
   class PatientActions;
 }

@@ -37,15 +37,6 @@ FrequencyUnit::~FrequencyUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarFrequency::SEScalarFrequency()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarFrequency::~SEScalarFrequency()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool FrequencyUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Per_min.GetString(), unit) == 0)

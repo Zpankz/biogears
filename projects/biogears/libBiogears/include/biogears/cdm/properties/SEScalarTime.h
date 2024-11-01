@@ -38,16 +38,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<TimeUnit>;
-
-class BIOGEARS_API SEScalarTime : public SEScalarQuantity<TimeUnit> {
-public:
-  SEScalarTime();
-  virtual ~SEScalarTime();
-
-  using  SEScalarQuantity::SEScalarQuantity;
-
-  using SEScalarQuantity<TimeUnit>::SetValue;
-  using SEScalarQuantity<TimeUnit>::GetValue;
-};
+using SEScalarTime  = SEScalarQuantity<TimeUnit>;
 #pragma warning(default : 4661)
 }

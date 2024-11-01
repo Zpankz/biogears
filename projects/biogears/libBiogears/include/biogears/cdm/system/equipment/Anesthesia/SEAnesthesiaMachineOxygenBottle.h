@@ -13,13 +13,12 @@ specific language governing permissions and limitations under the License.
 #pragma once
 #include <biogears/cdm/CommonDataModel.h>
 #include <biogears/exports.h>
+#include <biogears/cdm/properties/SEScalarVolume.h>
 
 namespace biogears {
 class SEAnesthesiaMachine;
 class SESubstanceManager;
 class SEScalar;
-class SEScalarVolume;
-class VolumeUnit;
 namespace io {
   class Anesthesia;
 }

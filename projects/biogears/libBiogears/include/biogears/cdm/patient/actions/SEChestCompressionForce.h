@@ -13,12 +13,11 @@ specific language governing permissions and limitations under the License.
 #pragma once
 #include <biogears/cdm/patient/actions/SEChestCompression.h>
 #include <biogears/cdm/enums/SEPatientActionsEnums.h>
-
+#include <biogears/cdm/properties/SEScalarForce.h>
 
 #include <random>
 
 namespace biogears {
-class SEScalarForce;
 namespace io {
   class PatientActions;
 }

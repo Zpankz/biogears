@@ -127,24 +127,6 @@ const MassPerVolumeUnit& MassPerVolumeUnit::GetCompoundUnit(const std::string& u
   return GetCompoundUnit(unit.c_str());
 }
 //-------------------------------------------------------------------------------
-SEScalarMassPerVolume::SEScalarMassPerVolume()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerVolume::SEScalarMassPerVolume(const SEScalarMassPerVolume& obj)
-  : SEScalarQuantity<MassPerVolumeUnit>(obj)
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerVolume::SEScalarMassPerVolume(double v, const MassPerVolumeUnit& u)
-  : SEScalarQuantity<MassPerVolumeUnit>(v, u)
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerVolume::~SEScalarMassPerVolume()
-{
-}
-//-------------------------------------------------------------------------------
 bool MassPerVolumeUnit::operator==(const MassPerVolumeUnit& obj) const
 {
   return CCompoundUnit::operator==(obj);

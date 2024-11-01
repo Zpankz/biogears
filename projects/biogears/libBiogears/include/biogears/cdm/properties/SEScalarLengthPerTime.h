@@ -38,13 +38,6 @@ public:
 };
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<LengthPerTimeUnit>;
-
-class BIOGEARS_API SEScalarLengthPerTime : public SEScalarQuantity<LengthPerTimeUnit> {
-public:
-  SEScalarLengthPerTime();
-  virtual ~SEScalarLengthPerTime();
-
-  using SEScalarQuantity<LengthPerTimeUnit>::SetValue;
-  using SEScalarQuantity<LengthPerTimeUnit>::GetValue;
-};
+using SEScalarLengthPerTime  = SEScalarQuantity<LengthPerTimeUnit>;
+#pragma warning(default : 4661)
 }

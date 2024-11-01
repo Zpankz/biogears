@@ -34,15 +34,6 @@ ElectricChargeUnit::~ElectricChargeUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarElectricCharge::SEScalarElectricCharge()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarElectricCharge::~SEScalarElectricCharge()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool ElectricChargeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(C.GetString(), unit) == 0)

@@ -37,16 +37,6 @@ AmountPerMassUnit::AmountPerMassUnit(const std::string& u)
 AmountPerMassUnit::~AmountPerMassUnit(){
 }
 //-----------------------------------------------------------------------------
-SEScalarAmountPerMass::SEScalarAmountPerMass()
-  : SEScalarQuantity()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarAmountPerMass::~SEScalarAmountPerMass()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool AmountPerMassUnit::IsValidUnit(const char* unit)
 {
   return IsValidUnit(std::string { unit });

@@ -14,13 +14,13 @@ specific language governing permissions and limitations under the License.
 #include <biogears/cdm/properties/SEScalarMassPerAmount.h>
 #include <biogears/cdm/patient/assessments/SEPatientAssessment.h>
 #include <biogears/cdm/enums/SEPatientAssessmentEnums.h>
+#include <biogears/cdm/properties/SEScalarMassPerVolume.h>
+#include <biogears/cdm/properties/SEScalarMassPerAmount.h>
+#include <biogears/cdm/properties/SEScalarVolume.h>
+#include <biogears/cdm/properties/SEScalarAmountPerVolume.h>
 
 namespace biogears {
 class SEScalarFraction;
-class SEScalarMassPerVolume;
-class SEScalarMassPerAmount;
-class SEScalarVolume;
-class SEScalarAmountPerVolume;
 namespace io {
   class PatientAssessments;
 }

@@ -37,13 +37,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<InversePressureUnit>;
-
-class BIOGEARS_API SEScalarInversePressure : public SEScalarQuantity<InversePressureUnit> {
-public:
-  SEScalarInversePressure();
-  virtual ~SEScalarInversePressure();
-
-  using SEScalarQuantity<InversePressureUnit>::SetValue;
-  using SEScalarQuantity<InversePressureUnit>::GetValue;
-};
+using SEScalarInversePressure  = SEScalarQuantity<InversePressureUnit>;
+#pragma warning(default : 4661)
 }

@@ -13,22 +13,20 @@ specific language governing permissions and limitations under the License.
 #pragma once
 #include <biogears/cdm/enums/SEEnvironmentEnums.h>
 #include <biogears/cdm/system/SESystem.h>
+#include <biogears/cdm/properties/SEScalarPower.h>
+#include <biogears/cdm/properties/SEScalarHeatConductancePerArea.h>
 
 namespace biogears {
+
 class SESubstance;
 class SESubstanceFraction;
 class SESubstanceManager;
 class SEEnvironmentalConditions;
 class SEEnvironmentChange;
 class SEInitialEnvironment;
+class SEAppliedTemperature;
 class SEActiveHeating;
 class SEActiveCooling;
-class SEAppliedTemperature;
-
-class SEScalarPower;
-class PowerUnit;
-class SEScalarHeatConductancePerArea;
-class HeatConductancePerAreaUnit;
 namespace io {
   class Environment;
 }

@@ -34,14 +34,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<MassPerAreaTimeUnit>;
-
-class BIOGEARS_API SEScalarMassPerAreaTime : public SEScalarQuantity<MassPerAreaTimeUnit> {
-public:
-  SEScalarMassPerAreaTime();
-  virtual ~SEScalarMassPerAreaTime();
-
-  using SEScalarQuantity<MassPerAreaTimeUnit>::SetValue;
-  using SEScalarQuantity<MassPerAreaTimeUnit>::GetValue;
-
-};
+using SEScalarMassPerAreaTime  = SEScalarQuantity<MassPerAreaTimeUnit>;
+#pragma warning(default : 4661)
 }

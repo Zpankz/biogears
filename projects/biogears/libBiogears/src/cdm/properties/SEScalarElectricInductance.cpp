@@ -33,14 +33,6 @@ ElectricInductanceUnit ::~ElectricInductanceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarElectricInductance::SEScalarElectricInductance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarElectricInductance::~SEScalarElectricInductance()
-{
-}
-//-----------------------------------------------------------------------------
 bool ElectricInductanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(H.GetString(), unit) == 0)

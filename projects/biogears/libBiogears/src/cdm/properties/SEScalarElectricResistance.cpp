@@ -34,15 +34,6 @@ ElectricResistanceUnit::~ElectricResistanceUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarElectricResistance::SEScalarElectricResistance()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarElectricResistance::~SEScalarElectricResistance()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool ElectricResistanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Ohm.GetString(), unit) == 0)
@@ -75,17 +66,6 @@ bool ElectricResistanceUnit::operator==(const ElectricResistanceUnit& obj) const
 }
 //-------------------------------------------------------------------------------
 bool ElectricResistanceUnit::operator!=(const ElectricResistanceUnit& obj) const
-{
-  return !(*this == obj);
-}
-//-------------------------------------------------------------------------------
-
-bool SEScalarElectricResistance::operator==(const SEScalarElectricResistance& obj) const
-{
-  return SEScalarQuantity::operator==(obj);
-}
-//-------------------------------------------------------------------------------
-bool SEScalarElectricResistance::operator!=(const SEScalarElectricResistance& obj) const
 {
   return !(*this == obj);
 }

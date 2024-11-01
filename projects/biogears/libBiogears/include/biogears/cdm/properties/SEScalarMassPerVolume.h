@@ -47,16 +47,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<MassPerVolumeUnit>;
-
-class BIOGEARS_API SEScalarMassPerVolume : public SEScalarQuantity<MassPerVolumeUnit> {
-public:
-  SEScalarMassPerVolume();
-  SEScalarMassPerVolume(const SEScalarMassPerVolume& obj);
-  SEScalarMassPerVolume(double, const MassPerVolumeUnit&);
-  virtual ~SEScalarMassPerVolume();
-
-  using SEScalarQuantity<MassPerVolumeUnit>::SetValue;
-  using SEScalarQuantity<MassPerVolumeUnit>::GetValue;
-};
+using SEScalarMassPerVolume  = SEScalarQuantity<MassPerVolumeUnit>;
 #pragma warning(default:4661)
 }

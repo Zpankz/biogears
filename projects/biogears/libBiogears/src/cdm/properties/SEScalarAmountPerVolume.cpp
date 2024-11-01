@@ -38,15 +38,6 @@ AmountPerVolumeUnit::~AmountPerVolumeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarAmountPerVolume::SEScalarAmountPerVolume()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarAmountPerVolume::~SEScalarAmountPerVolume()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool AmountPerVolumeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mol_Per_L.GetString(), unit) == 0)

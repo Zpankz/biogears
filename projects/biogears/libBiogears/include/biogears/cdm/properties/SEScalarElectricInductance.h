@@ -34,15 +34,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<ElectricInductanceUnit>;
-
-class BIOGEARS_API SEScalarElectricInductance : public SEScalarQuantity<ElectricInductanceUnit> {
-public:
-  SEScalarElectricInductance();
-  virtual ~SEScalarElectricInductance(); 
-
-  using SEScalarQuantity<ElectricInductanceUnit>::SetValue;
-  using SEScalarQuantity<ElectricInductanceUnit>::GetValue;
-
-};
+using SEScalarElectricInductance  = SEScalarQuantity<ElectricInductanceUnit>;
 #pragma warning(default : 4661)
 }

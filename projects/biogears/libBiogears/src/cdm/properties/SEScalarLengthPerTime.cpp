@@ -39,15 +39,6 @@ LengthPerTimeUnit::~LengthPerTimeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarLengthPerTime::SEScalarLengthPerTime()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarLengthPerTime::~SEScalarLengthPerTime()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool LengthPerTimeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(m_Per_s.GetString(), unit) == 0)

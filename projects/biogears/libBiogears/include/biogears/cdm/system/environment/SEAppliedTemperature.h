@@ -13,13 +13,11 @@ specific language governing permissions and limitations under the License.
 #include "biogears/cdm/properties/SEScalarFraction.h"
 #include <biogears/cdm/enums/SEEnvironmentEnums.h>
 #include <biogears/cdm/system/environment/actions/SEEnvironmentAction.h>
+#include <biogears/cdm/properties/SEScalarTemperature.h>
+#include <biogears/cdm/properties/SEScalarArea.h>
 
 namespace biogears {
 class SEScalar;
-class SEScalarTemperature;
-class TemperatureUnit;
-class SEScalarArea;
-class AreaUnit;
 namespace io {
   class Environment;
 }

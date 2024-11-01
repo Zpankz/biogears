@@ -38,15 +38,6 @@ AreaPerTimePressureUnit::~AreaPerTimePressureUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarAreaPerTimePressure::SEScalarAreaPerTimePressure()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarAreaPerTimePressure::~SEScalarAreaPerTimePressure()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool AreaPerTimePressureUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(m2_Per_s_mmHg.GetString(), unit) == 0)

@@ -40,16 +40,6 @@ AmountPerTimeUnit::~AmountPerTimeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarAmountPerTime::SEScalarAmountPerTime()
-  : SEScalarQuantity()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarAmountPerTime::~SEScalarAmountPerTime()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool AmountPerTimeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mol_Per_day.GetString(), unit) == 0)

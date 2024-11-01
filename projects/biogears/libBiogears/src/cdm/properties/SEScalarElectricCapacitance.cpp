@@ -34,15 +34,6 @@ ElectricCapacitanceUnit::~ElectricCapacitanceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarElectricCapacitance::SEScalarElectricCapacitance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarElectricCapacitance::~SEScalarElectricCapacitance()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool ElectricCapacitanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(F.GetString(), unit) == 0)

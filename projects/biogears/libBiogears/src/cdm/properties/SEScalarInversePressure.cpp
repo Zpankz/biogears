@@ -36,15 +36,6 @@ InversePressureUnit::~InversePressureUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarInversePressure::SEScalarInversePressure()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarInversePressure::~SEScalarInversePressure()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool InversePressureUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Inverse_Pa.GetString(), unit) == 0)

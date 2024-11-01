@@ -35,15 +35,6 @@ EnergyPerAmountUnit::~EnergyPerAmountUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarEnergyPerAmount::SEScalarEnergyPerAmount()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarEnergyPerAmount::~SEScalarEnergyPerAmount()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool EnergyPerAmountUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(kcal_Per_mol.GetString(), unit) == 0)

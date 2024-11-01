@@ -35,15 +35,6 @@ PressureTimePerAreaUnit::PressureTimePerAreaUnit(const std::string& u)
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarPressureTimePerArea::SEScalarPressureTimePerArea()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarPressureTimePerArea::~SEScalarPressureTimePerArea()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool PressureTimePerAreaUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mmHg_Per_mL_m2.GetString(), unit) == 0)

@@ -17,14 +17,11 @@ specific language governing permissions and limitations under the License.
 
 #include <biogears/cdm/patient/actions/SEPatientAction.h>
 #include <biogears/cdm/properties/SEScalarPressure.h>
-
-
-#include <biogears/cdm/properties/SEScalarPressure.h>
+#include <biogears/cdm/properties/SEScalarMassPerVolume.h>
 
 #include <random>
 
 namespace biogears {
-class SEScalarMassPerVolume;
 namespace io {
   class PatientActions;
 }

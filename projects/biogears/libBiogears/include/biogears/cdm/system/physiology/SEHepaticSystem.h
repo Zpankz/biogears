@@ -12,14 +12,11 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 #include <biogears/cdm/system/SESystem.h>
-
 #include <biogears/cdm/enums/SEPhysiologyEnums.h>
+#include <biogears/cdm/properties/SEScalarAmountPerTime.h>
+#include <biogears/cdm/properties/SEScalarMassPerTime.h>
 
 namespace biogears {
-class SEScalarAmountPerTime;
-class AmountPerTimeUnit;
-class SEScalarMassPerTime;
-class MassPerTimeUnit;
 namespace io {
   class Physiology;
 }

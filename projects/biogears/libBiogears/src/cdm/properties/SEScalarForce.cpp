@@ -36,15 +36,6 @@ ForceUnit::~ForceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarForce::SEScalarForce()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarForce::~SEScalarForce()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool ForceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(N.GetString(), unit) == 0)

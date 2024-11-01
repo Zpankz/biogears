@@ -35,15 +35,6 @@ OsmolarityUnit::~OsmolarityUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarOsmolarity::SEScalarOsmolarity()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarOsmolarity::~SEScalarOsmolarity()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool OsmolarityUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Osm_Per_L.GetString(), unit) == 0)

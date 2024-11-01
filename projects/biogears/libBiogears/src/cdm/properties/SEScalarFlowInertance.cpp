@@ -38,15 +38,6 @@ FlowInertanceUnit::~FlowInertanceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarFlowInertance::SEScalarFlowInertance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarFlowInertance::~SEScalarFlowInertance()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool FlowInertanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(mmHg_s2_Per_mL.GetString(), unit) == 0)

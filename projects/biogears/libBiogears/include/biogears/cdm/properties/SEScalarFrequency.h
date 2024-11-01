@@ -37,14 +37,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<FrequencyUnit>;
-
-class BIOGEARS_API SEScalarFrequency : public SEScalarQuantity<FrequencyUnit> {
-public:
-  SEScalarFrequency();
-  virtual ~SEScalarFrequency();
-
-  using SEScalarQuantity<FrequencyUnit>::SetValue;
-  using SEScalarQuantity<FrequencyUnit>::GetValue;
-};
+using SEScalarFrequency  = SEScalarQuantity<FrequencyUnit>;
 #pragma warning(default : 4661)
 }

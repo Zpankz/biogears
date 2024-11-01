@@ -19,10 +19,10 @@ specific language governing permissions and limitations under the License.
 #include <biogears/cdm/CommonDataModel.h>
 #include <biogears/cdm/enums/SEPhysiologyEnums.h>
 #include <biogears/cdm/system/equipment/ElectroCardioGram/SEElectroCardioGramWaveformLeadNumber.h>
+#include <biogears/cdm/properties/SEScalarElectricPotential.h>
 #include <biogears/schema/cdm/ElectroCardioGram.hxx>
 
 namespace biogears {
-class SEScalarElectricPotential;
 class SEElectroCardioGramInterpolationWaveform;
 namespace io {
   class ElectroCardioGram;

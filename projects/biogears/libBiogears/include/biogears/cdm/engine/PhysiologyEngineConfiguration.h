@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 #include <biogears/cdm/utils/GeneralMath.h>
-
+#include <biogears/cdm/properties/SEScalarTime.h>
 
 namespace biogears {
 class SEElectroCardioGramInterpolator;
@@ -20,8 +20,6 @@ class PhysiologyEngineStabilization;
 class PhysiologyEngineTimedStabilization;
 class PhysiologyEngineDynamicStabilization;
 class SEPatient;
-class SEScalarTime;
-class TimeUnit;
 namespace io {
   class EngineConfiguration;
 }

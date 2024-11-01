@@ -37,15 +37,6 @@ HeatConductanceUnit::~HeatConductanceUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatConductance::SEScalarHeatConductance()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatConductance::~SEScalarHeatConductance()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatConductanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(W_Per_K.GetString(), unit) == 0)

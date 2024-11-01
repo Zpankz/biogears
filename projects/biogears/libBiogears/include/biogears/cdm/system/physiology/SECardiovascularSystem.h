@@ -14,26 +14,17 @@ specific language governing permissions and limitations under the License.
 #include <biogears/exports.h>
 
 #include <biogears/cdm/enums/SEPhysiologyEnums.h>
+#include <biogears/cdm/properties/SEScalarFlowResistance.h>
+#include <biogears/cdm/properties/SEScalarFrequency.h>
+#include <biogears/cdm/properties/SEScalarPressure.h>
+#include <biogears/cdm/properties/SEScalarPressureTimePerVolumeArea.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTime.h>
+#include <biogears/cdm/properties/SEScalarVolume.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTimeArea.h>
+#include <biogears/cdm/properties/SEScalarFraction.h>
 #include <biogears/cdm/system/SESystem.h>
-#include <biogears/cdm/enums/SEPhysiologyEnums.h>
 
 namespace biogears {
-class SEScalarPressure;
-class PressureUnit;
-class SEScalarVolume;
-class VolumeUnit;
-class SEScalarVolumePerTimeArea;
-class VolumePerTimeAreaUnit;
-class SEScalarVolumePerTime;
-class VolumePerTimeUnit;
-class SEScalarFraction;
-class FractionUnit;
-class SEScalarFrequency;
-class FrequencyUnit;
-class SEScalarFlowResistance;
-class FlowResistanceUnit;
-class SEScalarPressureTimePerVolumeArea;
-class PressureTimePerVolumeAreaUnit;
 namespace io {
   class Physiology;
 }

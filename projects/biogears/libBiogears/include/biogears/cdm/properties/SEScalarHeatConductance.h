@@ -37,14 +37,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<HeatConductanceUnit>;
-
-class BIOGEARS_API SEScalarHeatConductance : public SEScalarQuantity<HeatConductanceUnit> {
-public:
-  SEScalarHeatConductance();
-  virtual ~SEScalarHeatConductance();
-
-  using SEScalarQuantity<HeatConductanceUnit>::SetValue;
-  using SEScalarQuantity<HeatConductanceUnit>::GetValue;
-
-};
+using SEScalarHeatConductance  = SEScalarQuantity<HeatConductanceUnit>;
+#pragma warning(default : 4661)
 }

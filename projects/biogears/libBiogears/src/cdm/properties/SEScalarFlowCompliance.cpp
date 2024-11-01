@@ -37,15 +37,6 @@ FlowComplianceUnit::~FlowComplianceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarFlowCompliance::SEScalarFlowCompliance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarFlowCompliance::~SEScalarFlowCompliance()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool FlowComplianceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(L_Per_cmH2O.GetString(), unit) == 0)

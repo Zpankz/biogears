@@ -12,10 +12,9 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 #include <biogears/cdm/system/SESystem.h>
+#include <biogears/cdm/properties/SEScalarElectricPotential.h>
 
 namespace biogears {
-class SEScalarElectricPotential;
-class ElectricPotentialUnit;
 namespace io {
   class ElectroCardioGram;
 }

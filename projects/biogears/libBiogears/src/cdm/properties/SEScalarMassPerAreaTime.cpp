@@ -33,14 +33,6 @@ MassPerAreaTimeUnit::MassPerAreaTimeUnit(const std::string& u)
 MassPerAreaTimeUnit::~MassPerAreaTimeUnit()
 {
 }
-//-------------------------------------------------------------------------------
-SEScalarMassPerAreaTime::SEScalarMassPerAreaTime()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarMassPerAreaTime::~SEScalarMassPerAreaTime()
-{
-}
 
 //-------------------------------------------------------------------------------
 bool MassPerAreaTimeUnit::IsValidUnit(const char* unit)

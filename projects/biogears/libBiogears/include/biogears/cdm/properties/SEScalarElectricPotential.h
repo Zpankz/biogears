@@ -35,14 +35,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<ElectricPotentialUnit>;
-
-class BIOGEARS_API SEScalarElectricPotential : public SEScalarQuantity<ElectricPotentialUnit> {
-public:
-  using SEScalarQuantity::SEScalarQuantity;
-  virtual ~SEScalarElectricPotential();
-
-  using SEScalarQuantity<ElectricPotentialUnit>::SetValue;
-  using SEScalarQuantity<ElectricPotentialUnit>::GetValue;
-};
+using SEScalarElectricPotential  = SEScalarQuantity<ElectricPotentialUnit>;
 #pragma warning(default : 4661)
 }

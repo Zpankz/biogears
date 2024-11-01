@@ -34,15 +34,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<ElectricCurrentUnit>;
-
-class BIOGEARS_API SEScalarElectricCurrent : public SEScalarQuantity<ElectricCurrentUnit> {
-public:
-  SEScalarElectricCurrent();
-  virtual ~SEScalarElectricCurrent();
-
-  using SEScalarQuantity<ElectricCurrentUnit>::SetValue;
-  using SEScalarQuantity<ElectricCurrentUnit>::GetValue;
-
-};
+using SEScalarElectricCurrent  = SEScalarQuantity<ElectricCurrentUnit>;
 #pragma warning(default : 4661)
 }

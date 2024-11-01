@@ -39,15 +39,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<AmountPerTimeUnit>;
-
-class BIOGEARS_API SEScalarAmountPerTime : public SEScalarQuantity<AmountPerTimeUnit> {
-
-public:
-  SEScalarAmountPerTime();
-  virtual ~SEScalarAmountPerTime();
-
-  using SEScalarQuantity<AmountPerTimeUnit>::SetValue;
-  using SEScalarQuantity<AmountPerTimeUnit>::GetValue;
-};
+using SEScalarAmountPerTime  = SEScalarQuantity<AmountPerTimeUnit>;
 #pragma warning(default : 4661)
 }

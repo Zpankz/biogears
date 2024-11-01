@@ -37,15 +37,6 @@ HeatCapacitanceUnit::~HeatCapacitanceUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatCapacitance::SEScalarHeatCapacitance()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatCapacitance::~SEScalarHeatCapacitance()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatCapacitanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(J_Per_K.GetString(), unit) == 0)

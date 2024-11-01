@@ -34,15 +34,6 @@ HeatCapacitancePerAmountUnit::~HeatCapacitancePerAmountUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatCapacitancePerAmount::SEScalarHeatCapacitancePerAmount()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatCapacitancePerAmount::~SEScalarHeatCapacitancePerAmount()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatCapacitancePerAmountUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(J_Per_K_mol.GetString(), unit) == 0)

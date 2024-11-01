@@ -37,15 +37,6 @@ HeatResistanceUnit::~HeatResistanceUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarHeatResistance::SEScalarHeatResistance()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarHeatResistance::~SEScalarHeatResistance()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool HeatResistanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(K_Per_W.GetString(), unit) == 0)

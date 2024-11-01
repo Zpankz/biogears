@@ -35,15 +35,6 @@ InverseVolumeUnit::~InverseVolumeUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarInverseVolume::SEScalarInverseVolume()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarInverseVolume::~SEScalarInverseVolume()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool InverseVolumeUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(Inverse_L.GetString(), unit) == 0)

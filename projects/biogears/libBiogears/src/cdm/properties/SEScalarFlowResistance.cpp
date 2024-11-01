@@ -38,15 +38,6 @@ FlowResistanceUnit::~FlowResistanceUnit()
 {
 }
 //-----------------------------------------------------------------------------
-SEScalarFlowResistance::SEScalarFlowResistance()
-{
-}
-//-----------------------------------------------------------------------------
-SEScalarFlowResistance::~SEScalarFlowResistance()
-{
-}
-
-//-----------------------------------------------------------------------------
 bool FlowResistanceUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(cmH2O_s_Per_L.GetString(), unit) == 0)

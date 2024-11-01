@@ -16,12 +16,10 @@ specific language governing permissions and limitations under the License.
 
 #include <biogears/cdm/enums/SESubstanceEnums.h>
 #include <biogears/cdm/patient/actions/SEPupillaryResponse.h>
+#include <biogears/cdm/properties/SEScalarFrequency.h>
+#include <biogears/cdm/properties/SEScalarMassPerVolume.h>
 
 namespace biogears {
-class SEScalarFrequency;
-class FrequencyUnit;
-class SEScalarMassPerVolume;
-class MassPerVolumeUnit;
 class SEScalarFraction;
 class SEPharmacodynamicModifier;
 

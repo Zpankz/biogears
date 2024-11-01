@@ -37,15 +37,6 @@ EnergyUnit::~EnergyUnit()
 {
 }
 //-------------------------------------------------------------------------------
-SEScalarEnergy::SEScalarEnergy()
-{
-}
-//-------------------------------------------------------------------------------
-SEScalarEnergy::~SEScalarEnergy()
-{
-}
-
-//-------------------------------------------------------------------------------
 bool EnergyUnit::IsValidUnit(const char* unit)
 {
   if (strcmp(J.GetString(), unit) == 0)

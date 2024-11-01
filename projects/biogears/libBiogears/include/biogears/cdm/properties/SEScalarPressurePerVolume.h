@@ -35,13 +35,6 @@ public:
 
 #pragma warning(disable : 4661)
 extern template class SEScalarQuantity<PressurePerVolumeUnit>;
-
-class BIOGEARS_API SEScalarPressurePerVolume : public SEScalarQuantity<PressurePerVolumeUnit> {
-public:
-  SEScalarPressurePerVolume();
-  virtual ~SEScalarPressurePerVolume();
-
-  using SEScalarQuantity<PressurePerVolumeUnit>::SetValue;
-  using SEScalarQuantity<PressurePerVolumeUnit>::GetValue;
-};
+using SEScalarPressurePerVolume  = SEScalarQuantity<PressurePerVolumeUnit>;
+#pragma warning(default : 4661)
 }
