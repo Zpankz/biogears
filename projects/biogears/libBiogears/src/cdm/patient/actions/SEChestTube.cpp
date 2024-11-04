@@ -88,7 +88,7 @@ void SEChestTube::InvalidateSide()
 //-------------------------------------------------------------------------------
 void SEChestTube::ToString(std::ostream& str) const
 {
-  str << "Patient Action : Needle Decompression";
+  str << "Patient Action : Chest Tube";
   if (HasComment())
     str << "\n\tComment: " << m_Comment;
   str << "\n\tState: " << IsActive();

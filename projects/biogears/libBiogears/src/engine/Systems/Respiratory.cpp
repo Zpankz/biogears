@@ -168,6 +168,13 @@ void Respiratory::Initialize()
   m_TopBreathPleuralPressure_cmH2O = 0.0;
   m_LastCardiacCycleBloodPH = 7.4;
 
+  m_data.GetDataTrack().Probe("m_TopBreathTotalVolume_L ", m_TopBreathTotalVolume_L);
+  m_data.GetDataTrack().Probe("m_TopBreathAlveoliVolume_L ", m_TopBreathAlveoliVolume_L);
+  m_data.GetDataTrack().Probe("m_TopBreathDeadSpaceVolume_L ", m_TopBreathDeadSpaceVolume_L);
+  m_data.GetDataTrack().Probe("m_TopBreathPleuralPressure_cmH2O ", m_TopBreathPleuralPressure_cmH2O);
+  //m_data.GetDataTrack().Probe("m_OxygenAutoregulatorHeart ", m_OxygenAutoregulatorHeart);
+  //m_data.GetDataTrack().Probe("m_OxygenAutoregulatorMuscle ", m_OxygenAutoregulatorMuscle);
+
   //Driver
   //Basically a Y-shift for the driver
   m_DefaultDrivePressure_cmH2O = -5.0;
@@ -179,6 +186,7 @@ void Respiratory::Initialize()
   m_VentilationFrequency_Per_min = m_Patient->GetRespirationRateBaseline(FrequencyUnit::Per_min);
   m_DriverPressure_cmH2O = m_DefaultDrivePressure_cmH2O;
   m_DriverPressureMin_cmH2O = m_DefaultDrivePressure_cmH2O;
+
 
   //The peak driver pressure is the pressure above the default pressure
   m_PeakRespiratoryDrivePressure_cmH2O = m_Patient->GetRespiratoryDriverAmplitudeBaseline(PressureUnit::cmH2O);
@@ -1860,10 +1868,16 @@ void Respiratory::CalculateVitalSigns()
     m_Patient->SetEvent(SEPatientEventType::StartOfExhale, true, m_data.GetSimulationTime());
     m_BreathTimeExhale_min = m_ElapsedBreathingCycleTime_min;
     m_BreathingCycle = true;
+    
     m_TopBreathTotalVolume_L = GetTotalLungVolume(VolumeUnit::L);
     m_TopBreathAlveoliVolume_L = m_RightAlveoli->GetNextVolume().GetValue(VolumeUnit::L) + m_LeftAlveoli->GetNextVolume().GetValue(VolumeUnit::L);
     m_TopBreathDeadSpaceVolume_L = m_RightBronchi->GetNextVolume().GetValue(VolumeUnit::L) + m_LeftBronchi->GetNextVolume().GetValue(VolumeUnit::L) + m_Trachea->GetVolume(VolumeUnit::L);
     m_TopBreathPleuralPressure_cmH2O = dPleuralPressure_cmH2O;
+
+    m_data.GetDataTrack().Probe("m_TopBreathTotalVolume_L ", m_TopBreathTotalVolume_L);
+    m_data.GetDataTrack().Probe("m_TopBreathAlveoliVolume_L ", m_TopBreathAlveoliVolume_L);
+    m_data.GetDataTrack().Probe("m_TopBreathDeadSpaceVolume_L ", m_TopBreathDeadSpaceVolume_L);
+    m_data.GetDataTrack().Probe("m_TopBreathPleuralPressure_cmH2O ", m_TopBreathPleuralPressure_cmH2O);
 
     if (m_data.GetState() > EngineState::InitialStabilization) { // Don't throw events if we are initializing
       //Check for acute lung injury and acute respiratory distress

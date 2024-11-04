@@ -311,7 +311,7 @@ void Nervous::CentralSignalProcess()
   const double xCO2SP = 0.25;
   const double tauIschemia = 30.0;
   const double tauCO2 = 20.0;
-
+  
 
   // Exercise Signal Modifiers
   double fExerciseSympathetic = 0.0;
