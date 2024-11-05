@@ -130,6 +130,7 @@ private:
   void DoRightNeedleDecompression(double dFlowResistance);
   void DoLeftChestTube(double ctFlowResistance);
   void DoRightChestTube(double ctFlowResistance);
+  void AdjustPleuralCavity();
   // Aerosol Deposition and various Effects
   void ProcessAerosolSubstances();
 
@@ -226,6 +227,7 @@ private:
   SEGasCompartment* m_RightLung;
   SEGasCompartment* m_Lungs;
   SEGasCompartment* m_Trachea;
+  SEGasCompartment* m_pleuralCavity;
   SEGasSubstanceQuantity* m_TracheaO2;
   SEGasSubstanceQuantity* m_TracheaCO2;
   SELiquidSubstanceQuantity* m_AortaO2;

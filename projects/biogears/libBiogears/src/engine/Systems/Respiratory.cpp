@@ -102,6 +102,7 @@ void Respiratory::Invalidate()
   m_LeftLungExtravascular = nullptr;
   m_RightLungExtravascular = nullptr;
   m_Trachea = nullptr;
+  m_pleuralCavity = nullptr;
   m_AortaO2 = nullptr;
   m_AortaCO2 = nullptr;
   m_MechanicalVentilatorConnection = nullptr;
@@ -286,6 +287,7 @@ void Respiratory::SetUp()
   m_LeftLung = m_data.GetCompartments().GetGasCompartment(BGE::PulmonaryCompartment::LeftLung);
   m_RightLung = m_data.GetCompartments().GetGasCompartment(BGE::PulmonaryCompartment::RightLung);
   m_Lungs = m_data.GetCompartments().GetGasCompartment(BGE::PulmonaryCompartment::Lungs);
+  m_pleuralCavity = m_data.GetCompartments().GetGasCompartment(BGE::PulmonaryCompartment::PleuralCavity);
   m_LeftLungExtravascular = m_data.GetCompartments().GetLiquidCompartment(BGE::ExtravascularCompartment::LeftLungIntracellular);
   m_RightLungExtravascular = m_data.GetCompartments().GetLiquidCompartment(BGE::ExtravascularCompartment::RightLungIntracellular);
   m_Trachea = m_data.GetCompartments().GetGasCompartment(BGE::PulmonaryCompartment::Trachea);
@@ -440,7 +442,7 @@ void Respiratory::PreProcess()
   ConsciousRespiration();
   NasalCannula();
   MechanicalVentilation();
-
+  AdjustPleuralCavity();
   RespiratoryDriver();
 }
 
@@ -1486,6 +1488,24 @@ void Respiratory::ProcessConsciousRespiration(SEConsciousRespirationCommand& cmd
 
 //--------------------------------------------------------------------------------------------------
 /// \brief
+/// Right Side Needle Decompression
+///
+/// \param  dFlowResistance - Resistance value for air flow through the needle
+///
+/// \details
+/// Used for right side needle decompression. this is an intervention (action) used to treat right
+/// side tension pneumothorax
+//--------------------------------------------------------------------------------------------------
+void Respiratory::DoRightNeedleDecompression(double dFlowResistance)
+{
+  //Leak flow resistance that is scaled in proportion to Lung resistance, depending on severity
+  double dScalingFactor = 0.5; //Tuning parameter to allow gas flow due to needle decompression using lung resistance as reference
+  double dFlowResistanceRightNeedle = dScalingFactor * dFlowResistance;
+  m_RightPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceRightNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
+}
+
+//--------------------------------------------------------------------------------------------------
+/// \brief
 /// Left Side Needle Decompression
 ///
 /// \param  dFlowResistance - Resistance value for air flow through the needle
@@ -1518,6 +1538,7 @@ void Respiratory::DoRightChestTube(double ctFlowResistance)
   double dScalingFactor = 0.5; //Tuning parameter to allow gas flow due to needle decompression using lung resistance as reference
   double dFlowResistanceRightNeedle = dScalingFactor * ctFlowResistance;
   m_RightPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceRightNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
+
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1540,21 +1561,30 @@ void Respiratory::DoLeftChestTube(double ctFlowResistance)
 
 //--------------------------------------------------------------------------------------------------
 /// \brief
-/// Right Side Needle Decompression
+/// adjust pleural cavity pressure after injury
 ///
-/// \param  dFlowResistance - Resistance value for air flow through the needle
 ///
 /// \details
-/// Used for right side needle decompression. this is an intervention (action) used to treat right
-/// side tension pneumothorax
+/// Need a way to return pressure after a surgical proceedure
 //--------------------------------------------------------------------------------------------------
-void Respiratory::DoRightNeedleDecompression(double dFlowResistance)
+void Respiratory::AdjustPleuralCavity()
 {
-  //Leak flow resistance that is scaled in proportion to Lung resistance, depending on severity
-  double dScalingFactor = 0.5; //Tuning parameter to allow gas flow due to needle decompression using lung resistance as reference
-  double dFlowResistanceRightNeedle = dScalingFactor * dFlowResistance;
-  m_RightPleuralCavityToEnvironment->GetNextResistance().SetValue(dFlowResistanceRightNeedle, FlowResistanceUnit::cmH2O_s_Per_L);
+  if (!m_PatientActions->HasRightChestTube()) {
+    return;
+  }
+
+  double cavityPressure = m_RightPleuralCavity->GetPressure().GetValue(PressureUnit::cmH2O);
+
+  //lets reduce plueral pressure slowly
+  m_RightPleuralCavity->GetNextPressure().SetReadOnly(false);
+  m_RightPleuralCavity->GetNextVolume().SetReadOnly(false);
+
+  if (m_RightPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
+    m_RightPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+  }
+ // m_LeftPleuralCavity->GetNextPressure().IncrementValue(-10.0, PressureUnit::cmH2O);
 }
+
 //--------------------------------------------------------------------------------------------------
 /// \brief
 /// Pulmonary Shunt Implementation
