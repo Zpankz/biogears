@@ -37,6 +37,7 @@
 #include <biogears/engine/BioGearsPhysiologyEngine.h>
 #include <biogears/engine/Controller/BioGearsEngine.h>
 #include <biogears/engine/Controller/Scenario/BioGearsScenario.h>
+#include <biogears/cdm/Serializer.h>
 #include <biogears/engine/Controller/Scenario/BioGearsScenarioExec.h>
 #include <biogears/io/io-manager.h>
 
@@ -305,8 +306,15 @@ void Driver::queue_Scenario(Executor exec, bool as_subprocess)
         std::cerr << "Failed to open Scenarios/" << exec.Scenario() << " skipping\n";
         return;
       }
-      std::istringstream is = std::istringstream(std::string(content, content_size));
-      scenario = CDM::Scenario(is);
+
+      auto xmlObj = biogears::Serializer::ReadBuffer((XMLByte*)content, content_size, &logger);
+      if (dynamic_cast<ScenarioData*>(xmlObj.get())) {
+        scenario = std::unique_ptr<CDM::ScenarioData>(dynamic_cast<ScenarioData*>(xmlObj.release()));
+      }
+      else {
+        std::cerr << exec.Scenario() << " did not contain a valid CDM::ScenarioData file\n";
+        return;
+      }
       
 #endif
     } else {
@@ -427,6 +435,7 @@ void Driver::queue_Scenario(Executor exec, bool as_subprocess)
         return;
       }
     } 
+
     //Historically biogears auto falls back on a assumed directory structure
     //If the given exist in patients/ and is a directory we will treat it as
     //if ALL was given but for the provided directory
