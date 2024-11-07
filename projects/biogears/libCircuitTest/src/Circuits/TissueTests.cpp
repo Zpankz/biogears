@@ -827,7 +827,7 @@ void BioGearsEngineTest::TissueCombinedTransportTest(const std::string& rptDirec
 
   //Constants and circuit elements for VascExtra test
   SELiquidCompartmentGraph* Graph = &bg.GetCompartments().CreateLiquidGraph("Graphite");
-  Graph->Clear(); //Empty graph so we just add what we want
+  Graph->Invalidate(); //Empty graph so we just add what we want
   Graph->StateChange();
   SEFluidCircuit* EVcircuit = &circuits.CreateFluidCircuit("FlyingCircuit");
 

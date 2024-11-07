@@ -4392,7 +4392,7 @@ void CommonDataModelTest::BasicCircuitTest(const std::string& outputDirectory)
     }
   }
 
-  m_Circuits.Clear();
+  m_Circuits.Invalidate();
   std::string sOutputFile = outputDirectory + "/BasicCircuit.csv";
   trk1.WriteTrackToFile(sOutputFile.c_str());
 }
@@ -5128,7 +5128,7 @@ void CommonDataModelTest::RunTest(const std::string& outputDirectory, const std:
       trk1.WriteTrackToFile(sOutputFile.c_str());
     }
   }
-  m_Circuits.Clear();
+  m_Circuits.Invalidate();
 }
 
 void CommonDataModelTest::TestCircuitSerialization(const std::string& fileName)
