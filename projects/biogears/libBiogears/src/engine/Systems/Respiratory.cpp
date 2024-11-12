@@ -169,13 +169,6 @@ void Respiratory::Initialize()
   m_TopBreathPleuralPressure_cmH2O = 0.0;
   m_LastCardiacCycleBloodPH = 7.4;
 
-  m_data.GetDataTrack().Probe("m_TopBreathTotalVolume_L ", m_TopBreathTotalVolume_L);
-  m_data.GetDataTrack().Probe("m_TopBreathAlveoliVolume_L ", m_TopBreathAlveoliVolume_L);
-  m_data.GetDataTrack().Probe("m_TopBreathDeadSpaceVolume_L ", m_TopBreathDeadSpaceVolume_L);
-  m_data.GetDataTrack().Probe("m_TopBreathPleuralPressure_cmH2O ", m_TopBreathPleuralPressure_cmH2O);
-  //m_data.GetDataTrack().Probe("m_OxygenAutoregulatorHeart ", m_OxygenAutoregulatorHeart);
-  //m_data.GetDataTrack().Probe("m_OxygenAutoregulatorMuscle ", m_OxygenAutoregulatorMuscle);
-
   //Driver
   //Basically a Y-shift for the driver
   m_DefaultDrivePressure_cmH2O = -5.0;
@@ -1565,24 +1558,38 @@ void Respiratory::DoLeftChestTube(double ctFlowResistance)
 ///
 ///
 /// \details
-/// Need a way to return pressure after a surgical proceedure
+/// Need a way to return pressure after a surgical proceedure. Since we don't consider the biomechanics 
+/// of the lungs expansion reducing the volume in the pleural space after chest tube, we will 
+/// manually move volume to ground as a result of the proceedure
 //--------------------------------------------------------------------------------------------------
 void Respiratory::AdjustPleuralCavity()
 {
-  if (!m_PatientActions->HasRightChestTube()) {
-    return;
+  if (m_PatientActions->HasRightChestTube()) {
+
+    double cavityPressure = m_RightPleuralCavity->GetPressure().GetValue(PressureUnit::cmH2O);
+
+    //lets reduce plueral pressure slowly
+    m_RightPleuralCavity->GetNextPressure().SetReadOnly(false);
+    m_RightPleuralCavity->GetNextVolume().SetReadOnly(false);
+
+    if (m_RightPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
+      m_RightPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+    }
   }
 
-  double cavityPressure = m_RightPleuralCavity->GetPressure().GetValue(PressureUnit::cmH2O);
+   if (m_PatientActions->HasLeftChestTube()) {
 
-  //lets reduce plueral pressure slowly
-  m_RightPleuralCavity->GetNextPressure().SetReadOnly(false);
-  m_RightPleuralCavity->GetNextVolume().SetReadOnly(false);
+    double cavityPressure = m_LeftPleuralCavity->GetPressure().GetValue(PressureUnit::cmH2O);
 
-  if (m_RightPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
-    m_RightPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+    //lets reduce plueral pressure slowly
+    m_LeftPleuralCavity->GetNextPressure().SetReadOnly(false);
+    m_LeftPleuralCavity->GetNextVolume().SetReadOnly(false);
+
+    if (m_LeftPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
+      m_LeftPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+    }
   }
- // m_LeftPleuralCavity->GetNextPressure().IncrementValue(-10.0, PressureUnit::cmH2O);
+
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1903,11 +1910,6 @@ void Respiratory::CalculateVitalSigns()
     m_TopBreathAlveoliVolume_L = m_RightAlveoli->GetNextVolume().GetValue(VolumeUnit::L) + m_LeftAlveoli->GetNextVolume().GetValue(VolumeUnit::L);
     m_TopBreathDeadSpaceVolume_L = m_RightBronchi->GetNextVolume().GetValue(VolumeUnit::L) + m_LeftBronchi->GetNextVolume().GetValue(VolumeUnit::L) + m_Trachea->GetVolume(VolumeUnit::L);
     m_TopBreathPleuralPressure_cmH2O = dPleuralPressure_cmH2O;
-
-    m_data.GetDataTrack().Probe("m_TopBreathTotalVolume_L ", m_TopBreathTotalVolume_L);
-    m_data.GetDataTrack().Probe("m_TopBreathAlveoliVolume_L ", m_TopBreathAlveoliVolume_L);
-    m_data.GetDataTrack().Probe("m_TopBreathDeadSpaceVolume_L ", m_TopBreathDeadSpaceVolume_L);
-    m_data.GetDataTrack().Probe("m_TopBreathPleuralPressure_cmH2O ", m_TopBreathPleuralPressure_cmH2O);
 
     if (m_data.GetState() > EngineState::InitialStabilization) { // Don't throw events if we are initializing
       //Check for acute lung injury and acute respiratory distress
