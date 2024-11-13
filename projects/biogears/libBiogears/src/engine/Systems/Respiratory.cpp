@@ -1246,7 +1246,7 @@ void Respiratory::Pneumothorax()
     double normalPleuralPressure_mmHg = -4.2;
     double venousResistanceModifier = GeneralMath::LinearInterpolator(normalPleuralPressure_mmHg, 3.0, 1.0, 4.0, GetMeanPleuralPressure(PressureUnit::mmHg));
     venousResistanceModifier = std::max(1.0, venousResistanceModifier);
-    nextVenousResistance *= 1.1*venousResistanceModifier;
+    nextVenousResistance *= 2.1*venousResistanceModifier;
     venousReturn->GetNextResistance().SetValue(nextVenousResistance, FlowResistanceUnit::mmHg_s_Per_mL);
 
     if (m_PatientActions->HasLeftOpenTensionPneumothorax()) {
@@ -1573,7 +1573,7 @@ void Respiratory::AdjustPleuralCavity()
     m_RightPleuralCavity->GetNextVolume().SetReadOnly(false);
 
     if (m_RightPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
-      m_RightPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+      m_RightPleuralCavity->GetNextVolume().DecrementValue(0.1, VolumeUnit::mL);
     }
   }
 
@@ -1586,7 +1586,7 @@ void Respiratory::AdjustPleuralCavity()
     m_LeftPleuralCavity->GetNextVolume().SetReadOnly(false);
 
     if (m_LeftPleuralCavity->GetVolume().GetValue(VolumeUnit::mL) > 550.0) {
-      m_LeftPleuralCavity->GetNextVolume().DecrementValue(0.01, VolumeUnit::mL);
+      m_LeftPleuralCavity->GetNextVolume().DecrementValue(0.1, VolumeUnit::mL);
     }
   }
 
