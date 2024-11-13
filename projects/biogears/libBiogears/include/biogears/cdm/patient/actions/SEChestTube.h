@@ -14,8 +14,6 @@ specific language governing permissions and limitations under the License.
 #include <biogears/cdm/patient/actions/SEPatientAction.h>
 #include <biogears/cdm/enums/SEPatientActionsEnums.h>
 
-#include <biogears/schema/cdm/PatientActions.hxx>
-
 #include <random>
 
 namespace biogears {
@@ -33,14 +31,11 @@ public:
   static constexpr const char* TypeTag() { return "SEChestTube"; };
   const char* classname() const override { return TypeTag(); }
 
-  virtual void Clear() override; // clear memory
+  virtual void Invalidate() override; //clear memory
 
   virtual bool IsValid() const override;
   virtual bool IsActive() const override;
   virtual void SetActive(bool b);
-
-  virtual bool Load(const CDM::ChestTubeData& in, std::default_random_engine* rd = nullptr);
-  virtual CDM::ChestTubeData* Unload() const override;
 
   virtual SESide GetSide() const;
   virtual void SetSide(SESide LeftOrRight);
@@ -51,9 +46,6 @@ public:
 
   bool operator==(const SEChestTube& rhs) const;
   bool operator!=(const SEChestTube& rhs) const;
-
-protected:
-  virtual void Unload(CDM::ChestTubeData& data) const;
 
 protected:
   SESide m_Side;

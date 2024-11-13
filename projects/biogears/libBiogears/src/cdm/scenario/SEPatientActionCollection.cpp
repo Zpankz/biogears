@@ -331,6 +331,8 @@ void SEPatientActionCollection::Invalidate()
   RemoveConsumeNutrients();
   RemoveLeftChestOcclusiveDressing();
   RemoveRightChestOcclusiveDressing();
+  RemoveLeftChestTube();
+  RemoveRightChestTube();
   RemoveExercise();
   RemoveEbola();
   RemoveInfection();
@@ -350,158 +352,14 @@ void SEPatientActionCollection::Invalidate()
   RemoveUrinate();
   RemoveOverride();
 
-  DELETE_MAP_SECOND(m_Escharotomies);
-  DELETE_MAP_SECOND(m_Hemorrhages);
-  DELETE_MAP_SECOND(m_PainStimuli);
-  DELETE_MAP_SECOND(m_SubstanceBolus);
-  DELETE_MAP_SECOND(m_SubstanceInfusions);
-  DELETE_MAP_SECOND(m_SubstanceOralDoses);
-  DELETE_MAP_SECOND(m_SubstanceCompoundInfusions);
-  DELETE_MAP_SECOND(m_Tourniquets);
-}
-//-------------------------------------------------------------------------------
-void SEPatientActionCollection::Unload(std::vector<CDM::ActionData*>& to)
-{
-  if (HasAcuteRespiratoryDistress()) {
-    to.push_back(GetAcuteRespiratoryDistress()->Unload());
-  }
-  if (HasAcuteStress()) {
-    to.push_back(GetAcuteStress()->Unload());
-  }
-  if (HasExampleAction()) {
-    to.push_back(GetExampleAction()->Unload());
-  }
-  if (HasAirwayObstruction()) {
-    to.push_back(GetAirwayObstruction()->Unload());
-  }
-  if (HasApnea()) {
-    to.push_back(GetApnea()->Unload());
-  }
-  if (HasAsthmaAttack()) {
-    to.push_back(GetAsthmaAttack()->Unload());
-  }
-  if (HasBrainInjury()) {
-    to.push_back(GetBrainInjury()->Unload());
-  }
-  if (HasBronchoconstriction()) {
-    to.push_back(GetBronchoconstriction()->Unload());
-  }
-  if (HasBurnWound()) {
-    to.push_back(GetBurnWound()->Unload());
-  }
-  if (HasCardiacArrest()) {
-    to.push_back(GetCardiacArrest()->Unload());
-  }
-  if (HasChestCompressionForce()) {
-    to.push_back(GetChestCompressionForce()->Unload());
-  }
-  if (HasChestCompressionForceScale()) {
-    to.push_back(GetChestCompressionForceScale()->Unload());
-  }
-  if (HasLeftChestOcclusiveDressing()) {
-    to.push_back(GetLeftChestOcclusiveDressing()->Unload());
-  }
-  if (HasRightChestOcclusiveDressing()) {
-    to.push_back(GetRightChestOcclusiveDressing()->Unload());
-  }
-  if (HasLeftChestTube()) {
-    to.push_back(GetLeftChestTube()->Unload());
-  }
-  if (HasRightChestTube()) {
-    to.push_back(GetRightChestTube()->Unload());
-  }
-  if (HasConsciousRespiration()) {
-    to.push_back(GetConsciousRespiration()->Unload());
-  }
-  if (HasConsumeNutrients()) {
-    to.push_back(GetConsumeNutrients()->Unload());
-  }
-  if (HasEscharotomy()) {
-    for (auto itr : GetEscharotomies()) {
-      to.push_back(itr.second->Unload());
-    }
-  }
-  if (HasEbola()) {
-    to.push_back(GetEbola()->Unload());
-  }
-  if (HasExercise()) {
-    to.push_back(GetExercise()->Unload());
-  }
-  if (HasHemorrhage()) {
-    for (auto itr : GetHemorrhages()) {
-      to.push_back(itr.second->Unload());
-    }
-  }
-  if (HasInfection()) {
-    to.push_back(GetInfection()->Unload());
-  }
-  if (HasIntubation()) {
-    to.push_back(GetIntubation()->Unload());
-  }
-  if (HasMechanicalVentilation()) {
-    to.push_back(GetMechanicalVentilation()->Unload());
-  }
-  if (HasNasalCannula()) {
-    to.push_back(GetNasalCannula()->Unload());
-  }
-  if (HasLeftNeedleDecompression()) {
-    to.push_back(GetLeftNeedleDecompression()->Unload());
-  }
-  if (HasRightNeedleDecompression()) {
-    to.push_back(GetRightNeedleDecompression()->Unload());
-  }
-  if (HasPainStimulus()) {
-    for (auto itr : GetPainStimuli()) {
-      to.push_back(itr.second->Unload());
-    }
-  }
-  if (HasPericardialEffusion()) {
-    to.push_back(GetPericardialEffusion()->Unload());
-  }
-  if (HasPulmonaryShunt()) {
-    to.push_back(GetPulmonaryShunt()->Unload());
-  }
-  if (HasRadiationAbsorbedDose()) {
-    to.push_back(GetRadiationAbsorbedDose()->Unload());
-  }
-  if (HasSleepState()) {
-    to.push_back(GetSleepState()->Unload());
-  }
-  if (HasLeftClosedTensionPneumothorax()) {
-    to.push_back(GetLeftClosedTensionPneumothorax()->Unload());
-  }
-  if (HasLeftOpenTensionPneumothorax()) {
-    to.push_back(GetLeftOpenTensionPneumothorax()->Unload());
-  }
-  if (HasRightClosedTensionPneumothorax()) {
-    to.push_back(GetRightClosedTensionPneumothorax()->Unload());
-  }
-  if (HasRightOpenTensionPneumothorax()) {
-    to.push_back(GetRightOpenTensionPneumothorax()->Unload());
-  }
-  for (auto itr : GetSubstanceBoluses()) {
-    to.push_back(itr.second->Unload());
-  }
-  for (auto itr : GetSubstanceInfusions()) {
-    to.push_back(itr.second->Unload());
-  }
-  for (auto itr : GetSubstanceOralDoses()) {
-    to.push_back(itr.second->Unload());
-  }
-  for (auto itr : GetSubstanceCompoundInfusions()) {
-    to.push_back(itr.second->Unload());
-  }
-  if (HasTourniquet()) {
-    for (auto itr : GetTourniquets()) {
-      to.push_back(itr.second->Unload());
-    }
-  }
-  if (HasUrinate()) {
-    to.push_back(GetUrinate()->Unload());
-  }
-  if (HasOverride()) {
-    to.push_back((GetOverride()->Unload()));
-  }
+  DELETE_MAP_OF_POINTERS(m_Escharotomies);
+  DELETE_MAP_OF_POINTERS(m_Hemorrhages);
+  DELETE_MAP_OF_POINTERS(m_PainStimuli);
+  DELETE_MAP_OF_POINTERS(m_SubstanceBolus);
+  DELETE_MAP_OF_POINTERS(m_SubstanceInfusions);
+  DELETE_MAP_OF_POINTERS(m_SubstanceOralDoses);
+  DELETE_MAP_OF_POINTERS(m_SubstanceCompoundInfusions);
+  DELETE_MAP_OF_POINTERS(m_Tourniquets);
 }
 //-------------------------------------------------------------------------------
 bool SEPatientActionCollection::ProcessAction(const SEPatientAction& action, const PhysiologyEngine& engine)
@@ -725,23 +583,23 @@ bool SEPatientActionCollection::ProcessAction(const SEPatientAction& action, con
     }
   }
 
-  auto chestTube = dynamic_cast<const SEChestTube*>(&action);
-  if (chestTube != nullptr) {
-    if (chestTube->Side() == SESide::Left) {
+  auto chestTu = dynamic_cast<const SEChestTube*>(&action);
+  if (chestTu != nullptr) {
+    if (chestTu->GetSide() == SESide::Left) {
       if (m_LeftChestTube == nullptr) {
         m_LeftChestTube = new SEChestTube();
       }
-      m_LeftChestTube->Load(*chestTube);
+      CDM_PATIENT_ACTION_COPY(ChestTube, *chestTu, *m_LeftChestTube)
       if (!m_LeftChestTube->IsActive()) {
         RemoveLeftChestTube();
         return true;
       }
       return IsValid(*m_LeftChestTube);
-    } else if (chestTube->Side() == SESide::Right) {
+    } else if (chestTu->GetSide() == SESide::Right) {
       if (m_RightChestTube == nullptr) {
         m_RightChestTube = new SEChestTube();
       }
-      m_RightChestTube->Load(*chestTube);
+      CDM_PATIENT_ACTION_COPY(ChestTube, *chestTu, *m_RightChestTube)
       if (!m_RightChestTube->IsActive()) {
         RemoveRightChestTube();
         return true;

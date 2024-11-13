@@ -23,12 +23,12 @@ SEChestTube::SEChestTube()
 //-------------------------------------------------------------------------------
 SEChestTube::~SEChestTube()
 {
-  Clear();
+  Invalidate();
 }
 //-------------------------------------------------------------------------------
-void SEChestTube::Clear()
+void SEChestTube::Invalidate()
 {
-  SEPatientAction::Clear();
+  SEPatientAction::Invalidate();
   m_State = SEOnOff::Off;
   m_Side = SESide::Invalid;
 }
@@ -46,24 +46,6 @@ bool SEChestTube::IsActive() const
 void SEChestTube::SetActive(bool b)
 {
   m_State = b ? SEOnOff::On : SEOnOff::Off;
-}
-//-------------------------------------------------------------------------------
-bool SEChestTube::Load(const CDM::ChestTubeData& in, std::default_random_engine* rd)
-{
-  io::PatientActions::UnMarshall(in, *this, rd);
-  return true;
-}
-//-------------------------------------------------------------------------------
-CDM::ChestTubeData* SEChestTube::Unload() const
-{
-  CDM::ChestTubeData* data(new CDM::ChestTubeData());
-  Unload(*data);
-  return data;
-}
-//-------------------------------------------------------------------------------
-void SEChestTube::Unload(CDM::ChestTubeData& data) const
-{
-  io::PatientActions::Marshall(*this, data);
 }
 //-------------------------------------------------------------------------------
 SESide SEChestTube::GetSide() const

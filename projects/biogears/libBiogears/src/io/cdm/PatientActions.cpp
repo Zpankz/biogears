@@ -134,6 +134,7 @@ namespace io {
       throw biogears::CommonDataModelException("PatientActions:Factory - Unsupported ChestCompression Action Received.");
     }
     STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ChestOcclusiveDressing, PatientActions, rd)
+    STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ChestTube, PatientActions, rd)
     STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ConsciousRespiration, PatientActions, rd)
     STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ConsumeNutrients, PatientActions, rd)
     STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Exercise, PatientActions, rd)
@@ -171,60 +172,6 @@ namespace io {
         auto substance = substances.GetSubstance(substanceOralDoseData->Substance());
         if (substance == nullptr) {
           throw biogears::CommonDataModelException("PatientActions:Factory - Unknown substance : " + substanceOralDoseData->Substance());
-      POLYMORPHIC_UNMARSHALL(environmentActionData, ThermalApplication, EnvironmentActions)
-
-      throw biogears::CommonDataModelException("PatientActions::factory: Unsupported Environment Action.");
-    }
-
-    if (auto patientActionData = dynamic_cast<CDM::PatientActionData const*>(actionData); patientActionData) {
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, AcuteStress, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, AcuteRespiratoryDistress, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, AsthmaAttack, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, AirwayObstruction, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Apnea, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, BrainInjury, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Bronchoconstriction, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, BurnWound, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, CardiacArrest, PatientActions, rd)
-
-      if (auto chestCompressionData = dynamic_cast<CDM::ChestCompressionData const*>(actionData); chestCompressionData) {
-        STOCASTIC_POLYMORPHIC_UNMARSHALL(chestCompressionData, ChestCompressionForce, PatientActions, rd)
-        STOCASTIC_POLYMORPHIC_UNMARSHALL(chestCompressionData, ChestCompressionForceScale, PatientActions, rd)
-        throw biogears::CommonDataModelException("PatientActions:Factory - Unsupported ChestCompression Action Received.");
-      }
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ChestOcclusiveDressing, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ChestTube, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ConsciousRespiration, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ConsumeNutrients, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Exercise, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Ebola, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Escharotomy, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, ExampleAction, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Intubation, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Infection, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Hemorrhage, PatientActions, rd)
-      POLYMORPHIC_UNMARSHALL(patientActionData, MechanicalVentilation, PatientActions)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, NasalCannula, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, NeedleDecompression, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Override, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, PainStimulus, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, PatientAssessmentRequest, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, PericardialEffusion, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, PulmonaryShunt, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, RadiationAbsorbedDose, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, TensionPneumothorax, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Tourniquet, PatientActions, rd)
-      STOCASTIC_POLYMORPHIC_UNMARSHALL(patientActionData, Sleep, PatientActions, rd)
-
-      if (auto substanceAdministrationActionData = dynamic_cast<CDM::SubstanceAdministrationData const*>(actionData); substanceAdministrationActionData) {
-        if (auto substanceBolusData = dynamic_cast<CDM::SubstanceBolusData const*>(substanceAdministrationActionData); substanceBolusData) {
-          auto substance = substances.GetSubstance(substanceBolusData->Substance());
-          if (substance == nullptr) {
-            throw biogears::CommonDataModelException("PatientActions:Factory - Unknown substance : " + substanceBolusData->Substance());
-          }
-          auto substanceBolusaction = std::make_unique<SESubstanceBolus>(*substance);
-          PatientActions::UnMarshall(*substanceBolusData, *substanceBolusaction, rd);
-          return substanceBolusaction;
         }
         auto od = std::make_unique<SESubstanceOralDose>(*substance);
         PatientActions::UnMarshall(*substanceOralDoseData, *od, rd);
@@ -362,6 +309,12 @@ namespace io {
     }
     if (in.m_RightChestOcclusiveDressing) {
       out.push_back(PatientActions::factory(in.m_RightChestOcclusiveDressing));
+    }
+    if (in.m_LeftChestTube) {
+      out.push_back(PatientActions::factory(in.m_LeftChestTube));
+    }
+    if (in.m_RightChestTube) {
+      out.push_back(PatientActions::factory(in.m_RightChestTube));
     }
     if (in.m_ConsciousRespiration) {
       out.push_back(PatientActions::factory(in.m_ConsciousRespiration));
@@ -712,6 +665,25 @@ namespace io {
     SE_PROPERTY_ENUM_PTR_MARSHALL_HELPER(in, out, Side)
   }
   //----------------------------------------------------------------------------------
+  // class SEChestTube
+  void PatientActions::UnMarshall(const CDM::ChestTubeData& in, SEChestTube& out, std::default_random_engine* rd)
+  {
+    out.Invalidate();
+
+    PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
+    ;
+    Property::UnMarshall(in.Side(), out.m_Side);
+    Property::UnMarshall(in.State(), out.m_State);
+  }
+  void PatientActions::Marshall(const SEChestTube& in, CDM::ChestTubeData& out)
+  {
+    PatientActions::Marshall(static_cast<const SEPatientAction&>(in), static_cast<CDM::PatientActionData&>(out));
+    out.State(std::make_unique<std::remove_reference<decltype(out.State())>::type>());
+    Property::Marshall(in.m_State, out.State());
+
+    SE_PROPERTY_ENUM_PTR_MARSHALL_HELPER(in, out, Side)
+  }
+  //----------------------------------------------------------------------------------
   // class SEConsciousRespirationCommand
   void PatientActions::UnMarshall(const CDM::ConsciousRespirationCommandData& in, SEConsciousRespirationCommand& out)
   {
@@ -859,25 +831,6 @@ namespace io {
       PatientActions::Marshall(*cmd, *cmdData);
       out.Command().push_back(std::move(cmdData));
     }
-  }
-  //----------------------------------------------------------------------------------
-  // class SEChestTube
-  void PatientActions::UnMarshall(const CDM::ChestTubeData& in, SEChestTube& out, std::default_random_engine* rd)
-  {
-    out.Clear();
-
-    PatientActions::UnMarshall(static_cast<const CDM::PatientActionData&>(in), static_cast<SEPatientAction&>(out));
-    ;
-    Property::UnMarshall(in.Side(), out.m_Side);
-    Property::UnMarshall(in.State(), out.m_State);
-  }
-  void PatientActions::Marshall(const SEChestTube& in, CDM::ChestTubeData& out)
-  {
-    PatientActions::Marshall(static_cast<const SEPatientAction&>(in), static_cast<CDM::PatientActionData&>(out));
-    out.State(std::make_unique<std::remove_reference<decltype(out.State())>::type>());
-    Property::Marshall(in.m_State, out.State());
-
-    SE_PROPERTY_ENUM_MARSHALL_HELPER(in, out, Side)
   }
   //----------------------------------------------------------------------------------
   // class SEConsumeNutrients
