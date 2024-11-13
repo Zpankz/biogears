@@ -27,6 +27,7 @@ specific language governing permissions and limitations under the License.
 #include <biogears/cdm/patient/actions/SEChestCompressionForce.h>
 #include <biogears/cdm/patient/actions/SEChestCompressionForceScale.h>
 #include <biogears/cdm/patient/actions/SEChestOcclusiveDressing.h>
+#include <biogears/cdm/patient/actions/SEChestTube.h>
 #include <biogears/cdm/patient/actions/SEConsciousRespiration.h>
 #include <biogears/cdm/patient/actions/SEConsumeNutrients.h>
 #include <biogears/cdm/patient/actions/SEEscharotomy.h>
@@ -274,6 +275,14 @@ public:
   SEChestOcclusiveDressing* GetRightChestOcclusiveDressing() const;
   void RemoveRightChestOcclusiveDressing();
 
+  bool HasChestTube() const;
+  bool HasLeftChestTube() const;
+  SEChestTube* GetLeftChestTube() const;
+  void RemoveLeftChestTube();
+  bool HasRightChestTube() const;
+  SEChestTube* GetRightChestTube() const;
+  void RemoveRightChestTube();
+
   bool HasConsciousRespiration() const;
   SEConsciousRespiration* GetConsciousRespiration() const;
   void RemoveConsciousRespiration();
@@ -422,6 +431,8 @@ protected:
   SEChestCompression* m_ChestCompression;
   SEChestOcclusiveDressing* m_LeftChestOcclusiveDressing;
   SEChestOcclusiveDressing* m_RightChestOcclusiveDressing;
+  SEChestTube* m_LeftChestTube;
+  SEChestTube* m_RightChestTube;
   SEConsciousRespiration* m_ConsciousRespiration;
   SEConsumeNutrients* m_ConsumeNutrients;
   SEEbola* m_Ebola;

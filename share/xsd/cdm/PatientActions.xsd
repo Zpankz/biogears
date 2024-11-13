@@ -234,6 +234,18 @@ specific language governing permissions and limitations under the License.
     </xs:complexContent>
   </xs:complexType>
 
+  <!-- @brief A ChestTube. -->
+  <xs:complexType name="ChestTubeData">
+    <xs:complexContent>
+      <xs:extension base="PatientActionData">
+        <xs:attribute name="State" type="enumOnOff" use="required"/>
+        <!--<< @brief -->
+        <xs:attribute name="Side" type="enumSide" use="required"/>
+        <!--<< @brief -->
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <!-- @brief Base class of all concious breathing controls. -->
   <xs:complexType name="ConsciousRespirationCommandData" >
     <xs:complexContent>

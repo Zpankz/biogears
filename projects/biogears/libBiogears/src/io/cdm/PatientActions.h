@@ -70,6 +70,7 @@ class SEChestCompression;
 class SEChestCompressionForce;
 class SEChestCompressionForceScale;
 class SEChestOcclusiveDressing;
+class SEChestTube;
 class SEConsciousRespirationCommand;
 class SEEbola;
 class SEEscharotomy;
@@ -167,6 +168,9 @@ namespace io {
     // class SEChestCompressionForceScale;
     static void UnMarshall(const CDM::ChestCompressionForceScaleData& in, SEChestCompressionForceScale& out, std::default_random_engine* rd = nullptr);
     static void Marshall(const SEChestCompressionForceScale& in, CDM::ChestCompressionForceScaleData& out);
+    // class SENeedleDecompression;
+    static void UnMarshall(const CDM::ChestTubeData& in, SEChestTube& out, std::default_random_engine* rd = nullptr);
+    static void Marshall(const SEChestTube& in, CDM::ChestTubeData& out);
     // class SEChestOcclusiveDressing;
     static void UnMarshall(const CDM::ChestOcclusiveDressingData& in, SEChestOcclusiveDressing& out, std::default_random_engine* rd = nullptr);
     static void Marshall(const SEChestOcclusiveDressing& in, CDM::ChestOcclusiveDressingData& out);
