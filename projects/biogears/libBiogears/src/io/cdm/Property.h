@@ -61,7 +61,6 @@ specific language governing permissions and limitations under the License.
   }*/
 
 #define CDM_RUNNING_AVERAGE_PTR_MARSHALL_HELPER(in, out, func)                     \
-                                                                                   \
   out.func(std::make_unique<std::remove_reference<decltype(out.func())>::type>()); \
   io::Property::Marshall(in.m_##func, out.func());
 

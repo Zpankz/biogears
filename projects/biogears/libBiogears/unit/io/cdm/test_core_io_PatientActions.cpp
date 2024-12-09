@@ -384,6 +384,32 @@ TEST_F(TEST_FIXTURE_NAME, ChestOcclusiveDressing)
   EXPECT_EQ(source, sink);
 }
 
+#include <biogears/cdm/patient/actions/SEChestTube.h>
+// class SEChestTube;
+//!
+//! TYPE ChestTube
+//! static void UnMarshall(const CDM::ChestTubeData& in, SEChestTube& out);
+//! static void Marshall(const SEChestTube& in, CDM::ChestTubeData& out);
+//!
+TEST_F(TEST_FIXTURE_NAME, ChestTube)
+{
+  USING_TYPES(ChestTube)
+
+  SEType source, sink;
+  CDMType data;
+
+  source.SetComment("Test Comment");
+  source.SetSide(biogears::SESide::Left);
+  source.SetActive(true);
+
+  EXPECT_NE(source, sink);
+
+  PatientActions::Marshall(source, data);
+  PatientActions::UnMarshall(data, sink);
+
+  EXPECT_EQ(source, sink);
+}
+
 #include <biogears/cdm/patient/actions/SEEbola.h>
 // class SEEbola;
 // static void UnMarshall(const CDM::EbolaData& in, SEEbola& out);
