@@ -170,9 +170,9 @@ InductionThread::~InductionThread()
 void InductionThread::AdministerInduction()
 {
     //set up bolus
-  m_RocuroniumBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
-  m_FentanylBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
-  m_PropofolBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
+  m_RocuroniumBolus->SetAdminRoute(biogears::SEBolusAdministration::Intravenous);
+  m_FentanylBolus->SetAdminRoute(SEBolusAdministration::Intravenous);
+  m_PropofolBolus->SetAdminRoute(SEBolusAdministration::Intravenous);
 
   //pull patient weight
   const SEPatient& patient = m_bg->GetPatient();
@@ -185,15 +185,15 @@ void InductionThread::AdministerInduction()
   double bolus = 10.0;
 
   //set concentrations
-  m_FentanylBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
+  m_FentanylBolus->SetAdminRoute(SEBolusAdministration::Intravenous);
   m_FentanylBolus->GetConcentration().SetValue(fentbolus_mg / 10, MassPerVolumeUnit::mg_Per_mL);
   m_FentanylBolus->GetDose().SetValue(bolus, VolumeUnit::mL);
 
-  m_PropofolBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
+  m_PropofolBolus->SetAdminRoute(SEBolusAdministration::Intravenous);
   m_PropofolBolus->GetConcentration().SetValue(propofolBolus_mg / 10, MassPerVolumeUnit::mg_Per_mL);
   m_PropofolBolus->GetDose().SetValue(bolus, VolumeUnit::mL);
 
-  m_RocuroniumBolus->SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
+  m_RocuroniumBolus->SetAdminRoute(SEBolusAdministration::Intravenous);
   m_RocuroniumBolus->GetConcentration().SetValue(rocuroniumBolus_mg / 10, MassPerVolumeUnit::mg_Per_mL);
   m_RocuroniumBolus->GetDose().SetValue(bolus, VolumeUnit::mL);
 
@@ -247,17 +247,17 @@ void InductionThread::Ventilation()
   // Modifying the class will keep any old settings that are not provided in the config
   // Using a xml will set the anesthesia machine to only the property states specified in the file
   SEIntubation intubate;
-  intubate.SetType(CDM::enumIntubationType::Tracheal);
+  intubate.SetType(SEIntubationType::Tracheal);
   m_bg->ProcessAction(intubate);
 
   SEAnesthesiaMachine& config = AMConfig.GetConfiguration();
-  config.SetConnection(CDM::enumAnesthesiaMachineConnection::Tube);
+  config.SetConnection(SEAnesthesiaMachineConnection::Tube);
   config.GetInletFlow().SetValue(2.0, VolumePerTimeUnit::L_Per_min);
   config.GetInspiratoryExpiratoryRatio().SetValue(.5);
   config.GetOxygenFraction().SetValue(.6);
-  config.SetOxygenSource(CDM::enumAnesthesiaMachineOxygenSource::Wall);
+  config.SetOxygenSource(SEAnesthesiaMachineOxygenSource::Wall);
   config.GetPositiveEndExpiredPressure().SetValue(5.0, PressureUnit::cmH2O);
-  config.SetPrimaryGas(CDM::enumAnesthesiaMachinePrimaryGas::Nitrogen);
+  config.SetPrimaryGas(SEAnesthesiaMachinePrimaryGas::Nitrogen);
   config.GetReliefValvePressure().SetValue(20.0, PressureUnit::cmH2O);
   config.GetRespiratoryRate().SetValue(12, FrequencyUnit::Per_min);
   config.GetVentilatorPressure().SetValue(22.0, PressureUnit::cmH2O);
@@ -270,7 +270,7 @@ void InductionThread::Ventilation()
 
   //introcuce desfulrane
   SEAnesthesiaMachineChamber& rightChamber = config.GetLeftChamber();
-  rightChamber.SetState(CDM::enumOnOff::On);
+  rightChamber.SetState(SEOnOff::On);
   rightChamber.GetSubstanceFraction().SetValue(0.02);
   rightChamber.SetSubstance(*m_bg->GetSubstanceManager().GetSubstance("Desflurane"));
   m_bg->ProcessAction(AMConfig);
@@ -429,7 +429,7 @@ void InductionThread::FluidLoading()
     }
 
     //exit checks:
-    if (m_bg->GetPatient().IsEventActive(CDM::enumPatientEvent::IrreversibleState)) {
+    if (m_bg->GetPatient().IsEventActive(SEPatientEventType::IrreversibleState)) {
       //m_bg->GetLogger()->Info(std::stringstream() << "oh no!");
       m_bg->GetLogger()->Info("///////////////////////////////////////////////////////////////");
       m_runThread = false;
