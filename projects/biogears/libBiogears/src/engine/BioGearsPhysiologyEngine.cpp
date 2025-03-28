@@ -4,11 +4,13 @@
 #include <biogears/cdm/properties/SEScalarTime.h>
 #include <biogears/cdm/properties/SEScalarElectricResistance.h>
 
+
 #include <biogears/schema/BioGearsDataModel.hxx>
 
 #include <memory>
 
 namespace biogears {
+// Legacy Factory Functions
 std::unique_ptr<PhysiologyEngine> CreateBioGearsEngine(Logger* logger)
 {
   return std::make_unique<BioGearsEngine>(logger);
