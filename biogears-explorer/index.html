@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioGears Explorer — Nested Physiology · Pharmacology · Physics</title>
+  <meta name="description" content="Interactive nested physiology, pharmacology and physics explorer grounded in BioGears modelling logic." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="16" cy="16" r="3" fill="currentColor"/>
+          <path d="M16 5v4M16 23v4M5 16h4M23 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>BioGears Explorer</h1>
+        <p>Nested physiology · pharmacology · physics</p>
+      </div>
+    </div>
+    <nav class="breadcrumbs" id="breadcrumbs" aria-label="Hierarchy"></nav>
+    <div class="transport">
+      <button id="playBtn" class="btn btn-primary" title="Play / pause (Space)">Pause</button>
+      <button id="stabilizeBtn" class="btn" title="Fast-forward to steady state">Stabilize</button>
+      <button id="resetBtn" class="btn" title="Reset to defaults">Reset</button>
+      <button id="upBtn" class="btn" title="Ascend one tier (Esc)">Up</button>
+    </div>
+  </header>
+
+  <p id="nodeBlurb" class="node-blurb"></p>
+
+  <main class="layout">
+    <aside class="panel nav-panel">
+      <div class="panel-head">
+        <h2>Navigator</h2>
+        <span class="hint">Hierarchy</span>
+      </div>
+      <div id="tree" class="tree" role="tree"></div>
+      <div class="panel-head mini-head">
+        <h2>Overview</h2>
+        <span class="hint">Click to jump</span>
+      </div>
+      <div class="canvas-wrap mini-wrap">
+        <canvas id="miniCanvas" width="280" height="180"></canvas>
+      </div>
+    </aside>
+
+    <section class="panel stage-panel">
+      <div class="panel-head">
+        <h2 id="stageTitle">Schematic</h2>
+        <span class="hint" id="stageHint">Live neon schematic</span>
+      </div>
+      <div class="canvas-wrap stage-wrap">
+        <canvas id="stageCanvas"></canvas>
+      </div>
+      <div class="canvas-wrap spark-wrap">
+        <canvas id="sparkCanvas"></canvas>
+      </div>
+    </section>
+
+    <aside class="panel side-panel">
+      <div class="panel-head">
+        <h2>Controls</h2>
+        <span class="hint">Drag to explore</span>
+      </div>
+      <div id="controlGroups"></div>
+
+      <div class="panel-head">
+        <h2>Metrics</h2>
+        <span class="hint" id="metricHint"></span>
+      </div>
+      <div id="metrics" class="metrics"></div>
+
+      <div class="panel-head">
+        <h2>Cross-Links</h2>
+        <span class="hint">Coupling</span>
+      </div>
+      <div id="crossLinks" class="cross-links"></div>
+    </aside>
+  </main>
+
+  <footer class="app-footer">
+    <span id="evidenceStrip">Evidence · BioGears-grounded educational models</span>
+    <span class="disclaimer">Educational tool — not for clinical use.</span>
+  </footer>
+
+  <!-- Reuse the existing closed-loop CV model as a leaf -->
+  <script src="../pv-loop-visualizer/js/model.js"></script>
+
+  <script src="js/kernel.js"></script>
+  <script src="js/schematic.js"></script>
+  <script src="js/registry.js"></script>
+  <script src="data/references.js"></script>
+  <script src="js/nodes/cardiovascular.js"></script>
+  <script src="js/nodes/thermoregulation.js"></script>
+  <script src="js/nodes/acidbase.js"></script>
+  <script src="js/nodes/pkpd.js"></script>
+  <script src="js/nodes/membrane.js"></script>
+  <script src="js/nodes/gasexchange.js"></script>
+  <script src="js/navigator.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
